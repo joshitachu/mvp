@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F06_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F06">
+            <LEGAL_BASIS VALUE="32014L0025"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Metropoolregio Rotterdam- Den Haag</OFFICIALNAME>
+                    <NATIONALID>41739529</NATIONALID>
+                    <ADDRESS>Westersingel 12</ADDRESS>
+                    <TOWN>Rotterdam</TOWN>
+                    <POSTAL_CODE>3014GN</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Fred  Kuhlman</CONTACT_POINT>
+                    <PHONE>+31 885445100</PHONE>
+                    <E_MAIL>jz@mrdh.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.mrdh.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CE_ACTIVITY_OTHER>Vervoerregio</CE_ACTIVITY_OTHER>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Reclame exploitatie Reclamevitrines</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="79341200"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Reclame exploitatie van Reclamevitrines RandstadRail, Den Haag, Delft, Midden-Delfland en Westland</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL PUBLICATION="YES" CURRENCY="EUR">1.0</VAL_TOTAL>
+                <LOT_DIVISION></LOT_DIVISION>
+                <OBJECT_DESCR ITEM="1">
+                    <TITLE>
+                        <P>Perceel 1: Den Haag/ RandstadRail</P>
+                    </TITLE>
+                    <LOT_NO>1</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79341200"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL332"></ns2:NUTS>
+                    <ns2:NUTS CODE="NL333"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>gemeente Den Haag</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Circa 2.193 Reclamevlakken</P>
+                    </SHORT_DESCR>
+                    <AC PUBLICATION="YES">
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Verlenging voor de duur van 2 jaar.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="2">
+                    <TITLE>
+                        <P>Perceel 2: Delft</P>
+                    </TITLE>
+                    <LOT_NO>2</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79341200"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL332"></ns2:NUTS>
+                    <ns2:NUTS CODE="NL333"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>gemeente Den Haag</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Circa 263 Reclamevlakken in abri's en minimaal 13 Reclamevlakken in vrijstaande reclamevitrines</P>
+                    </SHORT_DESCR>
+                    <AC PUBLICATION="YES">
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Verlenging voor de duur van 2 jaar.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="3">
+                    <TITLE>
+                        <P>Perceel 3: Midden Delfland en Westland</P>
+                    </TITLE>
+                    <LOT_NO>3</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79341200"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL332"></ns2:NUTS>
+                    <ns2:NUTS CODE="NL333"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>gemeente Den Haag</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Circa 188 Reclamevlakken</P>
+                    </SHORT_DESCR>
+                    <AC PUBLICATION="YES">
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Verlenging voor de duur van 2 jaar.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="4">
+                    <TITLE>
+                        <P>Perceel 4: Alle Reclamevitrines</P>
+                    </TITLE>
+                    <LOT_NO>4</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79341200"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL332"></ns2:NUTS>
+                    <ns2:NUTS CODE="NL333"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>gemeente Den Haag</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Circa 2.364 Reclamevlakken in abri's en minimaal 293 Reclamevlakken in vrijstaande reclamevitrines.</P>
+                    </SHORT_DESCR>
+                    <AC PUBLICATION="YES">
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Verlenging voor de duur van 2 jaar.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 189-492910</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>2</CONTRACT_NO>
+                <LOT_NO>2</LOT_NO>
+                <TITLE>
+                    <P>Reclame exploitatie Reclamevitrines MRDH</P>
+                </TITLE>
+                <NO_AWARDED_CONTRACT>
+                    <PROCUREMENT_UNSUCCESSFUL></PROCUREMENT_UNSUCCESSFUL>
+                </NO_AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="2">
+                <CONTRACT_NO>2</CONTRACT_NO>
+                <LOT_NO>1</LOT_NO>
+                <TITLE>
+                    <P>Reclame exploitatie Reclamevitrines MRDH</P>
+                </TITLE>
+                <NO_AWARDED_CONTRACT>
+                    <PROCUREMENT_UNSUCCESSFUL></PROCUREMENT_UNSUCCESSFUL>
+                </NO_AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="3">
+                <CONTRACT_NO>2</CONTRACT_NO>
+                <LOT_NO>3</LOT_NO>
+                <TITLE>
+                    <P>Reclame exploitatie Reclamevitrines MRDH</P>
+                </TITLE>
+                <NO_AWARDED_CONTRACT>
+                    <PROCUREMENT_UNSUCCESSFUL></PROCUREMENT_UNSUCCESSFUL>
+                </NO_AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="4">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <LOT_NO>4</LOT_NO>
+                <TITLE>
+                    <P>Reclame exploitatie Reclamevitrines MRDH</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS PUBLICATION="YES">
+                        <NB_TENDERS_RECEIVED>3</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>3</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS PUBLICATION="YES">
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Exterion Media (Netherlands) B.V.</OFFICIALNAME>
+                                <NATIONALID>33207193</NATIONALID>
+                                <ADDRESS>Karspeldreef 8 etage 4 &amp; 5</ADDRESS>
+                                <TOWN>AMSTERDAM</TOWN>
+                                <POSTAL_CODE>1101CJ</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 205620562</PHONE>
+                                <E_MAIL>marieke.vaessen@exterionmedia.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.exterionmedia.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES PUBLICATION="YES">
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">1.0</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>1.0</LOW>
+                            <HIGH>1.1</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <INFO_ADD>
+                    <P>Beeroep op artikel 2:138 Aw 2012 in verband met niet publiceren definitieve waarde.</P>
+                </INFO_ADD>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Den Haag</OFFICIALNAME>
+                    <TOWN>Den Haag</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>info@rechtspraak.nl</E_MAIL>
+                    <URL>https://www.rechtspraak.nl/</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2022-01-02</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F06_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

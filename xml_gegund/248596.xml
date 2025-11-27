@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F21_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F21">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <NOTICE TYPE="AWARD_CONTRACT"></NOTICE>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Haarlemmermeer</OFFICIALNAME>
+                    <NATIONALID>381942865</NATIONALID>
+                    <ADDRESS>Raadhuisplein 1</ADDRESS>
+                    <TOWN>Hoofddorp</TOWN>
+                    <POSTAL_CODE>2132 TZ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Niek  Bonhof</CONTACT_POINT>
+                    <PHONE>+31 9001852</PHONE>
+                    <E_MAIL>aanbesteden@haarlemmermeer.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.haarlemmermeer.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT ITEM="1">
+                <TITLE>
+                    <P>juridische content Wolter Kluwer</P>
+                </TITLE>
+                <REFERENCE_NUMBER>2021-366</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="79131000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Juridische content uitgaven Wolters Kluwer</P>
+                    <P>Overeenkomst wordt aangegaan voor periode van 5 jaar, met mogelijkheid tot velenging telkens met een jaar.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">340000.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>340.000</P>
+                    </SHORT_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_AWARD_CONTRACT_WITHOUT_CALL>
+                    <D_ACCORDANCE_ARTICLE>
+                        <D_PROTECT_RIGHTS></D_PROTECT_RIGHTS>
+                    </D_ACCORDANCE_ARTICLE>
+                    <D_JUSTIFICATION>
+                        <P>Wolter Kluwer heeft het intellectuele eigendomsrecht van de betreffende uitgaves die online worden ontsloten. Het gaat om een compleet content pakket bestaande uit titels waarvan Wolters Kluwer de enige rechthebbende is.</P>
+                    </D_JUSTIFICATION>
+                </PT_AWARD_CONTRACT_WITHOUT_CALL>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>juridische content Wolter Kluwer</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-12-29</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>1</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>0</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Wollters Kluwer NV</OFFICIALNAME>
+                                <ADDRESS>Staverenstraat 15 Deventwer</ADDRESS>
+                                <TOWN>Deventer</TOWN>
+                                <POSTAL_CODE>7418CJ</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">340000.0</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">340000.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <DATE_DISPATCH_NOTICE>2022-01-03</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F21_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

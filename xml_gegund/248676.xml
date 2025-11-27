@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F21_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F21">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <NOTICE TYPE="AWARD_CONTRACT"></NOTICE>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Edam-Volendam</OFFICIALNAME>
+                    <NATIONALID>232171628</NATIONALID>
+                    <ADDRESS>W. van der Knoopdreef 1</ADDRESS>
+                    <TOWN>Volendam</TOWN>
+                    <POSTAL_CODE>1132 KN</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Annemarieke de Boer</CONTACT_POINT>
+                    <PHONE>+31 299398398</PHONE>
+                    <E_MAIL>a.de.boer@edam-volendam.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.edam-volendam.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT ITEM="1">
+                <TITLE>
+                    <P>Wmo maatwerkvoorzieningen 2021-2026</P>
+                </TITLE>
+                <REFERENCE_NUMBER>21.198-SD</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="85000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>De gemeente Edam-Volendam kiest er voor om het inkopen van maatwerkvoorzieningen Wmo via een bestuurlijke aanbesteding in de markt te zetten. Deze vorm van aanbesteden past bij de complexiteit en onzekerheid in het Sociaal Domein en sluit aan bij het gemeentelijke beleid. Het biedt ruimte om tijdens de looptijd van de overeenkomsten mee te gaan met de ontwikkelingen in de markt en nieuwe initiatieven te honoreren.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">200.0</VAL_TOTAL>
+                <LOT_DIVISION></LOT_DIVISION>
+                <OBJECT_DESCR ITEM="1">
+                    <TITLE>
+                        <P>Hulp bij het huishouden.</P>
+                    </TITLE>
+                    <LOT_NO>1</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="85300000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>geen</P>
+                    </SHORT_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="2">
+                    <TITLE>
+                        <P>Individuele begeleiding (al dan niet met persoonlijke verzorging als dit voor de cliënt noodzakelijk is).</P>
+                    </TITLE>
+                    <LOT_NO>2</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="85300000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>geen</P>
+                    </SHORT_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="3">
+                    <TITLE>
+                        <P>Dagbesteding exclusief/inclusief vervoer met of zonder rolstoel (al dan niet met persoonlijke verzorging als dit voor de cliënt noodzakelijk is).</P>
+                    </TITLE>
+                    <LOT_NO>3</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="85300000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>geen</P>
+                    </SHORT_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="4">
+                    <TITLE>
+                        <P>Kortdurend verblijf/respijtzorg.</P>
+                    </TITLE>
+                    <LOT_NO>4</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="85300000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>geen</P>
+                    </SHORT_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <NOTICE_NUMBER_OJ>2021/S 191-497876</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>3</CONTRACT_NO>
+                <LOT_NO>3</LOT_NO>
+                <TITLE>
+                    <P>P3. Dagbesteding en P.4 kortdurende verblijf/respijtzorg</P>
+                </TITLE>
+                <NO_AWARDED_CONTRACT>
+                    <PROCUREMENT_UNSUCCESSFUL></PROCUREMENT_UNSUCCESSFUL>
+                </NO_AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="2">
+                <CONTRACT_NO>3</CONTRACT_NO>
+                <LOT_NO>4</LOT_NO>
+                <TITLE>
+                    <P>P3. Dagbesteding en P.4 kortdurende verblijf/respijtzorg</P>
+                </TITLE>
+                <NO_AWARDED_CONTRACT>
+                    <PROCUREMENT_UNSUCCESSFUL></PROCUREMENT_UNSUCCESSFUL>
+                </NO_AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="3">
+                <CONTRACT_NO>2</CONTRACT_NO>
+                <LOT_NO>2</LOT_NO>
+                <TITLE>
+                    <P>Wmo maatwerkvoorzieningen P2 Individuele begeleiding</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-03</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>3</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>3</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <AWARDED_TO_GROUP></AWARDED_TO_GROUP>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>123Moos B.V.</OFFICIALNAME>
+                                <NATIONALID>76083721</NATIONALID>
+                                <ADDRESS>Middenweg 564</ADDRESS>
+                                <TOWN>Amsterdam</TOWN>
+                                <POSTAL_CODE>1097VE</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <E_MAIL>info@123moos.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.123moos.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Zorgbureau Endless B.V.</OFFICIALNAME>
+                                <NATIONALID>32146633</NATIONALID>
+                                <ADDRESS>Katernstraat 21</ADDRESS>
+                                <TOWN>ALMERE</TOWN>
+                                <POSTAL_CODE>1321NC</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 365291688</PHONE>
+                                <E_MAIL>endless.esther@gmail.com</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.endlesszorg.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Origin Thuiszorg B.V.</OFFICIALNAME>
+                                <NATIONALID>75793989</NATIONALID>
+                                <ADDRESS>Ingelandenweg 1</ADDRESS>
+                                <TOWN>Amsterdam</TOWN>
+                                <POSTAL_CODE>1069WE</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">100.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="4">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <LOT_NO>1</LOT_NO>
+                <TITLE>
+                    <P>Wmo maatwerkvoorzieningen P1 Hulp bij het huishouden</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-03</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>2</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>2</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <AWARDED_TO_GROUP></AWARDED_TO_GROUP>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Zorgbureau Endless B.V.</OFFICIALNAME>
+                                <NATIONALID>32146633</NATIONALID>
+                                <ADDRESS>Katernstraat 21</ADDRESS>
+                                <TOWN>ALMERE</TOWN>
+                                <POSTAL_CODE>1321NC</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 365291688</PHONE>
+                                <E_MAIL>endless.esther@gmail.com</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.endlesszorg.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Origin Thuiszorg B.V.</OFFICIALNAME>
+                                <NATIONALID>75793989</NATIONALID>
+                                <ADDRESS>Ingelandenweg 1</ADDRESS>
+                                <TOWN>Amsterdam</TOWN>
+                                <POSTAL_CODE>1069WE</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">100.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Haarlem</OFFICIALNAME>
+                    <TOWN>Haarlem</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>kantonzaanstad@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2022-01-04</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F21_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

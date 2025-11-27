@@ -1,0 +1,13 @@
+# Big data files – don’t push these
+Dataset_TenderNed_2016_2024_herzien.xlsx
+TenderNed_filtered.csv
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+
+# Optional: any generated output
+output.csv

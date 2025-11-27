@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Heusden</OFFICIALNAME>
+                    <NATIONALID>58545766</NATIONALID>
+                    <ADDRESS>Julianastraat 34</ADDRESS>
+                    <TOWN>VLIJMEN</TOWN>
+                    <POSTAL_CODE>5251ED</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Maaike Burggraaf</CONTACT_POINT>
+                    <PHONE>+31 622330656</PHONE>
+                    <E_MAIL>maaike.burggraaf@beheeraccent.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.heusden.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Onderhoud bermen en waterlopen 2022-2023</P>
+                </TITLE>
+                <REFERENCE_NUMBER>1131283</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="77000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Het betreft het onderhoud van bermen en waterlopen voor de gemeente Heusden over de periode januari 2022 t/m december 2023 met een optie tot verlenging van 2 keer met 1 jaar.</P>
+                    <P>De opdracht bestaat uit de volgende werkzaamheden:</P>
+                    <P>- Maaien bermstroken</P>
+                    <P>- Maaien en ruimen van bermen (standaard beheer)</P>
+                    <P>- Bijmaaien rondom bomen</P>
+                    <P>- Maaien en ruimen van oevers</P>
+                    <P>- Maaien en ruimen van sloten</P>
+                    <P>- Uitmaaien bodem waterpartij met maaiboot</P>
+                    <P>- Maaien en ruimen wadi's</P>
+                    <P>- Werkzaamheden i.h.k.v. Wet Natuurbescherming</P>
+                    <P>- Treffen van verkeersmaatregelen</P>
+                    <P>- Beschikbaar stellen van werknemers en materieel</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">618800.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="77310000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL413"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Gemeente Heusden</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Zie aanbestedingsdocument</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>60</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Zie aanbestedingsdocument.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 136-361707</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Onderhoud bermen en waterlopen 2022-2023</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>3</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>3</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>J. van Esch B.V.</OFFICIALNAME>
+                                <NATIONALID>16038159</NATIONALID>
+                                <ADDRESS>Achterstraat 29</ADDRESS>
+                                <TOWN>CROMVOIRT</TOWN>
+                                <POSTAL_CODE>5266AR</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 411647020</PHONE>
+                                <E_MAIL>willy@jvesch.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.jvesch.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">618800.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Oost-Brabant</OFFICIALNAME>
+                    <ADDRESS>Leeghwaterlaan 8</ADDRESS>
+                    <TOWN>'s-Hertogenbosch</TOWN>
+                    <POSTAL_CODE>5223 BA</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>rechtbank@sHertogenbosch.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <REVIEW_PROCEDURE>
+                    <P>20 dagen</P>
+                </REVIEW_PROCEDURE>
+                <DATE_DISPATCH_NOTICE>2022-01-03</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

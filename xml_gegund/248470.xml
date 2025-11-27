@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F15_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F15">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Radboudumc</OFFICIALNAME>
+                    <NATIONALID>09177610</NATIONALID>
+                    <ADDRESS>Geert Grooteplein-Zuid 106525 GA Nijmegen</ADDRESS>
+                    <TOWN>Nijmegen</TOWN>
+                    <POSTAL_CODE>6525GA</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Radboudumc </CONTACT_POINT>
+                    <PHONE>+316 13167754</PHONE>
+                    <E_MAIL>Maaike.vanHout@radboudumc.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.radboudumc.nl</URL_GENERAL>
+                    <URL_BUYER>https://platform.negometrix.com/PublishedTenders.aspx?tenderid=192285</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="HEALTH"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Bruikleen high-throughput moleculair diagnostisch systeem</P>
+                </TITLE>
+                <REFERENCE_NUMBER>Negometrixnummer 192285</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="38000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SUPPLIES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Radboudumc heeft een maatschappelijke rol in de bestrijding en voorkoming van verdere verspreiding van Covid-19. Gezien de opkomst van nieuwe varianten zoals de Omikron variant, en de daarmee samenhangende toenemende vraag naar de test capaciteit, heeft Radboudumc op zeer korte termijn behoefte aan een moleculair high-throughput systeem ten behoeve van de verwerking van testresultaten. In het kader van de Covid-19 diagnostiek, zal leverancier aan Opdrachtgever een moleculair high-throughput systeem in bruikleen geven. Tevens levert leverancier de bijbehorende reagentia en consumables voor Covid-19 diagnostiek, gegarandeerd binnen 48 uur na bestelling. Radboudumc heeft de aanvraag, gezien de dwingende spoed door toegenomen vraag aan Covid diagnostiek, niet vooraf bekend kunnen maken. Het moleculair systeem alsmede de daarbij behorende reagentia en onderhoud worden op grond van artikel 2.32 Aw rechtstreeks middels de "onderhandelingsprocedure zonder aankondiging" van leverancier in bruikleen verkregen. Hiermee is Radboudumc in staat om met ingang van medio januari 2022 passende testcapaciteit vorm te geven.</P>
+                    <P> </P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1.00</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="33696500"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Nijmegen</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Radboudumc heeft een maatschappelijke rol in de bestrijding en voorkoming van verdere verspreiding van Covid-19. Gezien de opkomst van nieuwe varianten zoals de Omikron variant, en de daarmee samenhangende toenemende vraag naar de test capaciteit, heeft Radboudumc op zeer korte termijn behoefte aan een moleculair high-throughput systeem. In het kader van de Covid-19 diagnostiek, zal leverancier aan Opdrachtgever een moleculair high-throughput systeem in bruikleen geven. Tevens levert leverancier de bijbehorende reagentia en consumables voor Covid-19 diagnostiek, gegarandeerd binnen 48 uur na bestelling. Radboudumc heeft de aanvraag, gezien de dwingende spoed door toegenomen vraag aan Covid diagnostiek, niet vooraf bekend kunnen maken. Het moleculair systeem alsmede de daarbij behorende reagentia en onderhoud worden op grond van artikel 2.32 Aw rechtstreeks middels de “onderhandelingsprocedure zonder aankondiging” van leverancier in bruikleen verkregen.</P>
+                        <P></P>
+                        <P></P>
+                    </SHORT_DESCR>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <DIRECTIVE_2014_24_EU>
+                    <PT_NEGOTIATED_WITHOUT_PUBLICATION>
+                        <D_ACCORDANCE_ARTICLE>
+                            <D_EXTREME_URGENCY></D_EXTREME_URGENCY>
+                        </D_ACCORDANCE_ARTICLE>
+                        <D_JUSTIFICATION>
+                            <P>Radboudumc heeft een maatschappelijke rol in de bestrijding en voorkoming van verdere verspreiding van Covid-19. Gezien de opkomst van nieuwe varianten zoals de Omikron variant, en de daarmee samenhangende toenemende vraag naar de test capaciteit, heeft Radboudumc op zeer korte termijn behoefte aan een moleculair high-throughput systeem.</P>
+                        </D_JUSTIFICATION>
+                    </PT_NEGOTIATED_WITHOUT_PUBLICATION>
+                </DIRECTIVE_2014_24_EU>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-12-29</DATE_CONCLUSION_CONTRACT>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Roche Diagnostics Nederland B.V.</OFFICIALNAME>
+                                <TOWN>Almere</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Gelderland</OFFICIALNAME>
+                    <TOWN>Arnhem</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-12-30</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F15_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

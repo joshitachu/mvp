@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Vijfheerenlanden</OFFICIALNAME>
+                    <ADDRESS>Postbus 11</ADDRESS>
+                    <TOWN>Leerdam</TOWN>
+                    <POSTAL_CODE>4140 AA</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Inkoop Bureau Midden Nederland</CONTACT_POINT>
+                    <E_MAIL>kenniscentrum@ibmn.eu</E_MAIL>
+                    <ns2:NUTS CODE="NL31"></ns2:NUTS>
+                    <URL_GENERAL>https://vijfheerenlanden.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Gemeente Vijfheerenlanden - Servicebus</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="48000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SUPPLIES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>De Aanbestedende dienst wenst een overeenkomst aan te gaan waarbij de functionaliteit van de gegevensdistributie en -magazijn ingevuld wordt middels een Servicebus. </P>
+                    <P>De Aanbestedende dienst wenst voor de duur van vijf (5) jaar een Overeenkomst af te sluiten met één (1) professionele en betrouwbare Ondernemer ten behoeve van de uitvoering van de Dienst. Na afloop van deze periode heeft de Aanbestedende dienst de mogelijkheid van vijfmaal  te verlengen met één (1) jaar, waarbij dus de maximale looptijd van het contract tien (10) jaar behelst.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1.00</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL31"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Gemeente Vijfheerenlanden</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>De Aanbestedende dienst wenst een overeenkomst aan te gaan waarbij de functionaliteit van de gegevensdistributie en -magazijn ingevuld wordt middels een Servicebus. </P>
+                        <P>De Aanbestedende dienst wenst voor de duur van vijf (5) jaar een Overeenkomst af te sluiten met één (1) professionele en betrouwbare Ondernemer ten behoeve van de uitvoering van de Dienst. Na afloop van deze periode heeft de Aanbestedende dienst de mogelijkheid van vijfmaal  te verlengen met één (1) jaar, waarbij dus de maximale looptijd van het contract tien (10) jaar behelst.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Roadmap</AC_CRITERION>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Implementatie</AC_CRITERION>
+                            <AC_WEIGHTING>30</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>30</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>Voor deze opdracht, zoals omschreven in het aanbestedingsdocument, moet ten minste 2%  van de opdrachtwaarde exclusief btw ingezet worden voor social return. Het genoemde percentage wordt aan de hand van de inschrijving uitgedrukt in een geldbedrag: </P>
+                        <P>In dit geval 2% social return x opdrachtwaarde. Dit geldbedrag heet de social return verplichting.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <NO_CONTRACT_COVERED_GPA></NO_CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2022/S 160-456029</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <TITLE>
+                    <P>Servicebus</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-10-28</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>2</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>PinkRoccade Local Government B.V.</OFFICIALNAME>
+                                <TOWN>‘s-Hertogenbosch</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL41"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">1.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">1.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Midden-Nederland</OFFICIALNAME>
+                    <ADDRESS>Postbus 16005</ADDRESS>
+                    <TOWN>Utrecht</TOWN>
+                    <POSTAL_CODE>3500 DA</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 302233000</PHONE>
+                    <URL>http://www.rechtspraak.nl/Organisatie/Rechtbanken/Midden-Nederland/Contact/Pages/default.aspx</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2023-01-04</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

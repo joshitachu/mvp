@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F15_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F15">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Technische Universiteit Delft</OFFICIALNAME>
+                    <NATIONALID>102183628</NATIONALID>
+                    <ADDRESS>Stevinweg 1</ADDRESS>
+                    <TOWN>Delft</TOWN>
+                    <POSTAL_CODE>2628CN</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Inge Lensen</CONTACT_POINT>
+                    <PHONE>+31 152787694</PHONE>
+                    <E_MAIL>procurement@tudelft.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.tudelft.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="EDUCATION"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Aansprakelijkheidsverzekering TU Delft</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="66516500"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Aanbestedende dienst heeft een marktverkenning gehouden om tot een nieuwe aansprakelijkheidsverzekering te komen. Op basis van een uitgebreide marktanalyse is een selectie van mogelijke partijen gemaakt. Deze partijen zijn verzocht om een voorstel uit te brengen. Geen van de partijen, met uitzondering van de huidige verzekeraar, was in staat om een volledig voorstel uit te brengen. Ook qua premiestellingen, voorwaarden en condities mochten we geen passend voorstel ontvangen.</P>
+                    <P>Om deze reden, is de huidige verzekeraar, de enige geschikte partij op de markt die aan de dusdanige specifieke eisen en technische specificaties kan voldoen. De TU Delft is van oordeel dat mededinging om technische redenen hierdoor ontbreekt en TU Delft acht het gerechtvaardigd om de onderhandelingsprocedure zonder aankondiging toe te passen.</P>
+                    <P>Het doel van deze vrijwillige transparantiemelding is om de markt te informeren dat de TU Delft voornemens is de aansprakelijkheidsverzekering bij XL af te sluiten.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">600000.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Delft</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>De overeenkomst gaat in op 1 januari 2022 en eindigt op 1 januari 2023. Na de initiële contractstermijn wordt het contract stilzwijgend verlengd voor een periode van telkens 12 maanden.</P>
+                    </SHORT_DESCR>
+                    <DIRECTIVE_2014_24_EU>
+                        <AC>
+                            <AC_PRICE></AC_PRICE>
+                        </AC>
+                    </DIRECTIVE_2014_24_EU>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <DIRECTIVE_2014_24_EU>
+                    <PT_NEGOTIATED_WITHOUT_PUBLICATION>
+                        <D_ACCORDANCE_ARTICLE>
+                            <D_PROC_OPEN></D_PROC_OPEN>
+                        </D_ACCORDANCE_ARTICLE>
+                        <D_JUSTIFICATION>
+                            <P>Aanbestedende dienst heeft een marktverkenning gehouden. Hieruit bleek dat enkel de huidige verzekeraar een verzekeringsoplossing kon bieden.</P>
+                            <P>De aanbestedende dienst zal een standstill-periode in acht nemen van 20 (twintig) kalenderdagen, ingaande na de datum van bekendmaking van deze aankondiging (van 5 januari 2022 tot 25 januari 2022).</P>
+                            <P>Een leverancier die het niet eens is met deze beslissing kan hiertegen, via het elektronische berichtensysteem van Tenderned waarin hij zijn bezwaar toelicht, binnen voornoemde termijn een kort geding aan te spannen, op straffe van verval van recht. Na 20 dagen vervalt het recht op bezwaar.</P>
+                            <P>Dit geschiedt door betekening van de dagvaarding aan het adres van de aanbestedende dienst:</P>
+                            <P>Technische Universiteit Delft</P>
+                            <P>Afdeling Legal Affairs</P>
+                            <P>Stevinweg 1, 5e verdieping</P>
+                            <P>2628 CN Delft</P>
+                            <P>In het belang van een snelle en goede voortgang worden leveranciers die een kort geding aanspannen dringend verzocht de contactpersoon van de aanbestedende dienst onmiddellijk te informeren door een kopie van de dagvaarding via de berichtenmodule van Tenderned te verzenden. De aanbestedende dienst zal vervolgens via Tenderned meedelen dat een kort geding is aangespannen.</P>
+                            <P>Een verzoek tot voeging of tussenkomst dient zo spoedig mogelijk bij de bevoegde rechter te worden ingediend en in ieder geval voor de dag waarop het kort geding wordt behandeld. In beginsel zal de aanbestedende dienst de uitspraak in kort geding afwachten alvorens tot definitieve gunning over te gaan.</P>
+                            <P>Indien binnen de standstill-termijn geen kort geding aanhangig wordt gemaakt tegen het besluit, acht de aanbestedende dienst zich vrij om de onderhandelingsprocedure met XL te starten en een overeenkomst met XL te sluiten.</P>
+                        </D_JUSTIFICATION>
+                    </PT_NEGOTIATED_WITHOUT_PUBLICATION>
+                </DIRECTIVE_2014_24_EU>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Aansprakelijkheidsverzekering TU Delft</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-12-17</DATE_CONCLUSION_CONTRACT>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>XL Insurance Company SE</OFFICIALNAME>
+                                <ADDRESS>De Cuserstraat 91</ADDRESS>
+                                <TOWN>Amsterdam</TOWN>
+                                <POSTAL_CODE>1081 CN</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">150000.0</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Den Haag</OFFICIALNAME>
+                    <TOWN>Den Haag</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>kanton.dhg@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2022-01-04</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F15_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

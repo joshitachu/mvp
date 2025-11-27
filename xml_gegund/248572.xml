@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Woerden</OFFICIALNAME>
+                    <NATIONALID>4458826</NATIONALID>
+                    <ADDRESS>Blekerijlaan 14</ADDRESS>
+                    <TOWN>Woerden</TOWN>
+                    <POSTAL_CODE>3447 GR</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Jesse van de Weerdt</CONTACT_POINT>
+                    <PHONE>+31 348428911</PHONE>
+                    <E_MAIL>stadhuis@woerden.nl</E_MAIL>
+                    <FAX>+31 348428451</FAX>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.woerden.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Beheer civiele kunstwerken</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="71000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Gemeenten Woerden en Oudewater hebben een zorgplicht als het gaat om de openbare ruimte. Voor wat betreft de civiele kunstwerken (bruggen, kademuren en steigers) hebben de gemeenten de wettelijke verplichting om aan te tonen dat deze objecten hun functie betrouwbaar en veilig kunnen vervullen. Echter, zij beschikken niet over voldoende eigen capaciteit om invulling te geven aan deze wettelijke verplichting.</P>
+                </SHORT_DESCR>
+                <VAL_RANGE_TOTAL CURRENCY="EUR">
+                    <LOW>0.02</LOW>
+                    <HIGH>0.1</HIGH>
+                </VAL_RANGE_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Woerden en Oudewater</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>De gemeente Woerden heeft op dit moment in totaal 855 civiele kunstwerken in haar beheer.</P>
+                        <P>De gemeente Oudewater heeft op dit moment in totaal 84 civiele kunstwerken in haar beheer.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>60</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>De raamovereenkomst heeft een looptijd van twee (2) jaar, met opties tot verlenging van twee (2) maal één (1) jaar. De ingangsdatum van de overeenkomst staat gepland op 1 juni 2021.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_RESTRICTED></PT_RESTRICTED>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 018-041957</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Beheer civiele kunstwerken</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>5</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>5</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>HaskoningDHV Nederland B.V.</OFFICIALNAME>
+                                <NATIONALID>56515154</NATIONALID>
+                                <ADDRESS>Laan 1914 35</ADDRESS>
+                                <TOWN>AMERSFOORT</TOWN>
+                                <POSTAL_CODE>3818EX</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 883482258</PHONE>
+                                <E_MAIL>harry.bouman@rhdhv.com</E_MAIL>
+                                <FAX>+31 883482801</FAX>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Recthbank Midden-Nederland</OFFICIALNAME>
+                    <TOWN>Woerden</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>Klachtencoordinator.RB-MNL@rechtspraak.nl</E_MAIL>
+                    <URL>https://www.rechtspraak.nl/Organisatie-en-contact/Organisatie/Rechtbanken/Rechtbank-Midden-Nederland/Werk-en-rechtsgebied</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2022-01-03</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

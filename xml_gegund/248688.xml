@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Stichting Kind en Onderwijs Rotterdam</OFFICIALNAME>
+                    <NATIONALID>2247886</NATIONALID>
+                    <ADDRESS>Linker Rottekade 292</ADDRESS>
+                    <TOWN>ROTTERDAM</TOWN>
+                    <POSTAL_CODE>3034 CV</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Saskia Roos</CONTACT_POINT>
+                    <PHONE>+31 582132227</PHONE>
+                    <E_MAIL>l.oosterhoff@bic-bv.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.kindenonderwijsrotterdam.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="EDUCATION"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Europese aanbesteding voor de levering van papier</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="30197644"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SUPPLIES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Doelstelling van deze aanbesteding is om één geschikte leverancier te vinden voor het leveren van papier, hieronder wordt verstaan minimaal 5 pakken papier tot hele pallets. Kleinere verpakkingen en incidenteel een doosje papier van eenzelfde kleurenreeks (gekleurd papier valt dus buiten de scope van deze aanbesteding) worden afgenomen bij de leverancier van kantoorartikelen om onnodig dure en niet milieuvriendelijk transporten te voorkomen.</P>
+                    <P>Aanbestedende dienst wenst dit doel te realiseren door middel van een Europese aanbesteding volgens een openbare procedure, waar de ‘inschrijving met de laagste prijs’ het uitgangspunt is.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">26951.95</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <ns2:NUTS CODE="NL33C"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Rotterdam</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Raming omvang van levering gemiddeld over de afgelopen 4 jaren: € 30.000,-. Dit bedrag is per jaar en exclusief 21% BTW.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Deze aanbesteding kan leiden tot een raamovereenkomst van maximaal 72 maanden. Er wordt een initiële looptijd van 24 maanden aangegaan met viermaal een optionele verlenging van 12 maanden.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 057-143497</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Europese aanbesteding voor de levering van papier</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-10-28</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>3</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>3</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Canon Nederland N.V.</OFFICIALNAME>
+                                <NATIONALID>34045532</NATIONALID>
+                                <ADDRESS>Brabantlaan 2</ADDRESS>
+                                <TOWN>'s Hertogenbosch</TOWN>
+                                <POSTAL_CODE>5216TV</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 736815815</PHONE>
+                                <E_MAIL>Bidcenter@canon.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.canon.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">26951.95</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">26951.95</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Rotterdam</OFFICIALNAME>
+                    <ADDRESS>Wilhelminaplein 100-125</ADDRESS>
+                    <TOWN>Rotterdam</TOWN>
+                    <POSTAL_CODE>3072AK</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 883626000</PHONE>
+                    <E_MAIL>rechtbankrotterdam@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2022-01-04</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Maastricht</OFFICIALNAME>
+                    <NATIONALID>202214754</NATIONALID>
+                    <ADDRESS>Mosae Forum 10</ADDRESS>
+                    <TOWN>Maastricht</TOWN>
+                    <POSTAL_CODE>6211 DW</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Karin Jamar</CONTACT_POINT>
+                    <E_MAIL>Karin.jamar@maastricht.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>https://www.gemeentemaastricht.nl/</URL_GENERAL>
+                    <URL_BUYER>https://platform.negometrix.com/PublishedTenders.aspx?tenderid=187688</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Tijdelijk Specialistisch Vastgoedbeheer</P>
+                </TITLE>
+                <REFERENCE_NUMBER>VIA2021073KJ</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="70330000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Het betreft de Europese openbare aanbesteding voor het tijdelijk specialistisch vastgoedbeheer van de gemeente Maastricht. Doel van onderhavige aanbesteding is het afsluiten van een raamovereenkomst met maximaal één opdrachtnemer. Onderhavige opdracht is reeds eerder Europees openbaar aanbesteed geworden als zijnde perceel 3 van de aanbesteding Tijdelijk Beheer Vastgoed met referentie VIA2021014KJ welke is gepubliceerd op 25 maart jongstleden. Voor perceel 3 is geen sprake geweest van een definitieve gunning van de opdracht. Reden hiertoe is de verkoop van het object Sint Maartenslaan 26, één van de twee bedrijfsverzamelobjecten vallend binnen de scope van perceel 3, voorafgaand aan definitieve gunning. Vanwege deze wezenlijke materiële wijziging gaat de gemeente Maastricht middels onderhavige Europese aanbesteding over tot heraanbesteding van perceel 3.</P>
+                    <P></P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">0.01</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="70331000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="70332000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="70332200"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Maastricht</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Het betreft de Europese openbare aanbesteding voor het tijdelijk specialistisch vastgoedbeheer van de gemeente Maastricht. Doel van onderhavige aanbesteding is het afsluiten van een raamovereenkomst met maximaal één opdrachtnemer. Onderhavige opdracht is reeds eerder Europees openbaar aanbesteed geworden als zijnde perceel 3 van de aanbesteding Tijdelijk Beheer Vastgoed met referentie VIA2021014KJ welke is gepubliceerd op 25 maart jongstleden. Voor perceel 3 is geen sprake geweest van een definitieve gunning van de opdracht. Reden hiertoe is de verkoop van het object Sint Maartenslaan 26, één van de twee bedrijfsverzamelobjecten vallend binnen de scope van perceel 3, voorafgaand aan definitieve gunning. Vanwege deze wezenlijke materiële wijziging gaat de gemeente Maastricht middels onderhavige Europese aanbesteding over tot heraanbesteding van perceel 3.</P>
+                        <P></P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Zie NX</AC_CRITERION>
+                            <AC_WEIGHTING>Zie NX</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>Zie NX</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 211-553738</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>VIA2021073KJ</CONTRACT_NO>
+                <TITLE>
+                    <P>Specialistisch Vastgoedbeheer</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-04</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>1</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Stichting Integratie Parkmanagement en Arbeidstoeleiding Limburg</OFFICIALNAME>
+                                <TOWN>Maastricht</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">0.01</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Limburg</OFFICIALNAME>
+                    <TOWN>Maastricht</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2022-01-04</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

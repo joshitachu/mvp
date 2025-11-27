@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Leudal</OFFICIALNAME>
+                    <NATIONALID>81658932</NATIONALID>
+                    <ADDRESS>Leudalplein 1</ADDRESS>
+                    <TOWN>Heythuysen</TOWN>
+                    <POSTAL_CODE>6093HE</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>John  Janssen</CONTACT_POINT>
+                    <PHONE>+31 475859000</PHONE>
+                    <E_MAIL>inkoop@leudal.nl</E_MAIL>
+                    <FAX>+31 475859922</FAX>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.leudal.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Raamovereenkomst Eikenprocessierups bestrijding</P>
+                </TITLE>
+                <REFERENCE_NUMBER>LEU-2021-01</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="77231200"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Leudal is een landelijke en groene gemeente. In Leudal wonen ruim</P>
+                    <P>35.700 mensen in een gebied dat bijna 165 km2 groot is.</P>
+                    <P>Gemeente Leudal, gaat in 2020 het Raamcontract eikenprocessierups bestrijding aanbesteden</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">4890663.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL422"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Gemeente Leudal</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Het werk bestaat in hoofdzaak uit:</P>
+                        <P>a. Biologische bestrijding eikenprocessierups;</P>
+                        <P>b. Mechanische bestrijding eikenprocessierups;</P>
+                        <P>c. Uitvoeren verkeersmaatregelen.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Ja, zie kopje beschrijving van verlengingen:</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Raamovereenkomst Eikenprocessierups bestrijding</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-05</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>3</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>3</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Roodbeen B.V.</OFFICIALNAME>
+                                <NATIONALID>12029445</NATIONALID>
+                                <ADDRESS>de Vissert 2</ADDRESS>
+                                <TOWN>WELL L</TOWN>
+                                <POSTAL_CODE>5855EL</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 478501715</PHONE>
+                                <E_MAIL>hermanrothoff@roodbeenbv.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.roodbeenbv.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">48906.63</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Limburg, locatie Maastricht</OFFICIALNAME>
+                    <ADDRESS>Sint Annadal 1</ADDRESS>
+                    <TOWN>Maastricht</TOWN>
+                    <POSTAL_CODE>6214 PA</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 883612222</PHONE>
+                    <E_MAIL>rechtbanklimburg@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2022-01-06</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

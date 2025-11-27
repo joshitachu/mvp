@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Instituut Fysieke Veiligheid</OFFICIALNAME>
+                    <NATIONALID>7671490</NATIONALID>
+                    <ADDRESS>Zilverstraat 91</ADDRESS>
+                    <TOWN>Zoetermeer</TOWN>
+                    <POSTAL_CODE>2718 RP</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Sharanda de Jong</CONTACT_POINT>
+                    <E_MAIL>verwerving@ifv.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.ifv.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="NATIONAL_AGENCY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="PUBLIC_ORDER_AND_SAFETY"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Onderhoud en reparaties voertuigen, containers en overig materieel</P>
+                </TITLE>
+                <REFERENCE_NUMBER>IFV2021-EA- 00096</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="50110000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>De Aanbestedende Dienst is op zoek naar een Opdrachtnemer voor de uitvoering van onderhoud (preventief en correctief) en reparaties aan voertuigen, containers en overig materieel. De Aanbestedende Dienst heeft de voertuigen, containers en overig materieel in eigendom en geeft sommige van deze producten in bruikleen aan verschillende veiligheidsregio’s.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1669633.0</VAL_TOTAL>
+                <LOT_DIVISION></LOT_DIVISION>
+                <OBJECT_DESCR ITEM="1">
+                    <TITLE>
+                        <P>Perceel 1: Voertuigen "Mercedes"</P>
+                    </TITLE>
+                    <LOT_NO>1</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50110000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Zoetermeer</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Over 4 jaar:</P>
+                        <P>Geraamd: € 30.2000</P>
+                        <P>Maximale waarde: € 45.300</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>60</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Per wordt de Raamovereenkomst aangegaan voor een initiële duur van twee jaar.</P>
+                        <P>De Aanbestedende Dienst heeft de mogelijkheid om de Raamovereenkomst per perceel twee keer onder dezelfde voorwaarden te verlengen met een periode van maximaal 12 maanden.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>De Aanbestedende Dienst heeft de mogelijkheid om de Raamovereenkomst per perceel twee keer onder dezelfde voorwaarden te verlengen met een periode van maximaal 12 maanden.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="2">
+                    <TITLE>
+                        <P>Perceel 2: Voertuigen "Volkswagen"</P>
+                    </TITLE>
+                    <LOT_NO>2</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50110000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Zoetermeer</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Over 4 jaar:</P>
+                        <P>Geraamd: € 20.500</P>
+                        <P>Maximale waarde: € 30.750</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>60</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Per wordt de Raamovereenkomst aangegaan voor een initiële duur van twee jaar.</P>
+                        <P>De Aanbestedende Dienst heeft de mogelijkheid om de Raamovereenkomst per perceel twee keer onder dezelfde voorwaarden te verlengen met een periode van maximaal 12 maanden.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>De Aanbestedende Dienst heeft de mogelijkheid om de Raamovereenkomst per perceel twee keer onder dezelfde voorwaarden te verlengen met een periode van maximaal 12 maanden.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="3">
+                    <TITLE>
+                        <P>Perceel 3: Voertuigen "Volvo"</P>
+                    </TITLE>
+                    <LOT_NO>3</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50110000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Zoetermeer</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Over 4 jaar:</P>
+                        <P>Geraamd: € 375.800</P>
+                        <P>Maximale waarde: € 563.700</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>60</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Per wordt de Raamovereenkomst aangegaan voor een initiële duur van twee jaar.</P>
+                        <P>De Aanbestedende Dienst heeft de mogelijkheid om de Raamovereenkomst per perceel twee keer onder dezelfde voorwaarden te verlengen met een periode van maximaal 12 maanden.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>De Aanbestedende Dienst heeft de mogelijkheid om de Raamovereenkomst per perceel twee keer onder dezelfde voorwaarden te verlengen met een periode van maximaal 12 maanden.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="4">
+                    <TITLE>
+                        <P>Perceel 4: Mobiel Opstel Punt</P>
+                    </TITLE>
+                    <LOT_NO>4</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50110000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Zoetermeer</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Over 4 jaar:</P>
+                        <P>Geraamd: € 532.800</P>
+                        <P>maximale waarde: € 1.065.600</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>60</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Per wordt de Raamovereenkomst aangegaan voor een initiële duur van twee jaar.</P>
+                        <P>De Aanbestedende Dienst heeft de mogelijkheid om de Raamovereenkomst per perceel twee keer onder dezelfde voorwaarden te verlengen met een periode van maximaal 12 maanden.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>De Aanbestedende Dienst heeft de mogelijkheid om de Raamovereenkomst per perceel twee keer onder dezelfde voorwaarden te verlengen met een periode van maximaal 12 maanden.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="5">
+                    <TITLE>
+                        <P>Perceel 5: Containerunits</P>
+                    </TITLE>
+                    <LOT_NO>5</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50110000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Zoetermeer</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Over 4 jaar:</P>
+                        <P>Geraamd: € 402.689</P>
+                        <P>maximale waarde: € 604.033,50</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>60</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Per wordt de Raamovereenkomst aangegaan voor een initiële duur van twee jaar.</P>
+                        <P>De Aanbestedende Dienst heeft de mogelijkheid om de Raamovereenkomst per perceel twee keer onder dezelfde voorwaarden te verlengen met een periode van maximaal 12 maanden.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>De Aanbestedende Dienst heeft de mogelijkheid om de Raamovereenkomst per perceel twee keer onder dezelfde voorwaarden te verlengen met een periode van maximaal 12 maanden.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="6">
+                    <TITLE>
+                        <P>Perceel 6: Aggregaat units</P>
+                    </TITLE>
+                    <LOT_NO>6</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50110000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Zoetermeer</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Over vier jaar:</P>
+                        <P>Geraamd: € 153.608</P>
+                        <P>Maximale waarde: € 230.412</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>60</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Per wordt de Raamovereenkomst aangegaan voor een initiële duur van twee jaar.</P>
+                        <P>De Aanbestedende Dienst heeft de mogelijkheid om de Raamovereenkomst per perceel twee keer onder dezelfde voorwaarden te verlengen met een periode van maximaal 12 maanden.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>De Aanbestedende Dienst heeft de mogelijkheid om de Raamovereenkomst per perceel twee keer onder dezelfde voorwaarden te verlengen met een periode van maximaal 12 maanden.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="7">
+                    <TITLE>
+                        <P>Perceel 7: HCP (high capacity pump) pompen</P>
+                    </TITLE>
+                    <LOT_NO>7</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50110000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Zoetermeer</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Over 4 jaar:</P>
+                        <P>Geraamd: € 45.285</P>
+                        <P>Maximale waarde: € 67.927,50</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>60</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Per wordt de Raamovereenkomst aangegaan voor een initiële duur van twee jaar.</P>
+                        <P>De Aanbestedende Dienst heeft de mogelijkheid om de Raamovereenkomst per perceel twee keer onder dezelfde voorwaarden te verlengen met een periode van maximaal 12 maanden.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>De Aanbestedende Dienst heeft de mogelijkheid om de Raamovereenkomst per perceel twee keer onder dezelfde voorwaarden te verlengen met een periode van maximaal 12 maanden.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 177-461720</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>2</CONTRACT_NO>
+                <LOT_NO>3</LOT_NO>
+                <TITLE>
+                    <P>Percelen niet gegund na openbare procedure</P>
+                </TITLE>
+                <NO_AWARDED_CONTRACT>
+                    <PROCUREMENT_UNSUCCESSFUL></PROCUREMENT_UNSUCCESSFUL>
+                </NO_AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="2">
+                <CONTRACT_NO>2</CONTRACT_NO>
+                <LOT_NO>6</LOT_NO>
+                <TITLE>
+                    <P>Percelen niet gegund na openbare procedure</P>
+                </TITLE>
+                <NO_AWARDED_CONTRACT>
+                    <PROCUREMENT_UNSUCCESSFUL></PROCUREMENT_UNSUCCESSFUL>
+                </NO_AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="3">
+                <CONTRACT_NO>2</CONTRACT_NO>
+                <LOT_NO>7</LOT_NO>
+                <TITLE>
+                    <P>Percelen niet gegund na openbare procedure</P>
+                </TITLE>
+                <NO_AWARDED_CONTRACT>
+                    <PROCUREMENT_UNSUCCESSFUL></PROCUREMENT_UNSUCCESSFUL>
+                </NO_AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="4">
+                <CONTRACT_NO>2</CONTRACT_NO>
+                <LOT_NO>1</LOT_NO>
+                <TITLE>
+                    <P>Percelen niet gegund na openbare procedure</P>
+                </TITLE>
+                <NO_AWARDED_CONTRACT>
+                    <PROCUREMENT_UNSUCCESSFUL></PROCUREMENT_UNSUCCESSFUL>
+                </NO_AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="5">
+                <CONTRACT_NO>2</CONTRACT_NO>
+                <LOT_NO>2</LOT_NO>
+                <TITLE>
+                    <P>Percelen niet gegund na openbare procedure</P>
+                </TITLE>
+                <NO_AWARDED_CONTRACT>
+                    <PROCUREMENT_UNSUCCESSFUL></PROCUREMENT_UNSUCCESSFUL>
+                </NO_AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="6">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <LOT_NO>5</LOT_NO>
+                <TITLE>
+                    <P>Gunning perceel 4 en perceel 5</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>1</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>1</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Kenbri Fire Fighting B.V.</OFFICIALNAME>
+                                <NATIONALID>24308115</NATIONALID>
+                                <ADDRESS>Industriestraat 8</ADDRESS>
+                                <TOWN>NUMANSDORP</TOWN>
+                                <POSTAL_CODE>3281LB</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 187493588</PHONE>
+                                <E_MAIL>info@kenbri.nl</E_MAIL>
+                                <FAX>+31 187493066</FAX>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.kenbri.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">1.0</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="7">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <LOT_NO>4</LOT_NO>
+                <TITLE>
+                    <P>Gunning perceel 4 en perceel 5</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>1</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>1</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Kenbri Fire Fighting B.V.</OFFICIALNAME>
+                                <NATIONALID>24308115</NATIONALID>
+                                <ADDRESS>Industriestraat 8</ADDRESS>
+                                <TOWN>NUMANSDORP</TOWN>
+                                <POSTAL_CODE>3281LB</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 187493588</PHONE>
+                                <E_MAIL>info@kenbri.nl</E_MAIL>
+                                <FAX>+31 187493066</FAX>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.kenbri.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">1.0</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <INFO_ADD>
+                    <P>Perceel 4 en 5 worden gegund op basis van de inschrijving op deze Europees openbare procedure.</P>
+                    <P>Op overige percelen zijn geen of geen geschikte inschrijvingen ontvangen. Het IFV heeft hiervoor een onderhandelingsprocedure doorlopen.</P>
+                </INFO_ADD>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Arrondissement Den Haag</OFFICIALNAME>
+                    <ADDRESS>Prins Clauslaan 60</ADDRESS>
+                    <TOWN>Den Haag</TOWN>
+                    <POSTAL_CODE>2595 AJ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>voorlichting.rb.den.haag@rechtspraak.nl</E_MAIL>
+                    <URL>https://www.rechtspraak.nl/Organisatie/Rechtbanken/DenHaag/Contact/Pages/</URL>
+                </ADDRESS_REVIEW_BODY>
+                <ADDRESS_REVIEW_INFO>
+                    <OFFICIALNAME>Arrondissement Den Haag</OFFICIALNAME>
+                    <ADDRESS>Prins Clauslaan 60</ADDRESS>
+                    <TOWN>Den Haag</TOWN>
+                    <POSTAL_CODE>2595 AJ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>voorlichting.rb.den.haag@rechtspraak.nl</E_MAIL>
+                    <URL>https://www.rechtspraak.nl/Organisatie/Rechtbanken/DenHaag/Contact/Pages/</URL>
+                </ADDRESS_REVIEW_INFO>
+                <DATE_DISPATCH_NOTICE>2022-01-03</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

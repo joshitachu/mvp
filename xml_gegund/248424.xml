@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Leidschendam-Voorburg</OFFICIALNAME>
+                    <NATIONALID>27370940</NATIONALID>
+                    <ADDRESS>Raadhuisplein 1</ADDRESS>
+                    <TOWN>Leidschendam</TOWN>
+                    <POSTAL_CODE>2264BP</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Jessica Scheffers </CONTACT_POINT>
+                    <E_MAIL>inkoop.en.aanbesteding@leidschendam-voorburg.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL332"></ns2:NUTS>
+                    <URL_GENERAL>www.leidschendam-voorburg.nl</URL_GENERAL>
+                    <URL_BUYER>https://hub.negometrix.com/buyer/2400</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY_ADDITIONAL>
+                    <OFFICIALNAME>Gemeente Wassenaar</OFFICIALNAME>
+                    <NATIONALID>    27380612</NATIONALID>
+                    <TOWN>Wassenaar</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>inkoop.en.aanbesteding@leidschendam-voorburg.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL33"></ns2:NUTS>
+                    <URL_GENERAL>www.wassenaar.nl</URL_GENERAL>
+                    <URL_BUYER>www.wassenaar.nl</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY_ADDITIONAL>
+                <ADDRESS_CONTRACTING_BODY_ADDITIONAL>
+                    <OFFICIALNAME>Gemeente Voorschoten</OFFICIALNAME>
+                    <NATIONALID>27381083</NATIONALID>
+                    <TOWN>Voorschoten</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>inkoop.en.aanbesteding@leidschendam-voorburg.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL33"></ns2:NUTS>
+                    <URL_GENERAL>www.voorschoten.nl</URL_GENERAL>
+                    <URL_BUYER>www.voorschoten.nl</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY_ADDITIONAL>
+                <JOINT_PROCUREMENT_INVOLVED></JOINT_PROCUREMENT_INVOLVED>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Inburgering B1- en Z-routes</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="85320000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Op 1 januari 2022 treedt de nieuwe Wet inburgering in werking. Daarmee krijgen de gemeenten de verantwoordelijkheid voor en de regie op het inburgeringstraject. Het nieuwe inburgeringsstelsel bestaat uit een collectie van leerroutes (taalonderwijs op verschillende niveaus en met verschillende einddoelen) en ondersteunende modules (gericht op kennismaking met de Nederlandse maatschappij en arbeidsmarkt). </P>
+                    <P>Er zijn in totaal drie leerroutes, waarvan er twee binnen deze aanbesteding worden ingekocht. Dit zijn de B1-route en de Z-route. Eventuele alfabetisering en de module KNM maken onderdeel uit van deze leerroutes en zijn dus ook inbegrepen bij de opdracht van deze aanbesteding.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1</VAL_TOTAL>
+                <LOT_DIVISION></LOT_DIVISION>
+                <OBJECT_DESCR ITEM="1">
+                    <TITLE>
+                        <P>B1-route</P>
+                    </TITLE>
+                    <LOT_NO>1</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="85320000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL332"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>Meer informatie over de aanbesteding is te vinden op: https://hub.negometrix.com/today/5382</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>70</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_COST>
+                            <AC_CRITERION>Prijs</AC_CRITERION>
+                            <AC_WEIGHTING>30</AC_WEIGHTING>
+                        </AC_COST>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>De overeenkomst gaat in op 1 januari 2022 en heeft een looptijd van twee (2) jaar. De overeenkomst eindigt van rechtswege op 31 december 2023 zonder dat één der Partijen tot schriftelijke opzegging is verplicht. Opdrachtgever kan de overeenkomst maximaal twee (2) maal met twee (2) jaar verlengen.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="2">
+                    <TITLE>
+                        <P>Z-route</P>
+                    </TITLE>
+                    <LOT_NO>2</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="85320000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL332"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>Meer informatie over de aanbesteding is te vinden op: https://hub.negometrix.com/today/5382</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>70</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_COST>
+                            <AC_CRITERION>Prijs</AC_CRITERION>
+                            <AC_WEIGHTING>30</AC_WEIGHTING>
+                        </AC_COST>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>De overeenkomst gaat in op 1 januari 2022 en heeft een looptijd van twee (2) jaar. De overeenkomst eindigt van rechtswege op 31 december 2023 zonder dat één der Partijen tot schriftelijke opzegging is verplicht. Opdrachtgever kan de overeenkomst maximaal twee (2) maal met twee (2) jaar verlengen.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 092-239013</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <LOT_NO>1</LOT_NO>
+                <TITLE>
+                    <P>B1-route</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-11-25</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>7</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>EchtNederlands B.V.</OFFICIALNAME>
+                                <TOWN>Berkel en Rodenrijs</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL33"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="2">
+                <CONTRACT_NO>2</CONTRACT_NO>
+                <LOT_NO>2</LOT_NO>
+                <TITLE>
+                    <P>Z-route</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-11-25</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>7</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Foxtaal B.V.</OFFICIALNAME>
+                                <TOWN>'s-Gravenhage</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL332"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Den Haag</OFFICIALNAME>
+                    <TOWN>Den Haag</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-12-30</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>
