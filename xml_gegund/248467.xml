@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Sluis</OFFICIALNAME>
+                    <NATIONALID>231593303</NATIONALID>
+                    <ADDRESS>Nieuwstraat 22</ADDRESS>
+                    <TOWN>Oostburg</TOWN>
+                    <POSTAL_CODE>4501 BD</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Judith Huisman</CONTACT_POINT>
+                    <PHONE>+31 117457000</PHONE>
+                    <E_MAIL>rbuitendijk@gemeentesluis.nl</E_MAIL>
+                    <FAX>+31 117452241</FAX>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.gemeentesluis.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Brandverzekering Gemeente Sluis</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="66515100"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Brandverzekering Gemeente Sluis</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">129392.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Gemeente Sluis</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>199.093.980</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>De opdracht kan 3 x 1 jaar verlengd worden.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 187-486997</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Brandverzekering Gemeente Sluis</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-12-29</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>6</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>6</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <AWARDED_TO_GROUP></AWARDED_TO_GROUP>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Mandatis</OFFICIALNAME>
+                                <NATIONALID>08111458</NATIONALID>
+                                <ADDRESS>Hanzepoort 25</ADDRESS>
+                                <TOWN>OLDENZAAL</TOWN>
+                                <POSTAL_CODE>7575DB</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 541571111</PHONE>
+                                <E_MAIL>info@meliorverzekeringen.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.meliorverzekeringen.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Allianz Benelux N.V.</OFFICIALNAME>
+                                <NATIONALID>59395435</NATIONALID>
+                                <ADDRESS>Coolsingel 120</ADDRESS>
+                                <TOWN>Rotterdam</TOWN>
+                                <POSTAL_CODE>3011 AG</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 885771471</PHONE>
+                                <FAX>+31 885771199</FAX>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.allianz.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Achmea Schadeverzekeringen N.V.</OFFICIALNAME>
+                                <NATIONALID>08053410</NATIONALID>
+                                <ADDRESS>Laan van Malkenschoten 20</ADDRESS>
+                                <TOWN>Apeldoorn</TOWN>
+                                <POSTAL_CODE>7333 NP</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 555796643</PHONE>
+                                <E_MAIL>Tenderdesk@achmea.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.achmea.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>MS Amlin Insurance SE</OFFICIALNAME>
+                                <NATIONALID>64815323</NATIONALID>
+                                <ADDRESS>Van Heuven Goedhartlaan 939</ADDRESS>
+                                <TOWN>AMSTELVEEN</TOWN>
+                                <POSTAL_CODE>1181LD</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 205031723</PHONE>
+                                <E_MAIL>robin.visser@msamlin.com</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.msamlin.com</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Veerhaven Assuradeuren B.V.</OFFICIALNAME>
+                                <NATIONALID>24271341</NATIONALID>
+                                <ADDRESS>Lichtenauerlaan 202 220</ADDRESS>
+                                <TOWN>ROTTERDAM</TOWN>
+                                <POSTAL_CODE>3062ME</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 102511297</PHONE>
+                                <E_MAIL>m.van.bekkum@veerhavenassuradeuren.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.veerhavenassuradeuren.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">0.01</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">129392.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Zeeland/West-Brabant</OFFICIALNAME>
+                    <TOWN>Breda</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>info.zwb@rechtspraak.nl</E_MAIL>
+                    <URL>https://www.rechtspraak.nl/Organisatie-en-contact/Organisatie/Rechtbanken/Rechtbank-Zeeland-West-Brabant</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-12-30</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

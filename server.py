@@ -12,6 +12,8 @@ from datetime import datetime, timedelta
 from collections import defaultdict
 import csv
 
+from dotenv import load_dotenv
+
 
 
 
@@ -19,8 +21,14 @@ import csv
 from final_tenderned import run_import  # pas de bestandsnaam aan
 from sroi_scanner import analyze_import_sroi  # nieuwe SROI analyzer
 
-SUPABASE_URL = os.getenv("SUPABASE_URL", "https://fhrgolsungkggaroxmnp.supabase.co")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZocmdvbHN1bmdrZ2dhcm94bW5wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMzNzc4NDcsImV4cCI6MjA3ODk1Mzg0N30.OC-X62LPgaR4v-snEmVakzGUu465KlhvCWozH_I-XX4")
+# Load .env file
+load_dotenv()
+
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+
+print(SUPABASE_KEY)
+# Optional debug (verwijder later):
 
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 app = FastAPI(title="TenderNed Import Backend")
@@ -285,7 +293,7 @@ def start_import(payload: ImportRequest):
 
         
         # ✅ Check of bedrijf eerder aanbestedingen heeft gehad
-        bedrijf_naam = r.get("win_bedrijf_naam", "").strip()
+        bedrijf_naam = (r.get("win_bedrijf_naam") or "").strip()
         heeft_eerdere_aanbestedingen = False
         aantal_eerdere_aanbestedingen = 0
         
@@ -373,6 +381,54 @@ def start_import(payload: ImportRequest):
         total_records=total_records,
         created_at=import_row["created_at"],
     )
+
+
+@app.delete("/imports/{import_id}")
+def delete_import(import_id: str):
+  """
+  Verwijder een import en alle gekoppelde data uit Supabase.
+  - notices (import_id = import_id)
+  - optioneel: SROI resultaten
+  - imports record zelf
+  """
+
+  # 1) Bestaat de import?
+  imp_resp = supabase.table("imports").select("id").eq("id", import_id).execute()
+  if not imp_resp.data:
+    raise HTTPException(status_code=404, detail="Import niet gevonden")
+
+  # 2) Verwijder gekoppelde notices
+  try:
+    notices_resp = supabase.table("notices").delete().eq("import_id", import_id).execute()
+  except Exception as e:
+    print("Error deleting notices for import", import_id, e)
+    raise HTTPException(status_code=500, detail="Fout bij verwijderen van notices")
+
+  # 3) (Optioneel) Verwijder gekoppelde SROI resultaten, als je een tabel hebt
+  #    en daar een import_id of notice_id-relatie in hebt.
+  #    Hier ga ik ervan uit dat er een import_id kolom is in sroi_results:
+  try:
+    supabase.table("sroi_results").delete().eq("import_id", import_id).execute()
+  except Exception as e:
+    # Niet fatally als de tabel/kolom niet bestaat; loggen is genoeg
+    print("Optional: error deleting sroi_results for import", import_id, e)
+
+  # 4) Verwijder de import zelf
+  try:
+    delete_resp = supabase.table("imports").delete().eq("id", import_id).execute()
+  except Exception as e:
+    print("Error deleting import", import_id, e)
+    raise HTTPException(status_code=500, detail="Fout bij verwijderen van import")
+
+  if not delete_resp.data:
+    # Als er niets verwijderd is (race condition bijvoorbeeld)
+    raise HTTPException(status_code=404, detail="Import niet gevonden (bij verwijderen)")
+
+  return {
+    "detail": "Import en gekoppelde data verwijderd",
+    "import_id": import_id,
+    "deleted_notices": len(notices_resp.data or []),
+  }
 
 
 
@@ -504,6 +560,7 @@ def _make_excel_response(rows, filename: str):
         headers={"Content-Disposition": f'attachment; filename="{filename}"'}
     )
 
+
 def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
     """
     Doorzoek de tabel tenderned_raw op bedrijfsnaam (case-insensitive substring)
@@ -512,7 +569,8 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
     de meest recente publicatie.
     Extraheert begin- en einddatum van de aanbesteding.
 
-    Return-format is hetzelfde als de oude CSV-versie:
+    Return-format (nu met bedrag) sluit aan op de frontend:
+
     [
       {
         'publicatiedatum': '2024-03-10',
@@ -523,6 +581,7 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
         'begindatum_opdracht': '2024-12-01',
         'einddatum_opdracht': '2029-02-28',
         'aantal_publicaties': 3,
+        'bedrag': 123456.78,   # <-- NIEUW
       },
       ...
     ]
@@ -533,14 +592,13 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
     cutoff = (datetime.utcnow() - timedelta(days=365 * int(years))).date().isoformat()
 
     # 1) Haal ruwe rijen op uit de DB
-    #    - ILIKE voor case-insensitive substring match op Officiële benaming
-    #    - Publicatiedatum >= cutoff
-    #    - limit iets hoger dan max_results, omdat we nog gaan dedupliceren
+    #    - "Waarde - bedrag" toegevoegd aan select
     resp = (
         supabase.table("tenderned_raw")
         .select(
             'Publicatiedatum, "Officiële benaming", Kvknummer, '
-            '"Omschrijving aanbesteding", "Aanvang opdracht", "Voltooiing opdracht"'
+            '"Omschrijving aanbesteding", "Aanvang opdracht", "Voltooiing opdracht", '
+            '"bedrag"'
         )
         .ilike("Officiële benaming", f"%{q}%")
         .gte("Publicatiedatum", cutoff)
@@ -548,10 +606,9 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
         .execute()
     )
     if getattr(resp, "error", None):
-    # hier kun je loggen
+        # hier kun je loggen
         print("Supabase error:", resp.error)
         raise RuntimeError(resp.error)
-
 
     rows = resp.data or []
     if not rows:
@@ -561,16 +618,31 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
     def parse_date(raw):
         if not raw:
             return None
-        # Supabase geeft meestal 'YYYY-MM-DD' als string terug
         if isinstance(raw, str):
             try:
                 return datetime.fromisoformat(raw)
             except ValueError:
-                # fallback op dd-mm-YYYY
                 try:
                     return datetime.strptime(raw, "%d-%m-%Y")
                 except ValueError:
                     return None
+        return None
+
+    # Helper voor bedrag
+    def parse_amount(raw):
+        if raw is None:
+            return None
+        # Als Supabase al numeric/float teruggeeft:
+        if isinstance(raw, (int, float)):
+            return float(raw)
+        # Als het een string is, probeer te parsen
+        if isinstance(raw, str):
+            # simpele replace voor komma-decimalen, indien nodig
+            txt = raw.replace(".", "").replace(",", ".") if "," in raw else raw
+            try:
+                return float(txt)
+            except ValueError:
+                return None
         return None
 
     # 2) Groepeer per unieke combinatie (bedrijf, kvk, omschrijving[:100])
@@ -592,6 +664,10 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
         pub_raw = row.get("Publicatiedatum")
         pub_date = parse_date(pub_raw)
 
+        # bedrag uit kolom "Waarde - bedrag"
+        bedrag_raw = row.get("bedrag")
+        bedrag = parse_amount(bedrag_raw)
+
         unique_key = (company, kvk, omschrijving[:100] if omschrijving else "")
 
         all_matches[unique_key].append(
@@ -602,6 +678,7 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
                 "company": company,
                 "kvk": kvk,
                 "omschrijving": omschrijving,
+                "bedrag": bedrag,  # extra info per match
             }
         )
 
@@ -616,7 +693,6 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
         def sort_key(m):
             if m["pub_date_obj"] is not None:
                 return m["pub_date_obj"]
-            # als pub_date_obj None is, sorteer op raw string als fallback
             return m["publicatiedatum"] or ""
 
         most_recent = max(matches, key=sort_key)
@@ -646,9 +722,11 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
                 "begindatum_opdracht": begindatum,
                 "einddatum_opdracht": einddatum,
                 "aantal_publicaties": len(matches),
+                "bedrag": most_recent["bedrag"],  # <-- HIER KOMT HET BEDRAG MEE TERUG
             }
         )
 
+    print(results)
     return results
 
 

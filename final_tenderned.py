@@ -4,13 +4,17 @@ import requests
 from requests.auth import HTTPBasicAuth
 import xml.etree.ElementTree as ET
 
+from dotenv import load_dotenv
 
 # ---------- CONFIG ----------
+load_dotenv()
 
-TNS_BASE_URL = "https://www.tenderned.nl/papi/tenderned-rs-tns/v2/publicaties"
-API_BASE_URL = "https://www.tenderned.nl/papi/tenderned-rs-tns/v2"
-API_USERNAME = "TNXML08248"
-API_PASSWORD = "aapVqSgKB"
+TNS_BASE_URL = os.getenv("TNS_BASE_URL")
+API_BASE_URL = os.getenv("API_BASE_URL")
+API_USERNAME = os.getenv("API_USERNAME")
+API_PASSWORD = os.getenv("API_PASSWORD")
+
+
 
 DATE_FROM = "2022-01-01"
 DATE_TO = "2022-01-01"

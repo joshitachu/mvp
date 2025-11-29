@@ -9,8 +9,8 @@ import numpy as np
 # --------------------------
 # Supabase config
 # --------------------------
-SUPABASE_URL = os.getenv("SUPABASE_URL", "https://fhrgolsungkggaroxmnp.supabase.co")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZocmdvbHN1bmdrZ2dhcm94bW5wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMzNzc4NDcsImV4cCI6MjA3ODk1Mzg0N30.OC-X62LPgaR4v-snEmVakzGUu465KlhvCWozH_I-XX4")
+SUPABASE_URL = os.getenv("SUPABASE_URL" )
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
