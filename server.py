@@ -726,7 +726,6 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
             }
         )
 
-    print(results)
     return results
 
 
