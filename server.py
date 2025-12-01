@@ -4,7 +4,7 @@ import io
 import json
 import datetime as dt
 from typing import Optional, List, Dict
-from fastapi import FastAPI, HTTPException, Query, BackgroundTasks
+from fastapi import FastAPI, HTTPException, Query, BackgroundTasks, Depends, Header
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 from supabase import create_client, Client
@@ -71,6 +71,46 @@ class SROIAnalysisStatus(BaseModel):
 def generate_import_name() -> str:
     now = dt.datetime.utcnow().replace(microsecond=0)
     return "import_" + now.isoformat().replace(":", "-")
+
+
+# ----------------------
+# Simple header-based auth
+# Expects header `X-User-Code: 123456789012` (12 digits)
+# ----------------------
+def validate_user_code(x_user_code: str = Header(..., alias="X-User-Code")) -> str:
+    """Validate that the provided header is a 12-digit numeric code.
+    Returns the code when valid, otherwise raises HTTPException(401).
+    """
+    if not x_user_code:
+        raise HTTPException(status_code=401, detail="X-User-Code header missing")
+    code = str(x_user_code).strip()
+    if len(code) != 12 or not code.isdigit():
+        raise HTTPException(status_code=401, detail="Invalid user code. Must be 12 digits.")
+    # Server-side validation: ensure the code exists in a whitelist table (e.g. `auth_codes`)
+    try:
+        resp = supabase.table("auth_codes").select("code").eq("code", code).limit(1).execute()
+        # If Supabase returns an error (e.g. table doesn't exist), surface a server error
+        if getattr(resp, "error", None):
+            # If the table doesn't exist, treat as server misconfiguration
+            raise HTTPException(status_code=500, detail=f"Auth validation error: {resp.error}")
+        if not resp.data:
+            # No matching code found
+            raise HTTPException(status_code=403, detail="Unknown user code; please register your code or contact admin.")
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to validate user code: {e}")
+
+    return code
+
+
+def _import_belongs_to_user(import_id: str, user_code: str) -> bool:
+    try:
+        resp = supabase.table("imports").select("id").eq("id", import_id).eq("owner_code", user_code).limit(1).execute()
+        return bool(resp.data)
+    except Exception:
+        return False
+
 
 
 def ensure_sroi_table():
@@ -228,19 +268,20 @@ def health():
 
 
 @app.get("/imports")
-def list_imports():
+def list_imports(user_code: str = Depends(validate_user_code)):
     """
     Lijst eerdere imports (voor UI-overzicht).
     """
     resp = supabase.table("imports") \
         .select("*") \
+        .eq("owner_code", user_code) \
         .order("created_at", desc=True) \
         .limit(50) \
         .execute()
 
-    return resp.data
+    return resp.data or []
 @app.post("/imports", response_model=ImportResponse)
-def start_import(payload: ImportRequest):
+def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_code)):
     """
     Start een nieuwe import-run:
     - roept run_import(date_from, date_to, ...)
@@ -258,6 +299,7 @@ def start_import(payload: ImportRequest):
         "publicatie_type": payload.publicatie_type,
         "cpv_codes": payload.cpv_codes,
         "region": payload.region,
+        "owner_code": user_code,
     }).execute()
 
     if not insert_resp.data:
@@ -350,6 +392,7 @@ def start_import(payload: ImportRequest):
             # ✅ Nieuwe velden voor historische data
             "heeft_eerdere_aanbestedingen": heeft_eerdere_aanbestedingen,
             "aantal_eerdere_aanbestedingen": aantal_eerdere_aanbestedingen,
+            "owner_code": user_code,
         })
 
     total_records = len(notice_rows)
@@ -365,6 +408,9 @@ def start_import(payload: ImportRequest):
     deduped_notice_rows = list(unique_rows.values())
 
     if deduped_notice_rows:
+        # ensure each row contains owner_code (defence in depth)
+        for r in deduped_notice_rows:
+            r.setdefault("owner_code", user_code)
         supabase.table("notices") \
             .upsert(deduped_notice_rows, on_conflict="notice_id") \
             .execute()
@@ -373,6 +419,7 @@ def start_import(payload: ImportRequest):
     supabase.table("imports") \
         .update({"total_records": total_records}) \
         .eq("id", import_id) \
+        .eq("owner_code", user_code) \
         .execute()
 
     return ImportResponse(
@@ -382,58 +429,93 @@ def start_import(payload: ImportRequest):
         created_at=import_row["created_at"],
     )
 
-
 @app.delete("/imports/{import_id}")
-def delete_import(import_id: str):
-  """
-  Verwijder een import en alle gekoppelde data uit Supabase.
-  - notices (import_id = import_id)
-  - optioneel: SROI resultaten
-  - imports record zelf
-  """
+def delete_import(import_id: str, user_code: str = Depends(validate_user_code)):
+    """
+    Verwijder een import en alle gekoppelde data uit Supabase.
+    - notices (import_id = import_id)
+    - optioneel: SROI resultaten
+    - imports record zelf
+    """
 
-  # 1) Bestaat de import?
-  imp_resp = supabase.table("imports").select("id").eq("id", import_id).execute()
-  if not imp_resp.data:
-    raise HTTPException(status_code=404, detail="Import niet gevonden")
+    # 1) Bestaat de import? + eigenaarschap check
+    imp_resp = (
+        supabase.table("imports")
+        .select("id, owner_code")
+        .eq("id", import_id)
+        .execute()
+    )
 
-  # 2) Verwijder gekoppelde notices
-  try:
-    notices_resp = supabase.table("notices").delete().eq("import_id", import_id).execute()
-  except Exception as e:
-    print("Error deleting notices for import", import_id, e)
-    raise HTTPException(status_code=500, detail="Fout bij verwijderen van notices")
+    if not imp_resp.data:
+        raise HTTPException(status_code=404, detail="Import niet gevonden")
 
-  # 3) (Optioneel) Verwijder gekoppelde SROI resultaten, als je een tabel hebt
-  #    en daar een import_id of notice_id-relatie in hebt.
-  #    Hier ga ik ervan uit dat er een import_id kolom is in sroi_results:
-  try:
-    supabase.table("sroi_results").delete().eq("import_id", import_id).execute()
-  except Exception as e:
-    # Niet fatally als de tabel/kolom niet bestaat; loggen is genoeg
-    print("Optional: error deleting sroi_results for import", import_id, e)
+    found = imp_resp.data[0]
+    owner_code = found.get("owner_code")
 
-  # 4) Verwijder de import zelf
-  try:
-    delete_resp = supabase.table("imports").delete().eq("id", import_id).execute()
-  except Exception as e:
-    print("Error deleting import", import_id, e)
-    raise HTTPException(status_code=500, detail="Fout bij verwijderen van import")
+    if owner_code and owner_code != user_code:
+        raise HTTPException(
+            status_code=403,
+            detail="Je hebt geen toestemming om deze import te verwijderen"
+        )
 
-  if not delete_resp.data:
-    # Als er niets verwijderd is (race condition bijvoorbeeld)
-    raise HTTPException(status_code=404, detail="Import niet gevonden (bij verwijderen)")
+    # 2) Verwijder gekoppelde notices
+    try:
+        notices_resp = (
+            supabase.table("notices")
+            .delete()
+            .eq("import_id", import_id)
+            .eq("owner_code", user_code)  # <- ensures user can delete only own notices
+            .execute()
+        )
+    except Exception as e:
+        print("Error deleting notices for import", import_id, e)
+        raise HTTPException(
+            status_code=500,
+            detail="Fout bij verwijderen van notices"
+        )
 
-  return {
-    "detail": "Import en gekoppelde data verwijderd",
-    "import_id": import_id,
-    "deleted_notices": len(notices_resp.data or []),
-  }
+    # 3) Verwijder gekoppelde SROI resultaten
+    try:
+        supabase.table("sroi_results") \
+            .delete() \
+            .eq("import_id", import_id) \
+            .eq("owner_code", user_code) \
+            .execute()
+    except Exception as e:
+        print("Optional: error deleting sroi_results for import", import_id, e)
+
+    # 4) Verwijder de import zelf
+    try:
+        delete_resp = (
+            supabase.table("imports")
+            .delete()
+            .eq("id", import_id)
+            .eq("owner_code", user_code)
+            .execute()
+        )
+    except Exception as e:
+        print("Error deleting import", import_id, e)
+        raise HTTPException(
+            status_code=500,
+            detail="Fout bij verwijderen van import"
+        )
+
+    if not delete_resp.data:
+        raise HTTPException(
+            status_code=404,
+            detail="Import niet gevonden (bij verwijderen)"
+        )
+
+    return {
+        "detail": "Import en gekoppelde data verwijderd",
+        "import_id": import_id,
+        "deleted_notices": len(notices_resp.data or []),
+    }
 
 
 
 @app.get("/imports/{import_id}/notices")
-def get_import_notices(import_id: str, region: Optional[str] = Query(None, description="Filter op provincie/regio")):
+def get_import_notices(import_id: str, region: Optional[str] = Query(None, description="Filter op provincie/regio"), user_code: str = Depends(validate_user_code)):
     """
     Fetch all notices for a specific import to display in the UI.
     """
@@ -441,10 +523,12 @@ def get_import_notices(import_id: str, region: Optional[str] = Query(None, descr
     print(f"Import ID received: {import_id!r}")
 
     try:
+        # Only fetch notices that belong to this user
         resp = (
             supabase.table("notices")
             .select("*")
             .eq("import_id", import_id)
+            .eq("owner_code", user_code)
             .order("created_at", desc=False)
             .execute()
         )
@@ -476,7 +560,8 @@ def get_import_notices(import_id: str, region: Optional[str] = Query(None, descr
 def download_import(
     import_id: str,
     format: str = Query("excel", pattern="^(excel|csv)$"),
-    region: Optional[str] = Query(None, description="Filter op provincie/regio voor download")
+    region: Optional[str] = Query(None, description="Filter op provincie/regio voor download"),
+    user_code: str = Depends(validate_user_code),
 ):
     """
     Genereer Excel of CSV op basis van Supabase-data.
@@ -485,6 +570,7 @@ def download_import(
     resp = supabase.table("notices") \
         .select("*") \
         .eq("import_id", import_id) \
+        .eq("owner_code", user_code) \
         .execute()
 
     rows = resp.data or []
@@ -729,6 +815,70 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
     return results
 
 
+@app.post("/validate-code")
+def validate_code_endpoint(payload: dict):
+    """Validate a code server-side without needing a full authenticated request.
+    Expects JSON: { code: "123456789012" }
+    Returns 200 ok if code exists in `auth_codes` table; 400 for bad input; 403 if unknown.
+    """
+    code = (payload.get("code") if isinstance(payload, dict) else None) or ""
+    code = str(code).strip()
+    if not code or not code.isdigit() or len(code) != 12:
+        raise HTTPException(status_code=400, detail="Invalid code format")
+
+    try:
+        resp = supabase.table("auth_codes").select("code").eq("code", code).limit(1).execute()
+        if getattr(resp, "error", None):
+            raise HTTPException(status_code=500, detail=f"Auth validation error: {resp.error}")
+        if not resp.data:
+            raise HTTPException(status_code=403, detail="Unknown code")
+        return {"ok": True}
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/auth/request-code")
+def request_code_endpoint():
+    """Generate a unique 12-digit numeric code, store it in `auth_codes` and return it.
+    This endpoint is intentionally simple: it returns the generated code in the response body.
+    Ensure your Supabase DB has an `auth_codes(code TEXT PRIMARY KEY, created_at TIMESTAMPTZ)` table.
+    """
+    import random
+
+    def _gen():
+        return "%012d" % random.randint(0, 10**12 - 1)
+
+    # Try a few times to avoid collisions on insert
+    attempts = 0
+    max_attempts = 8
+    while attempts < max_attempts:
+        attempts += 1
+        code = _gen()
+        try:
+            resp = supabase.table("auth_codes").insert({"code": code, "created_at": dt.datetime.utcnow().isoformat()}).execute()
+            # If insert succeeded, return the code
+            if getattr(resp, "error", None):
+                # If duplicate key error or other, retry a few times
+                # Supabase client exposes resp.error; if it's a duplicate we try again
+                # For other errors, surface
+                err_text = str(resp.error)
+                # crude duplicate check
+                if "duplicate" in err_text.lower() or "unique" in err_text.lower():
+                    continue
+                raise HTTPException(status_code=500, detail=f"Failed to create auth code: {resp.error}")
+            if resp.data:
+                return {"code": code}
+        except Exception as e:
+            # If it's a DB-level duplicate, try again; otherwise surface after last attempt
+            if attempts >= max_attempts:
+                raise HTTPException(status_code=500, detail=f"Error generating code: {e}")
+            continue
+
+    raise HTTPException(status_code=500, detail="Could not generate unique code, try again later")
+
+
 @app.get("/api/search/company")
 def api_search_company(q: str = Query(..., description="Bedrijfsnaam om te zoeken"), years: int = Query(5, ge=1, le=20)):
     """
@@ -756,19 +906,20 @@ def api_search_company(q: str = Query(..., description="Bedrijfsnaam om te zoeke
 # SROI ANALYSIS ENDPOINTS (NEW)
 # ========================================
 
-def get_notices_for_sroi(import_id: str) -> List[Dict]:
+def get_notices_for_sroi(import_id: str, owner_code: str) -> List[Dict]:
     """
     Haal alle notices op voor SROI analyse.
     """
     resp = supabase.table("notices") \
         .select("*") \
         .eq("import_id", import_id) \
+        .eq("owner_code", owner_code) \
         .execute()
     
     return resp.data or []
 
 
-def save_sroi_results(results: List[Dict]):
+def save_sroi_results(results: List[Dict], owner_code: Optional[str] = None):
     """
     Sla SROI resultaten op in Supabase.
     """
@@ -792,6 +943,7 @@ def save_sroi_results(results: List[Dict]):
             "summary": result.get("summary", ""),
             "pages_checked": result.get("pages_checked", 0),
             "error": result.get("error"),
+            "owner_code": owner_code,
         })
     
     # Upsert (vervang bestaande resultaten)
@@ -801,13 +953,13 @@ def save_sroi_results(results: List[Dict]):
     ).execute()
 
 
-def run_sroi_analysis_background(import_id: str):
+def run_sroi_analysis_background(import_id: str, owner_code: Optional[str] = None):
     """
     Background task voor SROI analyse.
     """
     try:
         print(f"\n🚀 Starting SROI analysis for import {import_id}")
-        
+
         # Update status
         sroi_analysis_status[import_id] = {
             "status": "running",
@@ -816,10 +968,10 @@ def run_sroi_analysis_background(import_id: str):
             "total": 0,
             "started_at": dt.datetime.utcnow().isoformat()
         }
-        
-        # Haal notices op
-        notices = get_notices_for_sroi(import_id)
-        
+
+        # Haal notices op (eigenaar filter)
+        notices = get_notices_for_sroi(import_id, owner_code)
+
         if not notices:
             sroi_analysis_status[import_id].update({
                 "status": "failed",
@@ -827,10 +979,10 @@ def run_sroi_analysis_background(import_id: str):
             })
             print(f"❌ No notices found for import {import_id}")
             return
-        
+
         sroi_analysis_status[import_id]["total"] = len(notices)
         print(f"📊 Found {len(notices)} notices to analyze")
-        
+
         # Progress callback
         def progress_callback(current, total, result):
             sroi_analysis_status[import_id].update({
@@ -838,22 +990,22 @@ def run_sroi_analysis_background(import_id: str):
                 "progress": int((current / total) * 100)
             })
             print(f"Progress: {current}/{total} ({sroi_analysis_status[import_id]['progress']}%)")
-        
+
         # Run analysis
         results = analyze_import_sroi(notices, progress_callback)
-        
+
         # Add import_id to each result
         for result in results:
             result["import_id"] = import_id
-        
+
         # Save to database
         print(f"💾 Saving {len(results)} results to database...")
-        save_sroi_results(results)
-        
+        save_sroi_results(results, owner_code=owner_code)
+
         # Calculate summary
         compliant_count = sum(1 for r in results if r.get("sroi_compliant"))
         avg_score = sum(r.get("score", 0) for r in results) / len(results) if results else 0
-        
+
         sroi_analysis_status[import_id].update({
             "status": "completed",
             "progress": 100,
@@ -866,11 +1018,11 @@ def run_sroi_analysis_background(import_id: str):
                 "average_score": round(avg_score, 2)
             }
         })
-        
+
         print(f"✅ SROI analysis completed for import {import_id}")
         print(f"   Compliant: {compliant_count}/{len(results)} ({compliant_count/len(results)*100:.1f}%)")
         print(f"   Average score: {avg_score:.1f}\n")
-        
+
     except Exception as e:
         print(f"❌ ERROR in SROI analysis for import {import_id}: {e}")
         sroi_analysis_status[import_id].update({
@@ -880,18 +1032,20 @@ def run_sroi_analysis_background(import_id: str):
 
 
 @app.post("/imports/{import_id}/sroi-analyze")
-async def start_sroi_analysis(import_id: str, background_tasks: BackgroundTasks):
+async def start_sroi_analysis(import_id: str, background_tasks: BackgroundTasks, user_code: str = Depends(validate_user_code)):
     """
     Start SROI analyse voor een import.
     """
-    # Check if import exists
+    # Check if import exists and belongs to caller
     resp = supabase.table("imports") \
-        .select("id, name") \
+        .select("id, name, owner_code") \
         .eq("id", import_id) \
         .execute()
     
     if not resp.data:
         raise HTTPException(status_code=404, detail="Import niet gevonden")
+    if resp.data[0].get("owner_code") != user_code:
+        raise HTTPException(status_code=403, detail="Je hebt geen toestemming voor deze import")
     
     # Check if analysis already running
     if import_id in sroi_analysis_status:
@@ -915,8 +1069,8 @@ async def start_sroi_analysis(import_id: str, background_tasks: BackgroundTasks)
             detail="Er bestaan al SROI resultaten voor deze import. Verwijder ze eerst om opnieuw te analyseren."
         )
     
-    # Start background task
-    background_tasks.add_task(run_sroi_analysis_background, import_id)
+    # Start background task (pass owner_code so saved results are scoped)
+    background_tasks.add_task(run_sroi_analysis_background, import_id, user_code)
     
     # Initialize status
     sroi_analysis_status[import_id] = {
@@ -935,10 +1089,17 @@ async def start_sroi_analysis(import_id: str, background_tasks: BackgroundTasks)
 
 
 @app.get("/imports/{import_id}/sroi-status")
-async def get_sroi_status(import_id: str):
+async def get_sroi_status(import_id: str, user_code: str = Depends(validate_user_code)):
     """
     Haal de status op van een lopende SROI analyse.
     """
+    # ensure import belongs to user
+    imp = supabase.table("imports").select("id, owner_code").eq("id", import_id).limit(1).execute()
+    if not imp.data:
+        raise HTTPException(status_code=404, detail="Import niet gevonden")
+    if imp.data[0].get("owner_code") != user_code:
+        raise HTTPException(status_code=403, detail="Je hebt geen toegang tot de status van deze import")
+
     if import_id not in sroi_analysis_status:
         # Check if results exist in database
         resp = supabase.table("sroi_results") \
@@ -967,13 +1128,15 @@ async def get_sroi_status(import_id: str):
 
 
 @app.get("/imports/{import_id}/sroi-results")
-async def get_sroi_results(import_id: str):
+async def get_sroi_results(import_id: str, user_code: str = Depends(validate_user_code)):
     """
     Haal SROI resultaten op voor een import.
     """
+    # Only fetch results for this owner's import
     resp = supabase.table("sroi_results") \
         .select("*") \
         .eq("import_id", import_id) \
+        .eq("owner_code", user_code) \
         .order("score", desc=True) \
         .execute()
     
@@ -1002,13 +1165,21 @@ async def get_sroi_results(import_id: str):
 
 
 @app.delete("/imports/{import_id}/sroi-results")
-async def delete_sroi_results(import_id: str):
+async def delete_sroi_results(import_id: str, user_code: str = Depends(validate_user_code)):
     """
     Verwijder SROI resultaten (om opnieuw te analyseren).
     """
+    # ensure import belongs to user
+    imp = supabase.table("imports").select("id, owner_code").eq("id", import_id).limit(1).execute()
+    if not imp.data:
+        raise HTTPException(status_code=404, detail="Import niet gevonden")
+    if imp.data[0].get("owner_code") != user_code:
+        raise HTTPException(status_code=403, detail="Je hebt geen toegang tot deze import")
+
     resp = supabase.table("sroi_results") \
         .delete() \
         .eq("import_id", import_id) \
+        .eq("owner_code", user_code) \
         .execute()
     
     deleted_count = len(resp.data) if resp.data else 0
@@ -1024,7 +1195,7 @@ async def delete_sroi_results(import_id: str):
 
 
 @app.get("/imports/{import_id}/notices/{notice_id}")
-def get_notice_detail(import_id: str, notice_id: str):
+def get_notice_detail(import_id: str, notice_id: str, user_code: str = Depends(validate_user_code)):
     """
     Fetch a single notice detail by import_id and notice_id.
     """
@@ -1040,6 +1211,7 @@ def get_notice_detail(import_id: str, notice_id: str):
             .select("*")
             .eq("import_id", import_id)
             .eq("id", notice_id)
+            .eq("owner_code", user_code)
             .execute()
         )
         
@@ -1117,6 +1289,7 @@ CRM_COMPANIES_CREATE_SQL = """
 CREATE TABLE IF NOT EXISTS crm_companies (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   name TEXT NOT NULL,
+    owner_code TEXT,
   website TEXT,
   kvk TEXT,
   contact_name TEXT,
@@ -1131,6 +1304,7 @@ CREATE TABLE IF NOT EXISTS crm_companies (
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 CREATE INDEX IF NOT EXISTS idx_crm_companies_name ON crm_companies (lower(name));
+CREATE INDEX IF NOT EXISTS idx_crm_companies_owner ON crm_companies (owner_code);
 """
 
 CRM_FOLLOWUPS_CREATE_SQL = """
@@ -1175,13 +1349,13 @@ def _ensure_crm_tables_ok():
 
 
 @app.get("/crm/companies")
-def crm_list_companies(q: Optional[str] = Query(None, description="Search by name substring"), status: Optional[str] = Query(None)):
+def crm_list_companies(q: Optional[str] = Query(None, description="Search by name substring"), status: Optional[str] = Query(None), user_code: str = Depends(validate_user_code)):
     """List companies (leads). Optional search by name and filter by lead_status."""
     ok, err = _ensure_crm_tables_ok()
     if not ok:
         raise HTTPException(status_code=500, detail={"error": "CRM tables not found", "advice": "Call /crm/init and run SQL in Supabase" , "raw": err})
 
-    query = supabase.table("crm_companies").select("*")
+    query = supabase.table("crm_companies").select("*").eq("owner_code", user_code)
     if q:
         # simple ilike search
         query = query.ilike("name", f"%{q}%")
@@ -1193,7 +1367,7 @@ def crm_list_companies(q: Optional[str] = Query(None, description="Search by nam
 
 
 @app.post("/crm/companies")
-def crm_create_company(payload: dict):
+def crm_create_company(payload: dict, user_code: str = Depends(validate_user_code)):
     """Create a new company lead. Expected JSON payload keys: name (required), website, kvk, contact_name, contact_email, source_notice_id, notes, lead_status"""
     ok, err = _ensure_crm_tables_ok()
     if not ok:
@@ -1204,6 +1378,8 @@ def crm_create_company(payload: dict):
 
     payload.setdefault("created_at", dt.datetime.utcnow().isoformat())
     payload.setdefault("updated_at", dt.datetime.utcnow().isoformat())
+    # attach owner
+    payload["owner_code"] = user_code
 
     resp = supabase.table("crm_companies").insert(payload).execute()
     if getattr(resp, "error", None):
@@ -1212,7 +1388,7 @@ def crm_create_company(payload: dict):
 
 
 @app.get("/crm/companies/{company_id}")
-def crm_get_company(company_id: int):
+def crm_get_company(company_id: int, user_code: str = Depends(validate_user_code)):
     ok, err = _ensure_crm_tables_ok()
     if not ok:
         raise HTTPException(status_code=500, detail={"error": "CRM tables not found", "advice": "Call /crm/init and run SQL in Supabase" , "raw": err})
@@ -1221,6 +1397,8 @@ def crm_get_company(company_id: int):
     if not resp.data:
         raise HTTPException(status_code=404, detail="Company not found")
     company = resp.data[0]
+    if company.get("owner_code") != user_code:
+        raise HTTPException(status_code=403, detail="Je hebt geen toegang tot dit bedrijf")
 
     # fetch followups
     fresp = supabase.table("crm_followups").select("*").eq("company_id", company_id).order("scheduled_at", desc=False).execute()
@@ -1230,12 +1408,20 @@ def crm_get_company(company_id: int):
 
 
 @app.patch("/crm/companies/{company_id}")
-def crm_update_company(company_id: int, payload: dict):
+def crm_update_company(company_id: int, payload: dict, user_code: str = Depends(validate_user_code)):
     ok, err = _ensure_crm_tables_ok()
     if not ok:
         raise HTTPException(status_code=500, detail={"error": "CRM tables not found", "advice": "Call /crm/init and run SQL in Supabase" , "raw": err})
 
     payload["updated_at"] = dt.datetime.utcnow().isoformat()
+    # ensure company belongs to user
+    check = supabase.table("crm_companies").select("owner_code").eq("id", company_id).limit(1).execute()
+    if not check.data:
+        raise HTTPException(status_code=404, detail="Company not found")
+    if check.data[0].get("owner_code") != user_code:
+        raise HTTPException(status_code=403, detail="Je hebt geen toestemming om dit bedrijf te bewerken")
+
+    payload["owner_code"] = user_code
     resp = supabase.table("crm_companies").update(payload).eq("id", company_id).execute()
     if getattr(resp, "error", None):
         raise HTTPException(status_code=500, detail=str(resp.error))
@@ -1245,16 +1431,18 @@ def crm_update_company(company_id: int, payload: dict):
 
 
 @app.post("/crm/companies/{company_id}/followups")
-def crm_add_followup(company_id: int, payload: dict):
+def crm_add_followup(company_id: int, payload: dict, user_code: str = Depends(validate_user_code)):
     """Add a follow-up action/note for a company. payload keys: scheduled_at (ISO), action, note, emailed (bool), completed (bool), created_by"""
     ok, err = _ensure_crm_tables_ok()
     if not ok:
         raise HTTPException(status_code=500, detail={"error": "CRM tables not found", "advice": "Call /crm/init and run SQL in Supabase" , "raw": err})
 
-    # validate company exists
-    cresp = supabase.table("crm_companies").select("id").eq("id", company_id).limit(1).execute()
+    # validate company exists and belongs to user
+    cresp = supabase.table("crm_companies").select("id, owner_code").eq("id", company_id).limit(1).execute()
     if not cresp.data:
         raise HTTPException(status_code=404, detail="Company not found")
+    if cresp.data[0].get("owner_code") != user_code:
+        raise HTTPException(status_code=403, detail="Je hebt geen toestemming om followups voor dit bedrijf toe te voegen")
 
     payload["company_id"] = company_id
     payload.setdefault("created_at", dt.datetime.utcnow().isoformat())
@@ -1267,20 +1455,36 @@ def crm_add_followup(company_id: int, payload: dict):
 
 
 @app.get("/crm/companies/{company_id}/followups")
-def crm_list_followups(company_id: int):
+def crm_list_followups(company_id: int, user_code: str = Depends(validate_user_code)):
     ok, err = _ensure_crm_tables_ok()
     if not ok:
         raise HTTPException(status_code=500, detail={"error": "CRM tables not found", "advice": "Call /crm/init and run SQL in Supabase" , "raw": err})
+
+    # ensure company belongs to user
+    cresp = supabase.table("crm_companies").select("owner_code").eq("id", company_id).limit(1).execute()
+    if not cresp.data:
+        raise HTTPException(status_code=404, detail="Company not found")
+    if cresp.data[0].get("owner_code") != user_code:
+        raise HTTPException(status_code=403, detail="Je hebt geen toegang tot de followups van dit bedrijf")
 
     resp = supabase.table("crm_followups").select("*").eq("company_id", company_id).order("scheduled_at", desc=False).execute()
     return resp.data or []
 
 
 @app.patch("/crm/followups/{followup_id}")
-def crm_update_followup(followup_id: int, payload: dict):
+def crm_update_followup(followup_id: int, payload: dict, user_code: str = Depends(validate_user_code)):
     ok, err = _ensure_crm_tables_ok()
     if not ok:
         raise HTTPException(status_code=500, detail={"error": "CRM tables not found", "advice": "Call /crm/init and run SQL in Supabase" , "raw": err})
+
+    # ensure followup belongs to a company owned by user
+    fcheck = supabase.table("crm_followups").select("company_id").eq("id", followup_id).limit(1).execute()
+    if not fcheck.data:
+        raise HTTPException(status_code=404, detail="Followup not found")
+    company_id = fcheck.data[0].get("company_id")
+    cresp = supabase.table("crm_companies").select("owner_code").eq("id", company_id).limit(1).execute()
+    if not cresp.data or cresp.data[0].get("owner_code") != user_code:
+        raise HTTPException(status_code=403, detail="Je hebt geen toestemming om deze followup te bewerken")
 
     payload["updated_at"] = dt.datetime.utcnow().isoformat()
     resp = supabase.table("crm_followups").update(payload).eq("id", followup_id).execute()
