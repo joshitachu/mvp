@@ -543,23 +543,27 @@ def run_import(
             print(f"⚠️ Fout bij parsen XML {publicatie_id}: {e}")
             continue
 
-        # ✅ Gebruik dispatch date / contract_issue_date als publicatie_datum
-        # TED: DATE_DISPATCH_NOTICE → contract_issue_date
-        # eForms: IssueDate → contract_issue_date
+        # ✅ Parse publicatie_datum
         pub_raw = rec.get("contract_issue_date") or rec.get("datum_gunning")
-
         pub_iso = None
         if isinstance(pub_raw, str):
-            # als er 'YYYY-MM-DDThh:mm:ss' in zit → alleen datumdeel pakken
-            pub_iso = pub_raw.split("T")[0]
+            # Strip timezone: "2025-12-04+01:00" → "2025-12-04"
+            pub_iso = pub_raw.split("T")[0].split("+")[0]
         else:
             pub_iso = pub_raw
 
-        rec["publicatie_datum"] = pub_iso
-        rec["Publicatiedatum"] = pub_iso  # voor je "Publicatiedatum" kolom in tenderned_raw
+        # ✅✅ KRITIEKE FILTER: Skip als IssueDate buiten range valt
+        if date_from and pub_iso and pub_iso < date_from:
+            print(f"⏭️  Skip {publicatie_id}: IssueDate {pub_iso} < {date_from}")
+            continue
+        if date_to and pub_iso and pub_iso > date_to:
+            print(f"⏭️  Skip {publicatie_id}: IssueDate {pub_iso} > {date_to}")
+            continue
 
-        # Eventueel debug
-        print(f"[DEBUG] publicatie_id={publicatie_id}, dispatch/publicatie_datum={pub_iso!r}")
+        rec["publicatie_datum"] = pub_iso
+        rec["Publicatiedatum"] = pub_iso
+
+        print(f"✅ Accepted {publicatie_id}: IssueDate={pub_iso}")
 
         # Bestaande velden
         rec["id"] = row_id
