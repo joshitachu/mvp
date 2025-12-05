@@ -4,7 +4,7 @@ import io
 import json
 import datetime as dt
 from typing import Optional, List, Dict
-from fastapi import FastAPI, HTTPException, Query, BackgroundTasks, Depends, Header
+from fastapi import FastAPI, HTTPException, Query, BackgroundTasks, Depends, Header, Request
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 from supabase import create_client, Client
@@ -13,6 +13,7 @@ from collections import defaultdict
 import csv
 
 from dotenv import load_dotenv
+from sroi_scanner import analyze_notice_sroi
 
 
 
@@ -280,15 +281,182 @@ def list_imports(user_code: str = Depends(validate_user_code)):
         .execute()
 
     return resp.data or []
+
+    
+def map_cache_to_import_schema(cache_row: dict) -> dict:
+    """Map tenderned_raw schema naar import record schema"""
+    return {
+        "notice_id": cache_row.get("notice_id"),
+        "publicatieId": cache_row.get("publicatie_id"),
+        "publicatie_id": cache_row.get("publicatie_id"),
+        "URL": cache_row.get("url") or cache_row.get("URL TenderNed"),
+        "url": cache_row.get("url") or cache_row.get("URL TenderNed"),
+        "titel": cache_row.get("titel") or cache_row.get("Naam aanbesteding"),
+        "omschrijving": cache_row.get("omschrijving") or cache_row.get("Omschrijving aanbesteding"),
+        "win_bedrijf_naam": cache_row.get("win_bedrijf_naam") or cache_row.get("Officiële benaming"),
+        "win_kvk": cache_row.get("win_kvk") or cache_row.get("Kvknummer"),
+        "win_straat": cache_row.get("win_straat") or cache_row.get("Postadres"),
+        "win_postcode": cache_row.get("win_postcode") or cache_row.get("Postcode"),
+        "win_plaats": cache_row.get("win_plaats") or cache_row.get("Plaats"),
+        "win_land": cache_row.get("win_land") or cache_row.get("Land"),
+        "win_contact_naam": cache_row.get("win_contact_naam"),
+        "win_contact_email": cache_row.get("win_contact_email"),
+        "win_contact_tel": cache_row.get("win_contact_tel"),
+        "win_website": cache_row.get("win_website") or cache_row.get("Internetadres"),
+        "buyer_bedrijf_naam": cache_row.get("buyer_bedrijf_naam") or cache_row.get("Naam Aanbestedende dienst"),
+        "buyer_kvk": cache_row.get("buyer_kvk") or cache_row.get("Nationaal identificatienummer"),
+        "buyer_straat": cache_row.get("buyer_straat"),
+        "buyer_postcode": cache_row.get("buyer_postcode"),
+        "buyer_plaats": cache_row.get("buyer_plaats"),
+        "buyer_land": cache_row.get("buyer_land"),
+        "buyer_contact_naam": cache_row.get("buyer_contact_naam"),
+        "buyer_contact_email": cache_row.get("buyer_contact_email"),
+        "buyer_contact_tel": cache_row.get("buyer_contact_tel"),
+        "buyer_website": cache_row.get("buyer_website"),
+        "bedrag": cache_row.get("bedrag"),
+        "valuta": cache_row.get("valuta") or cache_row.get("Waarde - valuta"),
+        "contract_issue_date": cache_row.get("publicatie_datum") or cache_row.get("Publicatiedatum"),
+        "publicatie_datum": cache_row.get("publicatie_datum") or cache_row.get("Publicatiedatum"),
+
+        "heeft_eerdere_aanbestedingen": cache_row.get("heeft_eerdere_aanbestedingen", False),
+        "aantal_eerdere_aanbestedingen": cache_row.get("aantal_eerdere_aanbestedingen", 0),
+        "totaal_bedrag_eerdere_aanbestedingen": cache_row.get("totaal_bedrag_eerdere_aanbestedingen"),
+    }
+
+
+def map_import_to_cache_schema(import_row: dict) -> dict:
+    """Map import record schema naar tenderned_raw schema"""
+    # Haal publicatie_datum op en formatteer correct
+    pub_datum = import_row.get("contract_issue_date") or import_row.get("publicatie_datum")
+    if pub_datum and isinstance(pub_datum, str):
+        # Zorg dat het een date string is (YYYY-MM-DD)
+        pub_datum = pub_datum[:10] if len(pub_datum) >= 10 else pub_datum
+    
+    return {
+        "notice_id": import_row.get("notice_id"),
+        "publicatie_id": import_row.get("publicatieId") or import_row.get("publicatie_id"),
+        "Publicatiedatum": pub_datum,
+        "publicatie_datum": pub_datum,
+        "Naam aanbesteding": import_row.get("titel"),
+        "titel": import_row.get("titel"),
+        "Omschrijving aanbesteding": import_row.get("omschrijving"),
+        "omschrijving": import_row.get("omschrijving"),
+        "URL TenderNed": import_row.get("URL") or import_row.get("url"),
+        "url": import_row.get("URL") or import_row.get("url"),
+        "Officiële benaming": import_row.get("win_bedrijf_naam"),
+        "win_bedrijf_naam": import_row.get("win_bedrijf_naam"),
+        "Kvknummer": import_row.get("win_kvk"),
+        "win_kvk": import_row.get("win_kvk"),
+        "Postadres": import_row.get("win_straat"),
+        "win_straat": import_row.get("win_straat"),
+        "Postcode": import_row.get("win_postcode"),
+        "win_postcode": import_row.get("win_postcode"),
+        "Plaats": import_row.get("win_plaats"),
+        "win_plaats": import_row.get("win_plaats"),
+        "Land": import_row.get("win_land"),
+        "win_land": import_row.get("win_land"),
+        "win_contact_naam": import_row.get("win_contact_naam"),
+        "win_contact_email": import_row.get("win_contact_email"),
+        "win_contact_tel": import_row.get("win_contact_tel"),
+        "Internetadres": import_row.get("win_website"),
+        "win_website": import_row.get("win_website"),
+        "Naam Aanbestedende dienst": import_row.get("buyer_bedrijf_naam"),
+        "buyer_bedrijf_naam": import_row.get("buyer_bedrijf_naam"),
+        "Nationaal identificatienummer": import_row.get("buyer_kvk"),
+        "buyer_kvk": import_row.get("buyer_kvk"),
+        "buyer_straat": import_row.get("buyer_straat"),
+        "buyer_postcode": import_row.get("buyer_postcode"),
+        "buyer_plaats": import_row.get("buyer_plaats"),
+        "buyer_land": import_row.get("buyer_land"),
+        "buyer_contact_naam": import_row.get("buyer_contact_naam"),
+        "buyer_contact_email": import_row.get("buyer_contact_email"),
+        "buyer_contact_tel": import_row.get("buyer_contact_tel"),
+        "buyer_website": import_row.get("buyer_website"),
+        "bedrag": import_row.get("bedrag"),
+        "Waarde - valuta": import_row.get("valuta"),
+        "valuta": import_row.get("valuta"),
+        "owner_code": import_row.get("owner_code"),
+        "heeft_eerdere_aanbestedingen": import_row.get("heeft_eerdere_aanbestedingen", False),
+        "aantal_eerdere_aanbestedingen": import_row.get("aantal_eerdere_aanbestedingen", 0),
+        "totaal_bedrag_eerdere_aanbestedingen": import_row.get("totaal_bedrag_eerdere_aanbestedingen"),
+    
+    }
+    
+from datetime import datetime, timedelta
+
+BATCH_SIZE = 1000  # or whatever your PostgREST max-rows is
+
+def fetch_cached_in_batches(
+    date_from: str, 
+    date_to: str, 
+    cache_table: str = "tenderned_raw_cached",
+    cpv_codes: list[str] = None
+) -> list[dict]:
+    """
+    Haal alle cached rows op voor een Publicatiedatum-range, in batches van BATCH_SIZE.
+    Returned een platte list van rows (dus GEEN .data).
+    
+    Args:
+        date_from: Start datum voor de range (inclusive)
+        date_to: Eind datum voor de range (exclusive, zoals SQL <)
+        cache_table: Naam van de cache table (default: "tenderned_raw_cached")
+        cpv_codes: Optionele lijst van CPV codes om op te filteren
+    
+    Returns:
+        List van alle rows binnen de datum range (en optioneel gefilterd op CPV)
+    """
+    offset = 0
+    all_rows: list[dict] = []
+    
+    while True:
+        query = (
+            supabase
+            .table(cache_table)
+            .select("*")
+            .gte("Publicatiedatum", date_from)
+            .lt("Publicatiedatum", date_to)  # Changed from lte to lt to match SQL behavior
+        )
+        
+        # Als we CPV codes hebben, filter dan IN de database query
+        if cpv_codes and cache_table == "tenderned_raw_cpv_cached":
+            # Bouw OR filter voor alle CPV codes
+            # Dit zorgt ervoor dat we direct in de database filteren
+            cpv_filters = []
+            for cpv in cpv_codes:
+                cpv_filters.append(f"cpv_code.eq.{cpv},cpv_codes.ilike.%{cpv}%")
+            
+            # Gebruik or_ filter voor meerdere CPV codes
+            if len(cpv_codes) == 1:
+                query = query.or_(f"cpv_code.eq.{cpv_codes[0]},cpv_codes.ilike.%{cpv_codes[0]}%")
+            else:
+                or_condition = ",".join([f"cpv_code.eq.{cpv}" for cpv in cpv_codes] + 
+                                       [f"cpv_codes.ilike.%{cpv}%" for cpv in cpv_codes])
+                query = query.or_(or_condition)
+        
+        resp = query.range(offset, offset + BATCH_SIZE - 1).execute()
+        
+        rows = resp.data or []
+        
+        # Check of we nog rows hebben gekregen
+        if not rows:
+            break
+        
+        all_rows.extend(rows)
+        
+        # Als we minder rows krijgen dan BATCH_SIZE, zijn we klaar
+        if len(rows) < BATCH_SIZE:
+            break
+            
+        offset += BATCH_SIZE
+    
+    return all_rows
+
 @app.post("/imports", response_model=ImportResponse)
 def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_code)):
     """
-    Start een nieuwe import-run:
-    - roept run_import(date_from, date_to, ...)
-    - slaat import-meta + notices op in Supabase
-    - zorgt via unieke constraint / upsert dat er geen dubbele records komen
-    - filtert op region (province) als opgegeven
-    - checkt per bedrijf of ze eerder aanbestedingen hebben gehad in TenderNed_filtered.csv
+    Start een nieuwe import-run met volledige caching via tenderned_raw.
+    Implementeert alle scenario's uit het importeer-document.
+    Ondersteunt nu ook CPV-specifieke caching.
     """
     # 1) Maak import record
     name = generate_import_name()
@@ -308,61 +476,248 @@ def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_
     import_row = insert_resp.data[0]
     import_id = import_row["id"]
 
-    # 2) Run scraper (haalt ALLE data op)
-    records = run_import(
-        date_from=payload.date_from,
-        date_to=payload.date_to,
-        publicatie_type=payload.publicatie_type,
-        cpv_codes=payload.cpv_codes,
-        max_pages=payload.max_pages,
-    )
+    # 2) Bepaal data-bron(nen): cache (met of zonder CPV) + evt run_import
+    date_from = payload.date_from
+    date_to = payload.date_to
 
-    # 3) Map records & voeg import_id toe + check historische aanbestedingen
+    # Normaliseer naar strings voor vergelijking
+    df_str = str(date_from) if date_from is not None else None
+    dt_str = str(date_to) if date_to is not None else None
+
+    records: list[dict] = []
+    records_from_api: list[dict] = []  # Track welke records van API komen
+
+    # Bepaal welke cache table te gebruiken
+    cache_table = "tenderned_raw_cpv_cached" if payload.cpv_codes else "tenderned_raw_cached"
+    print(f"🗄️  Gebruikte cache table: {cache_table}")
+
+    # Haal cache range op
+    range_resp = supabase.table(cache_table) \
+        .select("Publicatiedatum") \
+        .not_.is_("Publicatiedatum", "null") \
+        .order("Publicatiedatum", desc=False) \
+        .limit(1) \
+        .execute()
+
+    earliest_publicatie = None
+    if range_resp.data:
+        earliest_publicatie = range_resp.data[0]["Publicatiedatum"]
+
+    latest_raw_resp = supabase.table(cache_table) \
+        .select("Publicatiedatum") \
+        .not_.is_("Publicatiedatum", "null") \
+        .order("Publicatiedatum", desc=True) \
+        .limit(1) \
+        .execute()
+
+    latest_publicatie = None
+    if latest_raw_resp.data:
+        latest_publicatie = latest_raw_resp.data[0]["Publicatiedatum"]
+
+    ep_str = str(earliest_publicatie) if earliest_publicatie is not None else None
+    lp_str = str(latest_publicatie) if latest_publicatie is not None else None
+
+    print(f"📊 Cache range: {ep_str} tot {lp_str}")
+    print(f"🎯 Gevraagde range: {df_str} tot {dt_str}")
+
+    # SCENARIO 1: Geen cache OF startdatum > meest recente datum in cache
+    if not lp_str or (df_str is not None and df_str > lp_str):
+        print(f"📡 SCENARIO 1: Startdatum ({df_str}) > laatste cache ({lp_str})")
+        print(f"   → Ophalen via TenderNed API: {df_str} tot {dt_str}")
+        
+        new_records = run_import(
+            date_from=payload.date_from,
+            date_to=payload.date_to,
+            publicatie_type=payload.publicatie_type,
+            cpv_codes=payload.cpv_codes,
+            max_pages=payload.max_pages,
+        )
+        
+        if new_records:
+            records.extend(new_records)
+            records_from_api.extend(new_records)  # Deze komen van API
+            
+            # Voeg toe aan cache
+            cache_records = [map_import_to_cache_schema(r) for r in new_records]
+            print(f"💾 Opslaan {len(cache_records)} records in {cache_table}")
+            supabase.table(cache_table) \
+                .upsert(cache_records, on_conflict="notice_id") \
+                .execute()
+
+    # SCENARIO 5: Startdatum < kleinste datum in cache
+    elif ep_str and df_str is not None and df_str < ep_str:
+        print(f"📡 SCENARIO 5: Startdatum ({df_str}) < oudste cache ({ep_str})")
+        
+        # Bepaal waar cache begint te overlappen
+        cache_overlap_start = ep_str
+        cache_overlap_end = dt_str if (dt_str and dt_str <= lp_str) else lp_str
+        
+        # Haal historische data op VIA API (ouder dan cache)
+        api_end = ep_str
+        print(f"   → API ophalen (historisch): {df_str} tot {api_end}")
+        
+        historical_records = run_import(
+            date_from=payload.date_from,
+            date_to=earliest_publicatie,
+            publicatie_type=payload.publicatie_type,
+            cpv_codes=payload.cpv_codes,
+            max_pages=payload.max_pages,
+        )
+        
+        if historical_records:
+            records.extend(historical_records)
+            records_from_api.extend(historical_records)  # Deze komen van API
+            
+            # Voeg historische data toe aan cache
+            cache_records = [map_import_to_cache_schema(r) for r in historical_records]
+            print(f"💾 Opslaan {len(cache_records)} historische records in {cache_table}")
+            supabase.table(cache_table) \
+                .upsert(cache_records, on_conflict="notice_id") \
+                .execute()
+        
+        # Haal cached data op (als einddatum binnen cache valt)
+        if dt_str and dt_str >= cache_overlap_start:
+            print(f"   → Cache gebruiken: {cache_overlap_start} tot {cache_overlap_end}")
+            
+            cached_rows = fetch_cached_in_batches(
+                cache_overlap_start, 
+                cache_overlap_end,
+                cache_table=cache_table,
+                cpv_codes=payload.cpv_codes
+            )
+
+            if cached_rows:
+                print(f"✅ {len(cached_rows)} records uit cache (batched)")
+                for cache_row in cached_rows:
+                    records.append(map_cache_to_import_schema(cache_row))
+                # NIET toevoegen aan records_from_api
+        
+        # Als einddatum > laatste cache datum, haal resterende data op
+        if dt_str and lp_str and dt_str > lp_str:
+            print(f"   → API ophalen (recent): {lp_str} tot {dt_str}")
+            
+            recent_records = run_import(
+                date_from=latest_publicatie,
+                date_to=payload.date_to,
+                publicatie_type=payload.publicatie_type,
+                cpv_codes=payload.cpv_codes,
+                max_pages=payload.max_pages,
+            )
+            
+            if recent_records:
+                records.extend(recent_records)
+                records_from_api.extend(recent_records)  # Deze komen van API
+                cache_records = [map_import_to_cache_schema(r) for r in recent_records]
+                print(f"💾 Opslaan {len(cache_records)} recente records in {cache_table}")
+                supabase.table(cache_table) \
+                    .upsert(cache_records, on_conflict="notice_id") \
+                    .execute()
+
+    # SCENARIO 2 & 3: Startdatum <= meest recente datum in cache
+    else:
+        print(f"📦 SCENARIO 2/3: Startdatum ({df_str}) binnen cache range")
+        
+        # Bepaal upper bound voor cached data
+        upper_bound_str = dt_str if (dt_str is not None and dt_str <= lp_str) else lp_str
+        
+        # Haal cached data op IN BATCHES
+        print(f"   → Cache gebruiken: {df_str} tot {upper_bound_str}")
+        cached_rows = fetch_cached_in_batches(
+            df_str, 
+            upper_bound_str,
+            cache_table=cache_table,
+            cpv_codes=payload.cpv_codes
+        )
+
+        if cached_rows:
+            print(f"✅ {len(cached_rows)} records uit cache (batched)")
+            for cache_row in cached_rows:
+                records.append(map_cache_to_import_schema(cache_row))
+            # Deze komen NIET van API, dus niet toevoegen aan records_from_api
+
+        # Als einddatum > laatste cache datum, vul aan met API
+        if dt_str is not None and lp_str and dt_str > lp_str:
+            print(f"   → API aanvullen: {lp_str} tot {dt_str}")
+            
+            new_records = run_import(
+                date_from=latest_publicatie,
+                date_to=payload.date_to,
+                publicatie_type=payload.publicatie_type,
+                cpv_codes=payload.cpv_codes,
+                max_pages=payload.max_pages,
+            )
+
+            if new_records:
+                print(f"✅ {len(new_records)} nieuwe records via API")
+                records.extend(new_records)
+                records_from_api.extend(new_records)  # Deze komen van API
+
+                # Voeg toe aan cache
+                cache_records = [map_import_to_cache_schema(r) for r in new_records]
+                print(f"💾 Opslaan {len(cache_records)} nieuwe records in {cache_table}")
+                supabase.table(cache_table) \
+                    .upsert(cache_records, on_conflict="notice_id") \
+                    .execute()
+
+    print(f"📊 Totaal records verzameld: {len(records)}")
+    print(f"📡 Waarvan van API: {len(records_from_api)}")
+
+    # Maak een set van notice_ids die van API komen voor snelle lookup
+    api_notice_ids = {r.get("notice_id") for r in records_from_api if r.get("notice_id")}
+
+    # 3) Map records & voeg import_id toe
+    # Check historische aanbestedingen ALLEEN voor records die van API komen
     notice_rows = []
     for r in records:
-        # Bereken province EERST
+        # Bereid province EERST
         province = map_city_to_province(r.get("win_plaats"))
-        print(r.get("win_plaats"))
         
         # Skip dit record als region filter actief is EN province niet matcht
         if payload.region:
             if not province:
-                print(f"SKIPPED: No province for {r.get('win_plaats')}")
                 continue
             if province.strip().lower() != payload.region.strip().lower():
-                print(f"SKIPPED: province={province} != {payload.region}")
                 continue
 
+        notice_id = r.get("notice_id")
         
-        # ✅ Check of bedrijf eerder aanbestedingen heeft gehad
-        bedrijf_naam = (r.get("win_bedrijf_naam") or "").strip()
+        # Check historische aanbestedingen ALLEEN als dit record van API komt
         heeft_eerdere_aanbestedingen = False
         aantal_eerdere_aanbestedingen = 0
         
-        if bedrijf_naam:
-            try:
-                # Zoek in historische data (laatste 5 jaar)
-                historische_records = _search_companies_in_db(
-                    q=bedrijf_naam,
-                    years=5,
-                    max_results=100
-                )
-                
-                if historische_records:
-                    heeft_eerdere_aanbestedingen = True
-                    aantal_eerdere_aanbestedingen = len(historische_records)
-            except Exception as e:
-                # Log error maar laat import doorgaan
-                print(f"Fout bij zoeken historische data voor {bedrijf_naam}: {e}")
+        if notice_id in api_notice_ids:
+            bedrijf_naam = (r.get("win_bedrijf_naam") or "").strip()
+            
+            if bedrijf_naam:
+                try:
+                    historische_records = _search_companies_in_db(
+                        q=bedrijf_naam,
+                        years=5,
+                        max_results=100
+                    )
+                    
+                    if historische_records:
+                        heeft_eerdere_aanbestedingen = True
+                        aantal_eerdere_aanbestedingen = len(historische_records)
+                except Exception as e:
+                    print(f"Fout bij zoeken historische data voor {bedrijf_naam}: {e}")
+        else:
+            # Voor cached records: haal de waarden op uit de cache
+            heeft_eerdere_aanbestedingen = r.get("heeft_eerdere_aanbestedingen", False)
+            aantal_eerdere_aanbestedingen = r.get("aantal_eerdere_aanbestedingen", 0)
+
+        # Haal publicatie_datum op
+        pub_datum = r.get("contract_issue_date") or r.get("publicatie_datum")
+        if pub_datum and isinstance(pub_datum, str) and len(pub_datum) >= 10:
+            pub_datum = pub_datum[:10]
         
         notice_rows.append({
             "import_id": import_id,
-            "notice_id": r.get("notice_id"),
-            "publicatie_id": r.get("publicatieId"),
-            "url": r.get("URL"),
+            "notice_id": notice_id,
+            "publicatie_id": r.get("publicatieId") or r.get("publicatie_id"),
+            "url": r.get("URL") or r.get("url"),
             "titel": r.get("titel"),
             "omschrijving": r.get("omschrijving"),
-
             "win_bedrijf_naam": r.get("win_bedrijf_naam"),
             "win_kvk": r.get("win_kvk"),
             "win_straat": r.get("win_straat"),
@@ -373,7 +728,6 @@ def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_
             "win_contact_email": r.get("win_contact_email"),
             "win_contact_tel": r.get("win_contact_tel"),
             "win_website": r.get("win_website"),
-
             "buyer_bedrijf_naam": r.get("buyer_bedrijf_naam"),
             "buyer_kvk": r.get("buyer_kvk"),
             "buyer_straat": r.get("buyer_straat"),
@@ -384,20 +738,19 @@ def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_
             "buyer_contact_email": r.get("buyer_contact_email"),
             "buyer_contact_tel": r.get("buyer_contact_tel"),
             "buyer_website": r.get("buyer_website"),
-
             "bedrag": r.get("bedrag"),
             "valuta": r.get("valuta"),
             "province": province,
-            
-            # ✅ Nieuwe velden voor historische data
+            "publicatie_datum": pub_datum,
             "heeft_eerdere_aanbestedingen": heeft_eerdere_aanbestedingen,
             "aantal_eerdere_aanbestedingen": aantal_eerdere_aanbestedingen,
             "owner_code": user_code,
         })
 
     total_records = len(notice_rows)
+    print(f"✅ {total_records} records na filtering")
 
-    # 4) Upsert naar Supabase (skip dubbele notice_id)
+    # 4) Upsert naar Supabase
     unique_rows = {}
     for row in notice_rows:
         nid = row.get("notice_id")
@@ -406,21 +759,23 @@ def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_
         unique_rows[nid] = row
 
     deduped_notice_rows = list(unique_rows.values())
+    print(f"💾 Opslaan {len(deduped_notice_rows)} unieke notices")
 
     if deduped_notice_rows:
-        # ensure each row contains owner_code (defence in depth)
         for r in deduped_notice_rows:
             r.setdefault("owner_code", user_code)
         supabase.table("notices") \
             .upsert(deduped_notice_rows, on_conflict="notice_id") \
             .execute()
 
-    # 5) Update total_records in imports
+    # 5) Update total_records
     supabase.table("imports") \
         .update({"total_records": total_records}) \
         .eq("id", import_id) \
         .eq("owner_code", user_code) \
         .execute()
+
+    print(f"✅ Import {name} voltooid: {total_records} records")
 
     return ImportResponse(
         import_id=import_id,
@@ -428,6 +783,7 @@ def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_
         total_records=total_records,
         created_at=import_row["created_at"],
     )
+
 
 @app.delete("/imports/{import_id}")
 def delete_import(import_id: str, user_code: str = Depends(validate_user_code)):
@@ -1088,6 +1444,40 @@ async def start_sroi_analysis(import_id: str, background_tasks: BackgroundTasks,
     }
 
 
+def save_notice_sroi_result(result: Dict, owner_code: str):
+    """
+    Sla één SROI resultaat op voor een specifieke notice (winner of buyer).
+    
+    Args:
+        result: Dictionary met SROI analyse resultaat
+        owner_code: User code van de eigenaar
+    """
+    if not result:
+        return
+    
+    # Map result naar database format
+    db_row = {
+        "notice_id": result.get("notice_id"),
+        "target": result.get("target", "winner"),  # winner or buyer
+        "company_name": result.get("winner_name") or result.get("company_name"),
+        "analyzed_url": result.get("analyzed_url"),
+        "url_source": result.get("url_source"),
+        "sroi_compliant": result.get("sroi_compliant", False),
+        "confidence": result.get("confidence", "none"),
+        "score": result.get("score", 0),
+        "evidence": result.get("evidence", []),  # Supabase JSONB
+        "summary": result.get("summary", ""),
+        "pages_checked": result.get("pages_checked", 0),
+        "error": result.get("error"),
+        "owner_code": owner_code,
+    }
+    
+    # Upsert (vervang bestaand resultaat voor deze notice + target combinatie)
+    supabase.table("notice_sroi_results").upsert(
+        db_row,
+        on_conflict="notice_id,target"
+    ).execute()
+
 @app.get("/imports/{import_id}/sroi-status")
 async def get_sroi_status(import_id: str, user_code: str = Depends(validate_user_code)):
     """
@@ -1164,6 +1554,48 @@ async def get_sroi_results(import_id: str, user_code: str = Depends(validate_use
     }
 
 
+@app.get("/imports/{import_id}/notices/{notice_id}/sroi-results")
+async def get_notice_sroi_results(
+    import_id: str, 
+    notice_id: str, 
+    user_code: str = Depends(validate_user_code)
+):
+    """
+    Haal SROI resultaat op voor een specifieke notice.
+    """
+    # Verify import ownership
+    imp = supabase.table("imports").select("id, owner_code").eq("id", import_id).limit(1).execute()
+    if not imp.data:
+        raise HTTPException(status_code=404, detail="Import niet gevonden")
+    if imp.data[0].get("owner_code") != user_code:
+        raise HTTPException(status_code=403, detail="Je hebt geen toegang tot deze import")
+    
+    # Fetch result for this notice
+    resp = (
+        supabase.table("notice_sroi_results")
+        .select("*")
+        .eq("notice_id", notice_id)
+        .eq("owner_code", user_code)
+        .limit(1)
+        .execute()
+    )
+    
+    if not resp.data:
+        return {
+            "notice_id": notice_id,
+            "result": None,
+            "message": "Nog geen analyse beschikbaar voor deze notice"
+        }
+    
+    result = resp.data[0]
+    
+    
+    return {
+        "notice_id": notice_id,
+        "result": result
+    }
+
+
 @app.delete("/imports/{import_id}/sroi-results")
 async def delete_sroi_results(import_id: str, user_code: str = Depends(validate_user_code)):
     """
@@ -1236,6 +1668,73 @@ def get_notice_detail(import_id: str, notice_id: str, user_code: str = Depends(v
             status_code=500,
             detail=f"Failed to fetch notice detail: {str(e)}"
         )
+
+@app.post("/imports/{import_id}/notices/{notice_id}/sroi-analyze")
+async def analyze_single_notice(import_id: str, notice_id: str, request: Request, user_code: str = Depends(validate_user_code)):
+    """
+    Analyseer één specifieke notice / bedrijf (winnaar of inkoper) en sla resultaat direct op.
+    Body (optioneel): { "target": "winner" | "buyer" }
+    """
+    try:
+        if not notice_id:
+            raise HTTPException(status_code=400, detail="Notice ID is missing or invalid")
+
+        try:
+            body = await request.json()
+        except Exception:
+            body = {}
+
+        target = (body or {}).get("target", "winner") if isinstance(body, dict) else "winner"
+
+        # Verify import exists and ownership
+        imp = supabase.table("imports").select("id, owner_code").eq("id", import_id).execute()
+        if not imp.data:
+            raise HTTPException(status_code=404, detail="Import niet gevonden")
+        if imp.data[0].get("owner_code") != user_code:
+            raise HTTPException(status_code=403, detail="Je hebt geen toegang tot deze import")
+
+        # Fetch the notice record
+        resp = (
+            supabase.table("notices")
+            .select("*")
+            .eq("import_id", import_id)
+            .eq("id", notice_id)
+            .eq("owner_code", user_code)
+            .execute()
+        )
+
+        if not resp.data:
+            raise HTTPException(status_code=404, detail="Notice niet gevonden")
+
+        notice = resp.data[0]
+
+        # If caller requested the buyer specifically, coerce fields so analyze_notice_sroi targets buyer
+        notice_for_analysis = dict(notice)
+        if target == "buyer":
+            notice_for_analysis["win_bedrijf_naam"] = notice.get("buyer_bedrijf_naam")
+            notice_for_analysis["win_website"] = notice.get("buyer_website")
+
+        # Run analysis
+        try:
+            result = analyze_notice_sroi(notice_for_analysis)
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"Analyse mislukt: {e}")
+
+        # Attach metadata
+        result["notice_id"] = notice_id
+        result["target"] = target
+        
+        # Save using new function
+        save_notice_sroi_result(result, owner_code=user_code)
+
+        return result
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        print("ERROR in analyze_single_notice:", e)
+        raise HTTPException(status_code=500, detail=str(e))
+
 
 @app.get("/imports/{import_id}/sroi-download")
 def download_sroi_results(

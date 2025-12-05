@@ -16,8 +16,8 @@ API_PASSWORD = os.getenv("API_PASSWORD")
 
 
 
-DATE_FROM = "2022-01-01"
-DATE_TO = "2022-01-01"
+DATE_FROM = "2025-02-03"
+DATE_TO = "2025-02-05"
 PUBLICATIE_TYPE = "AGO"
 CPV_CODES = None
 MAX_PAGES = None
@@ -224,7 +224,10 @@ def parse_ted_xml(root):
     # Dispatch date
     compl_info = find_element_ns_agnostic(form_elem, "COMPLEMENTARY_INFO")
     dispatch_date = get_text_ns_agnostic(compl_info, "DATE_DISPATCH_NOTICE") if compl_info is not None else None
-    
+
+    final_issue_date = dispatch_date or datum_gunning
+    print(f"  📅 final_issue_date determined as: {final_issue_date}")
+
     return {
         "notice_id": ref_number,
         "titel": titel,
@@ -252,13 +255,12 @@ def parse_ted_xml(root):
         "bedrag": bedrag,
         "valuta": valuta,
         "datum_gunning": datum_gunning,
-        "contract_issue_date": dispatch_date,
+        "contract_issue_date": final_issue_date,  # ✅ Always has a value now
         "contract_startdatum": None,
         "contract_einddatum": None,
         "contract_duur_waarde": None,
         "contract_duur_eenheid": None,
     }
-
 
 # ---------- EFORMS FORMAT PARSERS ----------
 
@@ -333,9 +335,15 @@ def extract_amount(root):
 
 
 def extract_contract_info(root):
-    """Haalt basis contractinformatie op."""
-    datum_gunning = get_text(root, ".//cac:TenderResult/cbc:AwardDate", NS_EFORMS)
-    contract_issue_date = get_text(root, ".//efac:SettledContract/cbc:IssueDate", NS_EFORMS)
+    """Haalt basis contractinformatie op, inclusief IssueDate en datum gunning."""
+    # ✅ CRITICAL: IssueDate is at ROOT level of the notice, NOT in SettledContract
+    contract_issue_date = get_text(root, "./cbc:IssueDate", NS_EFORMS)
+    
+    # Haal datum gunning op uit meerdere mogelijke locaties
+    datum_gunning = (
+        get_text(root, ".//efac:SettledContract/cbc:AwardDate", NS_EFORMS) or
+        get_text(root, ".//cac:TenderResult/cbc:AwardDate", NS_EFORMS)
+    )
 
     planned_period = root.find(".//cac:ProcurementProjectLot/cac:ProcurementProject/cac:PlannedPeriod", NS_EFORMS)
     contract_startdatum = get_text(planned_period, "./cbc:StartDate", NS_EFORMS) if planned_period is not None else None
@@ -349,9 +357,17 @@ def extract_contract_info(root):
             contract_duur_waarde = dur_el.text.strip()
             contract_duur_eenheid = dur_el.attrib.get("unitCode")
 
+    # ✅ Ensure we ALWAYS have a publication date - fallback chain
+    final_issue_date = contract_issue_date
+    if not final_issue_date:
+        print(f"⚠️ WARNING: No root IssueDate found, falling back to AwardDate")
+        final_issue_date = datum_gunning
+
+    print(f"  📅 final_issue_date determined as: {final_issue_date}")
+
     return {
         "datum_gunning": datum_gunning,
-        "contract_issue_date": contract_issue_date,
+        "contract_issue_date": final_issue_date,
         "contract_startdatum": contract_startdatum,
         "contract_einddatum": contract_einddatum,
         "contract_duur_waarde": contract_duur_waarde,
@@ -409,6 +425,8 @@ def parse_eforms_xml(root):
         "contract_duur_waarde": contract_info["contract_duur_waarde"],
         "contract_duur_eenheid": contract_info["contract_duur_eenheid"],
     }
+
+
 
 
 # ---------- UNIFIED PARSER ----------
@@ -477,8 +495,15 @@ def download_xml_bytes(publicatie_id: int):
 
 
 # ---------- MAIN ----------
-
-def run_import(date_from: str, date_to: str, publicatie_type: str = "AGO", cpv_codes=None, max_pages=None, save_xml: bool = False, xml_output_dir: str = "xml_gegund"):
+def run_import(
+    date_from: str,
+    date_to: str,
+    publicatie_type: str = "AGO",
+    cpv_codes=None,
+    max_pages=None,
+    save_xml: bool = False,
+    xml_output_dir: str = "xml_gegund",
+):
     """
     Draait de volledige import en geeft een lijst dicts (records) terug.
     Schrijft NIET naar CSV.
@@ -491,7 +516,13 @@ def run_import(date_from: str, date_to: str, publicatie_type: str = "AGO", cpv_c
     if save_xml:
         os.makedirs(xml_output_dir, exist_ok=True)
 
-    for publicatie_id, meta in iter_publicaties(publicatie_type=publicatie_type, date_from=date_from, date_to=date_to, cpv_codes=cpv_codes, max_pages=max_pages):
+    for publicatie_id, meta in iter_publicaties(
+        publicatie_type=publicatie_type,
+        date_from=date_from,
+        date_to=date_to,
+        cpv_codes=cpv_codes,
+        max_pages=max_pages,
+    ):
         print(f"Verwerk publicatie {publicatie_id}...")
 
         xml_bytes = download_xml_bytes(publicatie_id)
@@ -512,6 +543,25 @@ def run_import(date_from: str, date_to: str, publicatie_type: str = "AGO", cpv_c
             print(f"⚠️ Fout bij parsen XML {publicatie_id}: {e}")
             continue
 
+        # ✅ Gebruik dispatch date / contract_issue_date als publicatie_datum
+        # TED: DATE_DISPATCH_NOTICE → contract_issue_date
+        # eForms: IssueDate → contract_issue_date
+        pub_raw = rec.get("contract_issue_date") or rec.get("datum_gunning")
+
+        pub_iso = None
+        if isinstance(pub_raw, str):
+            # als er 'YYYY-MM-DDThh:mm:ss' in zit → alleen datumdeel pakken
+            pub_iso = pub_raw.split("T")[0]
+        else:
+            pub_iso = pub_raw
+
+        rec["publicatie_datum"] = pub_iso
+        rec["Publicatiedatum"] = pub_iso  # voor je "Publicatiedatum" kolom in tenderned_raw
+
+        # Eventueel debug
+        print(f"[DEBUG] publicatie_id={publicatie_id}, dispatch/publicatie_datum={pub_iso!r}")
+
+        # Bestaande velden
         rec["id"] = row_id
         rec["publicatieId"] = publicatie_id
         rec["URL"] = meta.get("link")
@@ -521,6 +571,7 @@ def run_import(date_from: str, date_to: str, publicatie_type: str = "AGO", cpv_c
 
     print(f"\n✅ Klaar. Totaal records: {len(records)}")
     return records
+
 
 
 def main():
@@ -559,6 +610,7 @@ def main():
 
         row_id += 1
         records.append(rec)
+        
 
     print(f"\nKlaar. Totaal records: {len(records)}")
 

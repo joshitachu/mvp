@@ -10,8 +10,8 @@ import os
 AI_PROVIDER = "groq"   # or "ollama", "together", or "none"
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 TOGETHER_API_KEY = "YOUR_TOGETHER_KEY_HERE"
-OLLAMA_BASE_URL = "http://localhost:11434"
-OLLAMA_MODEL = "llama3.2"
+OLLAMA_BASE_URL = ""
+OLLAMA_MODEL = ""
 
 # --------------------------
 # Keyword definitions

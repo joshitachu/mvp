@@ -1,4 +1,7 @@
-# Big data files – don’t push these
+# Secrets
+.env
+
+# Big data (don’t push these)
 Dataset_TenderNed_2016_2024_herzien.xlsx
 TenderNed_filtered.csv
 
@@ -6,8 +9,5 @@ TenderNed_filtered.csv
 __pycache__/
 *.pyc
 
-# Secrets
-.env
-
-# Optional: any generated output
+# Optional outputs
 output.csv
