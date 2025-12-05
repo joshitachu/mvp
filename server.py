@@ -759,14 +759,30 @@ def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_
         unique_rows[nid] = row
 
     deduped_notice_rows = list(unique_rows.values())
-    print(f"💾 Opslaan {len(deduped_notice_rows)} unieke notices")
 
-    if deduped_notice_rows:
-        for r in deduped_notice_rows:
+    # Filter alleen records die van API komen
+    api_records_to_save = [
+        row for row in deduped_notice_rows 
+        if row.get("notice_id") in api_notice_ids
+    ]
+
+    print(f"💾 Opslaan {len(api_records_to_save)} unieke notices (alleen van API)")
+    print(f"⏭️  Overgeslagen: {len(deduped_notice_rows) - len(api_records_to_save)} notices (al in cache)")
+
+    UPSERT_BATCH_SIZE = 500
+
+    if api_records_to_save:
+        for r in api_records_to_save:
             r.setdefault("owner_code", user_code)
-        supabase.table("notices") \
-            .upsert(deduped_notice_rows, on_conflict="notice_id") \
-            .execute()
+        
+        # Upsert in batches
+        for i in range(0, len(api_records_to_save), UPSERT_BATCH_SIZE):
+            batch = api_records_to_save[i:i + UPSERT_BATCH_SIZE]
+            print(f"💾 Upserting batch {i//UPSERT_BATCH_SIZE + 1}/{(len(api_records_to_save)-1)//UPSERT_BATCH_SIZE + 1} ({len(batch)} records)")
+            supabase.table("notices") \
+                .upsert(batch, on_conflict="notice_id") \
+                .execute()
+
 
     # 5) Update total_records
     supabase.table("imports") \
