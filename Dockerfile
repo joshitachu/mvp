@@ -32,7 +32,7 @@ ENV SERPAPI_API_KEY="3757554d02872ebf5aa117d04584f92d6f6020b1dd46ab840f005ba4aa1
     API_BASE_URL="https://www.tenderned.nl/papi/tenderned-rs-tns/v2" \
     API_USERNAME="TNXML08248" \
     API_PASSWORD="aapVqSgKB" \
-    DATABASE_URL="postgresql://postgres:voetbal123@46.224.91.176:5432/supabase_subset" \
+    DATABASE_URL="postgresql://postgres:voetbal123@172.17.0.1:5432/supabase_subset" \
     GOOGLE_CSE_API_KEY="AIzaSyAhm0u-wtyH1fQIn8Zc60GVBYw9ZZ8TGDs" \
     GOOGLE_CSE_CX="921c64bea8b8b4805"
 
