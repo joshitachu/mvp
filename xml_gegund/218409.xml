@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Apeldoorn</OFFICIALNAME>
+                    <NATIONALID>08223882</NATIONALID>
+                    <ADDRESS>Marktplein 1 Apeldoorn</ADDRESS>
+                    <TOWN>Apeldoorn</TOWN>
+                    <POSTAL_CODE>7300 ES</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Alen Todorović</CONTACT_POINT>
+                    <PHONE>+31 555802178</PHONE>
+                    <E_MAIL>a.todorovic@apeldoorn.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>https://www.apeldoorn.nl/aanbestedingen</URL_GENERAL>
+                    <URL_BUYER>https://platform.negometrix.com/PublishedTenders.aspx?tenderid=157309</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Levering substraten, gemeente Apeldoorn, 2021</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="14000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SUPPLIES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>De gemeente Apeldoorn (hierna: Opdrachtgever) is voornemens om middels deze Europese openbare aanbestedingsprocedure maximaal drie (3) Opdrachtnemers te contracteren voor de leveringen van substraten. </P>
+                    <P></P>
+                    <P>Opdrachtgever is voornemens (een) raamovereenkomst(en) aan te gaan voor de duur van één (1) jaar met de mogelijkheid deze drie (3) keer met één (1) jaar te verlengen.  </P>
+                    <P></P>
+                    <P>Percelen</P>
+                    <P>De aanbesteding is opgebouwd uit een hoofdtender en bijbehorende percelen (3). Inschrijvers mogen zich inschrijven op alle percelen en kunnen deze ook allen winnen. Let op: Inschrijvers dienen de hoofdtender én het perceel/de percelen in te vullen waarvoor ze in aanmerking wensen te komen. </P>
+                    <P></P>
+                    <P>Gunning</P>
+                    <P>Gunning vindt plaats op basis van het gunningscriterium 'Laagste totaalprijs per perceel'.</P>
+                    <P> </P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1234567.00</VAL_TOTAL>
+                <LOT_DIVISION></LOT_DIVISION>
+                <OBJECT_DESCR ITEM="1">
+                    <TITLE>
+                        <P></P>
+                    </TITLE>
+                    <LOT_NO>1</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="14000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>Het betreft hier de uitvraag voor de leveringen van; </P>
+                        <P>- speelbakkenzand</P>
+                        <P>- valzand</P>
+                        <P>- straatzand</P>
+                        <P>- teelaarde</P>
+                        <P>- bomenvoedingsgrond</P>
+                        <P> </P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="2">
+                    <TITLE>
+                        <P>Gebroken grind, grauwacke split en puin aarde mengsel</P>
+                    </TITLE>
+                    <LOT_NO>2</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="14000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>Het betreft hier de uitvraag voor de leveringen van;</P>
+                        <P>- grauwacke split</P>
+                        <P>- gebroken grind </P>
+                        <P>- puin aarde mengsel 2:1</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="3">
+                    <TITLE>
+                        <P>Franse zeeden boomschors, groencompost en bladcompost (bladaarde)</P>
+                    </TITLE>
+                    <LOT_NO>3</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="03400000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>Perceel 3 betreft de leveringen van; Franse zeeden schors, groencompost en bladcompost (bladaarde)</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 208-507272</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2020-12-31</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>5</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Heicom </OFFICIALNAME>
+                                <TOWN>Oldebroek</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1234567.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="2">
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2020-12-31</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>2</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Van Doorn Soest BV</OFFICIALNAME>
+                                <TOWN>Soest</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1234567.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="3">
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2020-12-31</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>4</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Heicom </OFFICIALNAME>
+                                <TOWN>Oldebroek</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1234567.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Gelderland</OFFICIALNAME>
+                    <TOWN>Zutphen</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-01</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

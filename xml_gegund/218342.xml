@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Waterschap Limburg</OFFICIALNAME>
+                    <NATIONALID>27489264</NATIONALID>
+                    <ADDRESS>Maria Theresialaan 99</ADDRESS>
+                    <TOWN>Roermond</TOWN>
+                    <POSTAL_CODE>6043 CX</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Nico  Rossel</CONTACT_POINT>
+                    <PHONE>+31 888890100</PHONE>
+                    <E_MAIL>Inkoop@waterschaplimburg.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.waterschaplimburg.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Raamovereenkomst Landmeetkundige Diensten</P>
+                </TITLE>
+                <REFERENCE_NUMBER>2020-Z6749</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="71355000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Betreft het op orde brengen en het op orde houden van de geografische informatie in het gehele beheergebied van WL conform het meetprotocol.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                <LOT_DIVISION></LOT_DIVISION>
+                <OBJECT_DESCR ITEM="1">
+                    <TITLE>
+                        <P>Op orde houden van kernobjecten</P>
+                    </TITLE>
+                    <LOT_NO>1</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="71355000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <ns2:NUTS CODE="NL42"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Limburg</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Geschatte waarde is € 150.000,- per jaar.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Plan van Aanpak</AC_CRITERION>
+                            <AC_WEIGHTING>30</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Proefmeting</AC_CRITERION>
+                            <AC_WEIGHTING>30</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>De opdracht is voor drie jaar met de optie om maximaal drie keer te kunnen verlengen met één jaar (dus maximale looptijd is zes jaar).</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>Raamovereenkomst met maximaal drie partijen.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="2">
+                    <TITLE>
+                        <P>Op orde brengen van objecten</P>
+                    </TITLE>
+                    <LOT_NO>2</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="71355000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <ns2:NUTS CODE="NL42"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Limburg</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Geschatte waarde is € 50.000,- per jaar.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Plan van Aanpak</AC_CRITERION>
+                            <AC_WEIGHTING>30</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Proefmeting</AC_CRITERION>
+                            <AC_WEIGHTING>30</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>De opdracht is voor drie jaar met de optie om maximaal drie keer te kunnen verlengen met één jaar (dus maximale looptijd is zes jaar).</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>Raamovereenkomst met maximaal drie partijen.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 193-466875</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <LOT_NO>2</LOT_NO>
+                <TITLE>
+                    <P>Landmeetkundige Diensten perceel 1 en 2</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-01-05</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>7</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>7</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <AWARDED_TO_GROUP></AWARDED_TO_GROUP>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Geomij B.V.</OFFICIALNAME>
+                                <NATIONALID>13021768</NATIONALID>
+                                <ADDRESS>Natronchemieweg 3 a</ADDRESS>
+                                <TOWN>ROERMOND</TOWN>
+                                <POSTAL_CODE>6049CN</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 475402829</PHONE>
+                                <E_MAIL>info@geomij.nl</E_MAIL>
+                                <FAX>+31 475401255</FAX>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.geomij.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Siers Infraconsult B.V.</OFFICIALNAME>
+                                <NATIONALID>06045980</NATIONALID>
+                                <ADDRESS>Schelmaatstraat 14</ADDRESS>
+                                <TOWN>OLDENZAAL</TOWN>
+                                <POSTAL_CODE>7575BD</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 885572200</PHONE>
+                                <E_MAIL>aanbestedingen@siersgroep.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.siersgroep.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>RPS advies- en ingenieursbureau B.V.</OFFICIALNAME>
+                                <NATIONALID>24161143</NATIONALID>
+                                <ADDRESS>Elektronicaweg 2</ADDRESS>
+                                <TOWN>DELFT</TOWN>
+                                <POSTAL_CODE>2628XG</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 157501600</PHONE>
+                                <E_MAIL>tenderdesk@rps.nl</E_MAIL>
+                                <FAX>+31 157501610</FAX>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.rps.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="2">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <LOT_NO>1</LOT_NO>
+                <TITLE>
+                    <P>Landmeetkundige Diensten perceel 1 en 2</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-01-05</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>7</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>7</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <AWARDED_TO_GROUP></AWARDED_TO_GROUP>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Geomij B.V.</OFFICIALNAME>
+                                <NATIONALID>13021768</NATIONALID>
+                                <ADDRESS>Natronchemieweg 3 a</ADDRESS>
+                                <TOWN>ROERMOND</TOWN>
+                                <POSTAL_CODE>6049CN</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 475402829</PHONE>
+                                <E_MAIL>info@geomij.nl</E_MAIL>
+                                <FAX>+31 475401255</FAX>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.geomij.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Siers Infraconsult B.V.</OFFICIALNAME>
+                                <NATIONALID>06045980</NATIONALID>
+                                <ADDRESS>Schelmaatstraat 14</ADDRESS>
+                                <TOWN>OLDENZAAL</TOWN>
+                                <POSTAL_CODE>7575BD</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 885572200</PHONE>
+                                <E_MAIL>aanbestedingen@siersgroep.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.siersgroep.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>RPS advies- en ingenieursbureau B.V.</OFFICIALNAME>
+                                <NATIONALID>24161143</NATIONALID>
+                                <ADDRESS>Elektronicaweg 2</ADDRESS>
+                                <TOWN>DELFT</TOWN>
+                                <POSTAL_CODE>2628XG</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 157501600</PHONE>
+                                <E_MAIL>tenderdesk@rps.nl</E_MAIL>
+                                <FAX>+31 157501610</FAX>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.rps.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <INFO_ADD>
+                    <P>Winnaars voor perceel 1 en 2 zijn dezelfde.</P>
+                    <P>Dit betreft een raamovereenkomst, vandaar dat bij de waarde 1 euro is ingevuld.</P>
+                </INFO_ADD>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Limburg</OFFICIALNAME>
+                    <ADDRESS>Willem II Singel 67</ADDRESS>
+                    <TOWN>Roermond</TOWN>
+                    <POSTAL_CODE>6041HR</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 883612222</PHONE>
+                    <E_MAIL>br.kort.geding.RB-LIM.roermond@rechtspraak.nl</E_MAIL>
+                    <URL>https://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-01</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

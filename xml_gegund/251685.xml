@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Oldambt</OFFICIALNAME>
+                    <ADDRESS>Johan Modastraat 6</ADDRESS>
+                    <TOWN>Winschoten</TOWN>
+                    <POSTAL_CODE>9671CD</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Afdeling Inkoop</CONTACT_POINT>
+                    <E_MAIL>inkoop@gemeente-oldambt.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL111"></ns2:NUTS>
+                    <URL_GENERAL>https://www.gemeente-oldambt.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Europees openbare aanbesteding 2022 t/m 2026 Huishoudelijke Hulp</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="85000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>De inzet van huishoudelijke hulp heeft als doel een bijdrage te leveren aan de zelfredzaamheid met het oog op zo lang mogelijk in de eigen leefomgeving kunnen blijven. Zelfredzaamheid is in de Wmo 2015 gedefinieerd als: in staat zijn tot het uitvoeren van de noodzakelijke algemeen dagelijkse levensverrichtingen en het kunnen voeren van een gestructureerd huishouden. </P>
+                    <P>De gemeente Oldambt heeft reeds verschillende mogelijkheden voor inwoners op het gebied van voorliggende/algemene voorzieningen. Het is waarschijnlijk dat cliënten steeds vaker in oplossingen kunnen voorzien door eigen inkoop van (commerciële) diensten dan nu het geval is. Voorbeelden hiervan zijn een maaltijdvoorziening en het bezorgen van boodschappen. Opdrachtgever zal bij de indicatie rekening houden met de beschikbaarheid en inzet van de voorliggende voorzieningen.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">40800000.00</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL111"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Winschoten</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Doel van deze inkoopprocedure is om overeenkomsten te sluiten voor Wmo Huishoudelijke Hulp. De nieuwe overeenkomsten gaan in per 1 januari 2022. Een omschrijving van de huishoudelijke hulp en de uit te voeren dienstverlening is opgenomen in de eerder genoemde bijlage 3 uitvoeringsvoorwaarden.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <NO_CONTRACT_COVERED_GPA></NO_CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 178-464062</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <TITLE>
+                    <P>Huishoudelijk Hulp</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-12-13</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>10</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>5</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_EMEANS>10</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <AWARDED_TO_GROUP></AWARDED_TO_GROUP>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>BiOns B.V.</OFFICIALNAME>
+                                <ADDRESS>Watermolenweg 92</ADDRESS>
+                                <TOWN>Rijssen</TOWN>
+                                <POSTAL_CODE>7461 AZ</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL21"></ns2:NUTS>
+                                <URL>https://www.bions.nl/nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Beter Thuis Wonen Huishoudelijke Ondersteuning B.V.</OFFICIALNAME>
+                                <ADDRESS>Elbe 12</ADDRESS>
+                                <TOWN>Hoogeveen</TOWN>
+                                <POSTAL_CODE>7908 AB</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL13"></ns2:NUTS>
+                                <URL>https://www.beter-thuis-wonen.nl/</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Buurtdiensten Nederland B.V.</OFFICIALNAME>
+                                <ADDRESS>Postbus 69</ADDRESS>
+                                <TOWN>Almelo</TOWN>
+                                <POSTAL_CODE>7600 AB</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL13"></ns2:NUTS>
+                                <URL>https://www.buurtdiensten.nl/</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>De zorgzaak B.V.</OFFICIALNAME>
+                                <ADDRESS>Duymaer van Twistweg 8</ADDRESS>
+                                <TOWN>Hoogeveen</TOWN>
+                                <POSTAL_CODE>7909 CB</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL13"></ns2:NUTS>
+                                <URL>https://www.zorgzaak.nl/</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Flexiplus huishouding B.V.</OFFICIALNAME>
+                                <ADDRESS>Schoolstraat 14</ADDRESS>
+                                <TOWN>Wedde</TOWN>
+                                <POSTAL_CODE>9698 AP</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL11"></ns2:NUTS>
+                                <URL>http://www.flexiplushuishouding.nl/</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Miep B.V.</OFFICIALNAME>
+                                <ADDRESS>Deltastraat 41</ADDRESS>
+                                <TOWN>Zierikzee</TOWN>
+                                <POSTAL_CODE>4301 RC</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL34"></ns2:NUTS>
+                                <URL>https://miep.nu/</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Thuisgenoten B.V.</OFFICIALNAME>
+                                <ADDRESS>Wierdensestraat 131</ADDRESS>
+                                <TOWN>Almelo</TOWN>
+                                <POSTAL_CODE>7604 BD,</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL13"></ns2:NUTS>
+                                <URL>https://www.thuisgenoten.nl/</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>T-Zorg B.V</OFFICIALNAME>
+                                <ADDRESS>Verlengde Velmolen 1</ADDRESS>
+                                <TOWN>Uden</TOWN>
+                                <POSTAL_CODE>5406 NT</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL41"></ns2:NUTS>
+                                <URL>https://www.tzorg.nl/</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>De nieuwe zorg thuis B.V.</OFFICIALNAME>
+                                <ADDRESS>Stationsweg 44</ADDRESS>
+                                <TOWN>Meppel</TOWN>
+                                <POSTAL_CODE>7941 HE</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL13"></ns2:NUTS>
+                                <URL>https://dnzt.nl/</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">1.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">1.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Noord-Nederland (Groningen)</OFFICIALNAME>
+                    <ADDRESS>Postbus 933</ADDRESS>
+                    <TOWN>Groningen</TOWN>
+                    <POSTAL_CODE>9700 AX</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 503166166</PHONE>
+                    <E_MAIL>info.rechtbanknoordnederland@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl/Organisatie/Rechtbanken/Noord-Nederland/Contact/Pages/default.aspx</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2022-02-03</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F21_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F21">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <NOTICE TYPE="AWARD_CONTRACT"></NOTICE>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Specialistisch Inkoop Centrum DJI</OFFICIALNAME>
+                    <NATIONALID>273787680</NATIONALID>
+                    <ADDRESS>Turfmark 147</ADDRESS>
+                    <TOWN>Den Haag</TOWN>
+                    <POSTAL_CODE>2511 DP</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 6000000</PHONE>
+                    <E_MAIL>aanbestedensic@dji.minjus.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>www.dji.nl</URL_GENERAL>
+                    <URL_BUYER>https://ctmsolution.eu-supply.com/ctm/Company/CompanyInformation/Index/381203</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="NATIONAL_AGENCY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="HEALTH"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT ITEM="1">
+                <TITLE>
+                    <P>Onderhandelingsprocedure Zeist (DC)</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="85130000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Mondzorg tbv JI Zeist (DC)</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">210000.00</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="85130000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>Mondzorg tbv JI Zeist (DC).</P>
+                    </SHORT_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <FRAMEWORK></FRAMEWORK>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Onderhandelingsprocedure Zeist (DC)</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>1</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>1</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Fresh Unieke Mondzorg</OFFICIALNAME>
+                                <NATIONALID>67343775</NATIONALID>
+                                <ADDRESS>Botnische golf 9a</ADDRESS>
+                                <TOWN>Woerden</TOWN>
+                                <POSTAL_CODE>3446CN</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                        </CONTRACTOR>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">210000.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Voorzieningenrechter Den Haag</OFFICIALNAME>
+                    <ADDRESS>Prins Clauslaan 60</ADDRESS>
+                    <TOWN>Den Haag</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2022-02-03</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F21_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

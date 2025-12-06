@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Noordwijk</OFFICIALNAME>
+                    <NATIONALID>162008839</NATIONALID>
+                    <ADDRESS>Voorstraat 42</ADDRESS>
+                    <TOWN>NOORDWIJK</TOWN>
+                    <POSTAL_CODE>2201HW</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Niels van Kampen</CONTACT_POINT>
+                    <PHONE>+31 713660000</PHONE>
+                    <E_MAIL>niels.vankampen@stichtingrijk.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.noordwijk.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Gezondheidscentrum de Schelft</P>
+                </TITLE>
+                <REFERENCE_NUMBER>NW202202</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="71317200"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Verkoop van een gezondheidscentrum in de Herbouw de Schelft.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">600000.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Noordwijk</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Verkoop van een gezondheidscentrum in de Herbouw de Schelft.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_AWARD_CONTRACT_WITHOUT_CALL>
+                    <D_OUTSIDE_SCOPE></D_OUTSIDE_SCOPE>
+                    <D_JUSTIFICATION>
+                        <P>Het is geen overheidsopdracht maar invulling gegeven aan het arrest van de Hoge Raad 26 november 2021(didam arrest).</P>
+                    </D_JUSTIFICATION>
+                </PT_AWARD_CONTRACT_WITHOUT_CALL>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Gezondheidscentrum de Schelft</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-02-02</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>1</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>0</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>De Praktijk</OFFICIALNAME>
+                                <ADDRESS>Kerkstraat 25</ADDRESS>
+                                <TOWN>Noordwijk</TOWN>
+                                <POSTAL_CODE>2201 KK</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <INFO_ADD>
+                    <P>De gemeenteraad van Noordwijk ziet in de toevoeging van een gezondheidscentrum in de nieuwe De Schelft een waardevolle aanvulling op de sport/cultuur functies. Twee partijen willen zich hier vestigen. De ene partij draagt volledig zelf de kosten, terwijl de andere partij van mening is dat de gemeente risicodragend moet investeren. Een samenwerking tussen beide partijen blijkt niet haalbaar te zijn en de vestiging van 2 centra onder 1 dak is niet gewenst. De gemeente spreekt haar voorkeur uit voor de vestiging van een partij die de bouw van een gezondheidscentrum zelf bekostigt. De gemeente is al geruime tijd in gesprek hierover met De Praktijk. Op grond van een recente rechterlijke uitspraak moet de gemeente bij de verkoop van grond gelegenheid bieden aan (potentiële) gegadigden om mee te dingen. Dat betekent dat de gemeente niet zonder meer vrij is om grond te verkopen aan een partij naar keuze. De gemeente moet gelijke kansen bieden bij uitgifte van grond. Daarom wordt het voornemen om de vestiging van een gezondheidscentrum op basis van koop eerst openbaar gemaakt. En dit gebeurt middels deze aankondiging op TenderNed. De termijn om zich als gegadigde aan te melden voor verkoop  gezondheidscentrum bedraagt 20 kalenderdagen ingaande de dag na aankondigingsdatum van deze aankondiging.</P>
+                    <P>NB: De transparantie die we met TenderNed willen bereiken kon alleen maar door uit te gaan van een overheidsopdracht een andere mogelijkheid was niet beschikbaar binnen TenderNed. Het betreft geen overheidsopdracht.</P>
+                </INFO_ADD>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Noord-Holland</OFFICIALNAME>
+                    <ADDRESS>Simon de Vrieshof 1</ADDRESS>
+                    <TOWN>Haarlem</TOWN>
+                    <POSTAL_CODE>2019 HA</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 883616100</PHONE>
+                    <E_MAIL>info@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2022-02-03</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

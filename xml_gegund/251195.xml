@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Centraal Orgaan opvang asielzoekers (COA)</OFFICIALNAME>
+                    <NATIONALID>27380622</NATIONALID>
+                    <ADDRESS>Rijnstraat 8</ADDRESS>
+                    <TOWN>'s-Gravenhage</TOWN>
+                    <POSTAL_CODE>2515XP</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Quintin Soewarno</CONTACT_POINT>
+                    <PHONE>+31 887157000</PHONE>
+                    <E_MAIL>inkoop@coa.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>www.coa.nl</URL_GENERAL>
+                    <URL_BUYER>https://hub.negometrix.com/buyer/1217</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="HOUSING_AND_COMMUNITY_AMENITIES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Levering van keukenmaterialen</P>
+                </TITLE>
+                <REFERENCE_NUMBER>CDR-475203</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="39220000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SUPPLIES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Het doel van deze aanbesteding is om voor de levering van keukenmaterialen één Raamovereenkomst af te sluiten met één Opdrachtnemer voor de leveringen die worden uitgevoerd aan de verschillende COA-locaties door heel Nederland, inclusief het centraal magazijn te Schelluinen. Het COA wenst één landelijk opererende leverancier in verband met de uniformiteit en beheersbaarheid van deze leveringen.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">400000</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>Het COA wenst middels deze aanbestedingsprocedure één leverancier te selecteren voor de levering van keukenartikelen ten behoeve van de bewoners op de opvanglocaties. Het betreft het kleinmateriaal wat in een keuken wordt gebruikt voor het bereiden van voedsel, alsmede de consumptie hiervan. Het gaat dan om keukenartikelen zoals messen, vorken, maatbekers etc. die onderverdeeld worden in de volgende productcategorieën: </P>
+                        <P>- Bestek: messen, vorken, lepels e.d.; </P>
+                        <P>- Pannen: kookpannen, steelpannen, koekenpannen e.d.; </P>
+                        <P>- Servies: bekers, borden, glazen, schotels, schalen e.d.; </P>
+                        <P>- Overige artikelen: maatbekers, spatels, snijplanken e.d. </P>
+                        <P>Bovenstaande opsomming is niet limitatief.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <NO_CONTRACT_COVERED_GPA></NO_CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 093-241517</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>CDR-475203</CONTRACT_NO>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-09-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>5</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>0</NB_TENDERS_RECEIVED_SME>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Jos ten Berg's Handelmaatschappij B.V.</OFFICIALNAME>
+                                <NATIONALID>30001400</NATIONALID>
+                                <ADDRESS>Utrechthaven 16</ADDRESS>
+                                <TOWN>Nieuwegein</TOWN>
+                                <POSTAL_CODE>3433PN</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">346335.24</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Den Haag</OFFICIALNAME>
+                    <TOWN>Den Haag</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2022-02-01</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

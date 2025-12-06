@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Rijksvastgoedbedrijf</OFFICIALNAME>
+                    <NATIONALID>552550970</NATIONALID>
+                    <ADDRESS>Korte Voorhout 7</ADDRESS>
+                    <TOWN>Den Haag</TOWN>
+                    <POSTAL_CODE>2511 CW</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Ismail  Sahin</CONTACT_POINT>
+                    <E_MAIL>ismail.sahin@rijksoverheid.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.rijksvastgoedbedrijf.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="MINISTRY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="HOUSING_AND_COMMUNITY_AMENITIES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>19416 Maatregelen Brandveiligheid Legering en Overige Gebouwen te CARIB</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="71300000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>De omvang van de opdracht omvat alle objecten van de kazernes van het Ministerie van Defensie op Curaçao en Aruba.</P>
+                    <P></P>
+                    <P>De opdracht bestaat uit twee onderdelen, inspectie van de objecten met betrekking tot brandveiligheid en een Technisch Ontwerp om de brandveiligheid van deze objecten op niveau van Nederlandse wet- en regelgeving te brengen, gereed voor start aanbesteding Uitvoering.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">328890.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>De omvang van de opdracht is opgenomen in de Gebouwenlijst.</P>
+                        <P>Oppervlakte: de omvang per object verschilt van ca. 7 m2 tot en met ca. 2200 m2.</P>
+                        <P>Disciplines: Inspectie/ scan (beide begrippen worden gebruikt: er wordt hetzelfde bedoeld in de Aanbestedingsdocumenten) en ontwerp/ ontwerpwerkzaamheden (beide begrippen worden gebruikt: er wordt hetzelfde bedoeld in de Aanbestedingsdocumenten).</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Communicatieplan</AC_CRITERION>
+                            <AC_WEIGHTING>0</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Risicoinventarisatie</AC_CRITERION>
+                            <AC_WEIGHTING>0</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>0</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_RESTRICTED></PT_RESTRICTED>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 142-349751</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>19416 Maatregelen Brandveiligheid Legering en Overige Gebouwen te CARIB</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-01-15</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>5</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>5</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Deerns Nederland B.V.</OFFICIALNAME>
+                                <NATIONALID>27047671</NATIONALID>
+                                <ADDRESS>Anna van Buerenplein 21 F</ADDRESS>
+                                <TOWN>Den Haag</TOWN>
+                                <POSTAL_CODE>2595 DA</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 883740000</PHONE>
+                                <E_MAIL>tender@deerns.com</E_MAIL>
+                                <FAX>+31 883740010</FAX>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.deerns.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">328890.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Burgerlijke Rechter te 's Gravenhage</OFFICIALNAME>
+                    <ADDRESS>Paleis van Justitie - Prins Clauslaan 60</ADDRESS>
+                    <TOWN>'s Gravenhage</TOWN>
+                    <POSTAL_CODE>2595 AJ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 883622200</PHONE>
+                    <E_MAIL>voorlichting.rb.den.haag@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <ADDRESS_REVIEW_INFO>
+                    <OFFICIALNAME>Burgerlijke Rechter te 's Gravenhage</OFFICIALNAME>
+                    <ADDRESS>Paleis van Justitie - Prins Clauslaan 60</ADDRESS>
+                    <TOWN>'s Gravenhage</TOWN>
+                    <POSTAL_CODE>2595 AJ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 883622200</PHONE>
+                    <E_MAIL>voorlichting.rb.den.haag@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_INFO>
+                <DATE_DISPATCH_NOTICE>2021-02-01</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

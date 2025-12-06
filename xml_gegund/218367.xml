@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Winterswijk</OFFICIALNAME>
+                    <NATIONALID>7669994</NATIONALID>
+                    <ADDRESS>Stationsstraat 25</ADDRESS>
+                    <TOWN>Winterswijk</TOWN>
+                    <POSTAL_CODE>7101 GH</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Ceciel  Lurvink</CONTACT_POINT>
+                    <PHONE>+31 543543543</PHONE>
+                    <E_MAIL>clurvink@winterswijk.nl</E_MAIL>
+                    <FAX>+31 543543065</FAX>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.winterswijk.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Publicatie gegunde opdracht  Senior beleidsmedewerker Ruimtelijke Ordening via Dynamisch Aankoop Systeem Werken in Gelderland</P>
+                </TITLE>
+                <REFERENCE_NUMBER>Werken in Gelderland 040629 / Zaaknummer 216070</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="79620000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Inhuur opdracht voor een senior beleidsmedewerker.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">214000.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>2140000</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Beste PKV  kwaliteit en prijs</AC_CRITERION>
+                            <AC_WEIGHTING>100</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>100</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_AWARD_CONTRACT_WITHOUT_CALL>
+                    <D_ACCORDANCE_ARTICLE>
+                        <D_ADD_DELIVERIES_ORDERED></D_ADD_DELIVERIES_ORDERED>
+                    </D_ACCORDANCE_ARTICLE>
+                    <D_JUSTIFICATION>
+                        <P>Het gaat om een opdracht via Dynamisch Aankoop Systeem.</P>
+                    </D_JUSTIFICATION>
+                </PT_AWARD_CONTRACT_WITHOUT_CALL>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Publicatie gegunde opdracht  Senior beleidsmedewerker Ruimtelijke Ordening via Dynamisch Aankoop Systeem Werken in Gelderland</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-01-31</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>6</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>0</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>To Interface Projects B.V.</OFFICIALNAME>
+                                <NATIONALID>17183610</NATIONALID>
+                                <ADDRESS>Esscheweg 69</ADDRESS>
+                                <TOWN>Vught</TOWN>
+                                <POSTAL_CODE>5262VT</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">1.0</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Gelderland</OFFICIALNAME>
+                    <ADDRESS>Walburgstraat 2-4</ADDRESS>
+                    <TOWN>Arnhem</TOWN>
+                    <POSTAL_CODE>6811 CD</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 883612000</PHONE>
+                    <E_MAIL>kanton.arnhem@rechtspraak.nl</E_MAIL>
+                    <FAX>+31 883610374</FAX>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-01</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

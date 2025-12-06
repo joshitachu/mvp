@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Provincie Noord-Brabant</OFFICIALNAME>
+                    <NATIONALID>12345678</NATIONALID>
+                    <ADDRESS>Brabantlaan 1 </ADDRESS>
+                    <TOWN>'s-Hertogenbosch</TOWN>
+                    <POSTAL_CODE>5216TV</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Mevrouw Nanda  Bartelse</CONTACT_POINT>
+                    <PHONE>+31 736812812</PHONE>
+                    <E_MAIL>meldpuntaanbestedingen@brabant.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://inhuurdesk.werkeninnoordoostbrabant.nl</URL_GENERAL>
+                    <URL_BUYER>http://inhuurdesk.werkeninnoordoostbrabant.nl</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Testco?rdinator </P>
+                </TITLE>
+                <REFERENCE_NUMBER>TSF_5257</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="79000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Het leven is goed in het Brabantse land. Bij de   provincie Noord-Brabant zetten we ons dagelijks in om te zorgen dat dit ook   geldt voor de toekomst. Samen werken we aan een mooier, toekomstbestendig en   een duurzaam Brabant. Ga jij voor resultaat, ben je ondernemend, heb je   affiniteit met maatschappelijke vraagstukken en bovenal: werk je graag vol   trots mee aan een nog beter Brabant? Dan zijn wij op zoek naar jou! &amp;nbsp;Uitdaging &amp;nbsp;Binnen het Programmabureau dat deel uitmaakt van de   bedrijfsvoeringseenheid BBA opereert het Testcentrum, waar een senior testco?rdinator   werkt en een tester. Het centrum richt zich op uiteenlopende ICT-trajecten, het   testen is een cruciaal onderdeel. Op   dit moment hebben we capaciteitstekort en daarom zijn we op zoek naar een   testco?rdinator die testen kan opzetten, testers kan aansturen en zorgvuldige   rapportages kan opleveren waar projectleiders mee aan de slag kunnen. Als   testco?rdinator ben je verantwoordelijk voor het co?rdineren van testen. Je   werkt samen met de senior-testco?rdinator en de technisch tester en ook met   key users en functioneel/technisch beheerders van de diverse   applicaties/landschappen. &amp;nbsp;Taken   en verantwoordelijkhedenIn overleg met het project en de (vertegenwoordiger van)   gebruikersorganisatie, de ontwikkelafdeling en beheerorganisatie stel je een   masterplan op waarin wordt beschreven het wat en hoe beschreven wordt evenals   de planning en de detail-testplannen die per testsoort het testproces   beschrijven;Je faciliteert en/ of voert Product Risico Analyse (PRA) uit;Je levert een inhoudelijke bijdrage aan de ontwikkeling van test-producten;Je analyseert testvraagstukken en bedenkt hiervoor nieuwe   oplossingsrichtingen voor de aanpassing van nieuw test-beleid;Je begeleidt de testengineers (instructie en ondersteuning en   werkverdeling);Waar nodig ben je zelf actief met uitwerken en uitvoeren van   testgevallen;Je waarborgt faciliteiten (testwerkplekken, infrastructuur, interfaces,   etc.) en draagt oplossingen aan bij knelpunten;Je neemt actief deel aan risicomanagement (anticiperen op,   onderkennen van- en rapporteren over projectrisico?s)Neemt deel aan het projectoverleg en zit het testoverleg voor;Rapporteert over voortgang- en kwaliteit onder meer aan de   senior testco?rdinator en stakeholders. </P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>'s-Hertogenbosch</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>De waarde van de opdracht is onbekend</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>85</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>15</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2018/S 092-208434</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Testco?rdinator </P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-02</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>24</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>24</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>ITIUM</OFFICIALNAME>
+                                <ADDRESS>Pettemerstraat 7 </ADDRESS>
+                                <TOWN>Alkmaar</TOWN>
+                                <POSTAL_CODE>1823CW</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 611164731</PHONE>
+                                <E_MAIL>marktplaatsen@itium.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Provincie Noord-Brabant</OFFICIALNAME>
+                    <ADDRESS>Brabantlaan 1 </ADDRESS>
+                    <TOWN>'s-Hertogenbosch</TOWN>
+                    <POSTAL_CODE>5216TV</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 736812812</PHONE>
+                    <E_MAIL>aanbestedingen@brabant.nl</E_MAIL>
+                    <URL>http://www.brabant.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2018-11-23</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

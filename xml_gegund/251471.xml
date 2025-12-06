@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Rotterdam</OFFICIALNAME>
+                    <NATIONALID>24483298</NATIONALID>
+                    <ADDRESS>Coolsingel 40</ADDRESS>
+                    <TOWN>Rotterdam</TOWN>
+                    <POSTAL_CODE>3011AD</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Michiel Verkaik</CONTACT_POINT>
+                    <PHONE>+31 641550086</PHONE>
+                    <E_MAIL>mp.verkaik@rotterdam.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>www.rotterdam.nl</URL_GENERAL>
+                    <URL_BUYER>https://hub.negometrix.com/buyer/1315</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Leverancierspoule maatschappelijke ondersteuning en jeugdhulp Rotterdam</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="85000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Binnen de Leverancierspoule maatschappelijke ondersteuning en jeugdhulp Rotterdam zijn opdrachten gegund. Dit betreffende de volgende:</P>
+                    <P>1. T8380 - Resultaatgerichte jeugdhulp voor Jeugdige met een beperking</P>
+                    <P>2. T9596 - Generalistische enkelvoudige Basis J GGZ</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">9550000</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>Binnen de Leverancierspoule maatschappelijke ondersteuning en jeugdhulp Rotterdam zijn opdrachten gegund. Dit betreffende de volgende:</P>
+                        <P>1. Resultaatgerichte jeugdhulp voor Jeugdige met een beperking (EUR 4 mio). De Gemeente heeft bij de opdracht Jeugdige met een beperking, welke in 2018 middels een openbare Europese aanbestedingsprocedure op de markt is gezet, een drietal opdrachtnemers gecontracteerd. Bij deze raamovereenkomsten is een budgetplafond afgesproken en de opdrachtnemers hebben aangegeven dat het plafond bereikt is. De aanbestedingswet en jurisprudentie biedt slechts beperkt ruimte om het budgetplafond te verhogen en de extra middelen die het kabinet beschikbaar heeft gesteld voor het oplossen van acute problematiek in de jeugdzorg, dienen rechtmatig te worden aangewend. Zodoende wordt de opdracht Jeugdige met een beperking opnieuw aanbesteed zodat Aanbieders gecontracteerd kunnen worden om de ontstane en ongewenste wachtlijsten op te lossen. </P>
+                        <P>2. Generalistische enkelvoudige Basis J GGZ (EUR 5,55 mio): De Gemeente heeft bij de opdracht Resultaatgerichte enkelvoudige Jeugd GGZ, welke in 2018 middels een openbare Europese aanbestedingsprocedure op de markt is gezet, een twaalftal aanbieders gecontracteerd. Bij deze Raamovereenkomsten is een budgetplafond afgesproken en 9 van de 12 gecontracteerde aanbieders hebben aangegeven dat het plafond bereikt is. De aanbestedingswet en jurisprudentie bieden slechts beperkt ruimte om het budgetplafond te verhogen en de extra middelen die het kabinet beschikbaar heeft gesteld aan gemeenten voor het oplossen van acute problematiek in de jeugdzorg, dienen rechtmatig te worden aangewend. Zodoende wordt de opdracht Resultaatgerichte enkelvoudige Jeugd GGZ opnieuw aanbesteed zodat aanbieders gecontracteerd kunnen worden om de ontstane wachttijden weg te werken.</P>
+                        <P>Gezien de aanstaande inkoop per 2023, gaat het bij beide uitvragen om een tijdelijke inkoop. Zodra de wachtlijsten zijn opgelost, moet voorkomen worden dat er opnieuw wachtlijsten ontstaan.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>zie beschrijvend document</AC_CRITERION>
+                            <AC_WEIGHTING>100</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>100</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <NO_CONTRACT_COVERED_GPA></NO_CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 062-158246</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>T8380 (1-D-19217-21)</CONTRACT_NO>
+                <TITLE>
+                    <P>Resultaatgerichte jeugdhulp voor Jeugdige met beperking</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-10-15</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>7</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <AWARDED_TO_GROUP></AWARDED_TO_GROUP>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Stichting Pameijer</OFFICIALNAME>
+                                <TOWN>Rotterdam</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Stichting ASVZ</OFFICIALNAME>
+                                <TOWN>Sliedrecht</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">4000000</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">4000000</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="2">
+                <CONTRACT_NO>T9596 (1-D-25512-21)</CONTRACT_NO>
+                <TITLE>
+                    <P>Generalistische enkelvoudige Basis J GGZ</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>9</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <AWARDED_TO_GROUP></AWARDED_TO_GROUP>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Stichting Eleos christelijke ggz</OFFICIALNAME>
+                                <TOWN>Amersfoort</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>PKJP Praktijk voor Kinder- en Jeugdpsychiatrie B.V.</OFFICIALNAME>
+                                <TOWN>Rhoon</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>ADHD Behandelcentrum</OFFICIALNAME>
+                                <TOWN>Capelle aan den IJssel</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Stichting Fier</OFFICIALNAME>
+                                <TOWN>Leeuwarden</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Horses &amp; Co zorg en leerboerderij voor orthopedagogiek B.V.</OFFICIALNAME>
+                                <TOWN>Heerjansdam</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Mentaal Beter Cure B.V.</OFFICIALNAME>
+                                <TOWN>Hilversum</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Parnassia Groep B.V.</OFFICIALNAME>
+                                <TOWN>Den Haag</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>De Zorgstede B.V.</OFFICIALNAME>
+                                <TOWN>Gouda</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Stichting Kinderplein</OFFICIALNAME>
+                                <TOWN>Rotterdam</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">5550000</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">5550000</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Rotterdam</OFFICIALNAME>
+                    <TOWN>Rotterdam</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2022-02-03</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

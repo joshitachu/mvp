@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Vlaardingen</OFFICIALNAME>
+                    <NATIONALID>6116978</NATIONALID>
+                    <ADDRESS>Westnieuwland 6</ADDRESS>
+                    <TOWN>Vlaardingen</TOWN>
+                    <POSTAL_CODE>3131 VX</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>A.  Kouwenhoven</CONTACT_POINT>
+                    <PHONE>+31 102484000</PHONE>
+                    <E_MAIL>inkoop@vlaardingen.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.vlaardingen.nl</URL_GENERAL>
+                    <URL_BUYER>http://www.vlaardingen.nl</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Arbodienstverlening</P>
+                </TITLE>
+                <REFERENCE_NUMBER>BI.2019.570</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="85100000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Het doel van deze aanbesteding is het inkopen van effectieve arbodienstverlening  die er toe bijdragen dat het werk en de re-integratie van de medewerkers en de uitkeringsgerechtigden van de aanbestedende dienst zo weinig mogelijk wordt beperkt door medische en/of psychische klachten. Verzuim wordt door een snelle, adequate en proactieve aanpak teruggedrongen. Tevens dienen de gehanteerde instrumenten als effect een instroom beperkende en uitstroom bevorderende werking op de uitkeringsgerechtigden te hebben. Ook moet het maatwerk bieden met, waar mogelijk, als einddoel langdurige uitstroom naar reguliere arbeid.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">0.01</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="85147000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Vlaardingen</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Stroomopwaarts kent 2 doelgroepen:</P>
+                        <P>1.	Medewerkers van Stroomopwaartsmvs die in ambtelijke dienst zijn. Dit zijn ongeveer 325 medewerkers. De Opdrachtgever is de Gemeente Vlaardingen;</P>
+                        <P>2.	Medewerkers van Stroomopwaartsmvs met een indicatie voor de Sociale werkvoorziening. Dit zijn  arbeidsgehandicapten die door lichamelijke, verstandelijke of psychische beperkingen uitsluitend in staat zijn onder aangepaste omstandigheden arbeid te verrichten. Zij waren voorheen werkzaam bij de sociale werkvoorziening van de gemeenten Maassluis, Vlaardingen en Schiedam. Dit zijn ongeveer 1100 medewerkers. De Opdrachtgever is de Gemeente Vlaardingen.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>45</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Presentatie</AC_CRITERION>
+                            <AC_WEIGHTING>15</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Verlenging</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2019/S 239-586766</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Arbodienstverlening</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2020-07-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>3</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>3</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Salude Medisch Advies B.V.</OFFICIALNAME>
+                                <NATIONALID>28093959</NATIONALID>
+                                <ADDRESS>Hoofdstraat 1</ADDRESS>
+                                <TOWN>Leiderdorp</TOWN>
+                                <POSTAL_CODE>2351AA</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 715235000</PHONE>
+                                <E_MAIL>s.bartels@salude.nl</E_MAIL>
+                                <FAX>+31 713410385</FAX>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.salude.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">0.01</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Rotterdam</OFFICIALNAME>
+                    <ADDRESS>wilhelminaplein 100-125</ADDRESS>
+                    <TOWN>Rotterdam</TOWN>
+                    <POSTAL_CODE>3072 AK</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 883626000</PHONE>
+                    <E_MAIL>rechtbankrotterdam@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <REVIEW_PROCEDURE>
+                    <P>De aanbestedende dienst hanteert een vervaltermijn van 20 dagen aan het einde van de gunningfase van de aanbestedingsprocedure. Indien niet tijdig voor ommekomst van deze vervaltermijn, te rekenen vanaf de dag na de datum van verzending van de mededeling van de aanbestedende dienst ter zake het einde van de gunningfase, een kort geding aanhangig wordt gemaakt, is de desbetreffende deel-nemer niet ontvankelijk in zijn vorderingen ter zake van de afgesloten aanbestedingsprocedure.</P>
+                </REVIEW_PROCEDURE>
+                <ADDRESS_REVIEW_INFO>
+                    <OFFICIALNAME>Rechtbank Rotterdam</OFFICIALNAME>
+                    <ADDRESS>wilhelminaplein 100-125</ADDRESS>
+                    <TOWN>Rotterdam</TOWN>
+                    <POSTAL_CODE>3072 AK</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 883626000</PHONE>
+                    <E_MAIL>rechtbankrotterdam@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_INFO>
+                <DATE_DISPATCH_NOTICE>2021-02-04</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

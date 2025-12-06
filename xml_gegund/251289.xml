@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Rotterdam</OFFICIALNAME>
+                    <NATIONALID>24483298 0003</NATIONALID>
+                    <ADDRESS>Wilhelminakade 179</ADDRESS>
+                    <TOWN>Rotterdam</TOWN>
+                    <POSTAL_CODE>3002 AN</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Richard Brabers</CONTACT_POINT>
+                    <PHONE>+31 618293590</PHONE>
+                    <E_MAIL>rcj.brabers@rotterdam.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.rotterdam.nl</URL_GENERAL>
+                    <URL_BUYER>https://platform.negometrix.com/PublishedTenders.aspx?tenderid=178832</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>1-D-12279-21: Pechhulp onderweg van alle type voertuigen voor Vervoer en Materieel van de gemeente Rotterdam</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="50118000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>De onderhavige Opdracht heeft samengevat betrekking op het vinden van een leveranciers voor het verlenen van pechhulp voor alle typen voertuigen (tweewielers, personen-, bestel- en vrachtauto's, werktuigdragers en speciale voertuigen) voor Vervoer en Materieel van de gemeente Rotterdam</P>
+                    <P></P>
+                    <P>Doelstelling van deze opdracht is dat voertuigen zo snel mogelijk weer kunnen rijden of indien noodzakelijk, zo snel mogelijk naar één van de reparateurs wordt gebracht. Indien nodig en in overleg moet de Opdrachtnemer ook gelijkwaardig vervangend vervoer kunnen bieden.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1.00</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="34144220"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50100000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>De gevraagde ondersteuning zoals beschreven in deze Opdracht vindt plaats in geheel Nederland en kan ook plaatshebben in de landen, die op de groene kaart vermeld staan.</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>V&amp;M als onderdeel van Gemeente Rotterdam cluster Stadsbeheer, zorgt voor de mobiliteit van alle typen voertuigen o.a. speciale voertuigen van de Gemeente en ook van de externe klanten van V&amp;M.</P>
+                        <P></P>
+                        <P>Om de mobiliteit te kunnen garanderen hebben we ook een ‘pechhulp onderweg’ nodig voor alle typen voertuigen, die Opdrachtgever in beheer heeft. Opdrachtgever wil door een partij ontzorgd worden in het bieden van pechhulp onderweg van alle typen voertuigen.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Bruikbaarheid en gebruiksvriendelijkheid van platform en dashboard</AC_CRITERION>
+                            <AC_WEIGHTING>200</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Social Return</AC_CRITERION>
+                            <AC_WEIGHTING>100</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Nul Emissie Mobiliteit en Transport</AC_CRITERION>
+                            <AC_WEIGHTING>100</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Casus 1 - Hulpverlening</AC_CRITERION>
+                            <AC_WEIGHTING>200</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Casus 2 - Accubrand</AC_CRITERION>
+                            <AC_WEIGHTING>200</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Casus 3 - Calamiteiten</AC_CRITERION>
+                            <AC_WEIGHTING>200</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>Zie doc.</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 176-458306</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1-D-12279-21</CONTRACT_NO>
+                <TITLE>
+                    <P>Pechhulp onderweg van alle type voertuigen voor Vervoer en Materieel van de gemeente Rotterdam</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-12-21</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>3</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>VHD B.V.</OFFICIALNAME>
+                                <TOWN>Deventer</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">1.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">1.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <INFO_ADD>
+                    <P>In deze aankondiging van een gegunde opdracht is de waarde van de opdracht niet opgenomen. Bekendmaking van de waarde van de opdracht kan naar mening van de Aanbestedende Dienst de commerciële belangen van de opdrachtnemer schaden.</P>
+                </INFO_ADD>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Rotterdam</OFFICIALNAME>
+                    <TOWN>Rotterdam</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2022-02-01</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

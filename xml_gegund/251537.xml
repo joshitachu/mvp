@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Provincie Gelderland</OFFICIALNAME>
+                    <NATIONALID>51468751</NATIONALID>
+                    <ADDRESS>Markt 11</ADDRESS>
+                    <TOWN>Arnhem</TOWN>
+                    <POSTAL_CODE>6811 CG</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Jaap Römelingh</CONTACT_POINT>
+                    <PHONE>+31 263599103</PHONE>
+                    <E_MAIL>j.romelingh@gelderland.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.gelderland.nl</URL_GENERAL>
+                    <URL_BUYER>https://platform.negometrix.com/PublishedTenders.aspx?tenderid=153674</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Taxatiediensten</P>
+                </TITLE>
+                <REFERENCE_NUMBER>Zaaknummer 2020-0008470</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="79900000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Het doel was te komen tot Raamovereenkomsten met Opdrachtnemers voor het verlenen van Taxatiediensten uitgevoerd door maximaal 30 Taxateurs.</P>
+                    <P>De tender werd verdeeld in 3 Percelen:</P>
+                    <P>*Perceel A: Taxaties van de marktwaarde van objecten;</P>
+                    <P>*Perceel B: Taxaties van de volledige schadeloosstelling van objecten;</P>
+                    <P>*Perceel C: Taxaties in het kader van planschade/nadeelcompensatie.</P>
+                    <P></P>
+                    <P>De Raamovereenkomsten zijn gegund op basis van EMVI.</P>
+                    <P>Voor Perceel A betrof dit 12 (van de gewenste 12), voor Perceel B 8 (van de gewenste 12) en voor Perceel C 6 (van de gewenste 6) Taxateurs. Uiteindelijk uitkomend op 26 (van de gewenste 30) Taxateurs.</P>
+                    <P></P>
+                    <P>Provincie Gelderland wenst op een flexibele wijze de benodigde, veelal schriftelijke, Taxatiediensten (taxatierapporten, adviezen en dergelijke) van belang voor het doen van vastgoedtransacties (o.a. marktwaarde en op onteigeningsbasis), het verstrekken van subsidies en andersoortige adviezen gedurende 2 tot max. 4 jaar door Opdrachten in te vullen.</P>
+                </SHORT_DESCR>
+                <VAL_RANGE_TOTAL CURRENCY="EUR">
+                    <LOW>2500000.00</LOW>
+                    <HIGH>2750000.00</HIGH>
+                </VAL_RANGE_TOTAL>
+                <LOT_DIVISION></LOT_DIVISION>
+                <OBJECT_DESCR ITEM="1">
+                    <TITLE>
+                        <P>Taxaties van de marktwaarde van objecten</P>
+                    </TITLE>
+                    <LOT_NO>Perceel A (1 / 2 / 3)</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79900000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Provincie Gelderland</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Perceel A (1 / 2 / 3): Taxaties van de marktwaarde van objecten.</P>
+                        <P>Het betreft Taxatiediensten (taxaties of anderszins advisering) voor de marktwaarde van objecten. Taxatiediensten vinden plaats voor uiteenlopende projecten (bijvoorbeeld de realisatie van het Gelders Natuur Netwerk) en betreffen hoofdzakelijk objecten gelegen in het landelijk gebied. Taxatiediensten kunnen individueel of in commissieverband plaats vinden.</P>
+                        <P></P>
+                        <P>Het aantal Raamovereenkomsten op dit Perceel zal worden uitgevoerd door 12 van de gewenste 12 Taxateurs, voortkomend uit 8 Opdrachtnemers. </P>
+                        <P>Iedere Opdrachtnemer mocht op dit Perceel maximaal 3 Taxateurs aanbieden, die afzonderlijk van elkaar werden beoordeeld.</P>
+                        <P></P>
+                        <P>De Raamovereenkomsten zijn gegund aan de Inschrijvers die voor dit Perceel de economisch meest voordelige Inschrijving, zijnde de beste prijs-kwaliteitverhouding hadden uitgebracht voor Taxateurs.</P>
+                        <P></P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Certificaat NRVT Kamer Bedrijfsmatig Vastgoed en/of Kamer Wonen</AC_CRITERION>
+                            <AC_WEIGHTING>7%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Relvante opleiding</AC_CRITERION>
+                            <AC_WEIGHTING>3,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Relevante ervaringsjaren</AC_CRITERION>
+                            <AC_WEIGHTING>7%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Taxatiediensten i.o.v. overheid</AC_CRITERION>
+                            <AC_WEIGHTING>10,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Regionale kennis binnen provincie Gelderland</AC_CRITERION>
+                            <AC_WEIGHTING>10,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Waarborgen kwaliteit dienstverlening</AC_CRITERION>
+                            <AC_WEIGHTING>3,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Waarborgen kwaliteit dienstverlening bij ziekte</AC_CRITERION>
+                            <AC_WEIGHTING>7%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Social Return</AC_CRITERION>
+                            <AC_WEIGHTING>3,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Interview</AC_CRITERION>
+                            <AC_WEIGHTING>17,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_COST>
+                            <AC_CRITERION>Kortingspercentage (op max. tarief)</AC_CRITERION>
+                            <AC_WEIGHTING>30%</AC_WEIGHTING>
+                        </AC_COST>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>Er konden maximaal 3 Taxateurs per Inschrijver op dit Perceel worden aangeboden.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="2">
+                    <TITLE>
+                        <P>Taxaties van de volledige schadeloosstelling van objecten</P>
+                    </TITLE>
+                    <LOT_NO>Perceel B (4 / 5 / 6)</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79900000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Provincie Gelderland</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Perceel B (4 / 5 / 6): Taxaties van de volledige schadeloosstelling van objecten.</P>
+                        <P>Het betreft Taxatiediensten (taxaties of anderszins advisering) van objecten gebaseerd op de uitgangspunten van de Onteigeningswet of de daarvoor in de plaats tredende Aanvullingswet grondeigendom. Taxatiediensten vinden plaats voor uiteenlopende projecten (bijvoorbeeld de realisatie infrastructurele projecten). Taxatiediensten kunnen individueel of in commissieverband plaats vinden.</P>
+                        <P></P>
+                        <P>Het aantal Raamovereenkomsten op dit Perceel zal worden uitgevoerd door 8 van de gewenste 12 Taxateurs, voortkomend uit 5 Opdrachtnemers. </P>
+                        <P>Iedere Opdrachtnemer mocht op dit Perceel maximaal 3 Taxateurs aanbieden, die afzonderlijk van elkaar werden beoordeeld.</P>
+                        <P></P>
+                        <P>De Raamovereenkomsten zijn gegund aan de Inschrijvers die voor dit Perceel de economisch meest voordelige Inschrijving, zijnde de beste prijs-kwaliteitverhouding hadden uitgebracht voor Taxateurs.</P>
+                        <P></P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Certificaat NRVT Kamer Bedrijfsmatig Vastgoed en/of Kamer Wonen</AC_CRITERION>
+                            <AC_WEIGHTING>3,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Relvante opleiding</AC_CRITERION>
+                            <AC_WEIGHTING>3,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Relevante ervaringsjaren</AC_CRITERION>
+                            <AC_WEIGHTING>7%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Taxatiediensten i.o.v. overheid</AC_CRITERION>
+                            <AC_WEIGHTING>10,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Regionale kennis binnen provincie Gelderland</AC_CRITERION>
+                            <AC_WEIGHTING>10,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Waarborgen kwaliteit dienstverlening</AC_CRITERION>
+                            <AC_WEIGHTING>3,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Waarborgen kwaliteit dienstverlening bij ziekte</AC_CRITERION>
+                            <AC_WEIGHTING>7%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Social Return</AC_CRITERION>
+                            <AC_WEIGHTING>3,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Interview</AC_CRITERION>
+                            <AC_WEIGHTING>17,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Certificaat DOBS</AC_CRITERION>
+                            <AC_WEIGHTING>3,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_COST>
+                            <AC_CRITERION>Kortingspercentage (op max. tarief)</AC_CRITERION>
+                            <AC_WEIGHTING>30%</AC_WEIGHTING>
+                        </AC_COST>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>Er konden maximaal 3 Taxateurs per Inschrijver op dit Perceel worden aangeboden.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="3">
+                    <TITLE>
+                        <P>Taxaties in het kader van planschade/nadeelcompensatie</P>
+                    </TITLE>
+                    <LOT_NO>Perceel C (7 / 8 / 9)</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79900000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Provincie Gelderland</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Perceel C (7 / 8 / 9): Taxaties in het kader van planschade/nadeelcompensatie.</P>
+                        <P>Het betreft Taxatiediensten (taxaties of anderszins advisering) bij of vooruitlopend op de beoordeling en advisering inzake schadeclaims (o.a. planschade en nadeelcompensatie). Taxatiediensten vinden plaats voor uiteenlopende projecten (bijvoorbeeld realisatie infrastructurele (onderhouds)projecten). Taxatiediensten kunnen individueel of in commissieverband plaats vinden.</P>
+                        <P></P>
+                        <P>Het aantal Raamovereenkomsten op dit Perceel zal worden uitgevoerd door 6 van de gewenste 6 Taxateurs, voortkomend uit 5 Opdrachtnemers. </P>
+                        <P>Iedere Opdrachtnemer mocht op dit Perceel maximaal 3 Taxateurs aanbieden, die afzonderlijk van elkaar werden beoordeeld.</P>
+                        <P></P>
+                        <P>De Raamovereenkomsten zijn gegund aan de Inschrijvers die voor dit Perceel de economisch meest voordelige Inschrijving, zijnde de beste prijs-kwaliteitverhouding hadden uitgebracht voor Taxateurs.</P>
+                        <P></P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Certificaat NRVT Kamer Bedrijfsmatig Vastgoed en/of Kamer Wonen</AC_CRITERION>
+                            <AC_WEIGHTING>3,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Relvante opleiding</AC_CRITERION>
+                            <AC_WEIGHTING>3,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Relevante ervaringsjaren</AC_CRITERION>
+                            <AC_WEIGHTING>7%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Taxatiediensten i.o.v. overheid</AC_CRITERION>
+                            <AC_WEIGHTING>10,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Regionale kennis binnen provincie Gelderland</AC_CRITERION>
+                            <AC_WEIGHTING>10,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Waarborgen kwaliteit dienstverlening</AC_CRITERION>
+                            <AC_WEIGHTING>3,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Waarborgen kwaliteit dienstverlening bij ziekte</AC_CRITERION>
+                            <AC_WEIGHTING>7%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Social Return</AC_CRITERION>
+                            <AC_WEIGHTING>3,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Interview</AC_CRITERION>
+                            <AC_WEIGHTING>17,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Certificaat DOBS</AC_CRITERION>
+                            <AC_WEIGHTING>3,5%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_COST>
+                            <AC_CRITERION>Kortingspercentage (op max. tarief)</AC_CRITERION>
+                            <AC_WEIGHTING>30%</AC_WEIGHTING>
+                        </AC_COST>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>Er konden maximaal 3 Taxateurs per Inschrijver op dit Perceel worden aangeboden.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 104-274266</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1. (1 van 8) - 2 Taxateurs</CONTRACT_NO>
+                <LOT_NO>Perceel A (1 / 2 / 3)</LOT_NO>
+                <TITLE>
+                    <P>Taxatiediensten: Taxaties van de marktwaarde van objecten</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>18</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>18</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>18</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Breeschoten &amp; Vernooij B.V.</OFFICIALNAME>
+                                <ADDRESS>Brink 2</ADDRESS>
+                                <TOWN>Werkhoven</TOWN>
+                                <POSTAL_CODE>3985 SB</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 306777330</PHONE>
+                                <E_MAIL>info@breeschotenenvernooij.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>www.breeschotenenvernooij.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">234000.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>230000.00</LOW>
+                            <HIGH>240000.00</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="2">
+                <CONTRACT_NO>2. (2 van 8) - 2 Taxateurs</CONTRACT_NO>
+                <LOT_NO>Perceel A (1 / 2 / 3)</LOT_NO>
+                <TITLE>
+                    <P>Taxatiediensten: Taxaties van de marktwaarde van objecten</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>18</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>18</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>18</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>De Lorijn Raadgevers O.G.</OFFICIALNAME>
+                                <ADDRESS>Komkleiland 27</ADDRESS>
+                                <TOWN>Heteren</TOWN>
+                                <POSTAL_CODE>6666 ME</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 487512147</PHONE>
+                                <E_MAIL>raadgevers@delorijn.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>www.raadgevers.delorijn.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">234000.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>230000.00</LOW>
+                            <HIGH>240000.00</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="3">
+                <CONTRACT_NO>3. (3 van 8) - 1 Taxateur</CONTRACT_NO>
+                <LOT_NO>Perceel A (1 / 2 / 3) </LOT_NO>
+                <TITLE>
+                    <P>Taxatiediensten: Taxaties van de marktwaarde van objecten</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>18</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>18</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>18</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Rentmeesterkantoor De Veldstee</OFFICIALNAME>
+                                <ADDRESS>Veldhuizenweg 5a</ADDRESS>
+                                <TOWN>Hellendoorn</TOWN>
+                                <POSTAL_CODE>7447 PN</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 610350384</PHONE>
+                                <E_MAIL>info@develdstee.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>www.develdstee.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">117000.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>115000.00</LOW>
+                            <HIGH>120000.00</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="4">
+                <CONTRACT_NO>4. (4 van 8) - 1 Taxateur</CONTRACT_NO>
+                <LOT_NO>Perceel A (1 / 2 / 3)</LOT_NO>
+                <TITLE>
+                    <P>Taxatiediensten: Taxaties van de marktwaarde van objecten</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>18</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>18</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>18</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Grondzaken Dienstencentrum B.V </OFFICIALNAME>
+                                <ADDRESS>Rijndijk 2</ADDRESS>
+                                <TOWN>Pannerden</TOWN>
+                                <POSTAL_CODE>6911 KA</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 880902000</PHONE>
+                                <E_MAIL>info@grondzakendienstencentrum.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>www.grondzakendienstencentrum.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">117000.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>115000.00</LOW>
+                            <HIGH>120000.00</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="5">
+                <CONTRACT_NO>5. (5 van 8) - 3 Taxateurs</CONTRACT_NO>
+                <LOT_NO>Perceel A (1 / 2 / 3)</LOT_NO>
+                <TITLE>
+                    <P>Taxatiediensten: Taxaties van de marktwaarde van objecten</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>18</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>18</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>18</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Kendes Rentmeesters &amp; Adviseurs B.V.</OFFICIALNAME>
+                                <ADDRESS>Postbus 314</ADDRESS>
+                                <TOWN>Veenendaal</TOWN>
+                                <POSTAL_CODE>3900 AH</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 318582150</PHONE>
+                                <E_MAIL>aanbestedingen@kendes.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>www.kendes.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">351000.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>345000.00</LOW>
+                            <HIGH>360000.00</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="6">
+                <CONTRACT_NO>6. (6 van 8) - 1 Taxateur</CONTRACT_NO>
+                <LOT_NO>Perceel A (1 / 2 / 3)</LOT_NO>
+                <TITLE>
+                    <P>Taxatiediensten: Taxaties van de marktwaarde van objecten</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>18</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>18</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>18</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Meander Grondverwerving en Advies</OFFICIALNAME>
+                                <ADDRESS>Dorpstraat 1b</ADDRESS>
+                                <TOWN>Oeffelt</TOWN>
+                                <POSTAL_CODE>5441 AC</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 485336543</PHONE>
+                                <E_MAIL>oeffelt@meanderbv.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>www.meanderbv.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">117000.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>115000.00</LOW>
+                            <HIGH>120000.00</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="7">
+                <CONTRACT_NO>7. (7 van 8) - 1 Taxateur</CONTRACT_NO>
+                <LOT_NO>Perceel A (1 / 2 / 3)</LOT_NO>
+                <TITLE>
+                    <P>Taxatiediensten: Taxaties van de marktwaarde van objecten</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>18</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>18</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>18</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Nomis Advies</OFFICIALNAME>
+                                <ADDRESS>Raalterstraat 26</ADDRESS>
+                                <TOWN>Heino</TOWN>
+                                <POSTAL_CODE>8141 RM</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 648504802</PHONE>
+                                <E_MAIL>info@nomisadvies.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>www.nomisadvies.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">117000.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>115000.00</LOW>
+                            <HIGH>120000.00</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="8">
+                <CONTRACT_NO>8. (8 van 8) - 1 Taxateur</CONTRACT_NO>
+                <LOT_NO>Perceel A (1 / 2 / 3)</LOT_NO>
+                <TITLE>
+                    <P>Taxatiediensten: Taxaties van de marktwaarde van objecten</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>18</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>18</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>18</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Van Ameyde Waarderingen</OFFICIALNAME>
+                                <ADDRESS>Meander 651</ADDRESS>
+                                <TOWN>Arnhem</TOWN>
+                                <POSTAL_CODE>6825 ME</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 263521830</PHONE>
+                                <E_MAIL>waarderingen@vanameyde.com</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>www.vanameydewaarderingen.com</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">117000.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>115000.00</LOW>
+                            <HIGH>120000.00</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="9">
+                <CONTRACT_NO>9. (1 van 5) - 1 Taxateur</CONTRACT_NO>
+                <LOT_NO>Perceel B (4 / 5 / 6)</LOT_NO>
+                <TITLE>
+                    <P>Taxatiediensten: Taxaties van de volledige schadeloosstelling van objecten</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>14</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>14</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>14</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Breeschoten &amp; Vernooij B.V.</OFFICIALNAME>
+                                <ADDRESS>Brink 2</ADDRESS>
+                                <TOWN>Werkhoven</TOWN>
+                                <POSTAL_CODE>3985 SB</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 306777330</PHONE>
+                                <E_MAIL>info@breeschotenenvernooij.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>www.breeschotenenvernooij.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">112500.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>111000.00</LOW>
+                            <HIGH>114000.00</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="10">
+                <CONTRACT_NO>10. (2 van 5) - 1 Taxateur</CONTRACT_NO>
+                <LOT_NO>Perceel B (4 / 5 / 6)</LOT_NO>
+                <TITLE>
+                    <P>Taxatiediensten: Taxaties van de volledige schadeloosstelling van objecten</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>14</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>14</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>14</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>De Lorijn Raadgevers O.G.</OFFICIALNAME>
+                                <ADDRESS>Komkleiland 27</ADDRESS>
+                                <TOWN>Heteren</TOWN>
+                                <POSTAL_CODE>6666 ME</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 487512147</PHONE>
+                                <E_MAIL>raadgevers@delorijn.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>www.raadgevers.delorijn.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">112500.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>111000.00</LOW>
+                            <HIGH>114000.00</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="11">
+                <CONTRACT_NO>11. (3 van 5) - 1 Taxateur</CONTRACT_NO>
+                <LOT_NO>Perceel B (4 / 5 / 6)</LOT_NO>
+                <TITLE>
+                    <P>Taxatiediensten: Taxaties van de volledige schadeloosstelling van objecten</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>14</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>14</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>14</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Grondzaken Dienstencentrum B.V </OFFICIALNAME>
+                                <ADDRESS>Rijndijk 2</ADDRESS>
+                                <TOWN>Pannerden</TOWN>
+                                <POSTAL_CODE>6911 KA</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 880902000</PHONE>
+                                <E_MAIL>info@grondzakendienstencentrum.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>www.grondzakendienstencentrum.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">112500.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>111000.00</LOW>
+                            <HIGH>114000.00</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="12">
+                <CONTRACT_NO>12. (4 van 5) - 3 Taxateurs</CONTRACT_NO>
+                <LOT_NO>Perceel B (4 / 5 / 6)</LOT_NO>
+                <TITLE>
+                    <P>Taxatiediensten: Taxaties van de volledige schadeloosstelling van objecten</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>14</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>14</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>14</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Kendes Rentmeesters &amp; Adviseurs B.V.</OFFICIALNAME>
+                                <ADDRESS>Postbus 314</ADDRESS>
+                                <TOWN>Veenendaal</TOWN>
+                                <POSTAL_CODE>3900 AH</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 318582150</PHONE>
+                                <E_MAIL>aanbestedingen@kendes.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>www.kendes.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">337500.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>333000.00</LOW>
+                            <HIGH>342000.00</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="13">
+                <CONTRACT_NO>13. (5 van 5) - 2 Taxateurs</CONTRACT_NO>
+                <LOT_NO>Perceel B (4 / 5 / 6)</LOT_NO>
+                <TITLE>
+                    <P>Taxatiediensten: Taxaties van de volledige schadeloosstelling van objecten</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>14</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>14</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>14</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Van Ameyde Waarderingen</OFFICIALNAME>
+                                <ADDRESS>Meander 651</ADDRESS>
+                                <TOWN>Arnhem</TOWN>
+                                <POSTAL_CODE>6825 ME</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 263521830</PHONE>
+                                <E_MAIL>waarderingen@vanameyde.com</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>www.vanameydewaarderingen.com</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">225000.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>222000.00</LOW>
+                            <HIGH>228000.00</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="14">
+                <CONTRACT_NO>14. (1 van 5) - 1 Taxateur</CONTRACT_NO>
+                <LOT_NO>Perceel C (7 / 8 / 9)</LOT_NO>
+                <TITLE>
+                    <P>Taxatiediensten: Taxaties in het kader van planschade/nadeelcompensatie</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>9</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>9</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>9</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Aelmans Rentmeesters- en Makelaarskantoor B.V.</OFFICIALNAME>
+                                <ADDRESS>Kerkstraat 4</ADDRESS>
+                                <TOWN>Voerendaal</TOWN>
+                                <POSTAL_CODE>6367 JE</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 455753255</PHONE>
+                                <E_MAIL>info@aelmans.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>www.aelmans.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">33500.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>33000.00</LOW>
+                            <HIGH>34000.00</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="15">
+                <CONTRACT_NO>15. (2 van 5) - 1 Taxateur</CONTRACT_NO>
+                <LOT_NO>Perceel C (7 / 8 / 9)</LOT_NO>
+                <TITLE>
+                    <P>Taxatiediensten: Taxaties in het kader van planschade/nadeelcompensatie</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>9</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>9</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>9</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>De Lorijn Raadgevers O.G.</OFFICIALNAME>
+                                <ADDRESS>Komkleiland 27</ADDRESS>
+                                <TOWN>Heteren</TOWN>
+                                <POSTAL_CODE>6666 ME</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 487512147</PHONE>
+                                <E_MAIL>raadgevers@delorijn.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>www.raadgevers.delorijn.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">33500.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>33000.00</LOW>
+                            <HIGH>34000.00</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="16">
+                <CONTRACT_NO>16. (3 van 5) - 1 Taxateur</CONTRACT_NO>
+                <LOT_NO>Perceel C (7 / 8 / 9)</LOT_NO>
+                <TITLE>
+                    <P>Taxatiediensten: Taxaties in het kader van planschade/nadeelcompensatie</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>9</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>9</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>9</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Kendes Rentmeesters &amp; Adviseurs B.V.</OFFICIALNAME>
+                                <ADDRESS>Postbus 314</ADDRESS>
+                                <TOWN>Veenendaal</TOWN>
+                                <POSTAL_CODE>3900 AH</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 318582150</PHONE>
+                                <E_MAIL>aanbestedingen@kendes.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>www.kendes.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">33500.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>33000.00</LOW>
+                            <HIGH>34000.00</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="17">
+                <CONTRACT_NO>17. (4 van 5) - 1 Taxateur</CONTRACT_NO>
+                <LOT_NO>Perceel C (7 / 8 / 9)</LOT_NO>
+                <TITLE>
+                    <P>Taxatiediensten: Taxaties in het kader van planschade/nadeelcompensatie</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>9</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>9</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>9</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Nomis Advies</OFFICIALNAME>
+                                <ADDRESS>Raalterstraat 26</ADDRESS>
+                                <TOWN>Heino</TOWN>
+                                <POSTAL_CODE>8141 RM</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 648504802</PHONE>
+                                <E_MAIL>info@nomisadvies.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>www.nomisadvies.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">33500.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>33000.00</LOW>
+                            <HIGH>34000.00</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="18">
+                <CONTRACT_NO>18. (5 van 5) - 2 Taxateurs</CONTRACT_NO>
+                <LOT_NO>Perceel C (7 / 8 / 9)</LOT_NO>
+                <TITLE>
+                    <P>Taxatiediensten: Taxaties in het kader van planschade/nadeelcompensatie</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>9</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>9</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>9</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Van Ameyde Waarderingen</OFFICIALNAME>
+                                <ADDRESS>Meander 651</ADDRESS>
+                                <TOWN>Arnhem</TOWN>
+                                <POSTAL_CODE>6825 ME</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 263521830</PHONE>
+                                <E_MAIL>waarderingen@vanameyde.com</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>www.vanameydewaarderingen.com</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">67000.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_RANGE_TOTAL CURRENCY="EUR">
+                            <LOW>66000.00</LOW>
+                            <HIGH>68000.00</HIGH>
+                        </VAL_RANGE_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <INFO_ADD>
+                    <P>Deze aanbesteding verliep volledig via het elektronisch aanbestedingsplatform van Negometrix, dat te bereiken was via www.negometrix.com. Na kosteloze registratie op Negometrix kon men toegang krijgen tot de relevante informatie van deze aanbesteding.</P>
+                    <P>De benoemde bedragen onder II.1.7) en V.2.4) zijn de geraamde bedragen over vier jaar.</P>
+                    <P>De geraamde bedragen onder V.2.4) zijn gebaseerd op een gelijke verdeling onder de Taxateurs van het desbetreffende Perceel. Echter, ten gevolge van de gunning van 1, 2 of 3 Taxateurs van een Opdrachtnemer binnen een Perceel zijn de geraamde bedragen per Opdrachtnemer en per Perceel verschillend.</P>
+                </INFO_ADD>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Gelderland</OFFICIALNAME>
+                    <ADDRESS>Walburgstraat 2-4</ADDRESS>
+                    <TOWN>Arnhem</TOWN>
+                    <POSTAL_CODE>6811 CD</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <REVIEW_PROCEDURE>
+                    <P>20 kalenderdagen na dagtekening van de bekendmaking van de gunningsbeslissing aan de inschrijvers.</P>
+                </REVIEW_PROCEDURE>
+                <DATE_DISPATCH_NOTICE>2022-02-03</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Werkorganisatie CGM</OFFICIALNAME>
+                    <NATIONALID>12345678</NATIONALID>
+                    <ADDRESS>Louis Jansenplein 1 </ADDRESS>
+                    <TOWN>Cuijk, Grave en Mill</TOWN>
+                    <POSTAL_CODE>5431BV</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Mevrouw Janneke  Vermeulen</CONTACT_POINT>
+                    <PHONE>+31 485396600</PHONE>
+                    <E_MAIL>info@cmg.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://inhuurdesk.werkeninnoordoostbrabant.nl</URL_GENERAL>
+                    <URL_BUYER>http://inhuurdesk.werkeninnoordoostbrabant.nl</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Archeoloog</P>
+                </TITLE>
+                <REFERENCE_NUMBER>TSF_5250</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="79000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Werken voor de Werkorganisatie CGM betekent werken voor drie gemeenten: Cuijk, Grave en Mill en Sint Hubert. Drie zelfstandige gemeenten, elk met een eigen dynamiek en ambitie. Gelegen in het noordoosten van Brabant, een streek die bekend staat om z?n gemoedelijkheid en gastvrijheid.     Een goede dienstverlening aan de 48.000 inwoners van de drie gemeenten staat voorop. Bij CGM werken we met ruim 350 medewerkers samen om de ambities van de drie gemeenten waar te maken.   We gaan samen vooruit door integraal te werken, eigenaarschap te tonen en te werken in een sterk netwerk.  We zijn flexibel, vertrouwen elkaar, werken samen en doen!     Naast de dienstverlening aan de drie gemeenten, werken we aan de vorming van ??n gemeente Land van Cuijk, die 1 januari 2022 een feit zal zijn.    Voor ons team Ruimtelijk Beleid, afdeling Publiek, zoeken wij een    Archeoloog gemeente Cuijk  &amp;nbsp;( 15 uur per week, 0,4 FTE)    Team Ruimtelijke Beleid   Het team Ruimtelijk Beleid zorgt voor beleidsvorming en het opstellen van plannen en programma?s op het gebied van stedenbouw, ruimtelijk ordening, archeologie, erfgoed en monumenten, economische zaken, recreatie en toerisme, volkshuisvesting, milieu&amp;amp; duurzaamheid en de voorbereiding en uitvoering van ruimtelijke projecten.    De uitdaging in deze functie   Als gemeentelijk archeoloog geef je vorm aan het beheer en behoud van het archeologisch erfgoed van Cuijk en zet je je in voor een zo breed mogelijke ontsluiting van dat erfgoed. De gemeente Cuijk wil zich met haar Romeinse Verleden op de kaart zetten. Een uitgelezen kans om daarin op archeologie-gebied te adviseren.&amp;nbsp; Binnen de gemeentelijke organisatie ben je het eerste aanspreekpunt op dit werkveld. Namens de gemeente bepaal je of - en zo ja in welke vorm - archeologisch onderzoek noodzakelijk is. Je hebt een adviesrol in projecten.    Als archeoloog verricht je de volgende werkzaamheden:  ?&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Je stelt beleid op met betrekking tot het archeologisch erfgoed van de gemeente.  ?&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Je adviseert over (bouw) plannen.  ?&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Je beoordeelt archeologische onderzoeksrapporten en selectieadviezen van onderzoeksbureaus; Je stelt zelf PvE?s op of beoordeelt PvE?s en PvA?s van gekwalificeerde bureaus.   ?&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Je hebt nauw contact met de lokale amateurarcheologen van de Werkgroep Archeologie Cuijk.  ?&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Je werkt aan een goede ontsluiting van de in de gemeente opgegraven vondsten. Ook besteed je aandacht aan voorlichting over archeologie, bijv. middels publicaties in de (lokale) pers over erfgoed.  ?&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Je informeert en adviseert het bestuur.  ?&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Je neemt deel aan projecten die gericht zijn op ruimtelijke ontwikkeling en werkt constructief samen met beleidsmedewerkers op het gebied van ruimte, erfgoed, toerisme en cultuur.  ?&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Je participeert in lokale en regionale project- en werkgroepen.&amp;nbsp;</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Cuijk</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>De waarde van de opdracht is onbekend</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>75</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>25</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2018/S 092-208434</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Archeoloog</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-02</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>6</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>6</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>VUhbs archeologie</OFFICIALNAME>
+                                <ADDRESS>De Boelelaan 1105 </ADDRESS>
+                                <TOWN>Amsterdam</TOWN>
+                                <POSTAL_CODE>1082HV</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 205986516</PHONE>
+                                <E_MAIL>info@vuhbs.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Werkorganisatie CGM</OFFICIALNAME>
+                    <ADDRESS>Louis Jansenplein 1 </ADDRESS>
+                    <TOWN>Cuijk, Grave en Mill</TOWN>
+                    <POSTAL_CODE>5431BV</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 485396600</PHONE>
+                    <E_MAIL>info@cmg.nl</E_MAIL>
+                    <URL>http://loket.cgm.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2018-11-23</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

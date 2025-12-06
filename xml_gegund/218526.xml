@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Werkorganisatie CGM</OFFICIALNAME>
+                    <NATIONALID>12345678</NATIONALID>
+                    <ADDRESS>Louis Jansenplein 1 </ADDRESS>
+                    <TOWN>Cuijk, Grave en Mill</TOWN>
+                    <POSTAL_CODE>5431BV</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>De heer Bram  Bouwman</CONTACT_POINT>
+                    <PHONE>+31 485396600</PHONE>
+                    <E_MAIL>info@cmg.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://inhuurdesk.werkeninnoordoostbrabant.nl</URL_GENERAL>
+                    <URL_BUYER>http://inhuurdesk.werkeninnoordoostbrabant.nl</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Inhuur co?rdinator P&amp;C cyclus </P>
+                </TITLE>
+                <REFERENCE_NUMBER>TSF_5264</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="66000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Wij zoeken een proactieve collega die met financi?le deskundigheid klantgericht kan adviseren en de werkzaamheden kan organiseren en uitvoeren. Je klanten zijn de colleges van de drie gemeenten. Jij bent een spil tussen het bestuur en organisatie, die adviseert bij financi?le vraagstukken, een stevige trekkersrol inkleurt bij de planning &amp;amp; control cyclus en vanuit je senioriteit de budgethouders gevraagd en ongevraagd faciliteert bij het realiseren van de P&amp;amp;C-cyclus. Je bent (bestuurlijk) sensitief en hebt een goed gevoel voor bestuurlijke verhoudingen en je kunt tegelijkertijd je rug rechthouden. Belangrijk is dat je over de grenzen van je werk kunt denken en kijken en dat je dit kunt vertalen naar de facilitering van het team Financi?n. Je beschikt over uitstekende mondelinge en schriftelijke vaardigheden en bent een echte teamspeler.   Kennis van gemeentelijke financi?n is een must, omdat je naast het adviseurschap samen met je collega?s aan de lat staat voor de producten van het team, die de klanten wensen. &amp;nbsp;</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="66000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Grave</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>De waarde van de opdracht is onbekend</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>80</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>20</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2018/S 092-208434</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Inhuur co?rdinator P&amp;C cyclus </P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-02</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>14</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>14</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>NCOD</OFFICIALNAME>
+                                <ADDRESS>Lieve Vrouwekerkhof 7 </ADDRESS>
+                                <TOWN>Amersfoort</TOWN>
+                                <POSTAL_CODE>3811BS</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 859020530</PHONE>
+                                <E_MAIL>ab-fb@ncod.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Werkorganisatie CGM</OFFICIALNAME>
+                    <ADDRESS>Louis Jansenplein 1 </ADDRESS>
+                    <TOWN>Cuijk, Grave en Mill</TOWN>
+                    <POSTAL_CODE>5431BV</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 485396600</PHONE>
+                    <E_MAIL>info@cmg.nl</E_MAIL>
+                    <URL>http://loket.cgm.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2018-11-23</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

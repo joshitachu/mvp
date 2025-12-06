@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Stichting Openbaar Voortgezet Onderwijs Tiel.</OFFICIALNAME>
+                    <NATIONALID>n.v.t.</NATIONALID>
+                    <ADDRESS>Teisterbantlaan 2</ADDRESS>
+                    <TOWN>Tiel</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Arno Harbers</CONTACT_POINT>
+                    <PHONE>+31 620061301</PHONE>
+                    <E_MAIL>aharbers@pro-mereor.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>www.pro-mereor.nl</URL_GENERAL>
+                    <URL_BUYER>www.pro-mereor.nl</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="EDUCATION"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Europese aanbesteding onderwijsmeubilair</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="39160000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SUPPLIES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Het doel van de Aanbestedende dienst is het selecteren en contracteren van één (1) Inschrijver voor een projectlevering (eenmalige levering) van onderwijsmeubilair inclusief aanverwante dienstverlening. Aanbestedende dienst heeft ten behoeve van het laten uitvoeren van onderhoud en/of reparaties optioneel de mogelijkheid de Overeenkomst te laten voortduren en een éénzijdige, optionele verlengingsmogelijkheid van tien (10) keer één (1) jaar.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>Het doel van de Aanbestedende dienst is het selecteren en contracteren van één (1) Inschrijver voor een projectlevering (eenmalige levering) van onderwijsmeubilair inclusief aanverwante dienstverlening.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Onderhoud en reparaties van het onderwijsmeubilair gedurende tien (10) jaar.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 225-552859</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>n.v.t.</CONTRACT_NO>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-03</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>3</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>3</NB_TENDERS_RECEIVED_SME>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>EromesMarko B.V.</OFFICIALNAME>
+                                <NATIONALID>10002804</NATIONALID>
+                                <ADDRESS>Nieuweweg 240</ADDRESS>
+                                <TOWN>Wijchen</TOWN>
+                                <POSTAL_CODE>6603BV</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">174962.10</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Den Haag</OFFICIALNAME>
+                    <TOWN>Den Haag</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-04</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

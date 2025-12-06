@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Amersfoort</OFFICIALNAME>
+                    <NATIONALID>451541026</NATIONALID>
+                    <ADDRESS>Stadhuisplein 1</ADDRESS>
+                    <TOWN>Amersfoort</TOWN>
+                    <POSTAL_CODE>3811 LM</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Irene van de Veen</CONTACT_POINT>
+                    <PHONE>+31 334695111</PHONE>
+                    <E_MAIL>aanbestedingen@amersfoort.nl</E_MAIL>
+                    <FAX>+31 334695468</FAX>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.amersfoort.nl</URL_GENERAL>
+                    <URL_BUYER>http://www.amersfoort.nl/aanbestedingen</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Reconstructie Zevenhuizerstraat Hamseweg</P>
+                </TITLE>
+                <REFERENCE_NUMBER>2529-SL</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="45232400"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="WORKS"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>De uitvoering van het project omvat op hoofdlijnen de volgende werkzaamheden:</P>
+                    <P></P>
+                    <P>Zevenhuizerstraat:</P>
+                    <P>•	Aanleggen infiltratie hemelwaterriool;</P>
+                    <P>•	Uitvoeren van grondwerk;</P>
+                    <P>•	Opbreken en afvoeren bestaande verhardingen van asfalt en tegels;</P>
+                    <P>•	Aanleggen nieuwe trottoirs;</P>
+                    <P>•	Aanleggen nieuwe asfaltweg in stil asfalt;</P>
+                    <P>•	Aanpassen bestaande verlichting;</P>
+                    <P>•	Aanleg van groen.</P>
+                    <P></P>
+                    <P>Hamseweg:</P>
+                    <P>•	Aanleggen infiltratie hemelwaterriool en gemengd riool;</P>
+                    <P>•	Uitvoeren van grondwerk;</P>
+                    <P>•	Opbreken en afvoeren bestaande verhardingen van asfalt en tegels;</P>
+                    <P>•	Aanleggen van een nieuw verblijfsgebied in geluidreducerende betonstraatstenen;</P>
+                    <P>•	Aanleggen nieuwe asfaltweg;</P>
+                    <P>•	Aanleggen nieuwe openbaar verlichting;</P>
+                    <P>•	Aanleg van groen.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">2546000.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45233220"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Amersfoort</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Zie aanbestedingsleidraad.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit (plan van aanpak)</AC_CRITERION>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>60</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_RESTRICTED></PT_RESTRICTED>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Reconstructie Zevenhuizerstraat Hamseweg</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-01-19</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>4</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>4</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Van Schoonhoven Infra B.V.</OFFICIALNAME>
+                                <NATIONALID>32108849</NATIONALID>
+                                <ADDRESS>Ambachtsweg 1</ADDRESS>
+                                <TOWN>LEUSDEN</TOWN>
+                                <POSTAL_CODE>3831KA</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 334941538</PHONE>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.vanschoonhoveninfra.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">2546000.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Midden Nederland</OFFICIALNAME>
+                    <TOWN>Utrecht</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 883620000</PHONE>
+                    <E_MAIL>m-nederland@rechtspraak.nl</E_MAIL>
+                    <FAX>+31 302233049</FAX>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-04</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Contractables</OFFICIALNAME>
+                    <NATIONALID>61870064</NATIONALID>
+                    <ADDRESS>Rooiseweg 125481 SJ SchijndelT: (085) 021 20 81E: info@contractables.nl</ADDRESS>
+                    <TOWN>Schijndel</TOWN>
+                    <POSTAL_CODE>5481 SJ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Nick Vogels</CONTACT_POINT>
+                    <PHONE>+31 0850212081</PHONE>
+                    <E_MAIL>n.vogels@contractables.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.contractables.nl</URL_GENERAL>
+                    <URL_BUYER>https://platform.negometrix.com/PublishedTenders.aspx?tenderid=162708</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="EDUCATION"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>EA levensmiddelen CVO groep Zuidoost Utrecht</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="15800000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SUPPLIES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Aanbestedende dienst</P>
+                    <P>De CVO Groep (CVO Groep) Zuidoost Utrecht is een open christelijke scholengroep voor praktijkonderwijs, lwoo, vmbo, havo, atheneum, gymnasium en tweetalig vwo. De groep bestaat uit zes zelfstandige scholen:</P>
+                    <P>  Christelijk College ZeistChristelijk Lyceum ZeistSeyster CollegeRevius Lyceum DoornRevius Lyceum Wijk bij DuurstedeBeukenrode Onderwijs</P>
+                    <P>Rechtstreeks onder het College van Bestuur valt het centraal bureau van de CVO Groep. </P>
+                    <P></P>
+                    <P>Aan te besteden opdracht</P>
+                    <P>De aan te besteden opdracht wordt als volgt gedefinieerd: het op afroep leveren van levensmiddelen. De doelstelling van de aan te besteden opdracht is het voorzien in levensmiddelen ten behoeve van CVO-Groep. De omvang van de opdracht is circa € 120.000 per jaar, inclusief BTW. Daarmee wordt de Europese aanbestedingsgrens overschreden. </P>
+                    <P> </P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">120000.00</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="85312200"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Zeist</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P> Aan te besteden opdracht</P>
+                        <P>De aan te besteden opdracht wordt als volgt gedefinieerd: het op afroep leveren van levensmiddelen.</P>
+                        <P></P>
+                        <P>Doelstelling van de opdracht</P>
+                        <P>De doelstelling van de aan te besteden opdracht is het voorzien in levensmiddelen ten behoeve van onder CVO-Groep vallende scholen.</P>
+                        <P></P>
+                        <P>Omvang van de opdracht</P>
+                        <P>De omvang van de opdracht is circa € 120.000 per jaar, exclusief BTW. Daarmee wordt de Europese aanbestedingsgrens overschreden. </P>
+                        <P></P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_COST>
+                            <AC_CRITERION>prijs</AC_CRITERION>
+                            <AC_WEIGHTING>60</AC_WEIGHTING>
+                        </AC_COST>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <NO_CONTRACT_COVERED_GPA></NO_CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 225-552823</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <LOT_NO>1</LOT_NO>
+                <TITLE>
+                    <P>Openbare Europese aanbesteding leermiddelen voor stichting CPOB</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-05</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>2</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Langerak de Jong</OFFICIALNAME>
+                                <TOWN>Zoetermeer</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">480000.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank oost Brabant</OFFICIALNAME>
+                    <TOWN>s-Hertogenbosch</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-05</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Technische Universiteit Eindhoven</OFFICIALNAME>
+                    <NATIONALID>17100341</NATIONALID>
+                    <ADDRESS>Postbus 513</ADDRESS>
+                    <TOWN>Eindhoven</TOWN>
+                    <POSTAL_CODE>5600 MB</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Jeroen Zegveld</CONTACT_POINT>
+                    <PHONE>+31 402478830</PHONE>
+                    <E_MAIL>inkoop@tue.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.tue.nl</URL_GENERAL>
+                    <URL_BUYER>https://platform.negometrix.com/PublishedTenders.aspx?tenderid=162185</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="EDUCATION"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Raamovereenkomst Administratieve ondersteuning Education and Student Affairs</P>
+                </TITLE>
+                <REFERENCE_NUMBER>FMC2020/1867922</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="79000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>De TU/e wil een flexibele schil opbouwen om uitval bij ziekte en pieken in werkbelasting op te kunnen vangen. Om deze reden wil zij een raamovereenkomst sluiten met één Opdrachtnemer voor het leveren van tijdelijk personeel op het gebied van administratieve - en logistieke ondersteuning. Hierbij moet gedacht worden aan functies als secretaris examencommissies of medewerker studentenzaken.</P>
+                    <P></P>
+                    <P>De Opdrachtgever is op zoek naar een Opdrachtnemer welke de werving van het personeel uitvoert voor de Opdrachtgever en na selectie van de kandidaat door de Opdrachtgever, ook de payrollwerkzaamheden uitvoert. De geselecteerde kandidaat blijft in dienst van Opdrachtnemer. De Opdrachtnemer is daarbij volledig verantwoordelijk voor alle sociale en wettelijke lasten met betrekking tot de kandidaat.</P>
+                    <P>De werkzaamheden door de geselecteerde kandidaat worden onder leiding en toezicht van de Opdrachtgever uitgevoerd.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1.00</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="80000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>De TU/e wil een flexibele schil opbouwen om uitval bij ziekte en pieken in werkbelasting op te kunnen vangen. Om deze reden wil zij een raamovereenkomst sluiten met één Opdrachtnemer voor het leveren van tijdelijk personeel op het gebied van administratieve - en logistieke ondersteuning. Hierbij moet gedacht worden aan functies als secretaris examencommissies of medewerker studentenzaken.</P>
+                        <P></P>
+                        <P>De Opdrachtgever is op zoek naar een Opdrachtnemer welke de werving van het personeel uitvoert voor de Opdrachtgever en na selectie van de kandidaat door de Opdrachtgever, ook de payrollwerkzaamheden uitvoert. De geselecteerde kandidaat blijft in dienst van Opdrachtnemer. De Opdrachtnemer is daarbij volledig verantwoordelijk voor alle sociale en wettelijke lasten met betrekking tot de kandidaat.</P>
+                        <P>De werkzaamheden door de geselecteerde kandidaat worden onder leiding en toezicht van de Opdrachtgever uitgevoerd.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Borging kwaliteit kandidaten</AC_CRITERION>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Opleiding medewerkers</AC_CRITERION>
+                            <AC_WEIGHTING>20</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 208-508152</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Raamovereenkomst Administratieve ondersteuning Education and Student Affairs</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2020-12-15</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>1</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>1</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>1</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Omix Interim Professionals BV</OFFICIALNAME>
+                                <TOWN>Deventer</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">1.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">1.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank te Oost-Brabant</OFFICIALNAME>
+                    <TOWN>Den Bosch</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-01</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

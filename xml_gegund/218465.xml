@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Quo Vadis. Stichting voor interconfessioneel (k/pc), katholiek en protestants-christelijk basis- en speciaal onderwijs</OFFICIALNAME>
+                    <NATIONALID>141566897</NATIONALID>
+                    <ADDRESS>Bosanemoon 30</ADDRESS>
+                    <TOWN>DEVENTER</TOWN>
+                    <POSTAL_CODE>7422 NW</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Inkoop  Meesters</CONTACT_POINT>
+                    <PHONE>+31 413745084</PHONE>
+                    <E_MAIL>post@inkoopmeesters.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.varietas.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="EDUCATION"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Multifunctionals</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="30232100"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SUPPLIES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>De aan te besteden opdracht wordt als volgt gedefinieerd:</P>
+                    <P>-	Het leveren, installeren, implementeren en onderhouden van apparatuur om afdrukken te realiseren.</P>
+                    <P>-	Het leveren van service en onderhoud op de multifunctionals.</P>
+                    <P>•	Het leveren van verbruiksartikelen zoals nietjes en inkt etc.</P>
+                    <P>-	Optioneel: het leveren van papier.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">415798.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL212"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Deventer</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Het afdrukvolume was in 2019 circa 3.500.000. Het afdrukvolume was de afgelopen jaren licht dalend. Stichting Varietas wenst een overeenkomst te sluiten voor een periode van 3 jaar. Het is mogelijk de overeenkomst 1 keer te verlengen met 3 jaar. In deze periode kan voor een vast bedrag per maand per apparaat, onbeperkt worden geprint, gekopieerd en gescand.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>60</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 163-396073</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Multifunctionals</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-01-06</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>4</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>4</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Canon Nederland N.V.</OFFICIALNAME>
+                                <NATIONALID>34045532</NATIONALID>
+                                <ADDRESS>Brabantlaan 2</ADDRESS>
+                                <TOWN>'s Hertogenbosch</TOWN>
+                                <POSTAL_CODE>5216TV</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 736815815</PHONE>
+                                <E_MAIL>Bidcenter@canon.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.canon.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">415798.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Overijssel</OFFICIALNAME>
+                    <TOWN>Zwolle</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>kanton-zwolle@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-02</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

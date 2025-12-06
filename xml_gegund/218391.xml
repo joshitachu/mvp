@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F21_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F21">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <NOTICE TYPE="AWARD_CONTRACT"></NOTICE>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Alkmaar</OFFICIALNAME>
+                    <NATIONALID>22159309</NATIONALID>
+                    <ADDRESS>Langestraat 97</ADDRESS>
+                    <TOWN>ALKMAAR</TOWN>
+                    <POSTAL_CODE>1811JD</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Dennis  Bruijn</CONTACT_POINT>
+                    <PHONE>+31 725488888</PHONE>
+                    <E_MAIL>post@alkmaar.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.alkmaar.nl</URL_GENERAL>
+                    <URL_BUYER>http://www.alkmaar.nl</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT ITEM="1">
+                <TITLE>
+                    <P>Wmo-vervoer 1 april 2021 - 31 maart 2023 (2024, 2025)</P>
+                </TITLE>
+                <REFERENCE_NUMBER>20200603-01</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="60120000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>De gemeenten Alkmaar, Bergen (NH), Castricum, Heerhugowaard, Heiloo, Langedijk en Uitgeest organiseren samen de inkoop van Wmo Vervoer voor de periode van 1 april 2021- 31 maart 2023 vanuit het samenwerkingsverband van Regio Alkmaar e.o. Deze gemeenten zijn opdrachtgever van deze inkoop.</P>
+                    <P>De gemeente Alkmaar is penvoerder voor deze inkoop namens de zeven samenwerkende gemeenten. De bijbehorende Offerteaanvraag beschrijft de uitgangspunten en randvoorwaarden waaronder de gemeenten vanaf 1 april 2021 een inkooprelatie met de vervoerder willen aangaan.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">0.01</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>Zie bijbehorende Offerteaanvraag, paragraaf 3.3.</P>
+                    </SHORT_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <MAIN_FEATURES_AWARD>
+                    <P>Voor de gunningsprocedure wordt verwezen naar de bijbehorende Offerteaanvraag, paragrafen 2.3.7 en 2.3.8.</P>
+                </MAIN_FEATURES_AWARD>
+                <NOTICE_NUMBER_OJ>2020/S 108-262914</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Wmo-vervoer 1 april 2021 - 31 maart 2023 (2024, 2025)</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2020-10-26</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>8</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>8</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Munckhof Taxi B.V.</OFFICIALNAME>
+                                <NATIONALID>12035574</NATIONALID>
+                                <ADDRESS>Handelstraat 15</ADDRESS>
+                                <TOWN>HORST</TOWN>
+                                <POSTAL_CODE>5961PV</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 773978800</PHONE>
+                                <E_MAIL>aanbestedingen@munckhof.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.munckhof.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                        </CONTRACTOR>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">0.01</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">0.01</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <DATE_DISPATCH_NOTICE>2021-02-01</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F21_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Alliantie Voortgezet Onderwijs</OFFICIALNAME>
+                    <TOWN>Nijmegen</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>L.Nuijten@maaswaalcollege.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.alliantieVO.nl</URL_GENERAL>
+                    <URL_BUYER>https://platform.negometrix.com/PublishedTenders.aspx?tenderid=159607</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY_ADDITIONAL>
+                    <OFFICIALNAME>Scholengroep Rijk van Nijmegen</OFFICIALNAME>
+                    <TOWN>Nijmegen</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>e.loermans@kandinskymolenhoek.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.sgrvn.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY_ADDITIONAL>
+                <JOINT_PROCUREMENT_INVOLVED></JOINT_PROCUREMENT_INVOLVED>
+                <PROCUREMENT_LAW>
+                    <P>NL</P>
+                </PROCUREMENT_LAW>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="EDUCATION"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Europese aanbesteding Afvalinzameling en verwerking tbv de Scholengroepen Rijk van Nijmegen en Alliantie Voortgezet Onderwijs</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="90000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Aanbesteding Afval van de twee scholen organisaties, nl: De Alliantie Voortgezet onderwijs met 7 scholen verspreid over 13 locaties in Nijmegen en het land van Maas en WaalScholengroep Rijk van Nijmegen 7 scholen verspreid over 8 locaties in Nijmegen en omliggende gemeentenbetreffende de Europese Aanbesteding voor het huren van contaimers, inzamelen en verwerken van afval .</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">109561.43</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="90510000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Nijmegen en omgeving</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Deze leidraad betreft de aanbesteding voor het ophalen en verwerken van afval met nummer 159607 in Negometrix. De aanbesteding verloopt volgens de Europese openbare procedure.</P>
+                        <P>Dit programma van eisen behoort bij de offerteaanvraag van de twee scholen organisaties, nl:</P>
+                        <P>-	De Alliantie Voortgezet onderwijs met 7 scholen verspreid over 13 locaties in Nijmegen en het land van Maas en Waal</P>
+                        <P>-	Scholengroep Rijk van Nijmegen 7 scholen verspreid over 8 locaties in Nijmegen en omliggende gemeenten</P>
+                        <P></P>
+                        <P></P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_COST>
+                            <AC_CRITERION>prijs</AC_CRITERION>
+                            <AC_WEIGHTING>70</AC_WEIGHTING>
+                        </AC_COST>
+                        <AC_COST>
+                            <AC_CRITERION>afvalscheiding en duurzaamheid</AC_CRITERION>
+                            <AC_WEIGHTING>15</AC_WEIGHTING>
+                        </AC_COST>
+                        <AC_COST>
+                            <AC_CRITERION>Inzamelmiddelen</AC_CRITERION>
+                            <AC_WEIGHTING>10</AC_WEIGHTING>
+                        </AC_COST>
+                        <AC_COST>
+                            <AC_CRITERION>Afkeur</AC_CRITERION>
+                            <AC_WEIGHTING>5</AC_WEIGHTING>
+                        </AC_COST>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 184-444537</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2020-11-10</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>4</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Remondis</OFFICIALNAME>
+                                <TOWN>Lichtenvoorde</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">109561.43</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="2">
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2020-11-10</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>4</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Remondis</OFFICIALNAME>
+                                <TOWN>Lichtenvoorde</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">109561.43</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Gelderland</OFFICIALNAME>
+                    <TOWN>Arnhem</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-01</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

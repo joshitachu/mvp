@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Tilburg</OFFICIALNAME>
+                    <NATIONALID>32696202</NATIONALID>
+                    <ADDRESS>Stadhuisplein 130</ADDRESS>
+                    <TOWN>Tilburg</TOWN>
+                    <POSTAL_CODE>5038 TC</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Bas  Welling</CONTACT_POINT>
+                    <E_MAIL>aanbestedingen@tilburg.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.tilburg.nl</URL_GENERAL>
+                    <URL_BUYER>http://www.tilburg.nl/aanbestedingen</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Food en Non-Food</P>
+                </TITLE>
+                <REFERENCE_NUMBER>2021 / 453 / IB</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="15000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SUPPLIES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Om het sporten inclusief een sociaal maatschappelijk en wenselijke “derde helft” te faciliteren is er binnen de gemeente een pilot gedraaid waarbij de horeca in sportaccommodaties door de gemeente zelf werd geëxploiteerd. Deze pilot is succesvol afgerond. Voor het nieuwe sport seizoen gaat het Sportbedrijf Tilburg de exploitatie voortzetten. Om rechtmatig te voorzien in de toelevering van de producten om te verkopen is deze aanbesteding in de markt gezet voor “Food en Non-Food”.</P>
+                    <P>Aanbestedende Dienst doorloopt een Europese Aanbestedingsprocedure met als doel om tot een overeenkomst te komen voor gemeente Tilburg met één (1) leverancier voor de levering van Food en Non-Food.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">300000.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL412"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Tilburg</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>De opdracht is verdeeld in twee percelen, (1) Food en Non-Food en (2) Lokaal speciaal bier (uit Tilburg). De waarde van perceel 2 is dusdanig laag, dat deze middels de percelenregeling (art. 2.18 en 2.19 Aanbestedingswet 2021) enkelvoudig onderhands gegund zal worden. Dat betekent dat dit perceel niet wordt meegenomen in deze aanbesteding, en Inschrijvers enkel op perceel 1 kunnen inschrijven. Door deze percelenregeling geeft Aanbestedende Dienst ook het lokale mkb een kans, in dit geval voor lokaal speciaal bier uit Tilburg.</P>
+                        <P>Onder de scope van deze Opdracht valt:</P>
+                        <P>•	Food:</P>
+                        <P>-	Etenswaren horeca</P>
+                        <P>-	IJs, snacks en snoepwaren</P>
+                        <P>-	Bier (Pils, alcoholvrij en (inter)nationaal speciaal bier)</P>
+                        <P>-	Alcoholische dranken (vb. wijn, Bacardi, …)</P>
+                        <P>-	Frisdranken</P>
+                        <P>•	Non-Food</P>
+                        <P>-	Huishoudelijke schoonmaakmiddelen</P>
+                        <P>-	Disposables</P>
+                        <P>-	Klein keukenmateriaal</P>
+                        <P>•	Het leveren van de bestelde producten, naar verwachting maximaal 3 keer per week.</P>
+                        <P>Nadrukkelijk buiten scope van deze Opdracht:</P>
+                        <P>-	Catering en banqueting</P>
+                        <P>-	Ad hoc behoeften (bij tekorten)</P>
+                        <P>-	Verse groente en fruit</P>
+                        <P>-	Koffie en thee</P>
+                        <P>-	Lokaal speciaalbier</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>30</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>70</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Na 2 jaar contract mogelijke verlenging van 2 x 1 jaar.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 146-386001</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Food en Non-Food</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>1</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>1</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Bidfood B.V.</OFFICIALNAME>
+                                <NATIONALID>39051693</NATIONALID>
+                                <ADDRESS>Maxwellstraat 5</ADDRESS>
+                                <TOWN>Ede</TOWN>
+                                <POSTAL_CODE>6716 BX</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 492531490</PHONE>
+                                <E_MAIL>petra.erken@bidfood.nl</E_MAIL>
+                                <FAX>+31 318678912</FAX>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.bidfood.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">300000.0</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">300000.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Zeeland-West-Brabant (zittingslocatie Breda)</OFFICIALNAME>
+                    <ADDRESS>Stationslaan 10</ADDRESS>
+                    <TOWN>Breda</TOWN>
+                    <POSTAL_CODE>4815 GW</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>handelsrecht.breda.zwb@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2022-02-01</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

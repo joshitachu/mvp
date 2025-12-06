@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F06_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F06">
+            <LEGAL_BASIS VALUE="32014L0025"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>NedTrain B.V.</OFFICIALNAME>
+                    <NATIONALID>41680548</NATIONALID>
+                    <ADDRESS>Laan van Puntenburg 100</ADDRESS>
+                    <TOWN>UTRECHT</TOWN>
+                    <POSTAL_CODE>3511ER</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Koen  Rekers</CONTACT_POINT>
+                    <PHONE>+31 886713319</PHONE>
+                    <E_MAIL>procurementsupport@ns.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>https://www.ns.nl/over-ns/treinonderhoud</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CE_ACTIVITY_OTHER>Vervoer met trein</CE_ACTIVITY_OTHER>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Transport spoorwegmaterieel</P>
+                </TITLE>
+                <REFERENCE_NUMBER>WS2503174594</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="63711000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Transport spoorwegmaterieel is het op afroep transporteren / verslepen, rijden en rangeren met en parkeren van spoorwegmaterieel door heel Nederland. Dit gebeurt veelal in het kader van herinzetbaarheid of sloop. Onder spoorwegmaterieel wordtverstaan: treinen, treinstellen, (Koninklijke) rijtuigen en locomotieven. Het materieel dat verplaatst dient te worden heeft veelal geen geldig inzetcertificaat en daardoor zijn de ritten complexer dan een ‘reguliere’rit, waarbij bijvoorbeeld materieel met een geldig inzetcertificaat verplaatst dient te worden. Redenen voor het niet hebben van een geldig inzetcertificaat kunnen zijn dat het materieel geen onderhoud (meer) krijgt, de treinsamenstelling afwijkend is van het inzetcertificaat (“halve” treinen), er onderdelen uit het materieel verwijderd zijn. De uit te voeren dienstverlening omvat rangeren, overbrengingsrittenen conditieritten van spoorwegmaterieel. Opdrachtnemer dient hiervoor een locomotief inclusief machinist beschikbaar te stellen.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL PUBLICATION="YES" CURRENCY="EUR">0.01</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Nederland</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>n.v.t.</P>
+                    </SHORT_DESCR>
+                    <AC PUBLICATION="YES">
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>1</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>1</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Optie tot verlenging.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 198-481086</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Transport spoorwegmaterieel</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-01-11</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS PUBLICATION="YES">
+                        <NB_TENDERS_RECEIVED>3</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>3</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS PUBLICATION="YES">
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Strukton Rail Equipment</OFFICIALNAME>
+                                <NATIONALID>16081158</NATIONALID>
+                                <ADDRESS>Veemarktweg 2</ADDRESS>
+                                <TOWN>Den Bosch</TOWN>
+                                <POSTAL_CODE>5223AA</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES PUBLICATION="YES">
+                        <VAL_TOTAL CURRENCY="EUR">0.01</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Midden Nederland</OFFICIALNAME>
+                    <ADDRESS>Vrouwe Justitiaplein 1</ADDRESS>
+                    <TOWN>Utrecht</TOWN>
+                    <POSTAL_CODE>3511 EX</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>midden-nederland@rechtspraak.nl</E_MAIL>
+                    <URL>https://www.rechtspraak.nl/</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-02</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F06_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

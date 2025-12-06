@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Stichtse Vecht</OFFICIALNAME>
+                    <NATIONALID>51681897</NATIONALID>
+                    <ADDRESS>Endelhovenlaan 1</ADDRESS>
+                    <TOWN>Maarsen</TOWN>
+                    <POSTAL_CODE>3601GR</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Stefan de Jong</CONTACT_POINT>
+                    <PHONE>+31 615130505</PHONE>
+                    <E_MAIL>s.dejong@aevesbenefit.com</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.stichtsevecht.nl</URL_GENERAL>
+                    <URL_BUYER>https://platform.negometrix.com/PublishedTenders.aspx?tenderid=162583</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Onderhoud elektrotechnische en werktuigbouwkundige installaties</P>
+                </TITLE>
+                <REFERENCE_NUMBER>Z/20/198075</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="71334000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P> Gemeente Stichtse Vecht is voornemens het preventief en correctief onderhoud van elektrotechnische en werktuigbouwkundige installaties (e- en w-installaties) van de gemeentelijke vastgoedobjecten in te kopen.</P>
+                    <P></P>
+                    <P>Het doel van deze Europese openbare aanbesteding is te komen tot een raamovereenkomst met één opdrachtnemer. Deze opdracht wordt gegund aan de inschrijver die de economische meest voordelige inschrijving met de beste prijs-kwaliteit heeft uitgebracht.</P>
+                    <P></P>
+                    <P>Meer informatie over deze aanbesteding is opgenomen in de aanbestedingsstukken die bestaan uit alle op Negometrix gepubliceerde documenten, vragenlijsten, prijslijst, planning, vraag &amp; antwoord module en andere informatie.</P>
+                    <P></P>
+                    <P>Alle geïnteresseerde ondernemers krijgen toegang tot de vragenlijsten en de daarbij behorende op Negometrix gepubliceerde documenten,  planning en andere informatie (o.a. vraag &amp; antwoord module).</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1330000.00</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>Hiervoor wil ik u verwijzen naar de aanbestedingsleidraad Onderhoud e- en w-installaties Gemeente Stichtse Vecht opgenomen bij de aanbestedingsdocumenten en te downloaden via Negometrix.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>SG1: Implementatieplan (Opstartperiode)</AC_CRITERION>
+                            <AC_WEIGHTING>30</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>SG2: Werkwijze en uitvoering onderhoudsfase</AC_CRITERION>
+                            <AC_WEIGHTING>10</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>SG3: Communicatieplan onderhoudsfase</AC_CRITERION>
+                            <AC_WEIGHTING>10</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>SG4: Uitwerking Casus</AC_CRITERION>
+                            <AC_WEIGHTING>10</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_COST>
+                            <AC_CRITERION>P1: Aanneemsom Onderhoudsopdracht per jaar</AC_CRITERION>
+                            <AC_WEIGHTING>30</AC_WEIGHTING>
+                        </AC_COST>
+                        <AC_COST>
+                            <AC_CRITERION>P2: Fictieve prijs correctief onderhoud</AC_CRITERION>
+                            <AC_WEIGHTING>10</AC_WEIGHTING>
+                        </AC_COST>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 213-522151</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-04</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>7</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Veolia Gebouwenbeheer B.V.</OFFICIALNAME>
+                                <TOWN>Schiphol-Rijk</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1330000.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Midden Nederland</OFFICIALNAME>
+                    <TOWN>Utrecht</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-04</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

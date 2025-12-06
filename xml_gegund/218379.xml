@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F21_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F21">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <NOTICE TYPE="AWARD_CONTRACT"></NOTICE>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Haarlemmermeer</OFFICIALNAME>
+                    <NATIONALID>381942865</NATIONALID>
+                    <ADDRESS>Raadhuisplein 1</ADDRESS>
+                    <TOWN>Hoofddorp</TOWN>
+                    <POSTAL_CODE>2132 TZ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Anouk  Schatorje</CONTACT_POINT>
+                    <PHONE>+31 9001852</PHONE>
+                    <E_MAIL>aanbesteden@haarlemmermeer.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.haarlemmermeer.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT ITEM="1">
+                <TITLE>
+                    <P>Jeugdhulp Crisis</P>
+                </TITLE>
+                <REFERENCE_NUMBER>2020-320</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="85320000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Deze inkoop betreft de Jeugdhulp crisis. Binnen de Jeugdhulp crisis kennen we de volgende producten:</P>
+                    <P>Jeugdhulp crisis ambulant;</P>
+                    <P>Jeugdhulp crisis verblijf inclusief behandeling;</P>
+                    <P>Jeugdhulp crisis verblijf exclusief behandeling (= noodbed).</P>
+                    <P>Jeugdhulp crisis pleegzorg;</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">625000.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Gemeente Haarlemmermeer</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>raming van 625.000 euro per jaar</P>
+                    </SHORT_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <NOTICE_NUMBER_OJ>2020/S 182-440125</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Jeugdhulp Crisis</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>9</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>9</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <AWARDED_TO_GROUP></AWARDED_TO_GROUP>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>William Schrikker Stichting Gezinsvormen</OFFICIALNAME>
+                                <NATIONALID>41212707</NATIONALID>
+                                <ADDRESS>Bijlmerdreef 101</ADDRESS>
+                                <TOWN>AMSTERDAM</TOWN>
+                                <POSTAL_CODE>1102BP</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 885260000</PHONE>
+                                <E_MAIL>jsijtsma@wsg.nu</E_MAIL>
+                                <FAX>+31 885260821</FAX>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.wsg.nu</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Kenter Jeugdhulp</OFFICIALNAME>
+                                <NATIONALID>34105805</NATIONALID>
+                                <ADDRESS>Middenduinerweg 44</ADDRESS>
+                                <TOWN>Santpoort-Noord</TOWN>
+                                <POSTAL_CODE>2071 AN</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 235202521</PHONE>
+                                <E_MAIL>jasperwagemakers@kenterjeugdhulp.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.kenterjeugdhulp.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Altra Centraal Bureau en Altra Jeugd- en Opvoedhulp</OFFICIALNAME>
+                                <NATIONALID>41211784</NATIONALID>
+                                <ADDRESS>Rode Kruisstraat 32</ADDRESS>
+                                <TOWN>AMSTERDAM</TOWN>
+                                <POSTAL_CODE>1025KN</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 205558333</PHONE>
+                                <E_MAIL>marisa.vanmarwijk@ihub.nu</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.altra.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Stichting Levvel</OFFICIALNAME>
+                                <NATIONALID>41210822</NATIONALID>
+                                <ADDRESS>Fred. Roeskestraat 73</ADDRESS>
+                                <TOWN>AMSTERDAM</TOWN>
+                                <POSTAL_CODE>1076EC</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 205400500</PHONE>
+                                <E_MAIL>d.klein@spirit.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.levvel.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Stichting Levvel5</OFFICIALNAME>
+                                <NATIONALID>77819144</NATIONALID>
+                                <ADDRESS>Fred. Roeskestraat 73</ADDRESS>
+                                <TOWN>Amsterdam</TOWN>
+                                <POSTAL_CODE>1076EC</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.levvel5.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Its4Sure B.V.</OFFICIALNAME>
+                                <NATIONALID>70073449</NATIONALID>
+                                <ADDRESS>Lange Kleiweg 52 F</ADDRESS>
+                                <TOWN>RIJSWIJK</TOWN>
+                                <POSTAL_CODE>2288GK</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 0641691121</PHONE>
+                                <E_MAIL>info@its4sure.nu</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.its4sure.nu</URL>
+                            </ADDRESS_CONTRACTOR>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Stichting Interculturele Participatie en Integratie.</OFFICIALNAME>
+                                <NATIONALID>34220381</NATIONALID>
+                                <ADDRESS>Zuiderzeeweg 28</ADDRESS>
+                                <TOWN>Amsterdam</TOWN>
+                                <POSTAL_CODE>1095KJ</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 0206382808</PHONE>
+                                <E_MAIL>Emine@s-ipi.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.s-ipi.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                        </CONTRACTOR>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">625000.0</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">625000.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <DATE_DISPATCH_NOTICE>2021-02-01</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F21_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

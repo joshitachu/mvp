@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Sint Anthonis</OFFICIALNAME>
+                    <NATIONALID>561651879</NATIONALID>
+                    <ADDRESS>Postbus 40</ADDRESS>
+                    <TOWN>Sint Anthonis</TOWN>
+                    <POSTAL_CODE>5845 ZG</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Lisette Martens</CONTACT_POINT>
+                    <PHONE>+31 619287928</PHONE>
+                    <E_MAIL>l.martens@bizob.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.bizob.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Vervangen bomen gemeente Sint Anthonis</P>
+                </TITLE>
+                <REFERENCE_NUMBER>BIZOB-2020-SIN-LMA-00258</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="77200000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Het werk bestaat in hoofdzaak uit:</P>
+                    <P>- voorbereidende werkzaamheden</P>
+                    <P>- rooien van bomen</P>
+                    <P>- groeiplaatsinrichting</P>
+                    <P>- planten bomen</P>
+                    <P>- nazorg en inboet</P>
+                    <P>- werkzaamheden aan bestaande verhardingen</P>
+                    <P> </P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">267857.70</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="77211300"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Sint Anthonis, Noord-Brabant</P>
+                        <P>Noordoost-Noord-Brabant NL413</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Betreft met name het rooien van bomen en het planten van bomen</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 218-535640</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>BIZOB-2020-SIN-LMA-00258</CONTRACT_NO>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>10</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Idverde Realisatie BV</OFFICIALNAME>
+                                <TOWN>Venray</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">267857.70</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <INFO_ADD>
+                    <P>Alle gegadigden hebben de mogelijkheid om vragen te stellen. Vragen en/of opmerkingen kunnen alleen middels de Negometrix “vragen en antwoorden” module worden ingediend  uiterlijk tot het in de planning vermelde datum en tijdstip, bij de aanbestedende dienst. </P>
+                </INFO_ADD>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Oost-Brabant</OFFICIALNAME>
+                    <TOWN>’s-Hertogenbosch </TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>info.rechtbanksHertogenbosch@rechtspraak.nl</E_MAIL>
+                    <URL>www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <REVIEW_PROCEDURE>
+                    <P>Inschrijvers die niet in aanmerking komen voor gunning van de overeenkomst ontvangen een motivatie van de redenen tot afwijzing. De aanbestedende dienst hanteert een periode van twintig dagen vanaf het bekendmaken van de gunningsbeslissing aan de inschrijvers totdat de overeenkomst definitief wordt gegund. Als binnen die termijn een kort geding tegen de gunningsbeslissing aanhangig is gemaakt, wordt in eerste beginsel de definitieve overeenkomst, in afwachting van de uitspraak van de rechter, opgeschort. Indien de inschrijver niet binnen deze termijn een kort geding aanhangig maakt, dan wordt geacht dat de inschrijver afstand heeft gedaan van dit recht en is de inschrijver niet-ontvankelijk in zijn vorderingen, wanneer de inschrijver alsnog een kort geding aanhangig maakt.</P>
+                    <P></P>
+                    <P>Op deze aanbesteding is Nederlands recht van toepassing. Geschillen die ontstaan naar aanleiding van deze aanbesteding worden voorgelegd aan de bevoegde rechter in het arrondissement Oost-Brabant.</P>
+                    <P></P>
+                </REVIEW_PROCEDURE>
+                <DATE_DISPATCH_NOTICE>2021-02-01</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

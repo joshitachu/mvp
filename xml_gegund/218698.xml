@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Deurne</OFFICIALNAME>
+                    <NATIONALID>251662132</NATIONALID>
+                    <ADDRESS>Markt 1</ADDRESS>
+                    <TOWN>Deurne</TOWN>
+                    <POSTAL_CODE>5751 BE</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Roel Adriaans</CONTACT_POINT>
+                    <PHONE>+31 621495355</PHONE>
+                    <E_MAIL>r.adriaans@bizob.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.bizob.nl</URL_GENERAL>
+                    <URL_BUYER>https://platform.negometrix.com/PublishedTenders.aspx?tenderid=160493</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Vegen van wegen gemeente Deurne 2021-2024</P>
+                </TITLE>
+                <REFERENCE_NUMBER>BIZOB-2019-DEU-DTI-00539</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="90600000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>De overeenkomst bestaat uit het vegen van wegen in de gemeente Deurne. De overeenkomst wordt aangegaan voor een periode van minimaal 2 jaar en maximaal 4 jaar. </P>
+                    <P>De ingangsdatum van de overeenkomst is 1 januari 2021.</P>
+                    <P></P>
+                    <P>De werkzaamheden die moeten worden uitgevoerd in het kader van het vegen van wegen zijn:</P>
+                    <P></P>
+                    <P>- vegen van straten</P>
+                    <P>- vegen van straatgoten</P>
+                    <P>- vegen van pleinen</P>
+                    <P>- vegen van fietspaden</P>
+                    <P>- overige werkzaamheden</P>
+                    <P></P>
+                    <P>De uit te voeren werkzaamheden liggen binnen de gemeentegrenzen van de gemeente Deurne en vallen onder haar verantwoordelijkheid. De werkzaamheden moeten worden uitgevoerd op diverse locaties binnen de gemeente.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">85906.51</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="90612000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Gemeente Deurne</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>De overeenkomst bestaat uit het vegen van wegen in de gemeente Deurne. De overeenkomst wordt aangegaan voor een periode van minimaal 2 jaar en maximaal 4 jaar. </P>
+                        <P>De ingangsdatum van de overeenkomst is 1 januari 2021.</P>
+                        <P></P>
+                        <P>De werkzaamheden die moeten worden uitgevoerd in het kader van het vegen van wegen zijn: vegen van straten, vegen van straatgoten, vegen van pleinen, vegen van fietspaden en overige werkzaamheden. </P>
+                        <P></P>
+                        <P>De uit te voeren werkzaamheden liggen binnen de gemeentegrenzen van de gemeente Deurne en vallen onder haar verantwoordelijkheid. De werkzaamheden moeten worden uitgevoerd op diverse locaties binnen de gemeente.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 192-463321</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>BIZOB-2019-DEU-DTI-00539</CONTRACT_NO>
+                <TITLE>
+                    <P>Vegen van wegen gemeente Deurne 2021-2024</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2020-11-19</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>4</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>4</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Veeg- en Rioolbedrijf Adriaans B.V.</OFFICIALNAME>
+                                <NATIONALID>17027480</NATIONALID>
+                                <ADDRESS>Loeswijk 40</ADDRESS>
+                                <TOWN>Mierlo</TOWN>
+                                <POSTAL_CODE>5731VL</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">85906.51</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Oost-Brabant</OFFICIALNAME>
+                    <ADDRESS>Postbus 70548 </ADDRESS>
+                    <TOWN>'s-Hertogenbosch </TOWN>
+                    <POSTAL_CODE>5201 CZ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>info.rechtbanksHertogenbosch@rechtspraak.nl</E_MAIL>
+                    <URL>www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <REVIEW_PROCEDURE>
+                    <P>Inschrijvers die niet in aanmerking komen voor gunning van de overeenkomst ontvangen een motivatie van de redenen tot afwijzing. De aanbestedende dienst hanteert een periode van twintig dagen vanaf het bekendmaken van de gunningsbeslissing aan de inschrijvers totdat de overeenkomst definitief wordt gegund. Als binnen die termijn een kort geding tegen de gunningsbeslissing aanhangig is gemaakt, wordt in eerste beginsel de definitieve overeenkomst, in afwachting van de uitspraak van de rechter, opgeschort. Indien de inschrijver niet binnen deze termijn een kort geding aanhangig maakt, dan wordt geacht dat de inschrijver afstand heeft gedaan van dit recht en is de inschrijver niet-ontvankelijk in zijn vorderingen, wanneer de inschrijver alsnog een kort geding aanhangig maakt.</P>
+                </REVIEW_PROCEDURE>
+                <DATE_DISPATCH_NOTICE>2021-02-04</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

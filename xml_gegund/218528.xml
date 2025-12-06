@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Bernheze</OFFICIALNAME>
+                    <NATIONALID>12345678</NATIONALID>
+                    <ADDRESS>De Misse 6 </ADDRESS>
+                    <TOWN>HEESCH</TOWN>
+                    <POSTAL_CODE>5384BZ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Mevrouw Heleen  Steneker</CONTACT_POINT>
+                    <PHONE>+31 412458888</PHONE>
+                    <E_MAIL>budgethouder_bernheze@tsf.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://inhuurdesk.werkeninnoordoostbrabant.nl</URL_GENERAL>
+                    <URL_BUYER>http://inhuurdesk.werkeninnoordoostbrabant.nl</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Senior communicatieadviseur</P>
+                </TITLE>
+                <REFERENCE_NUMBER>TSF_5270</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="79000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Doelstelling opdrachtDe opdracht is een tijdelijke inhuur van een senior communicatieadviseur (30 uur per week). De opdracht start direct na gunning en duurt 6 maanden met de optie tot verlenging.ResultaatIn het communicatieveld verschuiven de pionnen. We halen de buitenwereld naar binnen en brengen de binnenwereld naar buiten. We pakken onze rol als verbinder, sparringpartner en procesbegeleider. In die veranderende omgeving, voel jij je thuis. Je staat open voor nieuwe uitdagingen, bent een aanpakker en een teamplayer.In het communicatiever worden en participatief werken, faciliteert de organisatie in (digitale) communicatiemiddelen en faciliteert/co?rdineert een aantal benoemde evenementen en bijeenkomsten.Het communicatieteam bestaat uit vier communicatiemedewerkers, inclusief deze vacature. Het team ondersteunt de organisatie.Concrete takenJe hebt en behoudt overzicht binnen het cluster communicatie.Je bent verantwoordelijk voor de advisering aan college, management en organisatie.Je bent eerste aanspreekpunt voor college en de pers.Je neemt zelf de meer complexe en strategische adviesprojecten voor je rekening.Je helpt je andere collega?s bij de dagelijkse zaken wat betreft communicatie.Je bent intern opdrachtnemer voor het project communicatiebeleid.Dit project heeft als opdracht: het samen met de organisatie ontwikkelen van een beleidskader voor communicatie. Dit is een lerend proces, met als uitgangspunt dat de hele organisatie zich onderdeel weet van en een actieve rol heeft in de communicatie met inwoners en stakeholders.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Heesch</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>De waarde van de opdracht is onbekend</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>85</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>15</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2018/S 092-208434</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Senior communicatieadviseur</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-02</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>12</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>12</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Bureau voor Overheidscommunicatie BV</OFFICIALNAME>
+                                <ADDRESS>Bergstraat 29 </ADDRESS>
+                                <TOWN>Amersfoort</TOWN>
+                                <POSTAL_CODE>3811NE</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 334653427</PHONE>
+                                <E_MAIL>welkom@bvoverheidscommunicatie.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Gemeente Bernheze</OFFICIALNAME>
+                    <ADDRESS>De Misse 6 </ADDRESS>
+                    <TOWN>HEESCH</TOWN>
+                    <POSTAL_CODE>5384BZ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 412458888</PHONE>
+                    <E_MAIL>aanbestedingen@bernheze.org</E_MAIL>
+                    <URL>http://www.bernheze.org</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2018-11-23</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

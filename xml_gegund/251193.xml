@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Waalwijk</OFFICIALNAME>
+                    <NATIONALID>261873054</NATIONALID>
+                    <ADDRESS>Taxandriaweg 6</ADDRESS>
+                    <TOWN>Waalwijk</TOWN>
+                    <POSTAL_CODE>5141 PA</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Merel van Hulten</CONTACT_POINT>
+                    <PHONE>+31 416683456</PHONE>
+                    <E_MAIL>inkoop@waalwijk.nl</E_MAIL>
+                    <FAX>+31 416683438</FAX>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.waalwijk.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Levering Brandstoffen</P>
+                </TITLE>
+                <REFERENCE_NUMBER>2021-026608</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="09100000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SUPPLIES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>De doelstelling van de Gemeente Waalwijk is om te komen tot een nieuwe raamovereenkomst voor het leveren van HVO100 Brandstof en AdBlue voor het wagenpark van de Buitendienst. Naast de genoemde brandstoffen dienen er ook nog zes (6) tankpassen geleverd te worden, als reserve bij eventuele storingen en calamiteiten zoals gladheidsbestrijding.</P>
+                    <P>De brandstofpasssen dienen gebruikt te kunnen worden bij een tankstation met zowel HVO100 als AdBlue op de pomp. Daarnaast dient in de aangeboden prijs de administratieve afhandeling inbegrepen te zijn.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">648000.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Waalwijk</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Gekeken naar het verleden betreft de geschatte afname HVO100 ongeveer 140.000 liter per jaar. De geschatte afname AdBlue bedraagt 2.000 liter per jaar. De geschatte waarde van de af te nemen brandstof ligt tussen de €200.000 – €210.000 per jaar. Door eventuele beleidswijzigingen kunnen de genoemde hoeveelheden afwijken. De genoemde aantallen betreffen daarom een indicatie en hieraan kunnen geen rechten worden ontleend</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Het betreft een raamovereenkomst die wordt aangegaan voor de periode 1 januari 2022 tot en met 31 december 2023. Dit is exclusief een optie tot verlenging van maximaal 2x keer 1 jaar. De opdrachtgever neemt uiterlijk in september van dat jaar de beslissing tot verlenging. De opdracht eindigt dan rechtswege.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 186-481766</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Levering Brandstoffen</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-03</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>3</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>3</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Future Fuels Wholesale B.V.</OFFICIALNAME>
+                                <NATIONALID>63989360</NATIONALID>
+                                <ADDRESS>Appelhof 7</ADDRESS>
+                                <TOWN>OUDEHASKE</TOWN>
+                                <POSTAL_CODE>8465RX</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">648000.0</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">648000.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Zeeland-West-Brabant</OFFICIALNAME>
+                    <ADDRESS>Stationslaan 10</ADDRESS>
+                    <TOWN>Breda</TOWN>
+                    <POSTAL_CODE>4815 GW</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 883616000</PHONE>
+                    <E_MAIL>info@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2022-02-01</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>
