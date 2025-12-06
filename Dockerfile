@@ -27,4 +27,4 @@ EXPOSE 8000
 
 # Start the FastAPI app
 # 'serve:app' = file 'serve.py' with variable 'app = FastAPI(...)'
-CMD ["uvicorn", "serve:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8000"]
