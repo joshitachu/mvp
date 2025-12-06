@@ -32,13 +32,6 @@ from sroi_scanner import analyze_import_sroi  # nieuwe SROI analyzer
 # Load .env file
 load_dotenv()
 
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
-
-print(SUPABASE_KEY)
-# Optional debug (verwijder later):
-
-supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 app = FastAPI(title="TenderNed Import Backend")
 
 # In-memory store voor SROI analysis progress tracking
@@ -116,12 +109,6 @@ def validate_user_code(
     return code
 
 
-def _import_belongs_to_user(import_id: str, user_code: str) -> bool:
-    try:
-        resp = supabase.table("imports").select("id").eq("id", import_id).eq("owner_code", user_code).limit(1).execute()
-        return bool(resp.data)
-    except Exception:
-        return False
 
 
 
