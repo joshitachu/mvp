@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>ROC van Amsterdam, VOvA en ROC van Flevoland</OFFICIALNAME>
+                    <NATIONALID>6225881</NATIONALID>
+                    <ADDRESS>Fraijlemaborg 141</ADDRESS>
+                    <TOWN>Amsterdam</TOWN>
+                    <POSTAL_CODE>1102 CV</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Jolanda  Krijnzen</CONTACT_POINT>
+                    <PHONE>+31 205791090</PHONE>
+                    <E_MAIL>aanbesteding@rocva.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.rocva.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="EDUCATION"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>EU aanbesteding Verhuisdiensten</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="98392000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>De opdracht betreft het verwerven en contracteren van één partij voor het leveren, verzorgen en coördineren  van  verhuizingen,  inclusief  alle  daarvoor  benodigde  transport,  logistieke  en  verpakkingsmiddelen, zowel intern (binnen de panden) als extern (tussen de panden en locaties van de aanbestedende dienst). De opdracht betreft alle gebouwen waarin de aanbestedende dienst is gevestigd. Hierin  behoudt de zij te allen tijde het recht om kleine verhuizingen zelf intern te organiseren. De aanbestedende dienst wenst een samenwerking aan te gaan met een dienstverlener die de haar ontzorgt. Zij verwacht  dat  Inschrijver  op  basis  van  zijn  expertise  als  professioneel  (project)verhuizer  een  aanbieding indient, waarin alle werkzaamheden zijn opgenomen.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <ns2:NUTS CODE="NL329"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Amsterdam</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Gemiddeld heeft aanbestedende dienst de afgelopen drie jaar</P>
+                        <P>€ 270.000 incl. btw per jaar uitgegeven. Dat komt neer op een geraamde waarde van € 1.080.000 incl. btw over vier jaar. Het betreft echter een raamovereenkomst. Hierdoor kan aan dit bedrag geen rechten worden ontleend of garanties op worden afgegeven.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Plan van Aanpak</AC_CRITERION>
+                            <AC_WEIGHTING>30</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>70</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>De aanbesteding zal leiden tot een raamovereenkomst. De raamovereenkomst heeft een looptijd van twee (2) jaar met de mogelijkheid deze nog twee (2) keer voor één (1) jaar te verlengen. De overeenkomst eindigt in ieder geval van rechtswege op 31 december 2024.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 190-459233</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>EU aanbesteding Verhuisdiensten</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-01-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>5</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>5</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Convoi Nederland B.V.</OFFICIALNAME>
+                                <NATIONALID>14018706</NATIONALID>
+                                <ADDRESS>Rutherfordweg 51</ADDRESS>
+                                <TOWN>Utrecht</TOWN>
+                                <POSTAL_CODE>3542CN</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 882426000</PHONE>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.convoi.com</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">1.0</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="DKK">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Amsterdam</OFFICIALNAME>
+                    <ADDRESS>Parnassusweg 220</ADDRESS>
+                    <TOWN>Amsterdam</TOWN>
+                    <POSTAL_CODE>1076 AV</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 883617000</PHONE>
+                    <E_MAIL>info.rechtbankamsterdam@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-05</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

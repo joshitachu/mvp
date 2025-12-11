@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Eindhoven, Sector Ruimtelijke Uitvoering</OFFICIALNAME>
+                    <NATIONALID>261529808</NATIONALID>
+                    <ADDRESS>Postbus 90150 1</ADDRESS>
+                    <TOWN>Eindhoven</TOWN>
+                    <POSTAL_CODE>5600 RB</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Mw. M.  Matheeuwsen</CONTACT_POINT>
+                    <E_MAIL>aanbestedingen-RB@eindhoven.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.eindhoven.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Raamovereenkomst maaien stedelijk schraal gras en sloten Eindhoven West</P>
+                </TITLE>
+                <REFERENCE_NUMBER>608342101</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="77310000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Het maaien en het verwerken van stedelijk schraal gras en sloten in de stadsdelen Gestel en Strijp van de gemeente Eindhoven.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">560766.6</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL414"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Het uit te voeren werk is gelegen in de stadsdelen Gestel en Strijp  in de gemeente Eindhoven.</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>De Raamovereenkomst maaien stedelijk schraal gras en sloten Eindhoven West 608342101 bestaat in hoofdzaak uit .</P>
+                        <P>a. 	het maaien van schrale grasvelden in een stedelijke omgeving;</P>
+                        <P>b. 	het verzamelen en afvoeren van maaisel;</P>
+                        <P>c. 	het snijden van graskanten;</P>
+                        <P>d.	het maaien van watergangen, vijvers en wadi’s;</P>
+                        <P>e. 	het maaien van riet;</P>
+                        <P>f. 	bijkomende werkzaamheden.</P>
+                        <P>De uit te voeren werkzaamheden zijn omschreven in de raamovereenkomst en de inschrijvingsleidraad.</P>
+                        <P>De gemeente Eindhoven is niet gehouden aan het daadwerkelijk verstrekken van deelopdrachten</P>
+                        <P>overeenkomend met de omvang van de inschrijvingssom.</P>
+                        <P>Gelet op het verleden is de maximaal geraamde waarde van de opdracht inclusief de mogelijke</P>
+                        <P>verlengingen (totaal 4 jaar) € 1.040.000,00.</P>
+                        <P>Aan bovengenoemd bedrag kunnen geen enkele rechten worden ontleend.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>CO2 Prestatieladder</AC_CRITERION>
+                            <AC_WEIGHTING>0</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Maximale diameter opslag</AC_CRITERION>
+                            <AC_WEIGHTING>0</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>0</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Mogelijke verlenging</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 194-469563</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Raamovereenkomst maaien stedelijk schraal gras en sloten Eindhoven West</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-01-15</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>3</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>3</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>J. van Esch B.V.</OFFICIALNAME>
+                                <NATIONALID>16038159</NATIONALID>
+                                <ADDRESS>Achterstraat 29</ADDRESS>
+                                <TOWN>CROMVOIRT</TOWN>
+                                <POSTAL_CODE>5266AR</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 411647020</PHONE>
+                                <E_MAIL>willy@jvesch.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.jvesch.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">560766.6</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <INFO_ADD>
+                    <P>-Betreft een Raamovereenkomst. De onder II.1.7 en V.2.4 vermelde "Totale waarde van de opdracht" is de waarde van de inschrijvingssom voor de periode van 2 jaar.</P>
+                </INFO_ADD>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Oost-Brabant, zittingplaats 's Hertogenbosch</OFFICIALNAME>
+                    <ADDRESS>Leeghwaterlaan 8</ADDRESS>
+                    <TOWN>'s-Hertogenbosch</TOWN>
+                    <POSTAL_CODE>5223 BA</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 736202020</PHONE>
+                    <E_MAIL>info.rechtbanksHertogenbosch@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <ADDRESS_REVIEW_INFO>
+                    <OFFICIALNAME>Rechtbank Oost-Brabant, zittingplaats 's Hertogenbosch</OFFICIALNAME>
+                    <ADDRESS>Leeghwaterlaan 8</ADDRESS>
+                    <TOWN>'s-Hertogenbosch</TOWN>
+                    <POSTAL_CODE>5223 BA</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 736202020</PHONE>
+                    <E_MAIL>info.rechtbanksHertogenbosch@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_INFO>
+                <DATE_DISPATCH_NOTICE>2021-02-02</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

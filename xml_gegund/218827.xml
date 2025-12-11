@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Rijksvastgoedbedrijf</OFFICIALNAME>
+                    <NATIONALID>552550970</NATIONALID>
+                    <ADDRESS>Korte Voorhout 7</ADDRESS>
+                    <TOWN>Den Haag</TOWN>
+                    <POSTAL_CODE>2511 CW</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Gerrit  Rook</CONTACT_POINT>
+                    <PHONE>+31 615540674</PHONE>
+                    <E_MAIL>gerrit.rook@rijksoverheid.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.rijksvastgoedbedrijf.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="MINISTRY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="HOUSING_AND_COMMUNITY_AMENITIES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>P-1004648 Renovatie legeringsgebouw J.M. van Nassau op Marinekazerne Erfprins te Den Helder</P>
+                </TITLE>
+                <REFERENCE_NUMBER>P-1004648</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="45000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="WORKS"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Eind jaren 80 is besloten om alle initiële en vervolg vakopleidingen van het Commando Zeestrijdkrachten (CZSK) te centreren op Marine Kazerne Erfprins te Den Helder. Naast cursisten van de opleidingen worden ook boordplaatsers van de vaste bemanning op de kazerne gelegerd. Er zijn 2 legeringsgebouwen aanwezig, namelijk J.M. van Nassau (gebouw 030) voor cursisten en het hoge gedeelte van gebouw Eendracht voor de vaste bemanning.</P>
+                    <P>Geleidelijk is de capaciteit in gebouw J.M. Nassau uitgebreid van initieel 240 naar uiteindelijk 600 bedden. Gebouw J.M. Nassau is niet ingericht voor bewoning door 600 mensen en voldoet niet meer aan de huidige normen en ook niet meer aan de huidige regelgeving.</P>
+                    <P>Met het renoveren van legeringsgebouw J.M. Nassau moet het gebouw weer voldoen aan alle huidige vigerende wet-/regelgeving en overige normen en voorschriften.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">8015000.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45450000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45300000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Den Helder</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Het werk omvat de gehele renovatie van gebouw J.M. van Nassau,</P>
+                        <P>de opdracht bestaat onder meer in hoofdlijnen uit:</P>
+                        <P>- Sloopwerkzaamheden;</P>
+                        <P>- Herindeling tussenwanden en vloer;</P>
+                        <P>- Vervangen dakbedekking incl. aanbrengen isolatie;</P>
+                        <P>- Vervangen kozijnen incl. beglazing (toepassen HR++ beglazing);</P>
+                        <P>- Vernieuwen totale Elektrotechnische- en Werktuigbouwkundige installatie;</P>
+                        <P>- Isoleren gevels aan de binnenzijde;</P>
+                        <P>- Herstel van gevel-, metsel- en voegwerk;</P>
+                        <P>- Aanpassen wandafwerking stucwerk, tegelwerk en schilderwerk (binnen en buiten);</P>
+                        <P>- Vernieuwen vloerafwerking;</P>
+                        <P>- Brandveilig maken gehele legeringsgebouw conform wet-/regelgeving.</P>
+                        <P></P>
+                        <P>Overzicht algemene projectkenmerken</P>
+                        <P>Oppervlakte: 	circa 7.695 m2 bvo</P>
+                        <P>Disciplines: 	bouwkunde, constructie, E&amp;W, ICT, terreintechniek, beveiliging</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteitsborging</AC_CRITERION>
+                            <AC_WEIGHTING>0</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Communicatie</AC_CRITERION>
+                            <AC_WEIGHTING>0</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Overlastbeperking</AC_CRITERION>
+                            <AC_WEIGHTING>0</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>0</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 154-376191</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>P-1004648 Renovatie legeringsgebouw J.M. van Nassau op Marinekazerne Erfprins te Den Helder</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-01-26</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>5</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>5</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Aannemingsbedrijf Carlebur B.V.</OFFICIALNAME>
+                                <NATIONALID>37057394</NATIONALID>
+                                <ADDRESS>Breeuwersweg 7</ADDRESS>
+                                <TOWN>Den Helder</TOWN>
+                                <POSTAL_CODE>1786PG</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 223636261</PHONE>
+                                <E_MAIL>info@carlebur.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.carlebur.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">8015000.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Burgerlijke Rechter te 's Gravenhage</OFFICIALNAME>
+                    <ADDRESS>Paleis van Justitie - Prins Clauslaan 60</ADDRESS>
+                    <TOWN>'s Gravenhage</TOWN>
+                    <POSTAL_CODE>2595 AJ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 883622200</PHONE>
+                    <E_MAIL>voorlichting.rb.den.haag@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <ADDRESS_REVIEW_INFO>
+                    <OFFICIALNAME>Burgerlijke Rechter te 's Gravenhage</OFFICIALNAME>
+                    <ADDRESS>Paleis van Justitie - Prins Clauslaan 60</ADDRESS>
+                    <TOWN>'s Gravenhage</TOWN>
+                    <POSTAL_CODE>2595 AJ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 883622200</PHONE>
+                    <E_MAIL>voorlichting.rb.den.haag@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_INFO>
+                <DATE_DISPATCH_NOTICE>2021-02-05</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

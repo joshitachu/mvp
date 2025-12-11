@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Prolander namens de provincie Drenthe</OFFICIALNAME>
+                    <NATIONALID>01179514</NATIONALID>
+                    <ADDRESS>Westerbrink 1</ADDRESS>
+                    <TOWN>Assen</TOWN>
+                    <POSTAL_CODE>9405 BJ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Paul Hoekstra</CONTACT_POINT>
+                    <PHONE>+31 592365339</PHONE>
+                    <E_MAIL>p.hoekstra@prolander.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>https://www.prolander.nl/</URL_GENERAL>
+                    <URL_BUYER>https://platform.negometrix.com/PublishedTenders.aspx?tenderid=164567</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Technisch applicatiebeheerder ICT Prolander</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="72000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Technisch applicatiebeheerder ICT Prolander</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">700000.00</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Assen en Groningen.</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Achtergrond van onderhavige opdracht: tweede en derde lijn ondersteuning van onze Oracle EBS applicatie (Financiële modules), Oracle APEX en aanpalende systemen waaronder P8 vastgoedregistratiesysteem (Hierna: P8 VRIS). Daarnaast op termijn BI-rapportages.</P>
+                        <P></P>
+                        <P>Resultaatgebied &amp; verantwoordelijkheden:</P>
+                        <P>• De applicatiebeheerder is in staat tot het aannemen, analyseren en oplossen van incidenten ongeacht of deze functioneel/maatwerk of technisch van aard zijn;</P>
+                        <P>• De applicatiebeheerder is in staat om gebruikerswensen te vertalen naar een technisch ontwerp en plan van aanpak alsmede de uitvoering en livegang;</P>
+                        <P>• Er dient gebruik te worden gemaakt van een centraal ticketsysteem;</P>
+                        <P>• Tijdens kantooruren geldt voor incidenten met een hoge prioriteit een reactietijd (mail of telefoon) van twee uur, voor incidenten met een normale prioriteit geldt een reactietijd van vier uur.</P>
+                        <P></P>
+                        <P>Voor de vakmatige taken verwijzen wij naar bijlage 7 ‘Functiespecificatie technisch applicatiebeheerder ICT’.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>40%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>60%</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 227-558482</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <TITLE>
+                    <P>Technisch applicatiebeheerder ICT Prolander</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-01-22</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>1</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Enshore BV</OFFICIALNAME>
+                                <TOWN>Groningen</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">700000.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Noord-Nederland</OFFICIALNAME>
+                    <TOWN>Assen</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-04</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

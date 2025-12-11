@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>academisch ziekenhuis Maastricht</OFFICIALNAME>
+                    <NATIONALID>14124959</NATIONALID>
+                    <ADDRESS>P. Debyelaan 25</ADDRESS>
+                    <TOWN>Maastricht</TOWN>
+                    <POSTAL_CODE>6229 HX</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Olger Zegers</CONTACT_POINT>
+                    <PHONE>+31 433874877</PHONE>
+                    <E_MAIL>olger.zegers@mumc.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.mumc.nl</URL_GENERAL>
+                    <URL_BUYER>https://platform.negometrix.com/PublishedTenders.aspx?tenderid=120795</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="HEALTH"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Schouderprotheses</P>
+                </TITLE>
+                <REFERENCE_NUMBER>120795</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="33183100"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SUPPLIES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Het azM, tevens handelend onder de naam Maastricht UMC+, was voornemens om de levering van schouderprotheses aan te besteden.</P>
+                    <P></P>
+                    <P>De aanbesteding geschiedde volgens de openbare procedure (de openbare procedure is een aanbestedingsprocedure met maar één ronde, waarop iedere ondernemer mag inschrijven) conform de Europese richtlijn voor overheidsopdrachten 2014/24/EU en de daaruit voortvloeiende "Aanbestedingswet 2012" van 1 juli 2016.</P>
+                    <P></P>
+                    <P>Gunning vond plaats op basis van gunningscriterium economisch meest voordelige inschrijving op basis van de beste prijs-kwaliteitverhouding.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">460000.00</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="33183200"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>NL-6229 HX no. 25 Maastricht</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Levering van schouderprotheses / schouderimplantaten</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>65</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>35</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>1 optiejaar</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <NO_CONTRACT_COVERED_GPA></NO_CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2019/S 075-177446</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>120795</CONTRACT_NO>
+                <LOT_NO>1</LOT_NO>
+                <TITLE>
+                    <P>Schouderprotheses</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>9</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>4</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>9</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Zimmer Biomet Nederland B.V.</OFFICIALNAME>
+                                <ADDRESS>Toermalijnring 600</ADDRESS>
+                                <TOWN>Dordrecht</TOWN>
+                                <POSTAL_CODE>3316 LC</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 786292929</PHONE>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>https://www.zimmerbiomet.eu/</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">460000.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Limburg</OFFICIALNAME>
+                    <TOWN>Maastricht</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-01</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

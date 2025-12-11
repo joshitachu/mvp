@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Stichting Christelijk Onderwijs Haaglanden</OFFICIALNAME>
+                    <NATIONALID>52412501</NATIONALID>
+                    <ADDRESS>Laan van Meerdervoort 70</ADDRESS>
+                    <TOWN>'S-GRAVENHAGE</TOWN>
+                    <POSTAL_CODE>2517AN</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Mitchel Vos</CONTACT_POINT>
+                    <PHONE>+31 703118787</PHONE>
+                    <E_MAIL>bkleij@scoh.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.scoh.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="EDUCATION"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>EU aanbesteding Audio Visuele Middelen (Touchscreens) SCOH</P>
+                </TITLE>
+                <REFERENCE_NUMBER>2021-TS7000</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="30000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SUPPLIES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Binnen de opdracht valt:</P>
+                    <P>-	Het leveren van AV middelen (Touchscreens) inclusief toebehoren;</P>
+                    <P>-	Het demonteren, plaatsen, installeren en monteren van de AV middelen;</P>
+                    <P>-	Het ondersteunen en verhuizen van de AV middelen indien gewenst;</P>
+                    <P>-	Het geven van gevraagd en ongevraagd advies;</P>
+                    <P>-	Het bieden van gebruikersinstructies / training en ondersteuning;</P>
+                    <P>-	Het bieden van onderhoud, service en garantie.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">0.01</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Den Haag</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Het betreft een raamovereenkomst voor de duur van 2 vaste jaren en + 2 keer 1 optiejaar. Na deze jaren heeft Opdrachtgever geen mogelijkheid om de overeenkomst te verlengen.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>70</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>30</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Het betreft een raamovereenkomst voor de duur van 2 vaste jaren en + 2 keer 1 optiejaar. Na deze jaren heeft Opdrachtgever geen mogelijkheid om de overeenkomst te verlengen.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 191-494570</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>EU aanbesteding Audio Visuele Middelen (Touchscreens) SCOH</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-01-17</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>5</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>5</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>ITS IT-services BV</OFFICIALNAME>
+                                <NATIONALID>27122867</NATIONALID>
+                                <ADDRESS>Nieuwstraat 6 B</ADDRESS>
+                                <TOWN>LEIDSCHENDAM</TOWN>
+                                <POSTAL_CODE>2266AD</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 703203200</PHONE>
+                                <E_MAIL>verkoop@its-itservices.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.its-itservices.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">0.01</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">0.01</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Den Haag</OFFICIALNAME>
+                    <ADDRESS>Prins Clauslaan 60</ADDRESS>
+                    <TOWN>Den Haag</TOWN>
+                    <POSTAL_CODE>2595 AJ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 883622200</PHONE>
+                    <E_MAIL>info.gerechtshofdenhaag@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2022-02-03</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

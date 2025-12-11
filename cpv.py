@@ -1,162 +1,190 @@
 from collections import defaultdict
 from datetime import datetime
-from supabase import create_client
+from sqlalchemy.orm import Session
+from sqlalchemy import and_
+from database import get_db, engine
+from models import TendernedRaw, TendernedRawCached, TendernedRawCPVCached
 import os
 import dotenv
 
 dotenv.load_dotenv()
 
 
-# --------------------------
-
-# Supabase config
-# --------------------------
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
-
-print(SUPABASE_URL)
-
-
-
-# Initialiseer je supabase client
-supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
-
-def update_eerdere_aanbestedingen(batch_size: int = 500):
+def update_eerdere_aanbestedingen(batch_size: int = 500, use_cpv_table: bool = False):
     """
-    Update tenderned_raw_cached met informatie over eerdere aanbestedingen
-    van dezelfde winnaar uit tenderned_raw.
+    Update tenderned_raw_cached (of tenderned_raw_cpv_cached) met informatie 
+    over eerdere aanbestedingen van dezelfde winnaar uit tenderned_raw.
     
-    Voor elke winnaar in tenderned_raw_cached:
+    Voor elke winnaar in de cache table:
     - Zoek in tenderned_raw hoeveel keer ze eerder hebben gewonnen
     - Tel het aantal eerdere aanbestedingen
     - Bereken totaal bedrag van eerdere aanbestedingen
+    
+    Args:
+        batch_size: Aantal records per batch
+        use_cpv_table: True voor tenderned_raw_cpv_cached, False voor tenderned_raw_cached
     """
     
     print("Starting update process...")
     
-    # 1) Haal ALLE data op uit tenderned_raw (de historische data)
-    print("Fetching historical data from tenderned_raw...")
-    resp_raw = (
-        supabase.table("tenderned_raw")
-        .select('"Officiële benaming", Publicatiedatum, bedrag')
-        .not_.is_('"Officiële benaming"', 'null')
-        .order("Publicatiedatum", desc=False)
-        .execute()
-    )
+    # Create database session
+    db: Session = next(get_db())
     
-    if getattr(resp_raw, "error", None):
-        print(f"Error fetching tenderned_raw: {resp_raw.error}")
-        raise RuntimeError(resp_raw.error)
-    
-    raw_data = resp_raw.data or []
-    print(f"Loaded {len(raw_data)} records from tenderned_raw")
-    
-    # 2) Organiseer de historische data per bedrijfsnaam
-    # Format: { "bedrijfsnaam": [(datum, bedrag), (datum, bedrag), ...] }
-    historical_wins = defaultdict(list)
-    
-    for row in raw_data:
-        bedrijf = (row.get("Officiële benaming") or "").strip()
-        if not bedrijf:
-            continue
-            
-        datum_raw = row.get("Publicatiedatum")
-        bedrag_raw = row.get("bedrag")
+    try:
+        # 1) Haal ALLE data op uit tenderned_raw (de historische data)
+        print("Fetching historical data from tenderned_raw...")
         
-        # Parse datum
-        datum = parse_date(datum_raw)
-        # Parse bedrag
-        bedrag = parse_amount(bedrag_raw)
+        raw_data = db.query(
+            TendernedRaw.Officiele_benaming,
+            TendernedRaw.Publicatiedatum,
+            TendernedRaw.bedrag
+        ).filter(
+            TendernedRaw.Officiele_benaming.isnot(None),
+            TendernedRaw.Officiele_benaming != ''
+        ).order_by(
+            TendernedRaw.Publicatiedatum.asc()
+        ).all()
         
-        historical_wins[bedrijf].append({
-            "datum": datum,
-            "bedrag": bedrag or 0
-        })
-    
-    print(f"Organized data for {len(historical_wins)} unique companies")
-    
-    # 3) Haal data op uit tenderned_raw_cached (de nieuwe data die we willen updaten)
-    print("Fetching data from tenderned_raw_cached...")
-    offset = 0
-    total_updated = 0
-    
-    while True:
-        resp_cached = (
-            supabase.table("tenderned_raw_cpv_cached")
-            .select('id, "Officiële benaming", Publicatiedatum')
-            .not_.is_('"Officiële benaming"', 'null')
-            .order("id")
-            .range(offset, offset + batch_size - 1)
-            .execute()
-        )
+        print(f"Loaded {len(raw_data)} records from tenderned_raw")
         
-        if getattr(resp_cached, "error", None):
-            print(f"Error fetching tenderned_raw_cached: {resp_cached.error}")
-            raise RuntimeError(resp_cached.error)
+        # 2) Organiseer de historische data per bedrijfsnaam
+        # Format: { "bedrijfsnaam": [(datum, bedrag), (datum, bedrag), ...] }
+        historical_wins = defaultdict(list)
         
-        cached_rows = resp_cached.data or []
-        if not cached_rows:
-            break
-        
-        print(f"Processing batch: records {offset + 1} to {offset + len(cached_rows)}")
-        
-        # 4) Bereken voor elke cached row het aantal eerdere aanbestedingen
-        updates = []
-        
-        for row in cached_rows:
-            row_id = row.get("id")
-            bedrijf = (row.get("Officiële benaming") or "").strip()
-            pub_datum_raw = row.get("Publicatiedatum")
-            
-            if not bedrijf or not row_id:
+        for row in raw_data:
+            bedrijf = (row.Officiele_benaming or "").strip()
+            if not bedrijf:
                 continue
             
-            pub_datum = parse_date(pub_datum_raw)
+            datum = parse_date(row.Publicatiedatum)
+            bedrag = parse_amount(row.bedrag)
             
-            # Tel eerdere aanbestedingen van dit bedrijf
-            aantal_eerder = 0
-            totaal_bedrag_eerder = 0
-            
-            if bedrijf in historical_wins:
-                for win in historical_wins[bedrijf]:
-                    # Check of deze win eerder was dan de huidige publicatie
-                    if win["datum"] and pub_datum and win["datum"] < pub_datum:
-                        aantal_eerder += 1
-                        totaal_bedrag_eerder += win["bedrag"]
-            
-            updates.append({
-                "id": row_id,
-                "aantal_eerdere_aanbestedingen": aantal_eerder,
-                "heeft_eerdere_aanbestedingen": aantal_eerder > 0
+            historical_wins[bedrijf].append({
+                "datum": datum,
+                "bedrag": bedrag or 0
             })
         
-        # 5) Bulk update naar database
-        if updates:
-            for update in updates:
-                try:
-                    supabase.table("tenderned_raw_cached").update({
-                        "aantal_eerdere_aanbestedingen": update["aantal_eerdere_aanbestedingen"],
-                        "heeft_eerdere_aanbestedingen": update["heeft_eerdere_aanbestedingen"]
-                    }).eq("id", update["id"]).execute()
-                except Exception as e:
-                    print(f"Error updating id {update['id']}: {e}")
+        print(f"Organized data for {len(historical_wins)} unique companies")
+        
+        # 3) Bepaal welke cache table te gebruiken
+        CacheModel = TendernedRawCPVCached if use_cpv_table else TendernedRawCached
+        table_name = "tenderned_raw_cpv_cached" if use_cpv_table else "tenderned_raw_cached"
+        print(f"Using cache table: {table_name}")
+        print(f"CacheModel: {CacheModel.__tablename__}")
+        
+        # 4) Haal data op uit cache table in batches
+        print("Fetching data from cache table...")
+        offset = 0
+        total_updated = 0
+        
+        while True:
+            cached_rows = db.query(
+                CacheModel.id,
+                CacheModel.Officiele_benaming,
+                CacheModel.Publicatiedatum
+            ).filter(
+                CacheModel.Officiele_benaming.isnot(None),
+                CacheModel.Officiele_benaming != ''
+            ).order_by(
+                CacheModel.id.asc()
+            ).limit(batch_size).offset(offset).all()
             
-            total_updated += len(updates)
-            print(f"Updated {len(updates)} records. Total so far: {total_updated}")
+            if not cached_rows:
+                break
+            
+            print(f"Processing batch: records {offset + 1} to {offset + len(cached_rows)}")
+            
+            # 5) Bereken voor elke cached row het aantal eerdere aanbestedingen
+            updates_performed = 0
+            
+            for idx, row in enumerate(cached_rows):
+                row_id = row.id
+                bedrijf = (row.Officiele_benaming or "").strip()
+                pub_datum = parse_date(row.Publicatiedatum)
+                
+                # Debug first 5 records of first batch
+                if offset == 0 and idx < 5:
+                    print(f"\n--- DEBUG Record {row_id} ---")
+                    print(f"Company: '{bedrijf}'")
+                    print(f"Pub Date: {pub_datum}")
+                    print(f"Historical wins for company: {len(historical_wins.get(bedrijf, []))}")
+                
+                if not bedrijf or not row_id:
+                    continue
+                
+                # Tel eerdere aanbestedingen van dit bedrijf
+                aantal_eerder = 0
+                totaal_bedrag_eerder = 0
+                
+                if bedrijf in historical_wins:
+                    for win in historical_wins[bedrijf]:
+                        # Check of deze win eerder was dan de huidige publicatie
+                        if win["datum"] and pub_datum and win["datum"] < pub_datum:
+                            aantal_eerder += 1
+                            totaal_bedrag_eerder += win["bedrag"]
+                    
+                    # Debug first 5 records
+                    if offset == 0 and idx < 5:
+                        print(f"Earlier wins found: {aantal_eerder}")
+                        print(f"Total amount earlier: {totaal_bedrag_eerder}")
+                        if len(historical_wins[bedrijf]) > 0:
+                            print(f"Sample wins (first 3):")
+                            for i, win in enumerate(historical_wins[bedrijf][:3]):
+                                is_earlier = win["datum"] and pub_datum and win["datum"] < pub_datum
+                                print(f"  {i+1}. Date: {win['datum']} | Amount: {win['bedrag']} | Earlier? {is_earlier}")
+                
+                # 6) Update het record
+                try:
+                    db.query(CacheModel).filter(
+                        CacheModel.id == row_id
+                    ).update({
+                        "aantal_eerdere_aanbestedingen": aantal_eerder,
+                        "heeft_eerdere_aanbestedingen": aantal_eerder > 0,
+                        "totaal_bedrag_eerdere_aanbestedingen": totaal_bedrag_eerder
+                    }, synchronize_session=False)
+                    
+                    updates_performed += 1
+                    
+                except Exception as e:
+                    print(f"❌ Error updating id {row_id}: {e}")
+                    db.rollback()
+                    continue
+            
+            # Commit na elke batch
+            db.commit()
+            
+            total_updated += updates_performed
+            print(f"Updated {updates_performed} records. Total so far: {total_updated}")
+            
+            offset += batch_size
+            
+            # Stop als we minder rows krijgen dan batch_size
+            if len(cached_rows) < batch_size:
+                break
         
-        offset += batch_size
+        print(f"✅ Complete! Updated {total_updated} records in total")
         
-        # Stop als we minder rows krijgen dan batch_size
-        if len(cached_rows) < batch_size:
-            break
-    
-    print(f"✅ Complete! Updated {total_updated} records in total")
+    except Exception as e:
+        print(f"❌ Error during update process: {e}")
+        db.rollback()
+        raise
+    finally:
+        db.close()
 
 
 def parse_date(raw):
     """Parse een datum string naar datetime object"""
     if not raw:
         return None
+    
+    # If it's already a datetime/date object
+    from datetime import date
+    if isinstance(raw, (datetime, date)):
+        # Convert date to datetime for comparison
+        if isinstance(raw, date) and not isinstance(raw, datetime):
+            return datetime.combine(raw, datetime.min.time())
+        return raw
+    
     if isinstance(raw, str):
         try:
             return datetime.fromisoformat(raw)
@@ -164,7 +192,11 @@ def parse_date(raw):
             try:
                 return datetime.strptime(raw, "%d-%m-%Y")
             except ValueError:
-                return None
+                try:
+                    return datetime.strptime(raw, "%Y-%m-%d")
+                except ValueError:
+                    return None
+    
     return None
 
 
@@ -184,5 +216,13 @@ def parse_amount(raw):
 
 
 if __name__ == "__main__":
-    # Run de update functie
-    update_eerdere_aanbestedingen(batch_size=500)
+    # Update beide tables
+    print("\n" + "="*50)
+    print("Updating tenderned_raw_cached...")
+    print("="*50 + "\n")
+    update_eerdere_aanbestedingen(batch_size=500, use_cpv_table=False)
+    
+    print("\n" + "="*50)
+    print("Updating tenderned_raw_cpv_cached...")
+    print("="*50 + "\n")
+    update_eerdere_aanbestedingen(batch_size=500, use_cpv_table=True)

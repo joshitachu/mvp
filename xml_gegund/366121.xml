@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+    <ext:UBLExtensions>
+        <ext:UBLExtension>
+            <ext:ExtensionContent>
+                <efext:EformsExtension>
+                    <efac:NoticeResult>
+                        <efbc:OverallMaximumFrameworkContractsAmount currencyID="EUR">1005000</efbc:OverallMaximumFrameworkContractsAmount>
+                        <efac:LotResult>
+                            <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                            <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                            <efac:LotTender>
+                                <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                            </efac:LotTender>
+                            <efac:FrameworkAgreementValues>
+                                <cbc:MaximumValueAmount currencyID="EUR">780000</cbc:MaximumValueAmount>
+                            </efac:FrameworkAgreementValues>
+                            <efac:ReceivedSubmissionsStatistics>
+                                <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                                <efbc:StatisticsNumeric>4</efbc:StatisticsNumeric>
+                            </efac:ReceivedSubmissionsStatistics>
+                            <efac:ReceivedSubmissionsStatistics>
+                                <efbc:StatisticsCode listName="received-submission-type">t-sme</efbc:StatisticsCode>
+                                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+                            </efac:ReceivedSubmissionsStatistics>
+                            <efac:ReceivedSubmissionsStatistics>
+                                <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                                <efbc:StatisticsNumeric>4</efbc:StatisticsNumeric>
+                            </efac:ReceivedSubmissionsStatistics>
+                            <efac:SettledContract>
+                                <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                            </efac:SettledContract>
+                            <efac:TenderLot>
+                                <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+                            </efac:TenderLot>
+                        </efac:LotResult>
+                        <efac:LotResult>
+                            <cbc:ID schemeName="result">RES-0002</cbc:ID>
+                            <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                            <efac:LotTender>
+                                <cbc:ID schemeName="tender">TEN-0002</cbc:ID>
+                            </efac:LotTender>
+                            <efac:FrameworkAgreementValues>
+                                <cbc:MaximumValueAmount currencyID="EUR">225000</cbc:MaximumValueAmount>
+                            </efac:FrameworkAgreementValues>
+                            <efac:ReceivedSubmissionsStatistics>
+                                <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                                <efbc:StatisticsNumeric>2</efbc:StatisticsNumeric>
+                            </efac:ReceivedSubmissionsStatistics>
+                            <efac:ReceivedSubmissionsStatistics>
+                                <efbc:StatisticsCode listName="received-submission-type">t-sme</efbc:StatisticsCode>
+                                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+                            </efac:ReceivedSubmissionsStatistics>
+                            <efac:ReceivedSubmissionsStatistics>
+                                <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                                <efbc:StatisticsNumeric>2</efbc:StatisticsNumeric>
+                            </efac:ReceivedSubmissionsStatistics>
+                            <efac:SettledContract>
+                                <cbc:ID schemeName="contract">CON-0002</cbc:ID>
+                            </efac:SettledContract>
+                            <efac:TenderLot>
+                                <cbc:ID schemeName="Lot">LOT-0002</cbc:ID>
+                            </efac:TenderLot>
+                        </efac:LotResult>
+                        <efac:LotTender>
+                            <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                            <efbc:TenderRankedIndicator>false</efbc:TenderRankedIndicator>
+                            <efbc:TenderVariantIndicator>false</efbc:TenderVariantIndicator>
+                            <efac:SubcontractingTerm>
+                                <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                            </efac:SubcontractingTerm>
+                            <efac:TenderingParty>
+                                <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                            </efac:TenderingParty>
+                            <efac:TenderLot>
+                                <cbc:ID>LOT-0001</cbc:ID>
+                            </efac:TenderLot>
+                            <efac:TenderReference>
+                                <cbc:ID>1</cbc:ID>
+                            </efac:TenderReference>
+                        </efac:LotTender>
+                        <efac:LotTender>
+                            <cbc:ID schemeName="tender">TEN-0002</cbc:ID>
+                            <efbc:TenderRankedIndicator>false</efbc:TenderRankedIndicator>
+                            <efbc:TenderVariantIndicator>false</efbc:TenderVariantIndicator>
+                            <efac:SubcontractingTerm>
+                                <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                            </efac:SubcontractingTerm>
+                            <efac:TenderingParty>
+                                <cbc:ID schemeName="tendering-party">TPA-0002</cbc:ID>
+                            </efac:TenderingParty>
+                            <efac:TenderLot>
+                                <cbc:ID>LOT-0002</cbc:ID>
+                            </efac:TenderLot>
+                            <efac:TenderReference>
+                                <cbc:ID>2</cbc:ID>
+                            </efac:TenderReference>
+                        </efac:LotTender>
+                        <efac:SettledContract>
+                            <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                            <cbc:AwardDate>2024-12-11+01:00</cbc:AwardDate>
+                            <cbc:IssueDate>2025-01-01+01:00</cbc:IssueDate>
+                            <cbc:Title languageID="NLD">P1 Perceel 1: Bedrijfskleding incl. PBM medewerkers buitendienst en toezichthouders</cbc:Title>
+                            <cac:SignatoryParty>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                                </cac:PartyIdentification>
+                            </cac:SignatoryParty>
+                            <efac:ContractReference>
+                                <cbc:ID>CON-0001</cbc:ID>
+                            </efac:ContractReference>
+                            <efac:LotTender>
+                                <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                            </efac:LotTender>
+                        </efac:SettledContract>
+                        <efac:SettledContract>
+                            <cbc:ID schemeName="contract">CON-0002</cbc:ID>
+                            <cbc:AwardDate>2024-12-11+01:00</cbc:AwardDate>
+                            <cbc:IssueDate>2025-01-01+01:00</cbc:IssueDate>
+                            <cbc:Title languageID="NLD">P2 Perceel 2: Bedrijfskleding incl. PBM handhavers (Boa’s)</cbc:Title>
+                            <cac:SignatoryParty>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                                </cac:PartyIdentification>
+                            </cac:SignatoryParty>
+                            <efac:ContractReference>
+                                <cbc:ID>CON-0002</cbc:ID>
+                            </efac:ContractReference>
+                            <efac:LotTender>
+                                <cbc:ID schemeName="tender">TEN-0002</cbc:ID>
+                            </efac:LotTender>
+                        </efac:SettledContract>
+                        <efac:TenderingParty>
+                            <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                            <efac:Tenderer>
+                                <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                            </efac:Tenderer>
+                        </efac:TenderingParty>
+                        <efac:TenderingParty>
+                            <cbc:ID schemeName="tendering-party">TPA-0002</cbc:ID>
+                            <efac:Tenderer>
+                                <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                            </efac:Tenderer>
+                        </efac:TenderingParty>
+                    </efac:NoticeResult>
+                    <efac:NoticeSubType>
+                        <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+                    </efac:NoticeSubType>
+                    <efac:Organizations>
+                        <efac:Organization>
+                            <efac:Company>
+                                <cbc:WebsiteURI>http://www.gemeentehw.nl</cbc:WebsiteURI>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="NLD">Gemeente Hoeksche Waard</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>Sportlaan 22</cbc:StreetName>
+                                    <cbc:CityName>Maasdam</cbc:CityName>
+                                    <cbc:PostalZone>3299 XG</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">NL33C</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">NLD</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>34652379</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Name>Kristel Bosgieter</cbc:Name>
+                                    <cbc:Telephone>+31 616120459</cbc:Telephone>
+                                    <cbc:ElectronicMail>inkoop@gemeentehw.nl</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                            <efac:TouchPoint>
+                                <cbc:WebsiteURI>http://www.tenderned.nl</cbc:WebsiteURI>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="touchpoint">TPO-0003</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="NLD">Vragen voor de Nota van Inlichtingen kunt u stellen via www.tenderned.nl</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:CityName>Maasdam</cbc:CityName>
+                                    <cbc:PostalZone>3299XG</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">NL33C</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">NLD</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:Contact>
+                                    <cbc:ElectronicMail>inkoop@gemeentehw.nl</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:TouchPoint>
+                            <efac:TouchPoint>
+                                <cbc:WebsiteURI>http://www.rechtspraak.nl</cbc:WebsiteURI>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="touchpoint">TPO-0002</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="NLD">Arrondissementsrechtbank Rotterdam - Dordrecht</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>Wilhelminaplein 100-125 </cbc:StreetName>
+                                    <cbc:CityName>Rotterdam</cbc:CityName>
+                                    <cbc:PostalZone>3072 AK</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">NL33C</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">NLD</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:Contact>
+                                    <cbc:Name>Rechtbank Rotterdam</cbc:Name>
+                                    <cbc:Telephone>+31 883626000</cbc:Telephone>
+                                    <cbc:ElectronicMail>rechtbankrotterdam@rechtspraak.nl</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:TouchPoint>
+                            <efac:TouchPoint>
+                                <cbc:WebsiteURI>http://www.rechtspraak.nl</cbc:WebsiteURI>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="touchpoint">TPO-0001</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="NLD">Arrondissementsrechtbank Rotterdam - Dordrecht</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>Wilhelminaplein 100-125 </cbc:StreetName>
+                                    <cbc:CityName>Rotterdam</cbc:CityName>
+                                    <cbc:PostalZone>3072 AK</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">NL33C</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">NLD</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:Contact>
+                                    <cbc:Name>Rechtbank Rotterdam</cbc:Name>
+                                    <cbc:Telephone>+31 883626000</cbc:Telephone>
+                                    <cbc:ElectronicMail>rechtbankrotterdam@rechtspraak.nl</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:TouchPoint>
+                        </efac:Organization>
+                        <efac:Organization>
+                            <efac:Company>
+                                <cbc:WebsiteURI>http://www.heigo.nl</cbc:WebsiteURI>
+                                <efbc:CompanySizeCode listName="economic-operator-size">medium</efbc:CompanySizeCode>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="NLD">Heigo Nederland B.V.</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>Industrieweg Oost 28</cbc:StreetName>
+                                    <cbc:CityName>ELST</cbc:CityName>
+                                    <cbc:PostalZone>6662NE</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">NL226</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">NLD</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>09067076</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Name>Jan van Haren</cbc:Name>
+                                    <cbc:Telephone>+31 481364111</cbc:Telephone>
+                                    <cbc:Telefax>+31 481364100</cbc:Telefax>
+                                    <cbc:ElectronicMail>tender@heigo.nl</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                        </efac:Organization>
+                    </efac:Organizations>
+                </efext:EformsExtension>
+            </ext:ExtensionContent>
+        </ext:UBLExtension>
+    </ext:UBLExtensions>
+    <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+    <cbc:CustomizationID>eforms-sdk-1.12</cbc:CustomizationID>
+    <cbc:ID schemeName="notice-id">18638f57-1d9e-47fe-bed1-fb5f5ede037e</cbc:ID>
+    <cbc:ContractFolderID>43017230-185c-4a49-b2e9-e6c0a5af6cd6</cbc:ContractFolderID>
+    <cbc:IssueDate>2025-02-03+01:00</cbc:IssueDate>
+    <cbc:IssueTime>13:40:14.459058964+01:00</cbc:IssueTime>
+    <cbc:VersionID>01</cbc:VersionID>
+    <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+    <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+    <cbc:NoticeLanguageCode listName="language">NLD</cbc:NoticeLanguageCode>
+    <cac:ContractingParty>
+        <cac:ContractingPartyType>
+            <cbc:PartyTypeCode listName="buyer-legal-type">ra</cbc:PartyTypeCode>
+        </cac:ContractingPartyType>
+        <cac:ContractingActivity>
+            <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+        </cac:ContractingActivity>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+        </cac:Party>
+    </cac:ContractingParty>
+    <cac:TenderingProcess>
+        <cbc:ProcedureCode languageID="NLD" listName="procurement-procedure-type">open</cbc:ProcedureCode>
+        <cac:ProcessJustification>
+            <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+        </cac:ProcessJustification>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+        <cbc:ID schemeName="InternalID">Z/22/153604</cbc:ID>
+        <cbc:Name languageID="NLD">Bedrijfskleding</cbc:Name>
+        <cbc:Description languageID="NLD">Gemeente Hoeksche Waard wil door middel van deze Europese openbare aanbesteding bedrijfskleding en persoonlijke beschermingsmiddelen inkopen. Daarnaast vragen wij ook aanvullende dienstverlening uit zoals o.a.:
+•	Het aanbieden een online bestel- en registratiesysteem
+•	Het inrichten van een webshop/dashBoard binnen een kledingmanagementsysteem;
+•	Het organiseren van pas- en inmeetafspraken;
+•	Het bijhouden uitgegeven kleding en monitoring wettelijke eisen;
+•	Het tussentijds vervangen en repareren van de kleding;
+•	Het verzorgen van het logistieke proces.
+De bedrijfskleding wordt gemeentebreed ingekocht en is bestemd voor buitendienstmedewerkers, toezichthouders, handhavers (Boa’s) en magazijn-/logistiekmedewerkers van het sociaal werkbedrijf.
+De gemeente heeft ervoor gekozen om de opdracht onder te verdelen in twee percelen. In totaal dragen ca. 160 medewerkers binnen gemeente Hoeksche Waard bedrijfskleding, PBM en/of schoeisel. 
+Gemeente Hoeksche Waard heeft ervoor gekozen om de nieuwe opdracht op te delen in twee percelen:
+•	Perceel 1 -  Bedrijfskleding incl. PBM medewerkers buitendienst en toezichthouders. Geschatte opdrachtwaarde gedurende de vaste looptijd van 4 jaar: € 260.000
+
+•	Perceel 2 -  Bedrijfskleding incl. PBM handhavers (BOA’s)		
+Geschatte opdrachtwaarde gedurende de vaste looptijd van 4 jaar: € 45.000
+
+Zie voor verdere informatie het beschrijvend document en alle bijbehorende bijlagen</cbc:Description>
+        <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+        <cbc:Note languageID="NLD">Er zijn twee vragenronden gepland. Alle vragen ten aanzien van de procedure en aanbestedingsdocumenten dienen via de specifieke vragenmodule in TenderNed te worden gesteld. 
+Alle vragen moeten per ronde uiterlijk voor de datum en tijdstip, zoals vermeld in de planning, paragraaf 1.5, door inschrijver gesteld zijn. Let op! De tweede Nota van Inlichtingen is alleen bedoeld om nadere vragen te stellen over de verstrekte antwoorden van de eerste Nota van Inlichtingen.</cbc:Note>
+        <cac:RequestedTenderTotal>
+            <cbc:EstimatedOverallContractAmount currencyID="EUR">305000</cbc:EstimatedOverallContractAmount>
+        </cac:RequestedTenderTotal>
+        <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">18000000</cbc:ItemClassificationCode>
+        </cac:MainCommodityClassification>
+        <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">18100000</cbc:ItemClassificationCode>
+        </cac:AdditionalCommodityClassification>
+        <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">18800000</cbc:ItemClassificationCode>
+        </cac:AdditionalCommodityClassification>
+        <cac:RealizedLocation>
+            <cbc:Description languageID="NLD">Hoeksche Waard</cbc:Description>
+            <cac:Address>
+                <cbc:CountrySubentityCode listName="nuts">NL33C</cbc:CountrySubentityCode>
+                <cac:Country>
+                    <cbc:IdentificationCode listName="country">NLD</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:Address>
+        </cac:RealizedLocation>
+    </cac:ProcurementProject>
+    <cac:ProcurementProjectLot>
+        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+        <cac:TenderingTerms>
+            <ext:UBLExtensions>
+                <ext:UBLExtension>
+                    <ext:ExtensionContent>
+                        <efext:EformsExtension>
+                            <efac:StrategicProcurement>
+                                <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+                            </efac:StrategicProcurement>
+                        </efext:EformsExtension>
+                    </ext:ExtensionContent>
+                </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:FundingProgramCode languageID="NLD" listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+            <cac:AwardingTerms>
+                <cac:AwardingCriterion>
+                    <cac:SubordinateAwardingCriterion>
+                        <ext:UBLExtensions>
+                            <ext:UBLExtension>
+                                <ext:ExtensionContent>
+                                    <efext:EformsExtension>
+                                        <efac:AwardCriterionParameter>
+                                            <efbc:ParameterCode listName="number-fixed">fix-tot</efbc:ParameterCode>
+                                            <efbc:ParameterNumeric>182000</efbc:ParameterNumeric>
+                                        </efac:AwardCriterionParameter>
+                                    </efext:EformsExtension>
+                                </ext:ExtensionContent>
+                            </ext:UBLExtension>
+                        </ext:UBLExtensions>
+                        <cbc:AwardingCriterionTypeCode languageID="NLD" listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                        <cbc:Name languageID="NLD">Fase 1: Kwaliteit</cbc:Name>
+                        <cbc:Description languageID="NLD">Het onderdeel Kwaliteit van fase 1 bestaat uit:
+fase 1:
+- K1: Kleding Management Systeem
+- K2: Dienstverlening  tijdens opstartfase en gedurende looptijd overeenkomst
+- K3: Inname en verwerking gebruikte oude kleding</cbc:Description>
+                    </cac:SubordinateAwardingCriterion>
+                    <cac:SubordinateAwardingCriterion>
+                        <ext:UBLExtensions>
+                            <ext:UBLExtension>
+                                <ext:ExtensionContent>
+                                    <efext:EformsExtension>
+                                        <efac:AwardCriterionParameter>
+                                            <efbc:ParameterCode listName="number-fixed">fix-tot</efbc:ParameterCode>
+                                            <efbc:ParameterNumeric>0</efbc:ParameterNumeric>
+                                        </efac:AwardCriterionParameter>
+                                    </efext:EformsExtension>
+                                </ext:ExtensionContent>
+                            </ext:UBLExtension>
+                        </ext:UBLExtensions>
+                        <cbc:AwardingCriterionTypeCode languageID="NLD" listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                        <cbc:Name languageID="NLD">Prijs</cbc:Name>
+                        <cbc:Description languageID="NLD">Voor beide percelen geldt:
+•	Alle prijzen dienen te worden ingediend in Euro’s exclusief BTW en te voldoen aan hetgeen gesteld in paragraaf 3.2.1.
+•	De opgegeven prijzen dienen all-in tarieven te zijn, hetgeen betekent dat alle eventuele bijkomende kosten in de tarieven dienen te zijn verwerkt, zoals, maar niet uitsluitend, reis- en transportkosten, rapportagekosten, administratiekosten en andere logisch tot de opdracht behorende kosten.
+•	De opgegeven prijzen worden afgerond op twee (2) decimalen achter de komma.</cbc:Description>
+                    </cac:SubordinateAwardingCriterion>
+                    <cac:SubordinateAwardingCriterion>
+                        <ext:UBLExtensions>
+                            <ext:UBLExtension>
+                                <ext:ExtensionContent>
+                                    <efext:EformsExtension>
+                                        <efac:AwardCriterionParameter>
+                                            <efbc:ParameterCode listName="number-fixed">fix-tot</efbc:ParameterCode>
+                                            <efbc:ParameterNumeric>0</efbc:ParameterNumeric>
+                                        </efac:AwardCriterionParameter>
+                                    </efext:EformsExtension>
+                                </ext:ExtensionContent>
+                            </ext:UBLExtension>
+                        </ext:UBLExtensions>
+                        <cbc:AwardingCriterionTypeCode languageID="NLD" listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                        <cbc:Name languageID="NLD">Fase 2: K4 Draagproef</cbc:Name>
+                        <cbc:Description languageID="NLD">De drie inschrijvers met de laagste fictieve inschrijfprijs van het perceel behaald in fase 1 gaan door naar fase 2. 
+
+Fase 2 bestaat uit de draagproef. Tijdens de draagproef begint elke inschrijver weer met 0 punten, zodat de beoordeling van de draagproef de doorslag geeft. De inschrijver met de hoogste totale eindscore is de beoogd winnaar van het perceel.</cbc:Description>
+                    </cac:SubordinateAwardingCriterion>
+                </cac:AwardingCriterion>
+            </cac:AwardingTerms>
+            <cac:AdditionalInformationParty>
+                <cac:PartyIdentification>
+                    <cbc:ID>TPO-0003</cbc:ID>
+                </cac:PartyIdentification>
+            </cac:AdditionalInformationParty>
+            <cac:AppealTerms>
+                <cac:PresentationPeriod>
+                    <cbc:Description languageID="NLD">20 kalenderdagen</cbc:Description>
+                </cac:PresentationPeriod>
+                <cac:AppealInformationParty>
+                    <cac:PartyIdentification>
+                        <cbc:ID>TPO-0001</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:AppealInformationParty>
+                <cac:AppealReceiverParty>
+                    <cac:PartyIdentification>
+                        <cbc:ID>TPO-0002</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:AppealReceiverParty>
+            </cac:AppealTerms>
+        </cac:TenderingTerms>
+        <cac:TenderingProcess>
+            <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+            <cac:AuctionTerms>
+                <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+            </cac:AuctionTerms>
+            <cac:ContractingSystem>
+                <cbc:ContractingSystemTypeCode listName="framework-agreement">fa-wo-rc</cbc:ContractingSystemTypeCode>
+            </cac:ContractingSystem>
+            <cac:ContractingSystem>
+                <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+            </cac:ContractingSystem>
+        </cac:TenderingProcess>
+        <cac:ProcurementProject>
+            <cbc:ID schemeName="InternalID">1</cbc:ID>
+            <cbc:Name languageID="NLD">Perceel 1: Bedrijfskleding incl. PBM medewerkers buitendienst en toezichthouders</cbc:Name>
+            <cbc:Description languageID="NLD">Gemeente Hoeksche Waard wil door middel van deze Europese openbare aanbesteding bedrijfskleding en persoonlijke beschermingsmiddelen inkopen. Daarnaast vragen wij ook aanvullende dienstverlening uit zoals o.a.:
+• Het aanbieden een online bestel- en registratiesysteem
+• Het inrichten van een webshop/dashBoard binnen een kledingmanagementsysteem;
+• Het organiseren van pas- en inmeetafspraken;
+• Het bijhouden uitgegeven kleding en monitoring wettelijke eisen;
+• Het tussentijds vervangen en repareren van de kleding;
+• Het verzorgen van het logistieke proces.
+
+De bedrijfskleding voor perceel 1 is bestemd voor buitendienstmedewerkers, toezichthouders en magazijn-/logistiekmedewerkers van het sociaal werkbedrijf. In totaal dragen ca. 150 medewerkers binnen dit perceel bedrijfskleding, PBM en/of schoeisel.
+
+Geschatte opdrachtwaarde gedurende de vaste looptijd van 4 jaar: € 260.000,-
+
+Voor dit perceel geldt een maximale waarde van 3x de opdrachtwaarde van € 260.000,-  exclusief BTW  over de gehele looptijd inclusief verlengingsopties (conform jurisprudentie Arrest ECLI:EU:C:2018:1034).</cbc:Description>
+            <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+            <cac:ProcurementAdditionalType>
+                <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+            </cac:ProcurementAdditionalType>
+            <cac:MainCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">18000000</cbc:ItemClassificationCode>
+            </cac:MainCommodityClassification>
+            <cac:AdditionalCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">18100000</cbc:ItemClassificationCode>
+            </cac:AdditionalCommodityClassification>
+            <cac:AdditionalCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">18800000</cbc:ItemClassificationCode>
+            </cac:AdditionalCommodityClassification>
+            <cac:RealizedLocation>
+                <cbc:Description languageID="NLD">Hoeksche Waard</cbc:Description>
+                <cac:Address>
+                    <cbc:CountrySubentityCode listName="nuts">NL33C</cbc:CountrySubentityCode>
+                    <cac:Country>
+                        <cbc:IdentificationCode listName="country">NLD</cbc:IdentificationCode>
+                    </cac:Country>
+                </cac:Address>
+            </cac:RealizedLocation>
+            <cac:PlannedPeriod>
+                <cbc:DurationMeasure unitCode="YEAR">6</cbc:DurationMeasure>
+            </cac:PlannedPeriod>
+            <cac:ContractExtension>
+                <cbc:OptionsDescription languageID="NLD">Mogelijkheid tot verlenging looptijd overeenkomst na aflopen vaste looptijd.</cbc:OptionsDescription>
+                <cbc:MaximumNumberNumeric>2</cbc:MaximumNumberNumeric>
+                <cac:Renewal>
+                    <cac:Period>
+                        <cbc:Description languageID="NLD">De ingangsdatum van de raamovereenkomst van perceel 1 als perceel 2 is de datum van definitieve gunning in verband met de implementatiefase. De opdrachtnemer wordt geacht de levering van kleding op zich te nemen vanaf 1 januari 2025. De vaste looptijd van de overeenkomst is 4 jaar en eindigt op 31 december 2028. De overeenkomst kan na deze vaste looptijd twee keer met 1 jaar verlengd worden.</cbc:Description>
+                    </cac:Period>
+                </cac:Renewal>
+            </cac:ContractExtension>
+        </cac:ProcurementProject>
+    </cac:ProcurementProjectLot>
+    <cac:ProcurementProjectLot>
+        <cbc:ID schemeName="Lot">LOT-0002</cbc:ID>
+        <cac:TenderingTerms>
+            <ext:UBLExtensions>
+                <ext:UBLExtension>
+                    <ext:ExtensionContent>
+                        <efext:EformsExtension>
+                            <efac:StrategicProcurement>
+                                <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+                            </efac:StrategicProcurement>
+                        </efext:EformsExtension>
+                    </ext:ExtensionContent>
+                </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:FundingProgramCode languageID="NLD" listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+            <cac:AwardingTerms>
+                <cac:AwardingCriterion>
+                    <cac:SubordinateAwardingCriterion>
+                        <ext:UBLExtensions>
+                            <ext:UBLExtension>
+                                <ext:ExtensionContent>
+                                    <efext:EformsExtension>
+                                        <efac:AwardCriterionParameter>
+                                            <efbc:ParameterCode listName="number-fixed">fix-tot</efbc:ParameterCode>
+                                            <efbc:ParameterNumeric>31500</efbc:ParameterNumeric>
+                                        </efac:AwardCriterionParameter>
+                                    </efext:EformsExtension>
+                                </ext:ExtensionContent>
+                            </ext:UBLExtension>
+                        </ext:UBLExtensions>
+                        <cbc:AwardingCriterionTypeCode languageID="NLD" listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                        <cbc:Name languageID="NLD">Fase 1: Kwaliteit</cbc:Name>
+                        <cbc:Description languageID="NLD">Fase 1: Kwaliteit</cbc:Description>
+                    </cac:SubordinateAwardingCriterion>
+                    <cac:SubordinateAwardingCriterion>
+                        <ext:UBLExtensions>
+                            <ext:UBLExtension>
+                                <ext:ExtensionContent>
+                                    <efext:EformsExtension>
+                                        <efac:AwardCriterionParameter>
+                                            <efbc:ParameterCode listName="number-fixed">fix-tot</efbc:ParameterCode>
+                                            <efbc:ParameterNumeric>0</efbc:ParameterNumeric>
+                                        </efac:AwardCriterionParameter>
+                                    </efext:EformsExtension>
+                                </ext:ExtensionContent>
+                            </ext:UBLExtension>
+                        </ext:UBLExtensions>
+                        <cbc:AwardingCriterionTypeCode languageID="NLD" listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                        <cbc:Name languageID="NLD">Prijs</cbc:Name>
+                        <cbc:Description languageID="NLD">Voor beide percelen geldt:
+•	Alle prijzen dienen te worden ingediend in Euro’s exclusief BTW en te voldoen aan hetgeen gesteld in paragraaf 3.2.1.
+•	De opgegeven prijzen dienen all-in tarieven te zijn, hetgeen betekent dat alle eventuele bijkomende kosten in de tarieven dienen te zijn verwerkt, zoals, maar niet uitsluitend, reis- en transportkosten, rapportagekosten, administratiekosten en andere logisch tot de opdracht behorende kosten.
+•	De opgegeven prijzen worden afgerond op twee (2) decimalen achter de komma.</cbc:Description>
+                    </cac:SubordinateAwardingCriterion>
+                    <cac:SubordinateAwardingCriterion>
+                        <ext:UBLExtensions>
+                            <ext:UBLExtension>
+                                <ext:ExtensionContent>
+                                    <efext:EformsExtension>
+                                        <efac:AwardCriterionParameter>
+                                            <efbc:ParameterCode listName="number-fixed">fix-tot</efbc:ParameterCode>
+                                            <efbc:ParameterNumeric>0</efbc:ParameterNumeric>
+                                        </efac:AwardCriterionParameter>
+                                    </efext:EformsExtension>
+                                </ext:ExtensionContent>
+                            </ext:UBLExtension>
+                        </ext:UBLExtensions>
+                        <cbc:AwardingCriterionTypeCode languageID="NLD" listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                        <cbc:Name languageID="NLD">Fase 2: K4 Draagproef</cbc:Name>
+                        <cbc:Description languageID="NLD">De drie inschrijvers met de laagste fictieve inschrijfprijs van het perceel behaald in fase 1 gaan door naar fase 2. 
+
+Fase 2 bestaat uit de draagproef. Tijdens de draagproef begint elke inschrijver weer met 0 punten, zodat de beoordeling van de draagproef de doorslag geeft. De inschrijver met de hoogste totale eindscore is de beoogd winnaar van het perceel.</cbc:Description>
+                    </cac:SubordinateAwardingCriterion>
+                </cac:AwardingCriterion>
+            </cac:AwardingTerms>
+            <cac:AdditionalInformationParty>
+                <cac:PartyIdentification>
+                    <cbc:ID>TPO-0003</cbc:ID>
+                </cac:PartyIdentification>
+            </cac:AdditionalInformationParty>
+            <cac:AppealTerms>
+                <cac:PresentationPeriod>
+                    <cbc:Description languageID="NLD">20 kalenderdagen</cbc:Description>
+                </cac:PresentationPeriod>
+                <cac:AppealInformationParty>
+                    <cac:PartyIdentification>
+                        <cbc:ID>TPO-0001</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:AppealInformationParty>
+                <cac:AppealReceiverParty>
+                    <cac:PartyIdentification>
+                        <cbc:ID>TPO-0002</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:AppealReceiverParty>
+            </cac:AppealTerms>
+        </cac:TenderingTerms>
+        <cac:TenderingProcess>
+            <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+            <cac:AuctionTerms>
+                <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+            </cac:AuctionTerms>
+            <cac:ContractingSystem>
+                <cbc:ContractingSystemTypeCode listName="framework-agreement">fa-wo-rc</cbc:ContractingSystemTypeCode>
+            </cac:ContractingSystem>
+            <cac:ContractingSystem>
+                <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+            </cac:ContractingSystem>
+        </cac:TenderingProcess>
+        <cac:ProcurementProject>
+            <cbc:ID schemeName="InternalID">2</cbc:ID>
+            <cbc:Name languageID="NLD">Perceel 2: Bedrijfskleding incl. PBM handhavers (Boa’s)</cbc:Name>
+            <cbc:Description languageID="NLD">Gemeente Hoeksche Waard wil door middel van deze Europese openbare aanbesteding bedrijfskleding en persoonlijke beschermingsmiddelen inkopen. Daarnaast vragen wij ook aanvullende dienstverlening uit zoals o.a.:
+• Het aanbieden een online bestel- en registratiesysteem
+• Het inrichten van een webshop/dashBoard binnen een kledingmanagementsysteem;
+• Het organiseren van pas- en inmeetafspraken;
+• Het bijhouden uitgegeven kleding en monitoring wettelijke eisen;
+• Het tussentijds vervangen en repareren van de kleding;
+• Het verzorgen van het logistieke proces.
+
+De bedrijfskleding voor perceel 2 is bestemd voor de handhavers (Boa's). In totaal dragen op dit moment ca. 10 medewerkers binnen dit perceel bedrijfskleding, PBM en/of schoeisel.
+
+Geschatte opdrachtwaarde gedurende de vaste looptijd van 4 jaar: € 45.000,-
+
+Voor dit perceel geldt een maximale waarde van 5x de opdrachtwaarde van €  45.000,-  exclusief BTW  over de gehele looptijd inclusief verlengingsopties (conform jurisprudentie Arrest ECLI:EU:C:2018:1034).</cbc:Description>
+            <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+            <cac:ProcurementAdditionalType>
+                <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+            </cac:ProcurementAdditionalType>
+            <cac:MainCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">18000000</cbc:ItemClassificationCode>
+            </cac:MainCommodityClassification>
+            <cac:AdditionalCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">18100000</cbc:ItemClassificationCode>
+            </cac:AdditionalCommodityClassification>
+            <cac:AdditionalCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">18800000</cbc:ItemClassificationCode>
+            </cac:AdditionalCommodityClassification>
+            <cac:RealizedLocation>
+                <cbc:Description languageID="NLD">Hoeksche Waard</cbc:Description>
+                <cac:Address>
+                    <cbc:CountrySubentityCode listName="nuts">NL33C</cbc:CountrySubentityCode>
+                    <cac:Country>
+                        <cbc:IdentificationCode listName="country">NLD</cbc:IdentificationCode>
+                    </cac:Country>
+                </cac:Address>
+            </cac:RealizedLocation>
+            <cac:PlannedPeriod>
+                <cbc:DurationMeasure unitCode="YEAR">6</cbc:DurationMeasure>
+            </cac:PlannedPeriod>
+            <cac:ContractExtension>
+                <cbc:OptionsDescription languageID="NLD">Mogelijkheid tot verlenging looptijd overeenkomst na aflopen vaste looptijd.</cbc:OptionsDescription>
+                <cbc:MaximumNumberNumeric>2</cbc:MaximumNumberNumeric>
+                <cac:Renewal>
+                    <cac:Period>
+                        <cbc:Description languageID="NLD">De ingangsdatum van de raamovereenkomst van perceel 1 als perceel 2 is de datum van definitieve gunning in verband met de implementatiefase. De opdrachtnemer wordt geacht de levering van kleding op zich te nemen vanaf 1 januari 2025. De vaste looptijd van de overeenkomst is 4 jaar en eindigt op 31 december 2028. De overeenkomst kan na deze vaste looptijd twee keer met 1 jaar verlengd worden.</cbc:Description>
+                    </cac:Period>
+                </cac:Renewal>
+            </cac:ContractExtension>
+        </cac:ProcurementProject>
+    </cac:ProcurementProjectLot>
+    <cac:TenderResult>
+        <cbc:AwardDate>2000-01-01+01:00</cbc:AwardDate>
+    </cac:TenderResult>
+</ContractAwardNotice>

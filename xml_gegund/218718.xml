@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>De Kompanjie, werkorganisatie Pekela en Veendam</OFFICIALNAME>
+                    <ADDRESS>Raadhuisplein</ADDRESS>
+                    <TOWN>Veendam</TOWN>
+                    <POSTAL_CODE>9641 AW</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>kenniscentrum@cbp.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL1"></ns2:NUTS>
+                    <URL_GENERAL>https://www.dekompanjie.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>De Kompanjie - Raamovereenkomst Levering Brandstoffen in bulk</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="09100000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SUPPLIES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Door het van rechtswege aflopen van de overeenkomst voor de levering van diesel brandstof wil de Kompanjie een leverancier contracteren voor de levering van brandstoffen. Binnen de organisatie worden brandstoffen gebruikt op beide gemeentewerven voor de tractie. De gemeente heeft ongeveer 80 diesel-voertuigen in haar wagenpark. Het verbruik van de brandstof is afhankelijk van vele variabelen en is gemiddeld 163.390 liter per jaar, gemeten over de jaren 2017 t/m 2019.  </P>
+                    <P>Daarnaast wenst De Kompanjie meer inzicht te verkrijgen in het brandstofverbruik van haar wagenpark. Om die reden wil De Kompanjie haar eigen brandstoftanks voorzien van brandstofregistratiesystemen. Het brandstofregistratiesysteem dient de brandstofpomp van de brandstoftank vrij te geven middels een aan een specifiek voertuig toegewezen toegangspas of een andere vrijgave oplossing.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">0.01</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="09134200"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="09134210"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="09134220"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="42122180"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL1"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Veendam en Pekela</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Door het van rechtswege aflopen van de overeenkomst voor de levering van diesel brandstof wil de Kompanjie een leverancier contracteren voor de levering van brandstoffen. Binnen de organisatie worden brandstoffen gebruikt op beide gemeentewerven voor de tractie. De gemeente heeft ongeveer 80 diesel-voertuigen in haar wagenpark. Het verbruik van de brandstof is afhankelijk van vele variabelen en is gemiddeld 163.390 liter per jaar, gemeten over de jaren 2017 t/m 2019.  </P>
+                        <P>Daarnaast wenst De Kompanjie meer inzicht te verkrijgen in het brandstofverbruik van haar wagenpark. Om die reden wil De Kompanjie haar eigen brandstoftanks voorzien van brandstofregistratiesystemen. Het brandstofregistratiesysteem dient de brandstofpomp van de brandstoftank vrij te geven middels een aan een specifiek voertuig toegewezen toegangspas of een andere vrijgave oplossing.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_COST>
+                            <AC_CRITERION>Prijs</AC_CRITERION>
+                            <AC_WEIGHTING>60</AC_WEIGHTING>
+                        </AC_COST>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 177-425393</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <TITLE>
+                    <P>Raamovereenkomst Levering Brandstoffen in bulk</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2020-12-23</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>5</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Slump Oil B.V.</OFFICIALNAME>
+                                <ADDRESS>Postbus 306</ADDRESS>
+                                <TOWN>Heerenveen</TOWN>
+                                <POSTAL_CODE>8442AH</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL1"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">0.01</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Noord-Nederland (Groningen)</OFFICIALNAME>
+                    <ADDRESS>Postbus 933</ADDRESS>
+                    <TOWN>Groningen</TOWN>
+                    <POSTAL_CODE>9700 AX</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 503166166</PHONE>
+                    <E_MAIL>info.rechtbanknoordnederland@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl/Organisatie/Rechtbanken/Noord-Nederland/Contact/Pages/default.aspx</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-04</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

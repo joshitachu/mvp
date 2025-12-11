@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Venlo</OFFICIALNAME>
+                    <NATIONALID>54364892</NATIONALID>
+                    <ADDRESS>Hanzeplaats 1</ADDRESS>
+                    <TOWN>Venlo</TOWN>
+                    <POSTAL_CODE>5912 AT</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Vera  Horsch</CONTACT_POINT>
+                    <PHONE>+31 773596666</PHONE>
+                    <E_MAIL>inkoop@venlo.nl</E_MAIL>
+                    <FAX>+31 773596766</FAX>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.venlo.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Communicatiediensten voor het WerkgeversServicepunt Noord-Limburg, gemeente Venlo</P>
+                </TITLE>
+                <REFERENCE_NUMBER>1647710</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="79340000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Ter ondersteuning bij het realiseren van haar communicatiedoelstellingen zoekt het WerkgeversServicepunt Noord-Limburg (hierna te noemen: WSP) een creatieve, deskundige en vooruitstrevende communicatiedienstverlener (hierna te noemen: opdrachtnemer) die niet alleen operationeel zorgdraagt voor de adequate uitvoering van de communicatie-uitingen, maar ook continu bijdraagt aan de doorontwikkeling van de communicatiestrategie en communicatieaanpak.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79341000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79341100"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79341400"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79342000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <ns2:NUTS CODE="NL421"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Venlo</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Gedurende de looptijd van de opdracht tot de som van € 160.000,- bereikt is. Gemiddelde opdrachtwaarde jaarlijks ligt tussen de € 24.000,- en € 35.000,- aan communicatiediensten</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>70</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>30</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Optie tot verlenging opdracht</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Communicatiediensten voor het WerkgeversServicepunt Noord-Limburg, gemeente Venlo</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-01-27</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>4</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>4</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Aviso Communicatie</OFFICIALNAME>
+                                <NATIONALID>12056787</NATIONALID>
+                                <ADDRESS>Pastoor Vranckenlaan 4</ADDRESS>
+                                <TOWN>Reuver</TOWN>
+                                <POSTAL_CODE>5953CP</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 773669330</PHONE>
+                                <E_MAIL>info@avisocommunicatie.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>https://www.aviso.nu/</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Limburg</OFFICIALNAME>
+                    <ADDRESS>Postbus 1988</ADDRESS>
+                    <TOWN>Maastricht</TOWN>
+                    <POSTAL_CODE>6201 BZ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 433465465</PHONE>
+                    <E_MAIL>rechtbanklimburg@rechtspraak.nl</E_MAIL>
+                    <FAX>+31 438885788</FAX>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-01</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

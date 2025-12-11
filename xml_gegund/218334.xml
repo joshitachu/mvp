@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Delft</OFFICIALNAME>
+                    <NATIONALID>27374588</NATIONALID>
+                    <ADDRESS>Stationsplein 1</ADDRESS>
+                    <TOWN>Delft</TOWN>
+                    <POSTAL_CODE>2611BV</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>NIC Support Delft</CONTACT_POINT>
+                    <E_MAIL>inhuurdeskdelft@hetnic.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL333"></ns2:NUTS>
+                    <URL_GENERAL>www.delft.nl</URL_GENERAL>
+                    <URL_BUYER>https://eu.eu-supply.com/ctm/Company/CompanyInformation/Index/296905</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Adviseur werk en inkomen</P>
+                </TITLE>
+                <REFERENCE_NUMBER>259018</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="79620000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Adviseur werk en inkomen</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">69.00</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79620000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL333"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Delft</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Adviseur werk en inkomen</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwalitatieve gunningscriteria</AC_CRITERION>
+                            <AC_WEIGHTING>70.00</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_COST>
+                            <AC_CRITERION>Prijs</AC_CRITERION>
+                            <AC_WEIGHTING>30</AC_WEIGHTING>
+                        </AC_COST>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>De Aanbestedende Dienst kan eenzijdig besluiten de Overeenkomst vier (4) maal te verlengen met drie (3) maanden.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_RESTRICTED></PT_RESTRICTED>
+                <DPS></DPS>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2016/S 177-318482</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Adviseur werk en inkomen</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-01-14</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>1</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>1</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Werkspirit Recruitment B.V.</OFFICIALNAME>
+                                <NATIONALID>65693485</NATIONALID>
+                                <ADDRESS>Boegspriet 17</ADDRESS>
+                                <TOWN>AMSTELVEEN</TOWN>
+                                <POSTAL_CODE>1186WV</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL329"></ns2:NUTS>
+                                <URL>http://www.werkspirit.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">69.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Arrondissement Den Haag</OFFICIALNAME>
+                    <ADDRESS>Prins Clauslaan 60</ADDRESS>
+                    <TOWN>Den Haag</TOWN>
+                    <POSTAL_CODE>2595AJ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 703813131</PHONE>
+                    <E_MAIL>voorlichting.rb.den.haag@rechtspraak.nl</E_MAIL>
+                    <URL>https://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <REVIEW_PROCEDURE>
+                    <P>N.v.t.</P>
+                </REVIEW_PROCEDURE>
+                <DATE_DISPATCH_NOTICE>2021-02-01</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

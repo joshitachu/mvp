@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>MBO Amersfoort</OFFICIALNAME>
+                    <NATIONALID>361694062</NATIONALID>
+                    <ADDRESS>Leusderweg 30 -34</ADDRESS>
+                    <TOWN>AMERSFOORT</TOWN>
+                    <POSTAL_CODE>3817KB</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Ramon  Nieuwenhuizen</CONTACT_POINT>
+                    <PHONE>+546 455655</PHONE>
+                    <E_MAIL>aanbesteding@inkada.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.mboamersfoort.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="EDUCATION"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Inhuur Personeel</P>
+                </TITLE>
+                <REFERENCE_NUMBER>2020/0930TK</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="79620000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>De Opdracht betreft het ter beschikking stellen van tijdelijk personeel voor de locaties van Opdrachtgever. Inschrijver dient de Opdracht uit te voeren conform het Programma van Eisen (Bijlage 1).</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">2320000.0</VAL_TOTAL>
+                <LOT_DIVISION></LOT_DIVISION>
+                <OBJECT_DESCR ITEM="1">
+                    <TITLE>
+                        <P>Perceel 1 – Ondersteunend personeel (tot en met schaal 7)</P>
+                    </TITLE>
+                    <LOT_NO>1</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79620000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>Zie aanbestedingsdocumenten</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Open vragen</AC_CRITERION>
+                            <AC_WEIGHTING>60</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Overnametermijn</AC_CRITERION>
+                            <AC_WEIGHTING>10</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>30</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Optiejaren: twee (2) maal één (1) jaar</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="2">
+                    <TITLE>
+                        <P>Perceel 2 – Onderwijzend personeel</P>
+                    </TITLE>
+                    <LOT_NO>2</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79620000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>Zie aanbestedingsdocumenten</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Open vragen</AC_CRITERION>
+                            <AC_WEIGHTING>60</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Overnametermijn</AC_CRITERION>
+                            <AC_WEIGHTING>10</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>30</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Optiejaren: twee (2) maal één (1) jaar</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="3">
+                    <TITLE>
+                        <P>Perceel 3 – Surveillanten</P>
+                    </TITLE>
+                    <LOT_NO>3</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79620000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>Zie aanbestedingsdocumenten</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Open vragen</AC_CRITERION>
+                            <AC_WEIGHTING>40</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>60</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Optiejaren: twee (2) maal één (1) jaar</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 193-466894</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>3</CONTRACT_NO>
+                <LOT_NO>3</LOT_NO>
+                <TITLE>
+                    <P>Perceel 3: Surveillanten</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2020-12-28</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>4</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>4</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Uitzendbureau 65plus B.V.</OFFICIALNAME>
+                                <NATIONALID>33110950</NATIONALID>
+                                <ADDRESS>Westzijde 163</ADDRESS>
+                                <TOWN>ZAANDAM</TOWN>
+                                <POSTAL_CODE>1506GC</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 756539939</PHONE>
+                                <E_MAIL>esthergoedhart@65plus.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.65plus.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">240000.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="2">
+                <CONTRACT_NO>2</CONTRACT_NO>
+                <LOT_NO>2</LOT_NO>
+                <TITLE>
+                    <P>Perceel 2: Onderwijzend personeel</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2020-12-28</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>7</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>7</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Randstad Uitzendbureau b.v.</OFFICIALNAME>
+                                <NATIONALID>56707479</NATIONALID>
+                                <ADDRESS>Diemermere 25</ADDRESS>
+                                <TOWN>DIEMEN</TOWN>
+                                <POSTAL_CODE>1112TC</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 205695911</PHONE>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1540000.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="3">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <LOT_NO>1</LOT_NO>
+                <TITLE>
+                    <P>Perceel 1: Ondersteunend personeel (t/m schaal 7)*</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2020-12-28</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>5</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>5</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Tempo Team Group B.V.</OFFICIALNAME>
+                                <NATIONALID>33041895</NATIONALID>
+                                <ADDRESS>Diemermere 25</ADDRESS>
+                                <TOWN>DIEMEN</TOWN>
+                                <POSTAL_CODE>1112TC</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 205695922</PHONE>
+                                <E_MAIL>commercieelsupport@tempo-team.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.tempo-team.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">540000.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Midden Nederland Locatie Utrecht</OFFICIALNAME>
+                    <ADDRESS>Vrouwe Justitiaplein 1</ADDRESS>
+                    <TOWN>Utrecht</TOWN>
+                    <POSTAL_CODE>3511 EX</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 883620000</PHONE>
+                    <E_MAIL>midden-nederland@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-04</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Capelle aan den IJssel (Stadsbeheer)</OFFICIALNAME>
+                    <ADDRESS>Groenedijk</ADDRESS>
+                    <TOWN>Capelle aan den IJssel</TOWN>
+                    <POSTAL_CODE>2903 LZ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Project en ingenieursbureau</CONTACT_POINT>
+                    <PHONE>+31 102848641</PHONE>
+                    <E_MAIL>aanbestedingen.stadsbeheer@capelleaandenijssel.nl</E_MAIL>
+                    <FAX>+31 102848818</FAX>
+                    <ns2:NUTS CODE="NL33C"></ns2:NUTS>
+                    <URL_GENERAL>https://capelleaandenijssel.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Inrichten Duurzame Speelplaatsen 2021-2026. Referentie EU\R43\2020-15</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="45112723"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="WORKS"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Met de aanbesteding beoogd opdrachtgever de volgende doelstellingen te realiseren:</P>
+                    <P>1.	Het contracteren van drie opdrachtnemers, die op professionele wijze zorg dragen voor het ontwerpen van duurzame, circulaire speelplaatsen, leveren en monteren/installeren van speeltoestellen met valondergronden en die op een actieve wijze ondersteuning biedt bij het proces van (her)inrichting van de bestaande speelruimten.</P>
+                    <P>2.	Het zo efficiënt , effectief en duurzaam mogelijk inrichten van de speelplaatsen in relatie tot de beschikbare ruimte en budgetten.</P>
+                    <P>3.	Speelplaatsen die goed passen in de omgeving en waar rekening is gehouden met wensen van kinderen en omwonenden.</P>
+                    <P>4.	Speelplaatsen die vernieuwend en duurzaam (milieutechnisch) zijn.</P>
+                    <P>5.	Speeltoestellen met valondergronden in te kopen tegen een marktconforme prijs- en kwaliteitsverhouding.</P>
+                    <P>6.	Speelplaatsen waarvan de onderhoudslast in verhouding is met de aanschafwaarde en levensduur.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">570000.00</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL33C"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Capelle aan den IJssel</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>De aanbesteding omvat het amoveren huidige speeltoestellen met valondergronden, renovatie speeltoestellen inclusief valondergronden, alsmede nieuwe speelplaatsen (speeltoestellen inclusief valondergronden) en het eventuele herstel van calamiteiten (vandalisme, brandstichting etc.).</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>Vragen dienen uiterlijk op 14 oktober 2020 vóór 9:00 uur (Nederlandse tijd) ingediend te zijn. Vragen die aangeleverd worden na voornoemde datum en tijdstip worden niet in behandeling genomen. Het streven is om de nota van inlichtingen uiterlijk op 15 oktober 2020 te publiceren.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <NO_CONTRACT_COVERED_GPA></NO_CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 200-484072</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Inrichten Duurzame Speelplaatsen 2021-2026</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-01-06</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>5</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>5</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_EMEANS>5</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <AWARDED_TO_GROUP></AWARDED_TO_GROUP>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Lappset Yalp B.V.</OFFICIALNAME>
+                                <ADDRESS>Nieuwerkampsmaten 12</ADDRESS>
+                                <TOWN>Goor</TOWN>
+                                <POSTAL_CODE>7472 DE</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 547-289410</PHONE>
+                                <E_MAIL>info@yalp.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL213"></ns2:NUTS>
+                                <URL>www.yalp.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Kompan B.V.</OFFICIALNAME>
+                                <ADDRESS>Postbus 2059</ADDRESS>
+                                <TOWN>Zaltbommel</TOWN>
+                                <POSTAL_CODE>5300CB</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 418681468</PHONE>
+                                <E_MAIL>kompan.nl@kompan.com</E_MAIL>
+                                <ns2:NUTS CODE="NL224"></ns2:NUTS>
+                                <URL>www.kompan.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Eibe benelux B.V.</OFFICIALNAME>
+                                <ADDRESS>Radonostraat 285</ADDRESS>
+                                <TOWN>Zoetermeer</TOWN>
+                                <POSTAL_CODE>2718 SV</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 793610010</PHONE>
+                                <E_MAIL>info@eibe.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL33B"></ns2:NUTS>
+                                <URL>www.eibe.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">570000.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">570000.00</VAL_TOTAL>
+                    </VALUES>
+                    <LIKELY_SUBCONTRACTED></LIKELY_SUBCONTRACTED>
+                    <VAL_SUBCONTRACTING CURRENCY="EUR">570000.00</VAL_SUBCONTRACTING>
+                    <INFO_ADD_SUBCONTRACTING>
+                        <P>Raamovereenkomst voor 2 jaar, met een maximum van 285.000,00 per jaar. Er is een verlening van 2 keer 24 maanden mogelijk.</P>
+                    </INFO_ADD_SUBCONTRACTING>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Rotterdam</OFFICIALNAME>
+                    <ADDRESS>Willaminaplein 100-125</ADDRESS>
+                    <TOWN>Rotterdam</TOWN>
+                    <POSTAL_CODE>3072 AK</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <ADDRESS_REVIEW_INFO>
+                    <OFFICIALNAME>Aanbestedingen Stadsbeheer</OFFICIALNAME>
+                    <ADDRESS>Groenendijk 10</ADDRESS>
+                    <TOWN>2903 LZ Capelle aan den IJssel</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>aanbestedingen.stadsbeheer@capelleaandenijssel.nl</E_MAIL>
+                </ADDRESS_REVIEW_INFO>
+                <DATE_DISPATCH_NOTICE>2021-02-02</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

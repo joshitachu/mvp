@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Beek</OFFICIALNAME>
+                    <NATIONALID>4502576</NATIONALID>
+                    <ADDRESS>Raadhuisstraat 9</ADDRESS>
+                    <TOWN>Beek</TOWN>
+                    <POSTAL_CODE>6191AA</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Sandra van Lipzig</CONTACT_POINT>
+                    <PHONE>+31 464389303</PHONE>
+                    <E_MAIL>info@gemeentebeek.nl</E_MAIL>
+                    <FAX>+31 464377757</FAX>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.gemeentebeek.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Raamovereenkomst onderhoud sportvelden gemeente Beek</P>
+                </TITLE>
+                <REFERENCE_NUMBER>zaaknummer 22782</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="77320000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>De Opdracht omvat het selecteren van één aanbieder die gedurende de contractduur het  onderhoud uitvoert aan de sportvelden binnen de gemeente.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">212400.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <ns2:NUTS CODE="NL423"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Gemeente Beek</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Uitvoeren onderhoud op basis van deelopdrachten</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Verlenging overeenkomst met optiejaren</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 220-540818</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Raamovereenkomst onderhoud sportvelden gemeente Beek</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>3</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>3</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Krinkels B.V.</OFFICIALNAME>
+                                <NATIONALID>20037591</NATIONALID>
+                                <ADDRESS>Rithsestraat 87</ADDRESS>
+                                <TOWN>Breda</TOWN>
+                                <POSTAL_CODE>4813 GW</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 762055555</PHONE>
+                                <E_MAIL>info@krinkels.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.krinkels.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">212400.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Voorzieningenrechtbank te Maastricht</OFFICIALNAME>
+                    <ADDRESS>Sint Annadal 1</ADDRESS>
+                    <TOWN>maastricht</TOWN>
+                    <POSTAL_CODE>6214 PA</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 433465465</PHONE>
+                    <E_MAIL>rechtbanklimburg@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-02</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

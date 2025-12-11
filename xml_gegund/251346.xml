@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Stichting Sanquin Bloedvoorziening</OFFICIALNAME>
+                    <NATIONALID>41217565</NATIONALID>
+                    <ADDRESS>Plesmanlaan 125</ADDRESS>
+                    <TOWN>Amsterdam</TOWN>
+                    <POSTAL_CODE>1066 CX</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Martijn van Gelderen</CONTACT_POINT>
+                    <PHONE>+31 683059276</PHONE>
+                    <E_MAIL>m.vangelderen@sanquin.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.sanquin.nl</URL_GENERAL>
+                    <URL_BUYER>https://platform.negometrix.com/PublishedTenders.aspx?tenderid=169773</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="HEALTH"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>EA Verbruiksgassen en installatie</P>
+                </TITLE>
+                <REFERENCE_NUMBER>2019(A)000703</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="24110000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SUPPLIES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>De aanbesteding is verdeeld in 3 percelen (+ een 4de  perceel zijnde de som van de drie percelen) met als doel een overeenkomst af te sluiten met één opdrachtnemer voor het vierde perceel dan wel elk van de drie percelen afzonderlijk. De levering/dienstverlening omvat:</P>
+                    <P></P>
+                    <P>Perceel 1: </P>
+                    <P>Gassen inclusief huur van cilinders, alsook onderhoudswerken aan de centrale gasflessenopslag, de afsluiters en koppelingen aan de gebruikerskant. Verder ook van de losse gasflessen de reduceerventielen, slangen en koppelingen.</P>
+                    <P></P>
+                    <P>Perceel 2: </P>
+                    <P>Levering van Droogijs inclusief verrijdbare container.</P>
+                    <P></P>
+                    <P>Perceel 3: </P>
+                    <P>Levering van cryogeen stikstof en een bulktank.</P>
+                    <P></P>
+                    <P>Perceel 4:</P>
+                    <P>Gassen inclusief huur van cilinders, alsook onderhoudswerken aan de centrale gasflessenopslag, de afsluiters en koppelingen aan de gebruikerskant. Verder ook van de losse gasflessen de reduceerventielen, slangen en koppelingen. Levering van Droogijs inclusief verrijdbare container. Levering van cryogeen stikstof en een bulktank.</P>
+                    <P></P>
+                    <P></P>
+                    <P></P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1152822.00</VAL_TOTAL>
+                <LOT_DIVISION></LOT_DIVISION>
+                <OBJECT_DESCR ITEM="1">
+                    <TITLE>
+                        <P></P>
+                    </TITLE>
+                    <LOT_NO>1</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="24110000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Amsterdam</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Levering van cilindergassen en evt klein onderhoud</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Implementatieplan Cillindergassen</AC_CRITERION>
+                            <AC_WEIGHTING>134</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Optimalisatieplan Cillindergassen</AC_CRITERION>
+                            <AC_WEIGHTING>134</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Duurzaamheid Cillindergassen</AC_CRITERION>
+                            <AC_WEIGHTING>82</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>650</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>Note: De som van de scores (x weegfactor) van de subsubcriteria 'kwaliteit' resulteert in de totaal puntenscore voor het subgunningscriterium ‘kwaliteit’. De inschrijver met de hoogste puntenscore verkrijgt het maximaal aantal punten die zijn te behalen, te weten 350 punten. De weging die in de publicatie staat is een afgeleide van de voorgaande zin uit de offerteaanvraag.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="2">
+                    <TITLE>
+                        <P>Droogijs inclusief huur containers</P>
+                    </TITLE>
+                    <LOT_NO>2</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="15981310"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Tenminste 10 locatie van Sanquin in Nederland</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Levering van Droogijs inclusief de huur van verrijdbare containers.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Implementatieplan Droogijs</AC_CRITERION>
+                            <AC_WEIGHTING>134</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Optimalisatieplan Droogijs</AC_CRITERION>
+                            <AC_WEIGHTING>134</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Duurzaamheid Droogijs</AC_CRITERION>
+                            <AC_WEIGHTING>82</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>650</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>Note: De som van de scores (x weegfactor) van de subsubcriteria 'kwaliteit' resulteert in de totaal puntenscore voor het subgunningscriterium ‘kwaliteit’. De inschrijver met de hoogste puntenscore verkrijgt het maximaal aantal punten die zijn te behalen, te weten 350 punten. De weging die in de publicatie staat is een afgeleide van de voorgaande zin uit de offerteaanvraag.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="3">
+                    <TITLE>
+                        <P>Cryogeen Stikstof en een Bulktank</P>
+                    </TITLE>
+                    <LOT_NO>3</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="24111800"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Nijmegen</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>De levering van vloeibaar cryogeen stikstof en de huur van een Bulktank, inclusief bijbehorende diensten.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Implementatieplan Stikstof</AC_CRITERION>
+                            <AC_WEIGHTING>109</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Optimalisatieplan Stikstof</AC_CRITERION>
+                            <AC_WEIGHTING>109</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Duurzaamheid Stikstof</AC_CRITERION>
+                            <AC_WEIGHTING>66</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Wens Stikstof</AC_CRITERION>
+                            <AC_WEIGHTING>66</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>650</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>Note: De som van de scores (x weegfactor) van de subsubcriteria 'kwaliteit' resulteert in de totaal puntenscore voor het subgunningscriterium ‘kwaliteit’. De inschrijver met de hoogste puntenscore verkrijgt het maximaal aantal punten die zijn te behalen, te weten 350 punten. De weging die in de publicatie staat is een afgeleide van de voorgaande zin uit de offerteaanvraag.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="4">
+                    <TITLE>
+                        <P>Cilindergassen, Droogijs inclusief huur containers, cryogeen Stikstof en een Bulktank</P>
+                    </TITLE>
+                    <LOT_NO>4</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="15981310"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="24111800"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="24110000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Perceel 4 is de som van Perceel 1, 2 en 3. Zie voor plaats van uitvoering de desbetreffende percelen.</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>De levering van Cilindergassen, Droogijs inclusief huur containers, cryogeen Stikstof en een Bulktank</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Implementatieplan Cillindergassen</AC_CRITERION>
+                            <AC_WEIGHTING>42</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Optimalisatieplan Cilindergassen</AC_CRITERION>
+                            <AC_WEIGHTING>42</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Duurzaamheid Cillindergassen</AC_CRITERION>
+                            <AC_WEIGHTING>25</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Implementatieplan Droogijs</AC_CRITERION>
+                            <AC_WEIGHTING>42</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Optimalisatieplan Droogijs</AC_CRITERION>
+                            <AC_WEIGHTING>42</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Duurzaamheid Droogijs</AC_CRITERION>
+                            <AC_WEIGHTING>25</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Implementatieplan Stikstof</AC_CRITERION>
+                            <AC_WEIGHTING>42</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Optimalisatieplan Stikstof</AC_CRITERION>
+                            <AC_WEIGHTING>42</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Duurzaamheid Stikstof</AC_CRITERION>
+                            <AC_WEIGHTING>24</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Wens Stikstof</AC_CRITERION>
+                            <AC_WEIGHTING>24</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>650</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>Deze opdracht is niet gegund omdat niet voldaan is aan de criteria hiervoor. Zie offerteaanvraag.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 169-441600</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>Cilindergassen</CONTRACT_NO>
+                <LOT_NO>1</LOT_NO>
+                <TITLE>
+                    <P>Cilindergassen</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>5</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>0</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>5</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>SOL Nederland b.v.</OFFICIALNAME>
+                                <TOWN>Tilburg</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">100.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">100.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="2">
+                <CONTRACT_NO>2</CONTRACT_NO>
+                <LOT_NO>2</LOT_NO>
+                <TITLE>
+                    <P>Droogijs</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>5</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>0</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>5</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>SOL Nederland b.v.</OFFICIALNAME>
+                                <TOWN>Tilburg</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">100.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">100.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="3">
+                <CONTRACT_NO>3</CONTRACT_NO>
+                <LOT_NO>3</LOT_NO>
+                <TITLE>
+                    <P>Vloeibaar stikstof</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>5</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>0</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>5</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>SOL Nederland b.v.</OFFICIALNAME>
+                                <TOWN>Tilburg</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">100.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">100.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Amsterdam</OFFICIALNAME>
+                    <TOWN>Amsterdam</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2022-02-02</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

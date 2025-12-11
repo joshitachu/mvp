@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F15_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F15">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Radboudumc</OFFICIALNAME>
+                    <NATIONALID>09177610</NATIONALID>
+                    <ADDRESS>Geert Grooteplein-Zuid 106525 GA Nijmegen</ADDRESS>
+                    <TOWN>Nijmegen</TOWN>
+                    <POSTAL_CODE>6525GA</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Radboudumc </CONTACT_POINT>
+                    <PHONE>+31 243613448</PHONE>
+                    <E_MAIL>arjen.vossen@radboudumc.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.radboudumc.nl</URL_GENERAL>
+                    <URL_BUYER>https://platform.negometrix.com/PublishedTenders.aspx?tenderid=169564</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="HEALTH"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Intra coronaire diagnostiek, apparatuur en materialen voor CFR &amp; IMR metingen en apparatuur en materialen voor OCT metingen</P>
+                </TITLE>
+                <REFERENCE_NUMBER>1058/AV</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="33000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SUPPLIES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Apparatuur en wires voor intra coronaire diagnostiek d.m.v. CFR en IMR metingen. </P>
+                    <P>&amp;</P>
+                    <P>Apparatuur en katheters voor intra coronaire diagnostiek waarbij gebruik gemaakt wordt van metingen door middel van licht (OCT).</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1.00</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="33000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Nijmegen</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>•	uitbreiding van apparatuur en gebruik van bijbehorende katheter voor intra coronaire diagnostiek waarbij gebruik </P>
+                        <P>        gemaakt wordt van metingen door middel van licht (OCT).</P>
+                        <P>&amp;</P>
+                        <P>•	uitbreiding van apparatuur en wires voor intra coronaire diagnostiek waarbij gebruik gemaakt wordt van CFR en IMR metingen.</P>
+                        <P></P>
+                    </SHORT_DESCR>
+                    <DIRECTIVE_2014_24_EU>
+                        <AC>
+                            <AC_QUALITY>
+                                <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                                <AC_WEIGHTING>100</AC_WEIGHTING>
+                            </AC_QUALITY>
+                            <AC_PRICE>
+                                <AC_WEIGHTING>0</AC_WEIGHTING>
+                            </AC_PRICE>
+                        </AC>
+                    </DIRECTIVE_2014_24_EU>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <DIRECTIVE_2014_24_EU>
+                    <PT_NEGOTIATED_WITHOUT_PUBLICATION>
+                        <D_ACCORDANCE_ARTICLE>
+                            <D_TECHNICAL></D_TECHNICAL>
+                        </D_ACCORDANCE_ARTICLE>
+                        <D_JUSTIFICATION>
+                            <P>Radboudumc maakt bij micro vasculair lijden gebruik van CFR en IMR metingen t.b.v. het meten van de micro circulatie om daarmee de ernst van een vernauwing vast te stellen en te kunnen bepalen of het plaatsen van een stent nodig is (i.h.k.v. gedachtengoed zinnige zorg).</P>
+                            <P>Enkel de apparatuur van voornoemde ondernemer heeft voornoemde toepassingsmogelijkheden, waarmee mededinging ontbreekt op basis van technische gronden.</P>
+                            <P></P>
+                            <P>Radboudumc maakt gebruik van metingen door middel van licht (OCT) aan de binnenkant van een bloedvat voor het stellen van de juiste diagnose (bepalen van de “culprit” bij STEMI en NSTEMI patienten) en het precies plaatsen van een stent (i.h.k.v. optimalisatie van de behandeling). </P>
+                            <P>Enkel de apparatuur van voornoemde ondernemer heeft voornoemde toepassingsmogelijkheden, waarmee mededinging ontbreekt op basis van technische gronden.</P>
+                            <P></P>
+                            <P>Radboudumc maakt deze voorafgaande vrijwillige aankondiging bekend op grond</P>
+                            <P>waarvan zij de onderhavige opdracht wil contracteren. Gedurende 20 kalenderdagen vanaf de</P>
+                            <P>datum van publicatie hebben potentiële (niet eerder betrokken) gegadigden die menen dat de</P>
+                            <P>onderhavige opdracht alsnog Europees zou moeten worden aanbesteed, de mogelijkheid om</P>
+                            <P>een kort geding bij de voorzieningenrechter van de rechtbank Gelderland locatie Arnhem</P>
+                            <P>aanhangig te maken. Indien niet binnen 20 dagen na publicatie van deze aankondiging een</P>
+                            <P>kort geding aanhangig is gemaakt, zal Radboudumc tot definitieve, rechtsgeldige</P>
+                            <P>gunning van de opdracht overgaan.</P>
+                            <P></P>
+                        </D_JUSTIFICATION>
+                    </PT_NEGOTIATED_WITHOUT_PUBLICATION>
+                </DIRECTIVE_2014_24_EU>
+                <FRAMEWORK></FRAMEWORK>
+                <NO_CONTRACT_COVERED_GPA></NO_CONTRACT_COVERED_GPA>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Intra coronaire diagnostiek, apparatuur en materialen voor CFR &amp; IMR metingen en apparatuur en materialen voor OCT metingen</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-02</DATE_CONCLUSION_CONTRACT>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Abbott Medical Nederland bv</OFFICIALNAME>
+                                <TOWN>Utrecht</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">1.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">1.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <INFO_ADD>
+                    <P>Radboudumc maakt deze voorafgaande vrijwillige aankondiging bekend op grond</P>
+                    <P>waarvan zij de onderhavige opdracht wil contracteren. Gedurende 20 kalenderdagen vanaf de</P>
+                    <P>datum van publicatie hebben potentiële (niet eerder betrokken) gegadigden die menen dat de</P>
+                    <P>onderhavige opdracht alsnog Europees zou moeten worden aanbesteed, de mogelijkheid om</P>
+                    <P>een kort geding bij de voorzieningenrechter van de rechtbank Gelderland locatie Arnhem</P>
+                    <P>aanhangig te maken. Indien niet binnen 20 dagen na publicatie van deze aankondiging een</P>
+                    <P>kort geding aanhangig is gemaakt, zal Radboudumc tot definitieve, rechtsgeldige</P>
+                    <P>gunning van de opdracht overgaan.</P>
+                </INFO_ADD>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Gelderland </OFFICIALNAME>
+                    <ADDRESS>Walburgstraat 2-4</ADDRESS>
+                    <TOWN>Arnhem</TOWN>
+                    <POSTAL_CODE>6800EM</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>kanton.arnhem@rechtspraak.nl</E_MAIL>
+                </ADDRESS_REVIEW_BODY>
+                <REVIEW_PROCEDURE>
+                    <P>20 kalenderdagen</P>
+                </REVIEW_PROCEDURE>
+                <DATE_DISPATCH_NOTICE>2021-02-02</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F15_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

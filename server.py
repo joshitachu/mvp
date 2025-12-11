@@ -1,6 +1,7 @@
 # serve.py
 import os
 import io
+from fastapi.middleware.cors import CORSMiddleware
 import json
 import datetime as dt
 from typing import Optional, List, Dict
@@ -10,7 +11,15 @@ from pydantic import BaseModel
 from supabase import create_client, Client
 from datetime import datetime, timedelta
 from collections import defaultdict
+import time
 import csv
+from models import Import, Notice, AuthCode, TendernedRawCached, TendernedRawCPVCached, TendernedRaw, SROIResult,NoticeSROIResult, CRMCompany, CRMFollowup
+
+from sqlalchemy.orm import Session
+from database import get_db
+import random
+
+from sqlalchemy import desc, func, and_, or_
 
 from dotenv import load_dotenv
 from sroi_scanner import analyze_notice_sroi
@@ -25,17 +34,56 @@ from sroi_scanner import analyze_import_sroi  # nieuwe SROI analyzer
 # Load .env file
 load_dotenv()
 
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
-
-print(SUPABASE_KEY)
-# Optional debug (verwijder later):
-
-supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 app = FastAPI(title="TenderNed Import Backend")
 
 # In-memory store voor SROI analysis progress tracking
 sroi_analysis_status: Dict[str, Dict] = {}
+
+
+
+# 1. CORS - Only allow your frontend domain
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://vercel.com/ferfs-projects/ithaka/5vz8wR52b8fTVTXtxzxBWYT7DMa6",  # Replace with your actual domain
+        "http://localhost:3000",              # For local dev
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# 2. Rate Limiter
+class RateLimiter:
+    def __init__(self, max_requests=100, window_seconds=60):
+        self.max_requests = max_requests
+        self.window_seconds = window_seconds
+        self.requests = defaultdict(list)
+    
+    def is_allowed(self, ip: str) -> bool:
+        now = time.time()
+        self.requests[ip] = [t for t in self.requests[ip] 
+                            if now - t < self.window_seconds]
+        
+        if len(self.requests[ip]) >= self.max_requests:
+            return False
+        
+        self.requests[ip].append(now)
+        return True
+
+rate_limiter = RateLimiter(max_requests=100, window_seconds=60)
+
+@app.middleware("http")
+async def rate_limit_middleware(request: Request, call_next):
+    # Get real IP from Cloudflare
+    client_ip = request.headers.get("CF-Connecting-IP") or request.client.host
+    
+    if not rate_limiter.is_allowed(client_ip):
+        raise HTTPException(status_code=429, detail="Too many requests")
+    
+    response = await call_next(request)
+    return response
+
 
 
 # --------- Pydantic modellen ---------
@@ -78,39 +126,37 @@ def generate_import_name() -> str:
 # Simple header-based auth
 # Expects header `X-User-Code: 123456789012` (12 digits)
 # ----------------------
-def validate_user_code(x_user_code: str = Header(..., alias="X-User-Code")) -> str:
+
+def validate_user_code(
+    x_user_code: str = Header(..., alias="X-User-Code"),
+    db: Session = Depends(get_db)
+) -> str:
     """Validate that the provided header is a 12-digit numeric code.
     Returns the code when valid, otherwise raises HTTPException(401).
     """
     if not x_user_code:
         raise HTTPException(status_code=401, detail="X-User-Code header missing")
+    
     code = str(x_user_code).strip()
     if len(code) != 12 or not code.isdigit():
         raise HTTPException(status_code=401, detail="Invalid user code. Must be 12 digits.")
-    # Server-side validation: ensure the code exists in a whitelist table (e.g. `auth_codes`)
+    
+    # Server-side validation: ensure the code exists in the whitelist table
     try:
-        resp = supabase.table("auth_codes").select("code").eq("code", code).limit(1).execute()
-        # If Supabase returns an error (e.g. table doesn't exist), surface a server error
-        if getattr(resp, "error", None):
-            # If the table doesn't exist, treat as server misconfiguration
-            raise HTTPException(status_code=500, detail=f"Auth validation error: {resp.error}")
-        if not resp.data:
-            # No matching code found
-            raise HTTPException(status_code=403, detail="Unknown user code; please register your code or contact admin.")
+        auth_code = db.query(AuthCode).filter(AuthCode.code == code).first()
+        if not auth_code:
+            raise HTTPException(
+                status_code=403, 
+                detail="Unknown user code; please register your code or contact admin."
+            )
     except HTTPException:
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to validate user code: {e}")
-
+    
     return code
 
 
-def _import_belongs_to_user(import_id: str, user_code: str) -> bool:
-    try:
-        resp = supabase.table("imports").select("id").eq("id", import_id).eq("owner_code", user_code).limit(1).execute()
-        return bool(resp.data)
-    except Exception:
-        return False
 
 
 
@@ -267,20 +313,37 @@ def map_city_to_province(city: Optional[str]) -> Optional[str]:
 def health():
     return {"status": "ok"}
 
-
 @app.get("/imports")
-def list_imports(user_code: str = Depends(validate_user_code)):
+def list_imports(
+    user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
+):
     """
     Lijst eerdere imports (voor UI-overzicht).
     """
-    resp = supabase.table("imports") \
-        .select("*") \
-        .eq("owner_code", user_code) \
-        .order("created_at", desc=True) \
+    imports = db.query(Import) \
+        .filter(Import.owner_code == user_code) \
+        .order_by(desc(Import.created_at)) \
         .limit(50) \
-        .execute()
+        .all()
+    
+    # Convert to dict format
+    return [
+        {
+            "id": imp.id,
+            "name": imp.name,
+            "date_from": imp.date_from,
+            "date_to": imp.date_to,
+            "publicatie_type": imp.publicatie_type,
+            "cpv_codes": imp.cpv_codes,
+            "region": imp.region,
+            "total_records": imp.total_records,
+            "owner_code": imp.owner_code,
+            "created_at": imp.created_at,
+        }
+        for imp in imports
+    ]
 
-    return resp.data or []
 
 BATCH_SIZE = 1000
 
@@ -289,10 +352,22 @@ def map_import_to_cache_schema(record: dict) -> dict:
     Map een import record naar het cache schema.
     Inclusief historische velden voor consistentie.
     """
+    # Extract URL - handle both dict and string formats
+    url_value = record.get("URL") or record.get("url")
+    if isinstance(url_value, dict):
+        url_value = url_value.get("href") or url_value.get("url")
+    
+    # Get publication date from any available field
+    pub_date = (
+        record.get("contract_issue_date") or 
+        record.get("publicatie_datum") or 
+        record.get("Publicatiedatum")  # ← Add this!
+    )
+    
     return {
         "notice_id": record.get("notice_id"),
         "publicatie_id": record.get("publicatieId") or record.get("publicatie_id"),
-        "url": record.get("URL") or record.get("url"),
+        "url": url_value,
         "titel": record.get("titel"),
         "omschrijving": record.get("omschrijving"),
         "win_bedrijf_naam": record.get("win_bedrijf_naam"),
@@ -317,8 +392,8 @@ def map_import_to_cache_schema(record: dict) -> dict:
         "buyer_website": record.get("buyer_website"),
         "bedrag": record.get("bedrag"),
         "valuta": record.get("valuta"),
-        "publicatie_datum": record.get("contract_issue_date") or record.get("publicatie_datum"),
-        "Publicatiedatum": record.get("contract_issue_date") or record.get("publicatie_datum"),
+        "publicatie_datum": pub_date,  # ← Use the variable
+        "Publicatiedatum": pub_date,    # ← Use the variable
         "heeft_eerdere_aanbestedingen": record.get("heeft_eerdere_aanbestedingen", False),
         "aantal_eerdere_aanbestedingen": record.get("aantal_eerdere_aanbestedingen", 0),
     }
@@ -329,12 +404,17 @@ def map_cache_to_import_schema(cache_row: dict) -> dict:
     Map een cache record terug naar het import schema.
     Inclusief historische velden.
     """
+    # Extract URL - handle both dict and string formats
+    url_value = cache_row.get("url") or cache_row.get("URL")
+    if isinstance(url_value, dict):
+        url_value = url_value.get("href") or url_value.get("url")
+    
     return {
         "notice_id": cache_row.get("notice_id"),
         "publicatieId": cache_row.get("publicatie_id"),
         "publicatie_id": cache_row.get("publicatie_id"),
-        "URL": cache_row.get("url"),
-        "url": cache_row.get("url"),
+        "URL": url_value,
+        "url": url_value,
         "titel": cache_row.get("titel"),
         "omschrijving": cache_row.get("omschrijving"),
         "win_bedrijf_naam": cache_row.get("win_bedrijf_naam"),
@@ -364,100 +444,164 @@ def map_cache_to_import_schema(cache_row: dict) -> dict:
         "heeft_eerdere_aanbestedingen": cache_row.get("heeft_eerdere_aanbestedingen", False),
         "aantal_eerdere_aanbestedingen": cache_row.get("aantal_eerdere_aanbestedingen", 0),
     }
-
-
 def fetch_cached_in_batches(
-    date_from: str, 
-    date_to: str, 
-    cache_table: str = "tenderned_raw_cached",
-    cpv_codes: list[str] = None
-) -> list[dict]:
+    start_date: str,
+    end_date: str,
+    cache_table: str,
+    cpv_codes: Optional[list] = None,
+    db: Session = None,
+    batch_size: int = 1000
+) -> list:
     """
-    Haal alle cached rows op voor een Publicatiedatum-range, in batches van BATCH_SIZE.
-    Returned een platte list van rows (dus GEEN .data).
-    
-    Args:
-        date_from: Start datum voor de range (inclusive)
-        date_to: Eind datum voor de range (exclusive, zoals SQL <)
-        cache_table: Naam van de cache table (default: "tenderned_raw_cached")
-        cpv_codes: Optionele lijst van CPV codes om op te filteren
-    
-    Returns:
-        List van alle rows binnen de datum range (en optioneel gefilterd op CPV)
+    Haal cached records op in batches.
     """
+    CacheModel = TendernedRawCPVCached if cache_table == "tenderned_raw_cpv_cached" else TendernedRawCached
+    
+    # First, check total records in date range WITHOUT CPV filter
+    total_in_range = db.query(func.count(CacheModel.id)).filter(
+        and_(
+            CacheModel.Publicatiedatum >= start_date,
+            CacheModel.Publicatiedatum <= end_date
+        )
+    ).scalar()
+    print(f"📊 Total records in date range (before CPV filter): {total_in_range}")
+    
+    query = db.query(CacheModel).filter(
+        and_(
+            CacheModel.Publicatiedatum >= start_date,
+            CacheModel.Publicatiedatum <= end_date
+        )
+    )
+    
+    # Apply CPV filter if provided
+    if cpv_codes and cache_table == "tenderned_raw_cpv_cached":
+        print(f"🔍 Filtering by CPV codes: {cpv_codes}")
+        
+        # Check BOTH cpv_codes and cpv_code columns
+        cpv_codes_count = db.query(func.count(CacheModel.id)).filter(
+            and_(
+                CacheModel.Publicatiedatum >= start_date,
+                CacheModel.Publicatiedatum <= end_date,
+                CacheModel.cpv_codes.isnot(None),
+                CacheModel.cpv_codes != ''
+            )
+        ).scalar()
+        
+        cpv_code_count = db.query(func.count(CacheModel.id)).filter(
+            and_(
+                CacheModel.Publicatiedatum >= start_date,
+                CacheModel.Publicatiedatum <= end_date,
+                CacheModel.cpv_code.isnot(None),
+                CacheModel.cpv_code != ''
+            )
+        ).scalar()
+        
+        print(f"📊 Records with non-null cpv_codes (plural): {cpv_codes_count}")
+        print(f"📊 Records with non-null cpv_code (singular): {cpv_code_count}")
+        
+        # Sample from cpv_code column
+       
+        
+        # Use cpv_code column instead of cpv_codes
+        cpv_filters = []
+        for code in cpv_codes:
+            # Try matching against cpv_code column
+            cpv_filters.append(
+                or_(
+                    CacheModel.cpv_code.like(f'%{code}%'),
+                    CacheModel.cpv_codes.like(f'%{code}%')  # Also try cpv_codes just in case
+                )
+            )
+        
+        if cpv_filters:
+            query = query.filter(or_(*cpv_filters))
+            
+            # Check count after filter
+            filtered_count = query.count()
+            print(f"📊 Records after CPV filter: {filtered_count}")
+    
+    query = query.order_by(CacheModel.id)
+    
+    all_records = []
     offset = 0
-    all_rows: list[dict] = []
     
     while True:
-        query = (
-            supabase
-            .table(cache_table)
-            .select("*")
-            .gte("Publicatiedatum", date_from)
-            .lt("Publicatiedatum", date_to)  # Changed from lte to lt to match SQL behavior
-        )
-        
-        # Als we CPV codes hebben, filter dan IN de database query
-        if cpv_codes and cache_table == "tenderned_raw_cpv_cached":
-            # Bouw OR filter voor alle CPV codes
-            # Dit zorgt ervoor dat we direct in de database filteren
-            cpv_filters = []
-            for cpv in cpv_codes:
-                cpv_filters.append(f"cpv_code.eq.{cpv},cpv_codes.ilike.%{cpv}%")
-            
-            # Gebruik or_ filter voor meerdere CPV codes
-            if len(cpv_codes) == 1:
-                query = query.or_(f"cpv_code.eq.{cpv_codes[0]},cpv_codes.ilike.%{cpv_codes[0]}%")
-            else:
-                or_condition = ",".join([f"cpv_code.eq.{cpv}" for cpv in cpv_codes] + 
-                                       [f"cpv_codes.ilike.%{cpv}%" for cpv in cpv_codes])
-                query = query.or_(or_condition)
-        
-        resp = query.range(offset, offset + BATCH_SIZE - 1).execute()
-        
-        rows = resp.data or []
-        
-        # Check of we nog rows hebben gekregen
-        if not rows:
+        batch = query.limit(batch_size).offset(offset).all()
+        if not batch:
             break
         
-        all_rows.extend(rows)
+        all_records.extend([
+            {
+                "notice_id": record.notice_id,
+                "publicatie_id": record.publicatie_id,
+                "URL": record.URL_TenderNed,
+                "titel": record.titel,
+                "omschrijving": record.omschrijving,
+                "win_bedrijf_naam": record.win_bedrijf_naam,
+                "win_kvk": record.win_kvk,
+                "win_straat": record.win_straat,
+                "win_postcode": record.win_postcode,
+                "win_plaats": record.win_plaats,
+                "win_land": record.win_land,
+                "win_contact_naam": record.win_contact_naam,
+                "win_contact_email": record.win_contact_email,
+                "win_contact_tel": record.win_contact_tel,
+                "win_website": record.win_website,
+                "buyer_bedrijf_naam": record.buyer_bedrijf_naam,
+                "buyer_kvk": record.buyer_kvk,
+                "buyer_straat": record.buyer_straat,
+                "buyer_postcode": record.buyer_postcode,
+                "buyer_plaats": record.buyer_plaats,
+                "buyer_land": record.buyer_land,
+                "buyer_contact_naam": record.buyer_contact_naam,
+                "buyer_contact_email": record.buyer_contact_email,
+                "buyer_contact_tel": record.buyer_contact_tel,
+                "buyer_website": record.buyer_website,
+                "bedrag": record.bedrag,
+                "valuta": record.valuta,
+                "Publicatiedatum": record.Publicatiedatum,
+                "heeft_eerdere_aanbestedingen": record.heeft_eerdere_aanbestedingen,
+                "aantal_eerdere_aanbestedingen": record.aantal_eerdere_aanbestedingen,
+            }
+            for record in batch
+        ])
         
-        # Als we minder rows krijgen dan BATCH_SIZE, zijn we klaar
-        if len(rows) < BATCH_SIZE:
-            break
-            
-        offset += BATCH_SIZE
+        offset += batch_size
     
-    return all_rows
+    return all_records
 
-
-@app.post("/imports", response_model=ImportResponse)
-def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_code)):
+@app.post("/imports", response_model=ImportResponse)  
+def start_import(
+    payload: ImportRequest,
+    user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
+):
     """
     Start een nieuwe import-run met volledige caching via tenderned_raw.
     Implementeert alle scenario's uit het importeer-document.
     Ondersteunt nu ook CPV-specifieke caching.
     """
-    UPSERT_BATCH_SIZE = 500  # Batch size voor upserts naar notices table
+    from sqlalchemy.dialects.postgresql import insert
+    import traceback
+    
+    UPSERT_BATCH_SIZE = 1000
     
     # 1) Maak import record
     name = generate_import_name()
-    insert_resp = supabase.table("imports").insert({
-        "name": name,
-        "date_from": payload.date_from,
-        "date_to": payload.date_to,
-        "publicatie_type": payload.publicatie_type,
-        "cpv_codes": payload.cpv_codes,
-        "region": payload.region,
-        "owner_code": user_code,
-    }).execute()
-
-    if not insert_resp.data:
-        raise HTTPException(500, "Kon import-record niet aanmaken")
-
-    import_row = insert_resp.data[0]
-    import_id = import_row["id"]
+    import_obj = Import(
+        name=name,
+        date_from=payload.date_from,
+        date_to=payload.date_to,
+        publicatie_type=payload.publicatie_type,
+        cpv_codes=payload.cpv_codes,
+        region=payload.region,
+        owner_code=user_code,
+    )
+    db.add(import_obj)
+    db.commit()
+    db.refresh(import_obj)
+    
+    import_id = import_obj.id
 
     # 2) Bepaal data-bron(nen): cache (met of zonder CPV) + evt run_import
     date_from = payload.date_from
@@ -468,34 +612,21 @@ def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_
     dt_str = str(date_to) if date_to is not None else None
 
     records: list[dict] = []
-    records_from_api: list[dict] = []  # Track welke records van API komen
+    records_from_api: list[dict] = []
 
     # Bepaal welke cache table te gebruiken
     cache_table = "tenderned_raw_cpv_cached" if payload.cpv_codes else "tenderned_raw_cached"
+    CacheModel = TendernedRawCPVCached if payload.cpv_codes else TendernedRawCached
     print(f"🗄️  Gebruikte cache table: {cache_table}")
 
     # Haal cache range op
-    range_resp = supabase.table(cache_table) \
-        .select("Publicatiedatum") \
-        .not_.is_("Publicatiedatum", "null") \
-        .order("Publicatiedatum", desc=False) \
-        .limit(1) \
-        .execute()
-
-    earliest_publicatie = None
-    if range_resp.data:
-        earliest_publicatie = range_resp.data[0]["Publicatiedatum"]
-
-    latest_raw_resp = supabase.table(cache_table) \
-        .select("Publicatiedatum") \
-        .not_.is_("Publicatiedatum", "null") \
-        .order("Publicatiedatum", desc=True) \
-        .limit(1) \
-        .execute()
-
-    latest_publicatie = None
-    if latest_raw_resp.data:
-        latest_publicatie = latest_raw_resp.data[0]["Publicatiedatum"]
+    earliest_publicatie = db.query(func.min(CacheModel.Publicatiedatum)) \
+        .filter(CacheModel.Publicatiedatum.isnot(None)) \
+        .scalar()
+    
+    latest_publicatie = db.query(func.max(CacheModel.Publicatiedatum)) \
+        .filter(CacheModel.Publicatiedatum.isnot(None)) \
+        .scalar()
 
     ep_str = str(earliest_publicatie) if earliest_publicatie is not None else None
     lp_str = str(latest_publicatie) if latest_publicatie is not None else None
@@ -508,7 +639,6 @@ def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_
         print(f"📡 SCENARIO 1: Startdatum ({df_str}) > laatste cache ({lp_str})")
         print(f"   → Ophalen via TenderNed API: {df_str} tot {dt_str}")
         
-        
         new_records = run_import(
             date_from=payload.date_from,
             date_to=payload.date_to,
@@ -519,24 +649,36 @@ def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_
         
         if new_records:
             records.extend(new_records)
-            records_from_api.extend(new_records)  # Deze komen van API
+            records_from_api.extend(new_records)
             
-            # Voeg toe aan cache
+            # Voeg toe aan cache (bulk upsert)
             cache_records = [map_import_to_cache_schema(r) for r in new_records]
             print(f"💾 Opslaan {len(cache_records)} records in {cache_table}")
-            supabase.table(cache_table) \
-                .upsert(cache_records, on_conflict="notice_id") \
-                .execute()
+            
+            try:
+                for cache_rec in cache_records:
+                    stmt = insert(CacheModel).values(**cache_rec)
+                    stmt = stmt.on_conflict_do_update(
+                        index_elements=['notice_id'],
+                        set_=cache_rec
+                    )
+                    db.execute(stmt)
+                db.commit()
+                print(f"✅ Cache insert successful!")
+            except Exception as e:
+                print(f"❌ ERROR inserting to cache: {e}")
+                print(f"❌ Error type: {type(e)}")
+                print(f"❌ Traceback: {traceback.format_exc()}")
+                db.rollback()
 
     # SCENARIO 5: Startdatum < kleinste datum in cache
     elif ep_str and df_str is not None and df_str < ep_str:
         print(f"📡 SCENARIO 5: Startdatum ({df_str}) < oudste cache ({ep_str})")
         
-        # Bepaal waar cache begint te overlappen
         cache_overlap_start = ep_str
         cache_overlap_end = dt_str if (dt_str and dt_str <= lp_str) else lp_str
         
-        # Haal historische data op VIA API (ouder dan cache)
+        # Haal historische data op VIA API
         api_end = ep_str
         print(f"   → API ophalen (historisch): {df_str} tot {api_end}")
         
@@ -550,16 +692,29 @@ def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_
         
         if historical_records:
             records.extend(historical_records)
-            records_from_api.extend(historical_records)  # Deze komen van API
+            records_from_api.extend(historical_records)
             
             # Voeg historische data toe aan cache
             cache_records = [map_import_to_cache_schema(r) for r in historical_records]
             print(f"💾 Opslaan {len(cache_records)} historische records in {cache_table}")
-            supabase.table(cache_table) \
-                .upsert(cache_records, on_conflict="notice_id") \
-                .execute()
+            
+            try:
+                for cache_rec in cache_records:
+                    stmt = insert(CacheModel).values(**cache_rec)
+                    stmt = stmt.on_conflict_do_update(
+                        index_elements=['notice_id'],
+                        set_=cache_rec
+                    )
+                    db.execute(stmt)
+                db.commit()
+                print(f"✅ Cache insert successful!")
+            except Exception as e:
+                print(f"❌ ERROR inserting to cache: {e}")
+                print(f"❌ Error type: {type(e)}")
+                print(f"❌ Traceback: {traceback.format_exc()}")
+                db.rollback()
         
-        # Haal cached data op (als einddatum binnen cache valt)
+        # Haal cached data op
         if dt_str and dt_str >= cache_overlap_start:
             print(f"   → Cache gebruiken: {cache_overlap_start} tot {cache_overlap_end}")
             
@@ -567,14 +722,14 @@ def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_
                 cache_overlap_start, 
                 cache_overlap_end,
                 cache_table=cache_table,
-                cpv_codes=payload.cpv_codes
+                cpv_codes=payload.cpv_codes,
+                db=db
             )
 
             if cached_rows:
                 print(f"✅ {len(cached_rows)} records uit cache (batched)")
                 for cache_row in cached_rows:
                     records.append(map_cache_to_import_schema(cache_row))
-                # NIET toevoegen aan records_from_api
         
         # Als einddatum > laatste cache datum, haal resterende data op
         if dt_str and lp_str and dt_str > lp_str:
@@ -590,39 +745,50 @@ def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_
             
             if recent_records:
                 records.extend(recent_records)
-                records_from_api.extend(recent_records)  # Deze komen van API
+                records_from_api.extend(recent_records)
+                
                 cache_records = [map_import_to_cache_schema(r) for r in recent_records]
                 print(f"💾 Opslaan {len(cache_records)} recente records in {cache_table}")
-                supabase.table(cache_table) \
-                    .upsert(cache_records, on_conflict="notice_id") \
-                    .execute()
+                
+                try:
+                    for cache_rec in cache_records:
+                        stmt = insert(CacheModel).values(**cache_rec)
+                        stmt = stmt.on_conflict_do_update(
+                            index_elements=['notice_id'],
+                            set_=cache_rec
+                        )
+                        db.execute(stmt)
+                    db.commit()
+                    print(f"✅ Cache insert successful!")
+                except Exception as e:
+                    print(f"❌ ERROR inserting to cache: {e}")
+                    print(f"❌ Error type: {type(e)}")
+                    print(f"❌ Traceback: {traceback.format_exc()}")
+                    db.rollback()
 
     # SCENARIO 2 & 3: Startdatum <= meest recente datum in cache
     else:
         print(f"📦 SCENARIO 2/3: Startdatum ({df_str}) binnen cache range")
         
-        # Bepaal upper bound voor cached data
         upper_bound_str = dt_str if (dt_str is not None and dt_str <= lp_str) else lp_str
         
-        # Haal cached data op IN BATCHES
         print(f"   → Cache gebruiken: {df_str} tot {upper_bound_str}")
         cached_rows = fetch_cached_in_batches(
             df_str, 
             upper_bound_str,
             cache_table=cache_table,
-            cpv_codes=payload.cpv_codes
+            cpv_codes=payload.cpv_codes,
+            db=db
         )
 
         if cached_rows:
             print(f"✅ {len(cached_rows)} records uit cache (batched)")
             for cache_row in cached_rows:
                 records.append(map_cache_to_import_schema(cache_row))
-            # Deze komen NIET van API, dus niet toevoegen aan records_from_api
 
         # Als einddatum > laatste cache datum, vul aan met API
         if dt_str is not None and lp_str and dt_str > lp_str:
             print(f"   → API aanvullen: {lp_str} tot {dt_str}")
-          
             
             new_records = run_import(
                 date_from=latest_publicatie,
@@ -635,26 +801,37 @@ def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_
             if new_records:
                 print(f"✅ {len(new_records)} nieuwe records via API")
                 records.extend(new_records)
-                records_from_api.extend(new_records)  # Deze komen van API
+                records_from_api.extend(new_records)
 
                 # Voeg toe aan cache
                 cache_records = [map_import_to_cache_schema(r) for r in new_records]
                 print(f"💾 Opslaan {len(cache_records)} nieuwe records in {cache_table}")
-                supabase.table(cache_table) \
-                    .upsert(cache_records, on_conflict="notice_id") \
-                    .execute()
+                
+                try:
+                    for cache_rec in cache_records:
+                        stmt = insert(CacheModel).values(**cache_rec)
+                        stmt = stmt.on_conflict_do_update(
+                            index_elements=['notice_id'],
+                            set_=cache_rec
+                        )
+                        db.execute(stmt)
+                    db.commit()
+                    print(f"✅ Cache insert successful!")
+                except Exception as e:
+                    print(f"❌ ERROR inserting to cache: {e}")
+                    print(f"❌ Error type: {type(e)}")
+                    print(f"❌ Traceback: {traceback.format_exc()}")
+                    db.rollback()
 
     print(f"📊 Totaal records verzameld: {len(records)}")
     print(f"📡 Waarvan van API: {len(records_from_api)}")
 
-    # Maak een set van notice_ids die van API komen voor snelle lookup
+    # Maak een set van notice_ids die van API komen
     api_notice_ids = {r.get("notice_id") for r in records_from_api if r.get("notice_id")}
 
     # 3) Map records & voeg import_id toe
-    # Check historische aanbestedingen ALLEEN voor records die van API komen
     notice_rows = []
     for r in records:
-        # Bereid province EERST
         province = map_city_to_province(r.get("win_plaats"))
         
         # Skip dit record als region filter actief is EN province niet matcht
@@ -667,7 +844,6 @@ def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_
         notice_id = r.get("notice_id")
         
         # Check historische aanbestedingen ALLEEN als dit record van API komt
-        # Anders gebruik de waarden uit de cache
         heeft_eerdere_aanbestedingen = r.get("heeft_eerdere_aanbestedingen", False)
         aantal_eerdere_aanbestedingen = r.get("aantal_eerdere_aanbestedingen", 0)
         
@@ -679,7 +855,8 @@ def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_
                     historische_records = _search_companies_in_db(
                         q=bedrijf_naam,
                         years=5,
-                        max_results=100
+                        max_results=100,
+                        db=db
                     )
                     
                     if historische_records:
@@ -693,11 +870,16 @@ def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_
         if pub_datum and isinstance(pub_datum, str) and len(pub_datum) >= 10:
             pub_datum = pub_datum[:10]
         
+        # Extract URL - handle both dict and string formats
+        url_value = r.get("URL") or r.get("url")
+        if isinstance(url_value, dict):
+            url_value = url_value.get("href") or url_value.get("url")
+        
         notice_rows.append({
             "import_id": import_id,
             "notice_id": notice_id,
             "publicatie_id": r.get("publicatieId") or r.get("publicatie_id"),
-            "url": r.get("URL") or r.get("url"),
+            "url": url_value,
             "titel": r.get("titel"),
             "omschrijving": r.get("omschrijving"),
             "win_bedrijf_naam": r.get("win_bedrijf_naam"),
@@ -731,7 +913,7 @@ def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_
 
     print(f"✅ {len(notice_rows)} records na filtering")
 
-    # 4) Upsert naar Supabase IN BATCHES
+    # 4) Deduplicate and bulk upsert naar database
     unique_rows = {}
     for row in notice_rows:
         nid = row.get("notice_id")
@@ -740,126 +922,85 @@ def start_import(payload: ImportRequest, user_code: str = Depends(validate_user_
         unique_rows[nid] = row
 
     deduped_notice_rows = list(unique_rows.values())
-    total_records = len(deduped_notice_rows)  # Gebruik de GEDEPLICEERDE count
+    total_records = len(deduped_notice_rows)
     print(f"💾 Opslaan {total_records} unieke notices (van {len(notice_rows)} totaal)")
 
     if deduped_notice_rows:
-        for r in deduped_notice_rows:
-            r.setdefault("owner_code", user_code)
-        
-        # Upsert in batches om timeouts te voorkomen
         total_batches = (len(deduped_notice_rows) - 1) // UPSERT_BATCH_SIZE + 1
+        
         for i in range(0, len(deduped_notice_rows), UPSERT_BATCH_SIZE):
             batch = deduped_notice_rows[i:i + UPSERT_BATCH_SIZE]
             batch_num = i // UPSERT_BATCH_SIZE + 1
             print(f"💾 Upserting batch {batch_num}/{total_batches} ({len(batch)} records)")
             
-            supabase.table("notices") \
-                .upsert(batch, on_conflict="notice_id") \
-                .execute()
+            # Bulk upsert using PostgreSQL's ON CONFLICT
+            stmt = insert(Notice).values(batch)
+            stmt = stmt.on_conflict_do_update(
+                index_elements=['notice_id'],
+                set_={
+                    'import_id': stmt.excluded.import_id,
+                    'publicatie_id': stmt.excluded.publicatie_id,
+                    'url': stmt.excluded.url,
+                    'titel': stmt.excluded.titel,
+                    'omschrijving': stmt.excluded.omschrijving,
+                    'win_bedrijf_naam': stmt.excluded.win_bedrijf_naam,
+                    'win_kvk': stmt.excluded.win_kvk,
+                    'win_straat': stmt.excluded.win_straat,
+                    'win_postcode': stmt.excluded.win_postcode,
+                    'win_plaats': stmt.excluded.win_plaats,
+                    'win_land': stmt.excluded.win_land,
+                    'win_contact_naam': stmt.excluded.win_contact_naam,
+                    'win_contact_email': stmt.excluded.win_contact_email,
+                    'win_contact_tel': stmt.excluded.win_contact_tel,
+                    'win_website': stmt.excluded.win_website,
+                    'buyer_bedrijf_naam': stmt.excluded.buyer_bedrijf_naam,
+                    'buyer_kvk': stmt.excluded.buyer_kvk,
+                    'buyer_straat': stmt.excluded.buyer_straat,
+                    'buyer_postcode': stmt.excluded.buyer_postcode,
+                    'buyer_plaats': stmt.excluded.buyer_plaats,
+                    'buyer_land': stmt.excluded.buyer_land,
+                    'buyer_contact_naam': stmt.excluded.buyer_contact_naam,
+                    'buyer_contact_email': stmt.excluded.buyer_contact_email,
+                    'buyer_contact_tel': stmt.excluded.buyer_contact_tel,
+                    'buyer_website': stmt.excluded.buyer_website,
+                    'bedrag': stmt.excluded.bedrag,
+                    'valuta': stmt.excluded.valuta,
+                    'province': stmt.excluded.province,
+                    'publicatie_datum': stmt.excluded.publicatie_datum,
+                    'heeft_eerdere_aanbestedingen': stmt.excluded.heeft_eerdere_aanbestedingen,
+                    'aantal_eerdere_aanbestedingen': stmt.excluded.aantal_eerdere_aanbestedingen,
+                    'owner_code': stmt.excluded.owner_code,
+                }
+            )
+            
+            try:
+                db.execute(stmt)
+                db.commit()
+            except Exception as e:
+                print(f"❌ Error batch {batch_num}: {e}")
+                db.rollback()
+                raise
 
     # 5) Update total_records
-    supabase.table("imports") \
-        .update({"total_records": total_records}) \
-        .eq("id", import_id) \
-        .eq("owner_code", user_code) \
-        .execute()
+    import_obj.total_records = total_records
+    db.commit()
 
     print(f"✅ Import {name} voltooid: {total_records} records")
 
     return ImportResponse(
-        import_id=import_id,
+        import_id=str(import_id),
         name=name,
         total_records=total_records,
-        created_at=import_row["created_at"],
+        created_at=import_obj.created_at.isoformat() if import_obj.created_at else None,
     )
-@app.delete("/imports/{import_id}")
-def delete_import(import_id: str, user_code: str = Depends(validate_user_code)):
-    """
-    Verwijder een import en alle gekoppelde data uit Supabase.
-    - notices (import_id = import_id)
-    - optioneel: SROI resultaten
-    - imports record zelf
-    """
-
-    # 1) Bestaat de import? + eigenaarschap check
-    imp_resp = (
-        supabase.table("imports")
-        .select("id, owner_code")
-        .eq("id", import_id)
-        .execute()
-    )
-
-    if not imp_resp.data:
-        raise HTTPException(status_code=404, detail="Import niet gevonden")
-
-    found = imp_resp.data[0]
-    owner_code = found.get("owner_code")
-
-    if owner_code and owner_code != user_code:
-        raise HTTPException(
-            status_code=403,
-            detail="Je hebt geen toestemming om deze import te verwijderen"
-        )
-
-    # 2) Verwijder gekoppelde notices
-    try:
-        notices_resp = (
-            supabase.table("notices")
-            .delete()
-            .eq("import_id", import_id)
-            .eq("owner_code", user_code)  # <- ensures user can delete only own notices
-            .execute()
-        )
-    except Exception as e:
-        print("Error deleting notices for import", import_id, e)
-        raise HTTPException(
-            status_code=500,
-            detail="Fout bij verwijderen van notices"
-        )
-
-    # 3) Verwijder gekoppelde SROI resultaten
-    try:
-        supabase.table("sroi_results") \
-            .delete() \
-            .eq("import_id", import_id) \
-            .eq("owner_code", user_code) \
-            .execute()
-    except Exception as e:
-        print("Optional: error deleting sroi_results for import", import_id, e)
-
-    # 4) Verwijder de import zelf
-    try:
-        delete_resp = (
-            supabase.table("imports")
-            .delete()
-            .eq("id", import_id)
-            .eq("owner_code", user_code)
-            .execute()
-        )
-    except Exception as e:
-        print("Error deleting import", import_id, e)
-        raise HTTPException(
-            status_code=500,
-            detail="Fout bij verwijderen van import"
-        )
-
-    if not delete_resp.data:
-        raise HTTPException(
-            status_code=404,
-            detail="Import niet gevonden (bij verwijderen)"
-        )
-
-    return {
-        "detail": "Import en gekoppelde data verwijderd",
-        "import_id": import_id,
-        "deleted_notices": len(notices_resp.data or []),
-    }
-
-
 
 @app.get("/imports/{import_id}/notices")
-def get_import_notices(import_id: str, region: Optional[str] = Query(None, description="Filter op provincie/regio"), user_code: str = Depends(validate_user_code)):
+def get_import_notices(
+    import_id: str, 
+    region: Optional[str] = Query(None, description="Filter op provincie/regio"), 
+    user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
+):
     """
     Fetch all notices for a specific import to display in the UI.
     """
@@ -867,34 +1008,66 @@ def get_import_notices(import_id: str, region: Optional[str] = Query(None, descr
     print(f"Import ID received: {import_id!r}")
 
     try:
-        # Only fetch notices that belong to this user
-        resp = (
-            supabase.table("notices")
-            .select("*")
-            .eq("import_id", import_id)
-            .eq("owner_code", user_code)
-            .order("created_at", desc=False)
-            .execute()
-        )
+        # Query notices using SQLAlchemy
+        query = db.query(Notice).filter(
+            Notice.import_id == import_id,
+            Notice.owner_code == user_code
+        ).order_by(Notice.created_at.asc())
 
-        rows = resp.data or []
-        print(f"Supabase returned {len(rows)} rows for import_id={import_id!r}")
-
-        # If region filter provided, apply server-side filtering using province or win_plaats
+        # Apply region filter if provided
         if region:
             region_norm = region.strip().lower()
-            filtered = []
-            for row in rows:
-                # prefer stored province, fallback to mapping from win_plaats
-                prov = (row.get("province") or map_city_to_province(row.get("win_plaats")))
-                if prov and prov.strip().lower() == region_norm:
-                    filtered.append(row)
-            print(f"Filtered down to {len(filtered)} rows for region={region!r}")
-            rows = filtered
+            query = query.filter(
+                func.lower(Notice.province) == region_norm
+            )
+
+        notices = query.all()
+        print(f"SQLAlchemy returned {len(notices)} notices for import_id={import_id!r}")
+
+        # Convert SQLAlchemy objects to dicts
+        rows = []
+        for notice in notices:
+            notice_dict = {
+                "id": str(notice.id) if notice.id else None,
+                "import_id": str(notice.import_id) if notice.import_id else None,
+                "notice_id": notice.notice_id,
+                "publicatie_id": notice.publicatie_id,
+                "url": notice.url,
+                "titel": notice.titel,
+                "omschrijving": notice.omschrijving,
+                "win_bedrijf_naam": notice.win_bedrijf_naam,
+                "win_kvk": notice.win_kvk,
+                "win_straat": notice.win_straat,
+                "win_postcode": notice.win_postcode,
+                "win_plaats": notice.win_plaats,
+                "win_land": notice.win_land,
+                "win_contact_naam": notice.win_contact_naam,
+                "win_contact_email": notice.win_contact_email,
+                "win_contact_tel": notice.win_contact_tel,
+                "win_website": notice.win_website,
+                "buyer_bedrijf_naam": notice.buyer_bedrijf_naam,
+                "buyer_kvk": notice.buyer_kvk,
+                "buyer_straat": notice.buyer_straat,
+                "buyer_postcode": notice.buyer_postcode,
+                "buyer_plaats": notice.buyer_plaats,
+                "buyer_land": notice.buyer_land,
+                "buyer_contact_naam": notice.buyer_contact_naam,
+                "buyer_contact_email": notice.buyer_contact_email,
+                "buyer_contact_tel": notice.buyer_contact_tel,
+                "buyer_website": notice.buyer_website,
+                "bedrag": float(notice.bedrag) if notice.bedrag else None,
+                "valuta": notice.valuta,
+                "province": notice.province,
+                "publicatie_datum": notice.publicatie_datum,
+                "heeft_eerdere_aanbestedingen": notice.heeft_eerdere_aanbestedingen,
+                "aantal_eerdere_aanbestedingen": notice.aantal_eerdere_aanbestedingen,
+                "created_at": notice.created_at.isoformat() if notice.created_at else None,
+            }
+            rows.append(notice_dict)
 
     except Exception as e:
         print(f"ERROR while fetching notices for import_id={import_id!r}: {e}")
-        raise
+        raise HTTPException(status_code=500, detail=str(e))
 
     print("=== FETCH NOTICES END ===\n")
     return rows
@@ -906,32 +1079,69 @@ def download_import(
     format: str = Query("excel", pattern="^(excel|csv)$"),
     region: Optional[str] = Query(None, description="Filter op provincie/regio voor download"),
     user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
 ):
     """
-    Genereer Excel of CSV op basis van Supabase-data.
-    Geen DB details in de UI, alleen een download.
+    Genereer Excel of CSV op basis van SQLAlchemy-data.
     """
-    resp = supabase.table("notices") \
-        .select("*") \
-        .eq("import_id", import_id) \
-        .eq("owner_code", user_code) \
-        .execute()
-
-    rows = resp.data or []
-    if not rows:
-        raise HTTPException(404, "Geen records voor deze import")
+    # Query notices using SQLAlchemy
+    query = db.query(Notice).filter(
+        Notice.import_id == import_id,
+        Notice.owner_code == user_code
+    )
 
     # Apply region filter if requested
     if region:
         region_norm = region.strip().lower()
-        filtered = []
-        for row in rows:
-            prov = (row.get("province") or map_city_to_province(row.get("win_plaats")))
-            if prov and prov.strip().lower() == region_norm:
-                filtered.append(row)
-        rows = filtered
-        if not rows:
-            raise HTTPException(404, "Geen records voor deze import en regio")
+        query = query.filter(
+            func.lower(Notice.province) == region_norm
+        )
+
+    notices = query.all()
+    
+    if not notices:
+        raise HTTPException(404, "Geen records voor deze import")
+
+    # Convert SQLAlchemy objects to dicts
+    rows = []
+    for notice in notices:
+        notice_dict = {
+            "id": str(notice.id) if notice.id else None,
+            "import_id": str(notice.import_id) if notice.import_id else None,
+            "notice_id": notice.notice_id,
+            "publicatie_id": notice.publicatie_id,
+            "url": notice.url,
+            "titel": notice.titel,
+            "omschrijving": notice.omschrijving,
+            "win_bedrijf_naam": notice.win_bedrijf_naam,
+            "win_kvk": notice.win_kvk,
+            "win_straat": notice.win_straat,
+            "win_postcode": notice.win_postcode,
+            "win_plaats": notice.win_plaats,
+            "win_land": notice.win_land,
+            "win_contact_naam": notice.win_contact_naam,
+            "win_contact_email": notice.win_contact_email,
+            "win_contact_tel": notice.win_contact_tel,
+            "win_website": notice.win_website,
+            "buyer_bedrijf_naam": notice.buyer_bedrijf_naam,
+            "buyer_kvk": notice.buyer_kvk,
+            "buyer_straat": notice.buyer_straat,
+            "buyer_postcode": notice.buyer_postcode,
+            "buyer_plaats": notice.buyer_plaats,
+            "buyer_land": notice.buyer_land,
+            "buyer_contact_naam": notice.buyer_contact_naam,
+            "buyer_contact_email": notice.buyer_contact_email,
+            "buyer_contact_tel": notice.buyer_contact_tel,
+            "buyer_website": notice.buyer_website,
+            "bedrag": float(notice.bedrag) if notice.bedrag else None,
+            "valuta": notice.valuta,
+            "province": notice.province,
+            "publicatie_datum": notice.publicatie_datum,
+            "heeft_eerdere_aanbestedingen": notice.heeft_eerdere_aanbestedingen,
+            "aantal_eerdere_aanbestedingen": notice.aantal_eerdere_aanbestedingen,
+            "created_at": notice.created_at.isoformat() if notice.created_at else None,
+        }
+        rows.append(notice_dict)
 
     if format == "csv":
         return _make_csv_response(rows, filename=f"import_{import_id}.csv")
@@ -991,7 +1201,10 @@ def _make_excel_response(rows, filename: str):
     )
 
 
-def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
+from datetime import datetime, timedelta, date
+from decimal import Decimal
+
+def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000, db: Session = None) -> List[Dict]:
     """
     Doorzoek de tabel tenderned_raw op bedrijfsnaam (case-insensitive substring)
     en filter op Publicatiedatum binnen de afgelopen `years` jaren.
@@ -1011,36 +1224,29 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
         'begindatum_opdracht': '2024-12-01',
         'einddatum_opdracht': '2029-02-28',
         'aantal_publicaties': 3,
-        'bedrag': 123456.78,   # <-- NIEUW
+        'bedrag': 123456.78,
       },
       ...
     ]
     """
     if not q:
         return []
+    
+    if not db:
+        raise ValueError("Database session is required")
 
-    cutoff = (datetime.utcnow() - timedelta(days=365 * int(years))).date().isoformat()
+    cutoff = (datetime.utcnow() - timedelta(days=365 * int(years))).date()
 
-    # 1) Haal ruwe rijen op uit de DB
-    #    - "Waarde - bedrag" toegevoegd aan select
-    resp = (
-        supabase.table("tenderned_raw")
-        .select(
-            'Publicatiedatum, "Officiële benaming", Kvknummer, '
-            '"Omschrijving aanbesteding", "Aanvang opdracht", "Voltooiing opdracht", '
-            '"bedrag"'
-        )
-        .ilike("Officiële benaming", f"%{q}%")
-        .gte("Publicatiedatum", cutoff)
-        .limit(max_results * 5)  # wat extra, i.v.m. deduplicatie
-        .execute()
-    )
-    if getattr(resp, "error", None):
-        # hier kun je loggen
-        print("Supabase error:", resp.error)
-        raise RuntimeError(resp.error)
+    # Query TendernedRaw using SQLAlchemy - use the Python attribute names
+    try:
+        rows = db.query(TendernedRaw).filter(
+            TendernedRaw.Officiele_benaming.ilike(f"%{q}%"),
+            TendernedRaw.Publicatiedatum >= cutoff
+        ).limit(max_results * 5).all()
+    except Exception as e:
+        print(f"Database query error: {e}")
+        raise
 
-    rows = resp.data or []
     if not rows:
         return []
 
@@ -1048,6 +1254,10 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
     def parse_date(raw):
         if not raw:
             return None
+        if isinstance(raw, date):
+            return datetime.combine(raw, datetime.min.time())
+        if isinstance(raw, datetime):
+            return raw
         if isinstance(raw, str):
             try:
                 return datetime.fromisoformat(raw)
@@ -1062,12 +1272,9 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
     def parse_amount(raw):
         if raw is None:
             return None
-        # Als Supabase al numeric/float teruggeeft:
-        if isinstance(raw, (int, float)):
+        if isinstance(raw, (int, float, Decimal)):
             return float(raw)
-        # Als het een string is, probeer te parsen
         if isinstance(raw, str):
-            # simpele replace voor komma-decimalen, indien nodig
             txt = raw.replace(".", "").replace(",", ".") if "," in raw else raw
             try:
                 return float(txt)
@@ -1080,35 +1287,35 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
 
     q_lower = q.lower()
     for row in rows:
-        company = (row.get("Officiële benaming") or "").strip()
+        # Use Python attribute names (without spaces)
+        company = (row.Officiele_benaming or "").strip()
         if not company:
             continue
 
-        # extra safeguard (ilike doet dit al, maar just in case)
         if q_lower not in company.lower():
             continue
 
-        kvk = (row.get("Kvknummer") or "").strip()
-        omschrijving = (row.get("Omschrijving aanbesteding") or "").strip()
+        kvk = (row.Kvknummer or "").strip()
+        omschrijving = (row.Omschrijving_aanbesteding or "").strip()
 
-        pub_raw = row.get("Publicatiedatum")
+        pub_raw = row.Publicatiedatum
         pub_date = parse_date(pub_raw)
 
-        # bedrag uit kolom "Waarde - bedrag"
-        bedrag_raw = row.get("bedrag")
+        # bedrag uit kolom "bedrag"
+        bedrag_raw = row.bedrag if hasattr(row, 'bedrag') else None
         bedrag = parse_amount(bedrag_raw)
 
         unique_key = (company, kvk, omschrijving[:100] if omschrijving else "")
 
         all_matches[unique_key].append(
             {
-                "publicatiedatum": pub_raw,
+                "publicatiedatum": str(pub_raw) if pub_raw else None,
                 "pub_date_obj": pub_date,
                 "row": row,
                 "company": company,
                 "kvk": kvk,
                 "omschrijving": omschrijving,
-                "bedrag": bedrag,  # extra info per match
+                "bedrag": bedrag,
             }
         )
 
@@ -1129,15 +1336,15 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
         row = most_recent["row"]
         pub_date = most_recent["pub_date_obj"]
 
-        # Begin- en einddatum uit row
-        aanvang_raw = (row.get("Aanvang opdracht") or "").strip()
-        voltooiing_raw = (row.get("Voltooiing opdracht") or "").strip()
+        # Begin- en einddatum uit row - use Python attribute names
+        aanvang_raw = (row.Aanvang_opdracht or "") if hasattr(row, 'Aanvang_opdracht') else ""
+        voltooiing_raw = (row.Voltooiing_opdracht or "") if hasattr(row, 'Voltooiing_opdracht') else ""
 
         def to_iso_str(raw):
             if not raw:
                 return None
             d = parse_date(raw)
-            return d.strftime("%Y-%m-%d") if d else raw
+            return d.strftime("%Y-%m-%d") if d else str(raw)
 
         begindatum = to_iso_str(aanvang_raw)
         einddatum = to_iso_str(voltooiing_raw)
@@ -1152,15 +1359,15 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000):
                 "begindatum_opdracht": begindatum,
                 "einddatum_opdracht": einddatum,
                 "aantal_publicaties": len(matches),
-                "bedrag": most_recent["bedrag"],  # <-- HIER KOMT HET BEDRAG MEE TERUG
+                "bedrag": most_recent["bedrag"],
             }
         )
 
     return results
 
-
+    
 @app.post("/validate-code")
-def validate_code_endpoint(payload: dict):
+def validate_code_endpoint(payload: dict, db: Session = Depends(get_db)):
     """Validate a code server-side without needing a full authenticated request.
     Expects JSON: { code: "123456789012" }
     Returns 200 ok if code exists in `auth_codes` table; 400 for bad input; 403 if unknown.
@@ -1171,10 +1378,8 @@ def validate_code_endpoint(payload: dict):
         raise HTTPException(status_code=400, detail="Invalid code format")
 
     try:
-        resp = supabase.table("auth_codes").select("code").eq("code", code).limit(1).execute()
-        if getattr(resp, "error", None):
-            raise HTTPException(status_code=500, detail=f"Auth validation error: {resp.error}")
-        if not resp.data:
+        auth_code = db.query(AuthCode).filter(AuthCode.code == code).first()
+        if not auth_code:
             raise HTTPException(status_code=403, detail="Unknown code")
         return {"ok": True}
     except HTTPException:
@@ -1184,13 +1389,11 @@ def validate_code_endpoint(payload: dict):
 
 
 @app.post("/auth/request-code")
-def request_code_endpoint():
+def request_code_endpoint(db: Session = Depends(get_db)):
     """Generate a unique 12-digit numeric code, store it in `auth_codes` and return it.
     This endpoint is intentionally simple: it returns the generated code in the response body.
-    Ensure your Supabase DB has an `auth_codes(code TEXT PRIMARY KEY, created_at TIMESTAMPTZ)` table.
+    Ensure your DB has an `auth_codes(code TEXT PRIMARY KEY, created_at TIMESTAMPTZ)` table.
     """
-    import random
-
     def _gen():
         return "%012d" % random.randint(0, 10**12 - 1)
 
@@ -1201,21 +1404,23 @@ def request_code_endpoint():
         attempts += 1
         code = _gen()
         try:
-            resp = supabase.table("auth_codes").insert({"code": code, "created_at": dt.datetime.utcnow().isoformat()}).execute()
-            # If insert succeeded, return the code
-            if getattr(resp, "error", None):
-                # If duplicate key error or other, retry a few times
-                # Supabase client exposes resp.error; if it's a duplicate we try again
-                # For other errors, surface
-                err_text = str(resp.error)
-                # crude duplicate check
-                if "duplicate" in err_text.lower() or "unique" in err_text.lower():
-                    continue
-                raise HTTPException(status_code=500, detail=f"Failed to create auth code: {resp.error}")
-            if resp.data:
-                return {"code": code}
+            # Check if code already exists
+            existing = db.query(AuthCode).filter(AuthCode.code == code).first()
+            if existing:
+                continue
+            
+            # Insert new e
+            new_code = AuthCode(
+                code=code,
+                created_at=dt.datetime.utcnow()
+            )
+            db.add(new_code)
+            db.commit()
+            
+            return {"code": code}
+            
         except Exception as e:
-            # If it's a DB-level duplicate, try again; otherwise surface after last attempt
+            db.rollback()
             if attempts >= max_attempts:
                 raise HTTPException(status_code=500, detail=f"Error generating code: {e}")
             continue
@@ -1223,8 +1428,16 @@ def request_code_endpoint():
     raise HTTPException(status_code=500, detail="Could not generate unique code, try again later")
 
 
+# ========================================
+# SEARCH ENDPOINT
+# ========================================
+
 @app.get("/api/search/company")
-def api_search_company(q: str = Query(..., description="Bedrijfsnaam om te zoeken"), years: int = Query(5, ge=1, le=20)):
+def api_search_company(
+    q: str = Query(..., description="Bedrijfsnaam om te zoeken"), 
+    years: int = Query(5, ge=1, le=20),
+    db: Session = Depends(get_db)
+):
     """
     API endpoint om op bedrijfsnaam te zoeken in TenderNed_filtered.csv.
     Query params:
@@ -1232,10 +1445,9 @@ def api_search_company(q: str = Query(..., description="Bedrijfsnaam om te zoeke
       - years: hoeveel jaren terug (default 5)
     
     Retourneert gededupliceerde resultaten met begin- en einddatum van opdrachten.
-
     """
     try:
-        results = _search_companies_in_db(q=q, years=years, max_results=1000)
+        results = _search_companies_in_db(q=q, years=years, max_results=1000, db=db)
         print(f"Found {len(results)} results for query '{q}' within last {years} years.")
         print(results)
         return {"query": q, "years": years, "total": len(results), "results": results}
@@ -1245,62 +1457,74 @@ def api_search_company(q: str = Query(..., description="Bedrijfsnaam om te zoeke
         raise HTTPException(status_code=500, detail=f"Search failed: {str(e)}")
 
 
-
 # ========================================
-# SROI ANALYSIS ENDPOINTS (NEW)
+# SROI ANALYSIS ENDPOINTS
 # ========================================
 
-def get_notices_for_sroi(import_id: str, owner_code: str) -> List[Dict]:
+def get_notices_for_sroi(import_id: str, owner_code: str, db: Session) -> List[Dict]:
     """
     Haal alle notices op voor SROI analyse.
     """
-    resp = supabase.table("notices") \
-        .select("*") \
-        .eq("import_id", import_id) \
-        .eq("owner_code", owner_code) \
-        .execute()
+    notices = db.query(Notice)\
+        .filter(Notice.import_id == import_id)\
+        .filter(Notice.owner_code == owner_code)\
+        .all()
     
-    return resp.data or []
+    # Convert to dict format (assuming you need dict for analysis functions)
+    return [notice.__dict__ for notice in notices]
 
 
-def save_sroi_results(results: List[Dict], owner_code: Optional[str] = None):
+def save_sroi_results(results: List[Dict], owner_code: Optional[str] = None, db: Session = None):
     """
-    Sla SROI resultaten op in Supabase.
+    Sla SROI resultaten op in database.
     """
-    if not results:
+    if not results or not db:
         return
     
-    # Map results naar database format
-    db_rows = []
     for result in results:
-        db_rows.append({
-            "import_id": result.get("import_id"),
-            "notice_id": result.get("notice_id"),
-            "publicatie_id": result.get("publicatie_id"),
-            "winner_name": result.get("winner_name"),
-            "analyzed_url": result.get("analyzed_url"),
-            "url_source": result.get("url_source"),
-            "sroi_compliant": result.get("sroi_compliant", False),
-            "confidence": result.get("confidence", "none"),
-            "score": result.get("score", 0),
-            "evidence": result.get("evidence", []),  # Supabase JSONB
-            "summary": result.get("summary", ""),
-            "pages_checked": result.get("pages_checked", 0),
-            "error": result.get("error"),
-            "owner_code": owner_code,
-        })
+        # Check if result already exists
+        existing = db.query(SROIResult)\
+            .filter(SROIResult.import_id == result.get("import_id"))\
+            .filter(SROIResult.notice_id == result.get("notice_id"))\
+            .first()
+        
+        if existing:
+            # Update existing
+            for key, value in result.items():
+                if hasattr(existing, key):
+                    setattr(existing, key, value)
+            existing.owner_code = owner_code
+        else:
+            # Create new
+            new_result = SROIResult(
+                import_id=result.get("import_id"),
+                notice_id=result.get("notice_id"),
+                publicatie_id=result.get("publicatie_id"),
+                winner_name=result.get("winner_name"),
+                analyzed_url=result.get("analyzed_url"),
+                url_source=result.get("url_source"),
+                sroi_compliant=result.get("sroi_compliant", False),
+                confidence=result.get("confidence", "none"),
+                score=result.get("score", 0),
+                evidence=result.get("evidence", []),
+                summary=result.get("summary", ""),
+                pages_checked=result.get("pages_checked", 0),
+                error=result.get("error"),
+                owner_code=owner_code
+            )
+            db.add(new_result)
     
-    # Upsert (vervang bestaande resultaten)
-    supabase.table("sroi_results").upsert(
-        db_rows,
-        on_conflict="import_id,notice_id"  # Of alleen import_id als je 1 resultaat per notice wil
-    ).execute()
+    db.commit()
 
 
 def run_sroi_analysis_background(import_id: str, owner_code: Optional[str] = None):
     """
     Background task voor SROI analyse.
     """
+    # Create a new database session for this background task
+    from database import SessionLocal
+    db = SessionLocal()
+    
     try:
         print(f"\n🚀 Starting SROI analysis for import {import_id}")
 
@@ -1314,7 +1538,7 @@ def run_sroi_analysis_background(import_id: str, owner_code: Optional[str] = Non
         }
 
         # Haal notices op (eigenaar filter)
-        notices = get_notices_for_sroi(import_id, owner_code)
+        notices = get_notices_for_sroi(import_id, owner_code, db)
 
         if not notices:
             sroi_analysis_status[import_id].update({
@@ -1344,7 +1568,7 @@ def run_sroi_analysis_background(import_id: str, owner_code: Optional[str] = Non
 
         # Save to database
         print(f"💾 Saving {len(results)} results to database...")
-        save_sroi_results(results, owner_code=owner_code)
+        save_sroi_results(results, owner_code=owner_code, db=db)
 
         # Calculate summary
         compliant_count = sum(1 for r in results if r.get("sroi_compliant"))
@@ -1373,22 +1597,29 @@ def run_sroi_analysis_background(import_id: str, owner_code: Optional[str] = Non
             "status": "failed",
             "error": str(e)
         })
+        db.rollback()
+    finally:
+        db.close()
 
 
 @app.post("/imports/{import_id}/sroi-analyze")
-async def start_sroi_analysis(import_id: str, background_tasks: BackgroundTasks, user_code: str = Depends(validate_user_code)):
+async def start_sroi_analysis(
+    import_id: str, 
+    background_tasks: BackgroundTasks, 
+    user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
+):
     """
     Start SROI analyse voor een import.
     """
     # Check if import exists and belongs to caller
-    resp = supabase.table("imports") \
-        .select("id, name, owner_code") \
-        .eq("id", import_id) \
-        .execute()
+    import_record = db.query(Import)\
+        .filter(Import.id == import_id)\
+        .first()
     
-    if not resp.data:
+    if not import_record:
         raise HTTPException(status_code=404, detail="Import niet gevonden")
-    if resp.data[0].get("owner_code") != user_code:
+    if import_record.owner_code != user_code:
         raise HTTPException(status_code=403, detail="Je hebt geen toestemming voor deze import")
     
     # Check if analysis already running
@@ -1401,13 +1632,11 @@ async def start_sroi_analysis(import_id: str, background_tasks: BackgroundTasks,
             )
     
     # Check if results already exist
-    existing = supabase.table("sroi_results") \
-        .select("id") \
-        .eq("import_id", import_id) \
-        .limit(1) \
-        .execute()
+    existing = db.query(SROIResult)\
+        .filter(SROIResult.import_id == import_id)\
+        .first()
     
-    if existing.data:
+    if existing:
         raise HTTPException(
             status_code=400,
             detail="Er bestaan al SROI resultaten voor deze import. Verwijder ze eerst om opnieuw te analyseren."
@@ -1432,61 +1661,85 @@ async def start_sroi_analysis(import_id: str, background_tasks: BackgroundTasks,
     }
 
 
-def save_notice_sroi_result(result: Dict, owner_code: str):
+def save_notice_sroi_result(result: Dict, owner_code: str, db: Session):
     """
     Sla één SROI resultaat op voor een specifieke notice (winner of buyer).
     
     Args:
         result: Dictionary met SROI analyse resultaat
         owner_code: User code van de eigenaar
+        db: Database session
     """
     if not result:
         return
     
-    # Map result naar database format
-    db_row = {
-        "notice_id": result.get("notice_id"),
-        "target": result.get("target", "winner"),  # winner or buyer
-        "company_name": result.get("winner_name") or result.get("company_name"),
-        "analyzed_url": result.get("analyzed_url"),
-        "url_source": result.get("url_source"),
-        "sroi_compliant": result.get("sroi_compliant", False),
-        "confidence": result.get("confidence", "none"),
-        "score": result.get("score", 0),
-        "evidence": result.get("evidence", []),  # Supabase JSONB
-        "summary": result.get("summary", ""),
-        "pages_checked": result.get("pages_checked", 0),
-        "error": result.get("error"),
-        "owner_code": owner_code,
-    }
+    # Check if result already exists
+    existing = db.query(NoticeSROIResult)\
+        .filter(NoticeSROIResult.notice_id == result.get("notice_id"))\
+        .filter(NoticeSROIResult.target == result.get("target", "winner"))\
+        .first()
     
-    # Upsert (vervang bestaand resultaat voor deze notice + target combinatie)
-    supabase.table("notice_sroi_results").upsert(
-        db_row,
-        on_conflict="notice_id,target"
-    ).execute()
+    if existing:
+        # Update existing
+        existing.company_name = result.get("winner_name") or result.get("company_name")
+        existing.analyzed_url = result.get("analyzed_url")
+        existing.url_source = result.get("url_source")
+        existing.sroi_compliant = result.get("sroi_compliant", False)
+        existing.confidence = result.get("confidence", "none")
+        existing.score = result.get("score", 0)
+        existing.evidence = result.get("evidence", [])
+        existing.summary = result.get("summary", "")
+        existing.pages_checked = result.get("pages_checked", 0)
+        existing.error = result.get("error")
+        existing.owner_code = owner_code
+    else:
+        # Create new
+        new_result = NoticeSROIResult(
+            notice_id=result.get("notice_id"),
+            target=result.get("target", "winner"),
+            company_name=result.get("winner_name") or result.get("company_name"),
+            analyzed_url=result.get("analyzed_url"),
+            url_source=result.get("url_source"),
+            sroi_compliant=result.get("sroi_compliant", False),
+            confidence=result.get("confidence", "none"),
+            score=result.get("score", 0),
+            evidence=result.get("evidence", []),
+            summary=result.get("summary", ""),
+            pages_checked=result.get("pages_checked", 0),
+            error=result.get("error"),
+            owner_code=owner_code
+        )
+        db.add(new_result)
+    
+    db.commit()
+
 
 @app.get("/imports/{import_id}/sroi-status")
-async def get_sroi_status(import_id: str, user_code: str = Depends(validate_user_code)):
+async def get_sroi_status(
+    import_id: str, 
+    user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
+):
     """
     Haal de status op van een lopende SROI analyse.
     """
-    # ensure import belongs to user
-    imp = supabase.table("imports").select("id, owner_code").eq("id", import_id).limit(1).execute()
-    if not imp.data:
+    # Ensure import belongs to user
+    import_record = db.query(Import)\
+        .filter(Import.id == import_id)\
+        .first()
+    
+    if not import_record:
         raise HTTPException(status_code=404, detail="Import niet gevonden")
-    if imp.data[0].get("owner_code") != user_code:
+    if import_record.owner_code != user_code:
         raise HTTPException(status_code=403, detail="Je hebt geen toegang tot de status van deze import")
 
     if import_id not in sroi_analysis_status:
         # Check if results exist in database
-        resp = supabase.table("sroi_results") \
-            .select("id") \
-            .eq("import_id", import_id) \
-            .limit(1) \
-            .execute()
+        result = db.query(SROIResult)\
+            .filter(SROIResult.import_id == import_id)\
+            .first()
         
-        if resp.data:
+        if result:
             return {
                 "import_id": import_id,
                 "status": "completed",
@@ -1506,30 +1759,37 @@ async def get_sroi_status(import_id: str, user_code: str = Depends(validate_user
 
 
 @app.get("/imports/{import_id}/sroi-results")
-async def get_sroi_results(import_id: str, user_code: str = Depends(validate_user_code)):
+async def get_sroi_results(
+    import_id: str, 
+    user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
+):
     """
     Haal SROI resultaten op voor een import.
     """
     # Only fetch results for this owner's import
-    resp = supabase.table("sroi_results") \
-        .select("*") \
-        .eq("import_id", import_id) \
-        .eq("owner_code", user_code) \
-        .order("score", desc=True) \
-        .execute()
+    results = db.query(SROIResult)\
+        .filter(SROIResult.import_id == import_id)\
+        .filter(SROIResult.owner_code == user_code)\
+        .order_by(desc(SROIResult.score))\
+        .all()
     
-    results = resp.data or []
+    # Convert to dict
+    results_list = [result.__dict__ for result in results]
+    # Remove SQLAlchemy internal state
+    for r in results_list:
+        r.pop('_sa_instance_state', None)
     
     # Calculate summary
-    if results:
-        compliant_count = sum(1 for r in results if r["sroi_compliant"])
-        avg_score = sum(r["score"] for r in results) / len(results)
+    if results_list:
+        compliant_count = sum(1 for r in results_list if r["sroi_compliant"])
+        avg_score = sum(r["score"] for r in results_list) / len(results_list)
         
         summary = {
-            "total": len(results),
+            "total": len(results_list),
             "compliant": compliant_count,
-            "non_compliant": len(results) - compliant_count,
-            "compliance_rate": round((compliant_count / len(results) * 100), 2),
+            "non_compliant": len(results_list) - compliant_count,
+            "compliance_rate": round((compliant_count / len(results_list) * 100), 2),
             "average_score": round(avg_score, 2)
         }
     else:
@@ -1537,7 +1797,7 @@ async def get_sroi_results(import_id: str, user_code: str = Depends(validate_use
     
     return {
         "import_id": import_id,
-        "results": results,
+        "results": results_list,
         "summary": summary
     }
 
@@ -1546,63 +1806,71 @@ async def get_sroi_results(import_id: str, user_code: str = Depends(validate_use
 async def get_notice_sroi_results(
     import_id: str, 
     notice_id: str, 
-    user_code: str = Depends(validate_user_code)
+    user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
 ):
     """
     Haal SROI resultaat op voor een specifieke notice.
     """
     # Verify import ownership
-    imp = supabase.table("imports").select("id, owner_code").eq("id", import_id).limit(1).execute()
-    if not imp.data:
+    import_record = db.query(Import)\
+        .filter(Import.id == import_id)\
+        .first()
+    
+    if not import_record:
         raise HTTPException(status_code=404, detail="Import niet gevonden")
-    if imp.data[0].get("owner_code") != user_code:
+    if import_record.owner_code != user_code:
         raise HTTPException(status_code=403, detail="Je hebt geen toegang tot deze import")
     
     # Fetch result for this notice
-    resp = (
-        supabase.table("notice_sroi_results")
-        .select("*")
-        .eq("notice_id", notice_id)
-        .eq("owner_code", user_code)
-        .limit(1)
-        .execute()
-    )
+    result = db.query(NoticeSROIResult)\
+        .filter(NoticeSROIResult.notice_id == notice_id)\
+        .filter(NoticeSROIResult.owner_code == user_code)\
+        .first()
     
-    if not resp.data:
+    if not result:
         return {
             "notice_id": notice_id,
             "result": None,
             "message": "Nog geen analyse beschikbaar voor deze notice"
         }
     
-    result = resp.data[0]
-    
+    # Convert to dict
+    result_dict = result.__dict__
+    result_dict.pop('_sa_instance_state', None)
     
     return {
         "notice_id": notice_id,
-        "result": result
+        "result": result_dict
     }
 
 
 @app.delete("/imports/{import_id}/sroi-results")
-async def delete_sroi_results(import_id: str, user_code: str = Depends(validate_user_code)):
+async def delete_sroi_results(
+    import_id: str, 
+    user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
+):
     """
     Verwijder SROI resultaten (om opnieuw te analyseren).
     """
-    # ensure import belongs to user
-    imp = supabase.table("imports").select("id, owner_code").eq("id", import_id).limit(1).execute()
-    if not imp.data:
+    # Ensure import belongs to user
+    import_record = db.query(Import)\
+        .filter(Import.id == import_id)\
+        .first()
+    
+    if not import_record:
         raise HTTPException(status_code=404, detail="Import niet gevonden")
-    if imp.data[0].get("owner_code") != user_code:
+    if import_record.owner_code != user_code:
         raise HTTPException(status_code=403, detail="Je hebt geen toegang tot deze import")
 
-    resp = supabase.table("sroi_results") \
-        .delete() \
-        .eq("import_id", import_id) \
-        .eq("owner_code", user_code) \
-        .execute()
+    # Delete results
+    deleted_count = db.query(SROIResult)\
+        .filter(SROIResult.import_id == import_id)\
+        .filter(SROIResult.owner_code == user_code)\
+        .delete()
     
-    deleted_count = len(resp.data) if resp.data else 0
+    db.commit()
     
     # Clear status
     if import_id in sroi_analysis_status:
@@ -1615,7 +1883,12 @@ async def delete_sroi_results(import_id: str, user_code: str = Depends(validate_
 
 
 @app.get("/imports/{import_id}/notices/{notice_id}")
-def get_notice_detail(import_id: str, notice_id: str, user_code: str = Depends(validate_user_code)):
+def get_notice_detail(
+    import_id: str, 
+    notice_id: str, 
+    user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
+):
     """
     Fetch a single notice detail by import_id and notice_id.
     """
@@ -1625,28 +1898,25 @@ def get_notice_detail(import_id: str, notice_id: str, user_code: str = Depends(v
     
     try:
         # Query notices table for the specific record
-        # Use .execute() first, then check if data exists
-        resp = (
-            supabase.table("notices")
-            .select("*")
-            .eq("import_id", import_id)
-            .eq("id", notice_id)
-            .eq("owner_code", user_code)
-            .execute()
-        )
+        notice = db.query(Notice)\
+            .filter(Notice.import_id == import_id)\
+            .filter(Notice.id == notice_id)\
+            .filter(Notice.owner_code == user_code)\
+            .first()
         
-        # Check if any data was returned
-        if not resp.data or len(resp.data) == 0:
+        if not notice:
             print(f"❌ Notice not found: import_id={import_id!r}, notice_id={notice_id!r}")
             raise HTTPException(
                 status_code=404, 
                 detail=f"Notice not found for import_id={import_id} and notice_id={notice_id}"
             )
         
-        # Get the first (and should be only) result
-        notice = resp.data[0]
-        print(f"✅ Found notice: {notice.get('titel', 'No title')}")
-        return notice
+        # Convert to dict
+        notice_dict = notice.__dict__
+        notice_dict.pop('_sa_instance_state', None)
+        
+        print(f"✅ Found notice: {notice_dict.get('titel', 'No title')}")
+        return notice_dict
         
     except HTTPException:
         raise
@@ -1657,8 +1927,15 @@ def get_notice_detail(import_id: str, notice_id: str, user_code: str = Depends(v
             detail=f"Failed to fetch notice detail: {str(e)}"
         )
 
+
 @app.post("/imports/{import_id}/notices/{notice_id}/sroi-analyze")
-async def analyze_single_notice(import_id: str, notice_id: str, request: Request, user_code: str = Depends(validate_user_code)):
+async def analyze_single_notice(
+    import_id: str, 
+    notice_id: str, 
+    request: Request, 
+    user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
+):
     """
     Analyseer één specifieke notice / bedrijf (winnaar of inkoper) en sla resultaat direct op.
     Body (optioneel): { "target": "winner" | "buyer" }
@@ -1675,32 +1952,34 @@ async def analyze_single_notice(import_id: str, notice_id: str, request: Request
         target = (body or {}).get("target", "winner") if isinstance(body, dict) else "winner"
 
         # Verify import exists and ownership
-        imp = supabase.table("imports").select("id, owner_code").eq("id", import_id).execute()
-        if not imp.data:
+        import_record = db.query(Import)\
+            .filter(Import.id == import_id)\
+            .first()
+        
+        if not import_record:
             raise HTTPException(status_code=404, detail="Import niet gevonden")
-        if imp.data[0].get("owner_code") != user_code:
+        if import_record.owner_code != user_code:
             raise HTTPException(status_code=403, detail="Je hebt geen toegang tot deze import")
 
         # Fetch the notice record
-        resp = (
-            supabase.table("notices")
-            .select("*")
-            .eq("import_id", import_id)
-            .eq("id", notice_id)
-            .eq("owner_code", user_code)
-            .execute()
-        )
+        notice = db.query(Notice)\
+            .filter(Notice.import_id == import_id)\
+            .filter(Notice.id == notice_id)\
+            .filter(Notice.owner_code == user_code)\
+            .first()
 
-        if not resp.data:
+        if not notice:
             raise HTTPException(status_code=404, detail="Notice niet gevonden")
 
-        notice = resp.data[0]
+        # Convert to dict for analysis
+        notice_dict = notice.__dict__
+        notice_dict.pop('_sa_instance_state', None)
 
         # If caller requested the buyer specifically, coerce fields so analyze_notice_sroi targets buyer
-        notice_for_analysis = dict(notice)
+        notice_for_analysis = dict(notice_dict)
         if target == "buyer":
-            notice_for_analysis["win_bedrijf_naam"] = notice.get("buyer_bedrijf_naam")
-            notice_for_analysis["win_website"] = notice.get("buyer_website")
+            notice_for_analysis["win_bedrijf_naam"] = notice_dict.get("buyer_bedrijf_naam")
+            notice_for_analysis["win_website"] = notice_dict.get("buyer_website")
 
         # Run analysis
         try:
@@ -1713,7 +1992,7 @@ async def analyze_single_notice(import_id: str, notice_id: str, request: Request
         result["target"] = target
         
         # Save using new function
-        save_notice_sroi_result(result, owner_code=user_code)
+        save_notice_sroi_result(result, owner_code=user_code, db=db)
 
         return result
 
@@ -1723,35 +2002,44 @@ async def analyze_single_notice(import_id: str, notice_id: str, request: Request
         print("ERROR in analyze_single_notice:", e)
         raise HTTPException(status_code=500, detail=str(e))
 
-
 @app.get("/imports/{import_id}/sroi-download")
 def download_sroi_results(
     import_id: str,
-    format: str = Query("excel", pattern="^(excel|csv)$")
+    format: str = Query("excel", pattern="^(excel|csv)$"),
+    db: Session = Depends(get_db)
 ):
     """
     Download SROI resultaten als Excel of CSV.
     """
-    resp = supabase.table("sroi_results") \
-        .select("*") \
-        .eq("import_id", import_id) \
-        .order("score", desc=True) \
-        .execute()
+    results = db.query(SROIResult)\
+        .filter(SROIResult.import_id == import_id)\
+        .order_by(desc(SROIResult.score))\
+        .all()
     
-    rows = resp.data or []
-    if not rows:
+    if not results:
         raise HTTPException(404, "Geen SROI resultaten voor deze import")
     
-    # Flatten evidence array voor export
-    for row in rows:
+    # Convert to dict
+    rows = []
+    for result in results:
+        row = result.__dict__.copy()
+        row.pop('_sa_instance_state', None)
+        
+        # Flatten evidence array voor export
         if isinstance(row.get("evidence"), list):
             row["evidence"] = ", ".join(row["evidence"])
+        
+        rows.append(row)
     
     if format == "csv":
         return _make_csv_response(rows, filename=f"sroi_{import_id}.csv")
     else:
         return _make_excel_response(rows, filename=f"sroi_{import_id}.xlsx")
 
+
+# ========================================
+# REGIONS ENDPOINT
+# ========================================
 
 @app.get("/regions")
 def list_regions(include_cities: bool = Query(False, description="Include city lists per province")):
@@ -1763,20 +2051,15 @@ def list_regions(include_cities: bool = Query(False, description="Include city l
     return {"regions": list(PROVINCE_TO_CITIES.keys())}
 
 
-# ---------------------------
-# Simple CRM / Rapportage API
-# ---------------------------
-# Note: This implementation expects two tables in Supabase/postgres:
-# 1) crm_companies
-# 2) crm_followups
-# If these tables don't exist yet, call GET /crm/init to retrieve the SQL needed
-# to create them in your Supabase SQL editor.
+# ========================================
+# CRM ENDPOINTS
+# ========================================
 
 CRM_COMPANIES_CREATE_SQL = """
 CREATE TABLE IF NOT EXISTS crm_companies (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   name TEXT NOT NULL,
-    owner_code TEXT,
+  owner_code TEXT,
   website TEXT,
   kvk TEXT,
   contact_name TEXT,
@@ -1815,171 +2098,347 @@ CREATE INDEX IF NOT EXISTS idx_crm_followups_company ON crm_followups (company_i
 def crm_init():
     """Return SQL to create CRM tables. Run these statements in Supabase SQL editor if tables don't exist."""
     return {
-        "message": "If your Supabase database doesn't have the CRM tables, run the provided SQL in the Supabase SQL editor.",
+        "message": "If your database doesn't have the CRM tables, run the provided SQL in your SQL editor or use Alembic migrations.",
         "crm_companies_sql": CRM_COMPANIES_CREATE_SQL,
         "crm_followups_sql": CRM_FOLLOWUPS_CREATE_SQL,
     }
 
 
-def _ensure_crm_tables_ok():
-    """Quick check whether crm_companies exists; return (ok, error_message)
-    We try a harmless select. If it fails, return False and an advisory message.
-    """
+def _ensure_crm_tables_ok(db: Session):
+    """Quick check whether crm_companies exists; return (ok, error_message)"""
     try:
-        resp = supabase.table("crm_companies").select("id").limit(1).execute()
-        # If the table doesn't exist, supabase client may return an error on resp.error
-        if getattr(resp, "error", None):
-            return False, str(resp.error)
+        # Try a simple query to check if table exists
+        db.query(CRMCompany).limit(1).all()
         return True, None
     except Exception as e:
         return False, str(e)
 
 
 @app.get("/crm/companies")
-def crm_list_companies(q: Optional[str] = Query(None, description="Search by name substring"), status: Optional[str] = Query(None), user_code: str = Depends(validate_user_code)):
+def crm_list_companies(
+    q: Optional[str] = Query(None, description="Search by name substring"), 
+    status: Optional[str] = Query(None), 
+    user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
+):
     """List companies (leads). Optional search by name and filter by lead_status."""
-    ok, err = _ensure_crm_tables_ok()
+    ok, err = _ensure_crm_tables_ok(db)
     if not ok:
-        raise HTTPException(status_code=500, detail={"error": "CRM tables not found", "advice": "Call /crm/init and run SQL in Supabase" , "raw": err})
+        raise HTTPException(
+            status_code=500, 
+            detail={
+                "error": "CRM tables not found", 
+                "advice": "Call /crm/init and run SQL or create migrations", 
+                "raw": err
+            }
+        )
 
-    query = supabase.table("crm_companies").select("*").eq("owner_code", user_code)
+    query = db.query(CRMCompany).filter(CRMCompany.owner_code == user_code)
+    
     if q:
-        # simple ilike search
-        query = query.ilike("name", f"%{q}%")
+        # Case-insensitive search
+        query = query.filter(func.lower(CRMCompany.name).like(f"%{q.lower()}%"))
+    
     if status:
-        query = query.eq("lead_status", status)
+        query = query.filter(CRMCompany.lead_status == status)
 
-    resp = query.order("updated_at", desc=True).limit(100).execute()
-    return resp.data or []
+    companies = query.order_by(desc(CRMCompany.updated_at)).limit(100).all()
+    
+    # Convert to dict
+    result = []
+    for company in companies:
+        company_dict = company.__dict__.copy()
+        company_dict.pop('_sa_instance_state', None)
+        result.append(company_dict)
+    
+    return result
 
 
 @app.post("/crm/companies")
-def crm_create_company(payload: dict, user_code: str = Depends(validate_user_code)):
+def crm_create_company(
+    payload: dict, 
+    user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
+):
     """Create a new company lead. Expected JSON payload keys: name (required), website, kvk, contact_name, contact_email, source_notice_id, notes, lead_status"""
-    ok, err = _ensure_crm_tables_ok()
+    ok, err = _ensure_crm_tables_ok(db)
     if not ok:
-        raise HTTPException(status_code=500, detail={"error": "CRM tables not found", "advice": "Call /crm/init and run SQL in Supabase" , "raw": err})
+        raise HTTPException(
+            status_code=500, 
+            detail={
+                "error": "CRM tables not found", 
+                "advice": "Call /crm/init and run SQL or create migrations", 
+                "raw": err
+            }
+        )
 
     if not payload.get("name"):
         raise HTTPException(status_code=400, detail="Field 'name' is required")
 
-    payload.setdefault("created_at", dt.datetime.utcnow().isoformat())
-    payload.setdefault("updated_at", dt.datetime.utcnow().isoformat())
-    # attach owner
-    payload["owner_code"] = user_code
-
-    resp = supabase.table("crm_companies").insert(payload).execute()
-    if getattr(resp, "error", None):
-        raise HTTPException(status_code=500, detail=str(resp.error))
-    return resp.data[0]
+    # Create new company
+    new_company = CRMCompany(
+        name=payload.get("name"),
+        owner_code=user_code,
+        website=payload.get("website"),
+        kvk=payload.get("kvk"),
+        contact_name=payload.get("contact_name"),
+        contact_email=payload.get("contact_email"),
+        contact_phone=payload.get("contact_phone"),
+        source_notice_id=payload.get("source_notice_id"),
+        lead_status=payload.get("lead_status", "new"),
+        last_contacted=payload.get("last_contacted"),
+        notes=payload.get("notes"),
+        extra=payload.get("extra"),
+        created_at=dt.datetime.utcnow(),
+        updated_at=dt.datetime.utcnow()
+    )
+    
+    db.add(new_company)
+    db.commit()
+    db.refresh(new_company)
+    
+    # Convert to dict
+    result = new_company.__dict__.copy()
+    result.pop('_sa_instance_state', None)
+    
+    return result
 
 
 @app.get("/crm/companies/{company_id}")
-def crm_get_company(company_id: int, user_code: str = Depends(validate_user_code)):
-    ok, err = _ensure_crm_tables_ok()
+def crm_get_company(
+    company_id: int, 
+    user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
+):
+    ok, err = _ensure_crm_tables_ok(db)
     if not ok:
-        raise HTTPException(status_code=500, detail={"error": "CRM tables not found", "advice": "Call /crm/init and run SQL in Supabase" , "raw": err})
+        raise HTTPException(
+            status_code=500, 
+            detail={
+                "error": "CRM tables not found", 
+                "advice": "Call /crm/init and run SQL or create migrations", 
+                "raw": err
+            }
+        )
 
-    resp = supabase.table("crm_companies").select("*").eq("id", company_id).limit(1).execute()
-    if not resp.data:
+    company = db.query(CRMCompany).filter(CRMCompany.id == company_id).first()
+    
+    if not company:
         raise HTTPException(status_code=404, detail="Company not found")
-    company = resp.data[0]
-    if company.get("owner_code") != user_code:
+    
+    if company.owner_code != user_code:
         raise HTTPException(status_code=403, detail="Je hebt geen toegang tot dit bedrijf")
 
-    # fetch followups
-    fresp = supabase.table("crm_followups").select("*").eq("company_id", company_id).order("scheduled_at", desc=False).execute()
-    followups = fresp.data or []
-    company["followups"] = followups
-    return company
+    # Fetch followups
+    followups = db.query(CRMFollowup)\
+        .filter(CRMFollowup.company_id == company_id)\
+        .order_by(CRMFollowup.scheduled_at)\
+        .all()
+    
+    # Convert to dict
+    company_dict = company.__dict__.copy()
+    company_dict.pop('_sa_instance_state', None)
+    
+    followups_list = []
+    for followup in followups:
+        followup_dict = followup.__dict__.copy()
+        followup_dict.pop('_sa_instance_state', None)
+        followups_list.append(followup_dict)
+    
+    company_dict["followups"] = followups_list
+    
+    return company_dict
 
 
 @app.patch("/crm/companies/{company_id}")
-def crm_update_company(company_id: int, payload: dict, user_code: str = Depends(validate_user_code)):
-    ok, err = _ensure_crm_tables_ok()
+def crm_update_company(
+    company_id: int, 
+    payload: dict, 
+    user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
+):
+    ok, err = _ensure_crm_tables_ok(db)
     if not ok:
-        raise HTTPException(status_code=500, detail={"error": "CRM tables not found", "advice": "Call /crm/init and run SQL in Supabase" , "raw": err})
+        raise HTTPException(
+            status_code=500, 
+            detail={
+                "error": "CRM tables not found", 
+                "advice": "Call /crm/init and run SQL or create migrations", 
+                "raw": err
+            }
+        )
 
-    payload["updated_at"] = dt.datetime.utcnow().isoformat()
-    # ensure company belongs to user
-    check = supabase.table("crm_companies").select("owner_code").eq("id", company_id).limit(1).execute()
-    if not check.data:
+    # Ensure company belongs to user
+    company = db.query(CRMCompany).filter(CRMCompany.id == company_id).first()
+    
+    if not company:
         raise HTTPException(status_code=404, detail="Company not found")
-    if check.data[0].get("owner_code") != user_code:
+    
+    if company.owner_code != user_code:
         raise HTTPException(status_code=403, detail="Je hebt geen toestemming om dit bedrijf te bewerken")
 
-    payload["owner_code"] = user_code
-    resp = supabase.table("crm_companies").update(payload).eq("id", company_id).execute()
-    if getattr(resp, "error", None):
-        raise HTTPException(status_code=500, detail=str(resp.error))
-    if not resp.data:
-        raise HTTPException(status_code=404, detail="Company not found or not updated")
-    return resp.data[0]
+    # Update fields
+    for key, value in payload.items():
+        if hasattr(company, key) and key not in ['id', 'created_at', 'owner_code']:
+            setattr(company, key, value)
+    
+    company.updated_at = dt.datetime.utcnow()
+    
+    db.commit()
+    db.refresh(company)
+    
+    # Convert to dict
+    result = company.__dict__.copy()
+    result.pop('_sa_instance_state', None)
+    
+    return result
 
 
 @app.post("/crm/companies/{company_id}/followups")
-def crm_add_followup(company_id: int, payload: dict, user_code: str = Depends(validate_user_code)):
+def crm_add_followup(
+    company_id: int, 
+    payload: dict, 
+    user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
+):
     """Add a follow-up action/note for a company. payload keys: scheduled_at (ISO), action, note, emailed (bool), completed (bool), created_by"""
-    ok, err = _ensure_crm_tables_ok()
+    ok, err = _ensure_crm_tables_ok(db)
     if not ok:
-        raise HTTPException(status_code=500, detail={"error": "CRM tables not found", "advice": "Call /crm/init and run SQL in Supabase" , "raw": err})
+        raise HTTPException(
+            status_code=500, 
+            detail={
+                "error": "CRM tables not found", 
+                "advice": "Call /crm/init and run SQL or create migrations", 
+                "raw": err
+            }
+        )
 
-    # validate company exists and belongs to user
-    cresp = supabase.table("crm_companies").select("id, owner_code").eq("id", company_id).limit(1).execute()
-    if not cresp.data:
+    # Validate company exists and belongs to user
+    company = db.query(CRMCompany)\
+        .filter(CRMCompany.id == company_id)\
+        .first()
+    
+    if not company:
         raise HTTPException(status_code=404, detail="Company not found")
-    if cresp.data[0].get("owner_code") != user_code:
+    
+    if company.owner_code != user_code:
         raise HTTPException(status_code=403, detail="Je hebt geen toestemming om followups voor dit bedrijf toe te voegen")
 
-    payload["company_id"] = company_id
-    payload.setdefault("created_at", dt.datetime.utcnow().isoformat())
-    payload.setdefault("updated_at", dt.datetime.utcnow().isoformat())
-
-    resp = supabase.table("crm_followups").insert(payload).execute()
-    if getattr(resp, "error", None):
-        raise HTTPException(status_code=500, detail=str(resp.error))
-    return resp.data[0]
+    # Create new followup
+    new_followup = CRMFollowup(
+        company_id=company_id,
+        scheduled_at=payload.get("scheduled_at"),
+        action=payload.get("action"),
+        note=payload.get("note"),
+        emailed=payload.get("emailed", False),
+        completed=payload.get("completed", False),
+        created_by=payload.get("created_by"),
+        created_at=dt.datetime.utcnow(),
+        updated_at=dt.datetime.utcnow()
+    )
+    
+    db.add(new_followup)
+    db.commit()
+    db.refresh(new_followup)
+    
+    # Convert to dict
+    result = new_followup.__dict__.copy()
+    result.pop('_sa_instance_state', None)
+    
+    return result
 
 
 @app.get("/crm/companies/{company_id}/followups")
-def crm_list_followups(company_id: int, user_code: str = Depends(validate_user_code)):
-    ok, err = _ensure_crm_tables_ok()
+def crm_list_followups(
+    company_id: int, 
+    user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
+):
+    ok, err = _ensure_crm_tables_ok(db)
     if not ok:
-        raise HTTPException(status_code=500, detail={"error": "CRM tables not found", "advice": "Call /crm/init and run SQL in Supabase" , "raw": err})
+        raise HTTPException(
+            status_code=500, 
+            detail={
+                "error": "CRM tables not found", 
+                "advice": "Call /crm/init and run SQL or create migrations", 
+                "raw": err
+            }
+        )
 
-    # ensure company belongs to user
-    cresp = supabase.table("crm_companies").select("owner_code").eq("id", company_id).limit(1).execute()
-    if not cresp.data:
+    # Ensure company belongs to user
+    company = db.query(CRMCompany)\
+        .filter(CRMCompany.id == company_id)\
+        .first()
+    
+    if not company:
         raise HTTPException(status_code=404, detail="Company not found")
-    if cresp.data[0].get("owner_code") != user_code:
+    
+    if company.owner_code != user_code:
         raise HTTPException(status_code=403, detail="Je hebt geen toegang tot de followups van dit bedrijf")
 
-    resp = supabase.table("crm_followups").select("*").eq("company_id", company_id).order("scheduled_at", desc=False).execute()
-    return resp.data or []
+    followups = db.query(CRMFollowup)\
+        .filter(CRMFollowup.company_id == company_id)\
+        .order_by(CRMFollowup.scheduled_at)\
+        .all()
+    
+    # Convert to dict
+    result = []
+    for followup in followups:
+        followup_dict = followup.__dict__.copy()
+        followup_dict.pop('_sa_instance_state', None)
+        result.append(followup_dict)
+    
+    return result
 
 
 @app.patch("/crm/followups/{followup_id}")
-def crm_update_followup(followup_id: int, payload: dict, user_code: str = Depends(validate_user_code)):
-    ok, err = _ensure_crm_tables_ok()
+def crm_update_followup(
+    followup_id: int, 
+    payload: dict, 
+    user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
+):
+    ok, err = _ensure_crm_tables_ok(db)
     if not ok:
-        raise HTTPException(status_code=500, detail={"error": "CRM tables not found", "advice": "Call /crm/init and run SQL in Supabase" , "raw": err})
+        raise HTTPException(
+            status_code=500, 
+            detail={
+                "error": "CRM tables not found", 
+                "advice": "Call /crm/init and run SQL or create migrations", 
+                "raw": err
+            }
+        )
 
-    # ensure followup belongs to a company owned by user
-    fcheck = supabase.table("crm_followups").select("company_id").eq("id", followup_id).limit(1).execute()
-    if not fcheck.data:
+    # Ensure followup belongs to a company owned by user
+    followup = db.query(CRMFollowup)\
+        .filter(CRMFollowup.id == followup_id)\
+        .first()
+    
+    if not followup:
         raise HTTPException(status_code=404, detail="Followup not found")
-    company_id = fcheck.data[0].get("company_id")
-    cresp = supabase.table("crm_companies").select("owner_code").eq("id", company_id).limit(1).execute()
-    if not cresp.data or cresp.data[0].get("owner_code") != user_code:
+    
+    company = db.query(CRMCompany)\
+        .filter(CRMCompany.id == followup.company_id)\
+        .first()
+    
+    if not company or company.owner_code != user_code:
         raise HTTPException(status_code=403, detail="Je hebt geen toestemming om deze followup te bewerken")
 
-    payload["updated_at"] = dt.datetime.utcnow().isoformat()
-    resp = supabase.table("crm_followups").update(payload).eq("id", followup_id).execute()
-    if getattr(resp, "error", None):
-        raise HTTPException(status_code=500, detail=str(resp.error))
-    if not resp.data:
-        raise HTTPException(status_code=404, detail="Followup not found or not updated")
-    return resp.data[0]
+    # Update fields
+    for key, value in payload.items():
+        if hasattr(followup, key) and key not in ['id', 'company_id', 'created_at']:
+            setattr(followup, key, value)
+    
+    followup.updated_at = dt.datetime.utcnow()
+    
+    db.commit()
+    db.refresh(followup)
+    
+    # Convert to dict
+    result = followup.__dict__.copy()
+    result.pop('_sa_instance_state', None)
+    
+    return result
 
 
 # Runnen:

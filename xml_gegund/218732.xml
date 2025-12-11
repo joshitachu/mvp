@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Waterschap Rivierenland</OFFICIALNAME>
+                    <NATIONALID>51595840</NATIONALID>
+                    <ADDRESS>de Blomboogerd 1 te Tiel</ADDRESS>
+                    <TOWN>Tiel</TOWN>
+                    <POSTAL_CODE>4003 BX</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>H. Koppens</CONTACT_POINT>
+                    <PHONE>+31 344649090</PHONE>
+                    <E_MAIL>H.Koppens@wsrl.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.wsrl.nl</URL_GENERAL>
+                    <URL_BUYER>https://platform.negometrix.com/PublishedTenders.aspx?tenderid=167521</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY_OTHER>Waterschap </CA_ACTIVITY_OTHER>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>NO Inhuur Werkvoorbereider wegenbeheer</P>
+                </TITLE>
+                <REFERENCE_NUMBER>2021004359</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="79620000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>WSRL is door middel van deze aanbestedingsprocedure één overeenkomst aangegaan voor het inhuren van een werkvoorbereider wegbeheer per 8 februari 2021.</P>
+                    <P></P>
+                    <P>Het betreft een functie voor 36 uur per week met de mogelijkheid om het aantal uur, indien nodig, per maand bij te stellen. Opdrachtgever bepaalt welke inzet nodig is en wanneer de werkzaamheden zijn afgerond.</P>
+                    <P></P>
+                    <P>De Overeenkomst is aangegaan voor een periode van 1 (één) jaar. Optioneel is het mogelijk de Overeenkomst steeds met een periode van 6 (zes) maanden te verlengen onder gelijkblijvende voorwaarden. Bij een beëindiging wordt een opzegtermijn van één maand in acht genomen.</P>
+                    <P></P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">300000.00</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79620000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Tiel</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Werkvoorbereider wegenbeheer</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Inzet kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>50%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Interview</AC_CRITERION>
+                            <AC_WEIGHTING>50%</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>0</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 029-068092</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <LOT_NO>1</LOT_NO>
+                <TITLE>
+                    <P>167521 NO Inhuur Werkvoorbereider wegenbeheer </P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>2</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_SME>2</NB_TENDERS_RECEIVED_SME>
+                        <NB_TENDERS_RECEIVED_OTHER_EU>0</NB_TENDERS_RECEIVED_OTHER_EU>
+                        <NB_TENDERS_RECEIVED_NON_EU>0</NB_TENDERS_RECEIVED_NON_EU>
+                        <NB_TENDERS_RECEIVED_EMEANS>2</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Solyne B.V.</OFFICIALNAME>
+                                <TOWN>Amsterdam</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">300000.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Gelderland</OFFICIALNAME>
+                    <TOWN>Arnhem</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-04</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

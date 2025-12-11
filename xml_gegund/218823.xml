@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>SURFmarket B.V.</OFFICIALNAME>
+                    <NATIONALID>321787224</NATIONALID>
+                    <ADDRESS>Moreelsepark 48</ADDRESS>
+                    <TOWN>UTRECHT</TOWN>
+                    <POSTAL_CODE>3511EP</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Nelleke  Jansen</CONTACT_POINT>
+                    <PHONE>+31 887873000</PHONE>
+                    <E_MAIL>inkoop@surf.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.surf.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY_OTHER>ICT inkooporganisatie voor het Onderwijs en Onderzoek</CA_ACTIVITY_OTHER>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Levering Adobe Campuslicentie</P>
+                </TITLE>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="48000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SUPPLIES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Deze aankondiging betreft het voornemen van SURFmarket B.V. namens de bij haar aangesloten en deelnemende Hoger Onderwijs en MBO instellingen tot het sluiten van een “Adobe Campuslicentie overeenkomst overeenkomstig artikel 4.16 Aanbestedingswet. Het betreft derhalve een vrijwillige aankondiging. Het betreft een raamwerk overeenkomst voor de levering van Adobe CCE producten gericht op de educatieve sector op basis van een campusmodel voor onderwijsinstellingen, die tevens de mogelijkheid biedt voor aanschaf van een thuisgebruik licentie door individuele eindgebruikers (medewerkers &amp; studenten).  SURFmarket zal via haar webshop SURFspot verantwoordelijk zijn voor distributie van de Adobe-software en -licentiecodes aan genoemde eindgebruikers.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">30000000</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>Het betreft een raamwerk overeenkomst voor de levering van Adobe CCE producten gericht op de educatieve sector op basis van een campusmodel voor onderwijsinstellingen, die tevens de mogelijkheid biedt voor aanschaf van een thuisgebruik licentie door individuele eindgebruikers (medewerkers &amp; studenten).  SURFmarket zal via haar webshop SURFspot verantwoordelijk zijn voor distributie van de Adobe-software en -licentiecodes aan genoemde eindgebruikers.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_COST>
+                            <AC_CRITERION>Niet van toepassing</AC_CRITERION>
+                            <AC_WEIGHTING>1</AC_WEIGHTING>
+                        </AC_COST>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_AWARD_CONTRACT_WITHOUT_CALL>
+                    <D_ACCORDANCE_ARTICLE>
+                        <D_TECHNICAL></D_TECHNICAL>
+                    </D_ACCORDANCE_ARTICLE>
+                    <D_JUSTIFICATION>
+                        <P>Surfmarket B.V. past de onderhandelingsprocedure zonder voorafgaande aankondiging toe, aangezien de overheidsopdracht om technische redenen slechts door één bepaalde ondernemer (Adobe) kan worden uitgevoerd.</P>
+                        <P></P>
+                        <P>Er is geen andere partij op de markt:</P>
+                        <P>•	Voor de levering van Adobe CCE producten gericht op de Educatieve Sector op basis van een campusmodel voor onderwijsinstellingen die daarbij de mogelijkheid biedt voor aanschaf van een thuisgebruik licentie door individuele eindgebruikers (medewerkers &amp; studenten);</P>
+                        <P>•	En die de distributie van de Adobe-software en -licentiecodes direct aan genoemde eindgebruikers via de eigen webshop van SURFmarket, SURFspot kan laten verlopen volgens de technische eisen van SURFmarket.</P>
+                    </D_JUSTIFICATION>
+                </PT_AWARD_CONTRACT_WITHOUT_CALL>
+                <FRAMEWORK></FRAMEWORK>
+                <NO_CONTRACT_COVERED_GPA></NO_CONTRACT_COVERED_GPA>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Levering Adobe Campuslicentie</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2020-10-28</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>1</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>0</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Adobe Systems Software Ireland Limited (ADIR)</OFFICIALNAME>
+                                <ADDRESS>Riverwalk, Citywest Business Campus, Saggart 4</ADDRESS>
+                                <TOWN>Dublin</TOWN>
+                                <POSTAL_CODE>24, Ireland</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">30000000</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Bevoegde instantie</OFFICIALNAME>
+                    <ADDRESS>Prins Clauslaan 60</ADDRESS>
+                    <TOWN>Den Haag</TOWN>
+                    <POSTAL_CODE>2595AJ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>voorlichting.rb.den.haag@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <REVIEW_PROCEDURE>
+                    <P>20 kalenderdagen na publicatie van deze aankondiging.</P>
+                </REVIEW_PROCEDURE>
+                <ADDRESS_REVIEW_INFO>
+                    <OFFICIALNAME>Inlichtingen over beroepsprocedures</OFFICIALNAME>
+                    <ADDRESS>Prins Clauslaan 60</ADDRESS>
+                    <TOWN>Den Haag</TOWN>
+                    <POSTAL_CODE>2595AJ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>voorlichting.rb.den.haag@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl</URL>
+                </ADDRESS_REVIEW_INFO>
+                <DATE_DISPATCH_NOTICE>2021-02-05</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

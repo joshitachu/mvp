@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Waterschap Brabantse Delta</OFFICIALNAME>
+                    <NATIONALID>51181584</NATIONALID>
+                    <ADDRESS>Postbus 5520</ADDRESS>
+                    <TOWN>Breda</TOWN>
+                    <POSTAL_CODE>4801 DZ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Bjorn Marijnissen</CONTACT_POINT>
+                    <PHONE>+31 610906306</PHONE>
+                    <E_MAIL>b.marijnissen@brabantsedelta.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.brabantsedelta.nl</URL_GENERAL>
+                    <URL_BUYER>https://platform.negometrix.com/PublishedTenders.aspx?tenderid=187448</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY_ADDITIONAL>
+                    <OFFICIALNAME>Gemeente Moerdijk</OFFICIALNAME>
+                    <ADDRESS>Postbus 4</ADDRESS>
+                    <TOWN>Zevenbergen</TOWN>
+                    <POSTAL_CODE>4760 AA</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Bjorn Marijnissen</CONTACT_POINT>
+                    <E_MAIL>b.marijnissen@brabantsedelta.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>www.moerdijk.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY_ADDITIONAL>
+                <ADDRESS_CONTRACTING_BODY_ADDITIONAL>
+                    <OFFICIALNAME>Gemeente Steenbergen</OFFICIALNAME>
+                    <ADDRESS>Buiten de Veste 1</ADDRESS>
+                    <TOWN>Steenbergen</TOWN>
+                    <POSTAL_CODE>4652 GA</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Bjorn Marijnissen</CONTACT_POINT>
+                    <E_MAIL>b.marijnissen@brabantsedelta.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>www.gemeente-steenbergen.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY_ADDITIONAL>
+                <JOINT_PROCUREMENT_INVOLVED></JOINT_PROCUREMENT_INVOLVED>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Onderhoud groenelementen rayon West gemeente Steenbergen en Moerdijk</P>
+                </TITLE>
+                <REFERENCE_NUMBER>464703</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="77000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>De opdracht betreft een dienst. Voor deze opdracht zijn de volgende RAW-bestekken opgesteld: </P>
+                    <P>- Bestek onderhoud groenelementen Moerdijk 2022_2023</P>
+                    <P>- Bestek onderhoud groenelementen Steenbergen 2022_2023</P>
+                    <P></P>
+                    <P>Het werk bestaat in hoofdzaak uit:</P>
+                    <P>-	het maaien van watergangen, natuurvriendelijke oevers en waterelementen;</P>
+                    <P>-	het maaien van graslanden;</P>
+                    <P>-	het snoeien, dunnen, afzetten en verwijderen van beplanting;</P>
+                    <P>-	het controleren, snoeien/knotten en verwijderen van bomen;</P>
+                    <P>-	het inspecteren en repareren van fauna-elementen;</P>
+                    <P>-	het verwerken van vrijkomende materialen;</P>
+                    <P>-	bijkomende werkzaamheden.</P>
+                    <P></P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1500000.00</VAL_TOTAL>
+                <LOT_DIVISION></LOT_DIVISION>
+                <OBJECT_DESCR ITEM="1">
+                    <TITLE>
+                        <P></P>
+                    </TITLE>
+                    <LOT_NO>1</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="77000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Gemeente Moerdijk</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Betreft de werkzaamheden Moerdijk. </P>
+                        <P></P>
+                        <P>Het werk bestaat in hoofdzaak uit:</P>
+                        <P>-	het maaien van watergangen, natuurvriendelijke oevers en waterelementen;</P>
+                        <P>-	het maaien van graslanden;</P>
+                        <P>-	het snoeien, dunnen, afzetten en verwijderen van beplanting;</P>
+                        <P>-	het controleren, snoeien/knotten en verwijderen van bomen;</P>
+                        <P>-	het inspecteren en repareren van fauna-elementen;</P>
+                        <P>-	het verwerken van vrijkomende materialen;</P>
+                        <P>-	bijkomende werkzaamheden.</P>
+                        <P></P>
+                        <P></P>
+                        <P></P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Natuurwaarde</AC_CRITERION>
+                            <AC_WEIGHTING>20</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Case</AC_CRITERION>
+                            <AC_WEIGHTING>10</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Prestatieverklaring</AC_CRITERION>
+                            <AC_WEIGHTING>20</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>50</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>Zie aanbestedingsleidraad.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="2">
+                    <TITLE>
+                        <P>Perceel 2: Bestek onderhoud groenelementen Steenbergen 2022_2023</P>
+                    </TITLE>
+                    <LOT_NO>2</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="77000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Gemeente Steenbergen</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Betreft de werkzaamheden Steenbergen</P>
+                        <P></P>
+                        <P>Het werk bestaat in hoofdzaak uit:</P>
+                        <P>-	het maaien van watergangen, natuurvriendelijke oevers en waterelementen;</P>
+                        <P>-	het maaien van graslanden;</P>
+                        <P>-	het snoeien, dunnen, afzetten en verwijderen van beplanting;</P>
+                        <P>-	het controleren, snoeien/knotten en verwijderen van bomen;</P>
+                        <P>-	het inspecteren en repareren van fauna-elementen;</P>
+                        <P>-	het verwerken van vrijkomende materialen;</P>
+                        <P>-	bijkomende werkzaamheden.</P>
+                        <P></P>
+                        <P></P>
+                        <P></P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Natuurwaarde</AC_CRITERION>
+                            <AC_WEIGHTING>20</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Case</AC_CRITERION>
+                            <AC_WEIGHTING>10</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Prestatieverklaring</AC_CRITERION>
+                            <AC_WEIGHTING>20</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>50</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                    <INFO_ADD>
+                        <P>Zie aanbestedingsleidraad.</P>
+                    </INFO_ADD>
+                </OBJECT_DESCR>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 211-553785</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>464703</CONTRACT_NO>
+                <LOT_NO>1</LOT_NO>
+                <TITLE>
+                    <P>Bestek onderhoud groenelementen Moerdijk 2022_2023</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>2</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>V.O.F. A. Prop Beplantingswerken</OFFICIALNAME>
+                                <ADDRESS>Voltweg 23</ADDRESS>
+                                <TOWN>Hoogerheide</TOWN>
+                                <POSTAL_CODE>4631 SR</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">1.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">1.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="2">
+                <CONTRACT_NO>464703</CONTRACT_NO>
+                <LOT_NO>2</LOT_NO>
+                <TITLE>
+                    <P>Bestek onderhoud groenelementen Steenbergen 2022_2023</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>2</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>V.O.F. A. Prop Beplantingswerken</OFFICIALNAME>
+                                <ADDRESS>Voltweg 23</ADDRESS>
+                                <TOWN>Hoogerheide</TOWN>
+                                <POSTAL_CODE>4631 SR</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">1.00</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">1.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <INFO_ADD>
+                    <P>Zie aanbestedingsleidraad</P>
+                </INFO_ADD>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Zeeland - West-Brabant</OFFICIALNAME>
+                    <TOWN>Breda</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <REVIEW_PROCEDURE>
+                    <P>De aanbestedende dienst sluit niet eerder de overeenkomst op basis van een gunningsbeslissing dan nadat een termijn van twintig (20) kalenderdagen na verzenddatum van de mededeling van die gunningsbeslissing is verstreken. De termijn van 20 kalenderdagen kan worden verlengd. Zie hiervoor de planning in Negometrix horende bij deze aanbesteding.</P>
+                </REVIEW_PROCEDURE>
+                <DATE_DISPATCH_NOTICE>2022-02-01</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

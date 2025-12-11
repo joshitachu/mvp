@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Inkoop Uitvoeringscentrum Dienst Justitiële Inrichtingen (IUC DJI)</OFFICIALNAME>
+                    <NATIONALID>3814225</NATIONALID>
+                    <ADDRESS>Bezuidenhoutseweg 20</ADDRESS>
+                    <TOWN>Den Haag</TOWN>
+                    <POSTAL_CODE>2594 AV</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Erik  Veltman</CONTACT_POINT>
+                    <PHONE>+31 625690397</PHONE>
+                    <E_MAIL>e.veltman@dji.minjus.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.dji.nl</URL_GENERAL>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="MINISTRY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="PUBLIC_ORDER_AND_SAFETY"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Klus- en onderhoudswerkzaamheden t.b.v. Dienst Justitiële Inrichtingen</P>
+                </TITLE>
+                <REFERENCE_NUMBER>SSC DJI/INKEA/NB/2020-1</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="50000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Het doel van de aanbesteding is om een Raamovereenkomst te sluiten met één Leverancier per Perceel voor het laten uitvoeren van Diensten op het gebied van klus- en onderhoudswerkzaamheden t.b.v. Dienst Justitiële Inrichtingen.</P>
+                    <P>De aanbesteding bestaat uit dertien (13) Percelen, te weten:</P>
+                    <P>1	PI Lelystad</P>
+                    <P>2	PI Vught</P>
+                    <P>3	FPC Veldzicht</P>
+                    <P>4	PI Grave</P>
+                    <P>5	PI Heerhugowaard</P>
+                    <P>6	PI Nieuwegein</P>
+                    <P>7	RJJI De Hartelborgt</P>
+                    <P>8	PI Zwolle</P>
+                    <P>9	PI Ter Apel en AC Ter Apel</P>
+                    <P>10	Veenhuizen Esserheem, Veenhuizen Norgerhaven en Opleidingsinstituut Bankenbosch</P>
+                    <P>11	PI Ter Peel</P>
+                    <P>12 	PI Alphen a/d Rijn Maatschapslaan en PI Alphen a/d Rijn Eikenlaan</P>
+                    <P>13	Haaglanden</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">4000000.0</VAL_TOTAL>
+                <LOT_DIVISION></LOT_DIVISION>
+                <OBJECT_DESCR ITEM="1">
+                    <TITLE>
+                        <P>Perceel 1 PI Lelystad</P>
+                    </TITLE>
+                    <LOT_NO>1</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45440000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="71334000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45330000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Nederland</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>In 2019 bedroeg de spend per Perceel:</P>
+                        <P>Perceel 1 PI Lelystad: € 108.033</P>
+                        <P>Perceel 2 PI Vught: € 106.562</P>
+                        <P>Perceel 3 FPC Veldzicht: € 50.243</P>
+                        <P>Perceel 4 PI Grave: € 48.111</P>
+                        <P>Perceel 5 PI Heerhugowaard: € 42.069</P>
+                        <P>Perceel 6 PI Nieuwegein: € 40.406</P>
+                        <P>Perceel 7 RJJI de Hartelborgt: € 21.800</P>
+                        <P>Perceel 8 PI Zwolle: € 35.176</P>
+                        <P>Perceel 9 PI Ter Apel en AC Ter Apel: € 31.602</P>
+                        <P>Perceel 10 Veenhuizen Esserheem, Veenhuizen Norgerhaven en Opleidingsinstituut Bankenbosch: € 18.338</P>
+                        <P>Perceel 11 PI Ter Peel: € 21.380</P>
+                        <P>Perceel 12 PI Alphen a/d Rijn Maatschapslaan en Alphen a/d Rijn Eikenlaan: € 19.692</P>
+                        <P>Perceel 13 Haaglanden: €488</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Geen</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="2">
+                    <TITLE>
+                        <P>Perceel 2 PI Vught</P>
+                    </TITLE>
+                    <LOT_NO>2</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45440000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45330000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="71334000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Nederland</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>In 2019 bedroeg de spend per Perceel:</P>
+                        <P>Perceel 1 PI Lelystad: € 108.033</P>
+                        <P>Perceel 2 PI Vught: € 106.562</P>
+                        <P>Perceel 3 FPC Veldzicht: € 50.243</P>
+                        <P>Perceel 4 PI Grave: € 48.111</P>
+                        <P>Perceel 5 PI Heerhugowaard: € 42.069</P>
+                        <P>Perceel 6 PI Nieuwegein: € 40.406</P>
+                        <P>Perceel 7 RJJI de Hartelborgt: € 21.800</P>
+                        <P>Perceel 8 PI Zwolle: € 35.176</P>
+                        <P>Perceel 9 PI Ter Apel en AC Ter Apel: € 31.602</P>
+                        <P>Perceel 10 Veenhuizen Esserheem, Veenhuizen Norgerhaven en Opleidingsinstituut Bankenbosch: € 18.338</P>
+                        <P>Perceel 11 PI Ter Peel: € 21.380</P>
+                        <P>Perceel 12 PI Alphen a/d Rijn Maatschapslaan en Alphen a/d Rijn Eikenlaan: € 19.692</P>
+                        <P>Perceel 13 Haaglanden: €488</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Geen</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="3">
+                    <TITLE>
+                        <P>Perceel 3 FPC Veldzicht</P>
+                    </TITLE>
+                    <LOT_NO>3</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45440000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="71334000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45330000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Nederland</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>In 2019 bedroeg de spend per Perceel:</P>
+                        <P>Perceel 1 PI Lelystad: € 108.033</P>
+                        <P>Perceel 2 PI Vught: € 106.562</P>
+                        <P>Perceel 3 FPC Veldzicht: € 50.243</P>
+                        <P>Perceel 4 PI Grave: € 48.111</P>
+                        <P>Perceel 5 PI Heerhugowaard: € 42.069</P>
+                        <P>Perceel 6 PI Nieuwegein: € 40.406</P>
+                        <P>Perceel 7 RJJI de Hartelborgt: € 21.800</P>
+                        <P>Perceel 8 PI Zwolle: € 35.176</P>
+                        <P>Perceel 9 PI Ter Apel en AC Ter Apel: € 31.602</P>
+                        <P>Perceel 10 Veenhuizen Esserheem, Veenhuizen Norgerhaven en Opleidingsinstituut Bankenbosch: € 18.338</P>
+                        <P>Perceel 11 PI Ter Peel: € 21.380</P>
+                        <P>Perceel 12 PI Alphen a/d Rijn Maatschapslaan en Alphen a/d Rijn Eikenlaan: € 19.692</P>
+                        <P>Perceel 13 Haaglanden: €488</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Geen</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="4">
+                    <TITLE>
+                        <P>Perceel 4 PI Grave</P>
+                    </TITLE>
+                    <LOT_NO>4</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45440000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="71334000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45330000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Nederland</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>In 2019 bedroeg de spend per Perceel:</P>
+                        <P>Perceel 1 PI Lelystad: € 108.033</P>
+                        <P>Perceel 2 PI Vught: € 106.562</P>
+                        <P>Perceel 3 FPC Veldzicht: € 50.243</P>
+                        <P>Perceel 4 PI Grave: € 48.111</P>
+                        <P>Perceel 5 PI Heerhugowaard: € 42.069</P>
+                        <P>Perceel 6 PI Nieuwegein: € 40.406</P>
+                        <P>Perceel 7 RJJI de Hartelborgt: € 21.800</P>
+                        <P>Perceel 8 PI Zwolle: € 35.176</P>
+                        <P>Perceel 9 PI Ter Apel en AC Ter Apel: € 31.602</P>
+                        <P>Perceel 10 Veenhuizen Esserheem, Veenhuizen Norgerhaven en Opleidingsinstituut Bankenbosch: € 18.338</P>
+                        <P>Perceel 11 PI Ter Peel: € 21.380</P>
+                        <P>Perceel 12 PI Alphen a/d Rijn Maatschapslaan en Alphen a/d Rijn Eikenlaan: € 19.692</P>
+                        <P>Perceel 13 Haaglanden: €488</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Geen</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="5">
+                    <TITLE>
+                        <P>Perceel 5 PI Heerhugowaard</P>
+                    </TITLE>
+                    <LOT_NO>5</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45440000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="71334000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45330000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Nederland</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>In 2019 bedroeg de spend per Perceel:</P>
+                        <P>Perceel 1 PI Lelystad: € 108.033</P>
+                        <P>Perceel 2 PI Vught: € 106.562</P>
+                        <P>Perceel 3 FPC Veldzicht: € 50.243</P>
+                        <P>Perceel 4 PI Grave: € 48.111</P>
+                        <P>Perceel 5 PI Heerhugowaard: € 42.069</P>
+                        <P>Perceel 6 PI Nieuwegein: € 40.406</P>
+                        <P>Perceel 7 RJJI de Hartelborgt: € 21.800</P>
+                        <P>Perceel 8 PI Zwolle: € 35.176</P>
+                        <P>Perceel 9 PI Ter Apel en AC Ter Apel: € 31.602</P>
+                        <P>Perceel 10 Veenhuizen Esserheem, Veenhuizen Norgerhaven en Opleidingsinstituut Bankenbosch: € 18.338</P>
+                        <P>Perceel 11 PI Ter Peel: € 21.380</P>
+                        <P>Perceel 12 PI Alphen a/d Rijn Maatschapslaan en Alphen a/d Rijn Eikenlaan: € 19.692</P>
+                        <P>Perceel 13 Haaglanden: €488</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Geen</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="6">
+                    <TITLE>
+                        <P>Perceel 6 PI Nieuwegein</P>
+                    </TITLE>
+                    <LOT_NO>6</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45440000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="71334000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45330000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Nederland</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>In 2019 bedroeg de spend per Perceel:</P>
+                        <P>Perceel 1 PI Lelystad: € 108.033</P>
+                        <P>Perceel 2 PI Vught: € 106.562</P>
+                        <P>Perceel 3 FPC Veldzicht: € 50.243</P>
+                        <P>Perceel 4 PI Grave: € 48.111</P>
+                        <P>Perceel 5 PI Heerhugowaard: € 42.069</P>
+                        <P>Perceel 6 PI Nieuwegein: € 40.406</P>
+                        <P>Perceel 7 RJJI de Hartelborgt: € 21.800</P>
+                        <P>Perceel 8 PI Zwolle: € 35.176</P>
+                        <P>Perceel 9 PI Ter Apel en AC Ter Apel: € 31.602</P>
+                        <P>Perceel 10 Veenhuizen Esserheem, Veenhuizen Norgerhaven en Opleidingsinstituut Bankenbosch: € 18.338</P>
+                        <P>Perceel 11 PI Ter Peel: € 21.380</P>
+                        <P>Perceel 12 PI Alphen a/d Rijn Maatschapslaan en Alphen a/d Rijn Eikenlaan: € 19.692</P>
+                        <P>Perceel 13 Haaglanden: €488</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Geen</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="7">
+                    <TITLE>
+                        <P>Perceel 7 RJJI De Hartelborgt</P>
+                    </TITLE>
+                    <LOT_NO>7</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45440000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="71334000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45330000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Nederland</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>In 2019 bedroeg de spend per Perceel:</P>
+                        <P>Perceel 1 PI Lelystad: € 108.033</P>
+                        <P>Perceel 2 PI Vught: € 106.562</P>
+                        <P>Perceel 3 FPC Veldzicht: € 50.243</P>
+                        <P>Perceel 4 PI Grave: € 48.111</P>
+                        <P>Perceel 5 PI Heerhugowaard: € 42.069</P>
+                        <P>Perceel 6 PI Nieuwegein: € 40.406</P>
+                        <P>Perceel 7 RJJI de Hartelborgt: € 21.800</P>
+                        <P>Perceel 8 PI Zwolle: € 35.176</P>
+                        <P>Perceel 9 PI Ter Apel en AC Ter Apel: € 31.602</P>
+                        <P>Perceel 10 Veenhuizen Esserheem, Veenhuizen Norgerhaven en Opleidingsinstituut Bankenbosch: € 18.338</P>
+                        <P>Perceel 11 PI Ter Peel: € 21.380</P>
+                        <P>Perceel 12 PI Alphen a/d Rijn Maatschapslaan en Alphen a/d Rijn Eikenlaan: € 19.692</P>
+                        <P>Perceel 13 Haaglanden: €488</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Geen</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="8">
+                    <TITLE>
+                        <P>Perceel 8 PI Zwolle</P>
+                    </TITLE>
+                    <LOT_NO>8</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45440000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="71334000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45330000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Nederland</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>In 2019 bedroeg de spend per Perceel:</P>
+                        <P>Perceel 1 PI Lelystad: € 108.033</P>
+                        <P>Perceel 2 PI Vught: € 106.562</P>
+                        <P>Perceel 3 FPC Veldzicht: € 50.243</P>
+                        <P>Perceel 4 PI Grave: € 48.111</P>
+                        <P>Perceel 5 PI Heerhugowaard: € 42.069</P>
+                        <P>Perceel 6 PI Nieuwegein: € 40.406</P>
+                        <P>Perceel 7 RJJI de Hartelborgt: € 21.800</P>
+                        <P>Perceel 8 PI Zwolle: € 35.176</P>
+                        <P>Perceel 9 PI Ter Apel en AC Ter Apel: € 31.602</P>
+                        <P>Perceel 10 Veenhuizen Esserheem, Veenhuizen Norgerhaven en Opleidingsinstituut Bankenbosch: € 18.338</P>
+                        <P>Perceel 11 PI Ter Peel: € 21.380</P>
+                        <P>Perceel 12 PI Alphen a/d Rijn Maatschapslaan en Alphen a/d Rijn Eikenlaan: € 19.692</P>
+                        <P>Perceel 13 Haaglanden: €488</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Geen</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="9">
+                    <TITLE>
+                        <P>Perceel 9 PI Ter Apel en AC Ter Apel</P>
+                    </TITLE>
+                    <LOT_NO>9</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45440000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45330000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="71334000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Nederland</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>In 2019 bedroeg de spend per Perceel:</P>
+                        <P>Perceel 1 PI Lelystad: € 108.033</P>
+                        <P>Perceel 2 PI Vught: € 106.562</P>
+                        <P>Perceel 3 FPC Veldzicht: € 50.243</P>
+                        <P>Perceel 4 PI Grave: € 48.111</P>
+                        <P>Perceel 5 PI Heerhugowaard: € 42.069</P>
+                        <P>Perceel 6 PI Nieuwegein: € 40.406</P>
+                        <P>Perceel 7 RJJI de Hartelborgt: € 21.800</P>
+                        <P>Perceel 8 PI Zwolle: € 35.176</P>
+                        <P>Perceel 9 PI Ter Apel en AC Ter Apel: € 31.602</P>
+                        <P>Perceel 10 Veenhuizen Esserheem, Veenhuizen Norgerhaven en Opleidingsinstituut Bankenbosch: € 18.338</P>
+                        <P>Perceel 11 PI Ter Peel: € 21.380</P>
+                        <P>Perceel 12 PI Alphen a/d Rijn Maatschapslaan en Alphen a/d Rijn Eikenlaan: € 19.692</P>
+                        <P>Perceel 13 Haaglanden: €488</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Geen</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="10">
+                    <TITLE>
+                        <P>Perceel 10 Veenhuizen Esserheem, Veenhuizen Norgerhaven en Opleidingsinstituut Bankenbosch</P>
+                    </TITLE>
+                    <LOT_NO>10</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45440000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="71334000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45330000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Nederland</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>In 2019 bedroeg de spend per Perceel:</P>
+                        <P>Perceel 1 PI Lelystad: € 108.033</P>
+                        <P>Perceel 2 PI Vught: € 106.562</P>
+                        <P>Perceel 3 FPC Veldzicht: € 50.243</P>
+                        <P>Perceel 4 PI Grave: € 48.111</P>
+                        <P>Perceel 5 PI Heerhugowaard: € 42.069</P>
+                        <P>Perceel 6 PI Nieuwegein: € 40.406</P>
+                        <P>Perceel 7 RJJI de Hartelborgt: € 21.800</P>
+                        <P>Perceel 8 PI Zwolle: € 35.176</P>
+                        <P>Perceel 9 PI Ter Apel en AC Ter Apel: € 31.602</P>
+                        <P>Perceel 10 Veenhuizen Esserheem, Veenhuizen Norgerhaven en Opleidingsinstituut Bankenbosch: € 18.338</P>
+                        <P>Perceel 11 PI Ter Peel: € 21.380</P>
+                        <P>Perceel 12 PI Alphen a/d Rijn Maatschapslaan en Alphen a/d Rijn Eikenlaan: € 19.692</P>
+                        <P>Perceel 13 Haaglanden: €488</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Geen</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="11">
+                    <TITLE>
+                        <P>Perceel 11 PI Ter Peel</P>
+                    </TITLE>
+                    <LOT_NO>11</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45440000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="71334000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45330000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Nederland</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>In 2019 bedroeg de spend per Perceel:</P>
+                        <P>Perceel 1 PI Lelystad: € 108.033</P>
+                        <P>Perceel 2 PI Vught: € 106.562</P>
+                        <P>Perceel 3 FPC Veldzicht: € 50.243</P>
+                        <P>Perceel 4 PI Grave: € 48.111</P>
+                        <P>Perceel 5 PI Heerhugowaard: € 42.069</P>
+                        <P>Perceel 6 PI Nieuwegein: € 40.406</P>
+                        <P>Perceel 7 RJJI de Hartelborgt: € 21.800</P>
+                        <P>Perceel 8 PI Zwolle: € 35.176</P>
+                        <P>Perceel 9 PI Ter Apel en AC Ter Apel: € 31.602</P>
+                        <P>Perceel 10 Veenhuizen Esserheem, Veenhuizen Norgerhaven en Opleidingsinstituut Bankenbosch: € 18.338</P>
+                        <P>Perceel 11 PI Ter Peel: € 21.380</P>
+                        <P>Perceel 12 PI Alphen a/d Rijn Maatschapslaan en Alphen a/d Rijn Eikenlaan: € 19.692</P>
+                        <P>Perceel 13 Haaglanden: €488</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Geen</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="12">
+                    <TITLE>
+                        <P>Perceel 12 PI Alphen a/d Rijn Maatschapslaan en PI Alphen a/d Rijn Eikenlaan</P>
+                    </TITLE>
+                    <LOT_NO>12</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45440000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="71334000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45330000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Nederland</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>In 2019 bedroeg de spend per Perceel:</P>
+                        <P>Perceel 1 PI Lelystad: € 108.033</P>
+                        <P>Perceel 2 PI Vught: € 106.562</P>
+                        <P>Perceel 3 FPC Veldzicht: € 50.243</P>
+                        <P>Perceel 4 PI Grave: € 48.111</P>
+                        <P>Perceel 5 PI Heerhugowaard: € 42.069</P>
+                        <P>Perceel 6 PI Nieuwegein: € 40.406</P>
+                        <P>Perceel 7 RJJI de Hartelborgt: € 21.800</P>
+                        <P>Perceel 8 PI Zwolle: € 35.176</P>
+                        <P>Perceel 9 PI Ter Apel en AC Ter Apel: € 31.602</P>
+                        <P>Perceel 10 Veenhuizen Esserheem, Veenhuizen Norgerhaven en Opleidingsinstituut Bankenbosch: € 18.338</P>
+                        <P>Perceel 11 PI Ter Peel: € 21.380</P>
+                        <P>Perceel 12 PI Alphen a/d Rijn Maatschapslaan en Alphen a/d Rijn Eikenlaan: € 19.692</P>
+                        <P>Perceel 13 Haaglanden: €488</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Geen</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <OBJECT_DESCR ITEM="13">
+                    <TITLE>
+                        <P>Perceel 13 Haaglanden</P>
+                    </TITLE>
+                    <LOT_NO>13</LOT_NO>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45440000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="71334000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="50000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="45330000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Nederland</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>In 2019 bedroeg de spend per Perceel:</P>
+                        <P>Perceel 1 PI Lelystad: € 108.033</P>
+                        <P>Perceel 2 PI Vught: € 106.562</P>
+                        <P>Perceel 3 FPC Veldzicht: € 50.243</P>
+                        <P>Perceel 4 PI Grave: € 48.111</P>
+                        <P>Perceel 5 PI Heerhugowaard: € 42.069</P>
+                        <P>Perceel 6 PI Nieuwegein: € 40.406</P>
+                        <P>Perceel 7 RJJI de Hartelborgt: € 21.800</P>
+                        <P>Perceel 8 PI Zwolle: € 35.176</P>
+                        <P>Perceel 9 PI Ter Apel en AC Ter Apel: € 31.602</P>
+                        <P>Perceel 10 Veenhuizen Esserheem, Veenhuizen Norgerhaven en Opleidingsinstituut Bankenbosch: € 18.338</P>
+                        <P>Perceel 11 PI Ter Peel: € 21.380</P>
+                        <P>Perceel 12 PI Alphen a/d Rijn Maatschapslaan en Alphen a/d Rijn Eikenlaan: € 19.692</P>
+                        <P>Perceel 13 Haaglanden: €488</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Geen</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 205-499598</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>13</CONTRACT_NO>
+                <LOT_NO>11</LOT_NO>
+                <TITLE>
+                    <P>geen gunning P11</P>
+                </TITLE>
+                <NO_AWARDED_CONTRACT>
+                    <PROCUREMENT_UNSUCCESSFUL></PROCUREMENT_UNSUCCESSFUL>
+                </NO_AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="2">
+                <CONTRACT_NO>12</CONTRACT_NO>
+                <LOT_NO>13</LOT_NO>
+                <TITLE>
+                    <P>gunning P13</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>6</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>6</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Formabouw B.V.</OFFICIALNAME>
+                                <NATIONALID>28050549</NATIONALID>
+                                <ADDRESS>Energieweg 41B</ADDRESS>
+                                <TOWN>Zoeterwoude</TOWN>
+                                <POSTAL_CODE>2382NC</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 715410432</PHONE>
+                                <E_MAIL>roger@formabouw.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.formabouw.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="3">
+                <CONTRACT_NO>11</CONTRACT_NO>
+                <LOT_NO>12</LOT_NO>
+                <TITLE>
+                    <P>gunning P12</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>13</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>13</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Krämer Bouw B.V.</OFFICIALNAME>
+                                <NATIONALID>33053887</NATIONALID>
+                                <ADDRESS>Computerweg 13</ADDRESS>
+                                <TOWN>UTRECHT</TOWN>
+                                <POSTAL_CODE>3542DP</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 206971161</PHONE>
+                                <E_MAIL>fbentvelzen@kramer-bouw.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.kramer-bouw.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="4">
+                <CONTRACT_NO>10</CONTRACT_NO>
+                <LOT_NO>10</LOT_NO>
+                <TITLE>
+                    <P>gunning P10</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>5</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>5</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Brands Bouw B.V.</OFFICIALNAME>
+                                <NATIONALID>04021573</NATIONALID>
+                                <ADDRESS>Nautilusstraat 7</ADDRESS>
+                                <TOWN>Emmen</TOWN>
+                                <POSTAL_CODE>7821 AG</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 591657900</PHONE>
+                                <E_MAIL>marco.prins@brandsbouw.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.brandsbouw.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="5">
+                <CONTRACT_NO>9</CONTRACT_NO>
+                <LOT_NO>9</LOT_NO>
+                <TITLE>
+                    <P>gunning P9</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>6</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>6</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Brands Bouw B.V.</OFFICIALNAME>
+                                <NATIONALID>04021573</NATIONALID>
+                                <ADDRESS>Nautilusstraat 7</ADDRESS>
+                                <TOWN>Emmen</TOWN>
+                                <POSTAL_CODE>7821 AG</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 591657900</PHONE>
+                                <E_MAIL>marco.prins@brandsbouw.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.brandsbouw.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="6">
+                <CONTRACT_NO>8</CONTRACT_NO>
+                <LOT_NO>8</LOT_NO>
+                <TITLE>
+                    <P>gunning P8</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>3</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>3</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Ubink Bouw en Onderhoud B.V.</OFFICIALNAME>
+                                <NATIONALID>39043331</NATIONALID>
+                                <ADDRESS>Bolderweg 14</ADDRESS>
+                                <TOWN>ALMERE</TOWN>
+                                <POSTAL_CODE>1332AT</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 365323718</PHONE>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.ubinkenco.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="7">
+                <CONTRACT_NO>7</CONTRACT_NO>
+                <LOT_NO>7</LOT_NO>
+                <TITLE>
+                    <P>gunning P7</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>3</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>3</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>R. Blokland Interieurbouw B.V.</OFFICIALNAME>
+                                <NATIONALID>67311598</NATIONALID>
+                                <ADDRESS>Florijnstraat 6 f</ADDRESS>
+                                <TOWN>RIDDERKERK</TOWN>
+                                <POSTAL_CODE>2988CL</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.blokland-interieurbouw.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="8">
+                <CONTRACT_NO>6</CONTRACT_NO>
+                <LOT_NO>6</LOT_NO>
+                <TITLE>
+                    <P>gunning P6</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>5</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>5</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Krämer Bouw B.V.</OFFICIALNAME>
+                                <NATIONALID>33053887</NATIONALID>
+                                <ADDRESS>Computerweg 13</ADDRESS>
+                                <TOWN>UTRECHT</TOWN>
+                                <POSTAL_CODE>3542DP</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 206971161</PHONE>
+                                <E_MAIL>fbentvelzen@kramer-bouw.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.kramer-bouw.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="9">
+                <CONTRACT_NO>5</CONTRACT_NO>
+                <LOT_NO>5</LOT_NO>
+                <TITLE>
+                    <P>gunning P5</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>1</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>1</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>E. Witte Bouw- en Aannemersbedrijf B.V.</OFFICIALNAME>
+                                <NATIONALID>33253312</NATIONALID>
+                                <ADDRESS>Monitorstraat 23</ADDRESS>
+                                <TOWN>AMSTERDAM</TOWN>
+                                <POSTAL_CODE>1033RM</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 206343638</PHONE>
+                                <E_MAIL>info@wittebouw.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.wittebouw.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="10">
+                <CONTRACT_NO>4</CONTRACT_NO>
+                <LOT_NO>4</LOT_NO>
+                <TITLE>
+                    <P>gunning P4</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>1</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>1</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Cornelissen Service en Onderhoud B.V.</OFFICIALNAME>
+                                <NATIONALID>59332573</NATIONALID>
+                                <ADDRESS>Boekelsedijk 22 a</ADDRESS>
+                                <TOWN>ZEELAND</TOWN>
+                                <POSTAL_CODE>5411NX</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 486451608</PHONE>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="11">
+                <CONTRACT_NO>3</CONTRACT_NO>
+                <LOT_NO>3</LOT_NO>
+                <TITLE>
+                    <P>gunning P3</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>2</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>2</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Mulder Schilders/Bodewes B.V.</OFFICIALNAME>
+                                <NATIONALID>04024419</NATIONALID>
+                                <ADDRESS>Jules verneweg 40</ADDRESS>
+                                <TOWN>Emmen</TOWN>
+                                <POSTAL_CODE>7821 AE</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 591611777</PHONE>
+                                <E_MAIL>p.franx@mulderschilders.com</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.mulderschilders.com</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="12">
+                <CONTRACT_NO>2</CONTRACT_NO>
+                <LOT_NO>2</LOT_NO>
+                <TITLE>
+                    <P>gunning P2</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>2</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>2</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Cornelissen Service en Onderhoud B.V.</OFFICIALNAME>
+                                <NATIONALID>59332573</NATIONALID>
+                                <ADDRESS>Boekelsedijk 22 a</ADDRESS>
+                                <TOWN>ZEELAND</TOWN>
+                                <POSTAL_CODE>5411NX</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 486451608</PHONE>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <AWARD_CONTRACT ITEM="13">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <LOT_NO>1</LOT_NO>
+                <TITLE>
+                    <P>Gunning opdracht</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-01</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>5</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>5</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Lansink b.v.</OFFICIALNAME>
+                                <NATIONALID>06083616</NATIONALID>
+                                <ADDRESS>Lonnekerbrugstraat 95</ADDRESS>
+                                <TOWN>Enschede</TOWN>
+                                <POSTAL_CODE>7547AJ</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 534359863</PHONE>
+                                <E_MAIL>e.lassche@lansinkbv.nl</E_MAIL>
+                                <FAX>+31 534330953</FAX>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.lansinkbv.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Den Haag</OFFICIALNAME>
+                    <ADDRESS>Prins Clauslaan 60</ADDRESS>
+                    <TOWN>Den Haag</TOWN>
+                    <POSTAL_CODE>2595 AJ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>ienea@dji.minjus.nl</E_MAIL>
+                    <URL>http://www.dji.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-05</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

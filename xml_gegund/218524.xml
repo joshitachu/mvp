@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Provincie Noord-Brabant</OFFICIALNAME>
+                    <NATIONALID>12345678</NATIONALID>
+                    <ADDRESS>Brabantlaan 1 </ADDRESS>
+                    <TOWN>'s-Hertogenbosch</TOWN>
+                    <POSTAL_CODE>5216TV</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Mevrouw Femke  Bisschops</CONTACT_POINT>
+                    <PHONE>+31 736812812</PHONE>
+                    <E_MAIL>meldpuntaanbestedingen@brabant.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://inhuurdesk.werkeninnoordoostbrabant.nl</URL_GENERAL>
+                    <URL_BUYER>http://inhuurdesk.werkeninnoordoostbrabant.nl</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Senior Subsidiebehandelaar</P>
+                </TITLE>
+                <REFERENCE_NUMBER>TSF_5261</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="79000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Het leven is goed in het Brabantse land. Bij de provincie   Noord-Brabant zetten we ons dagelijks in om te zorgen dat dit ook geldt voor   de toekomst. Samen werken we aan een mooier, toekomstbestendig en een   duurzaam Brabant. Ga jij voor resultaat, ben je ondernemend, heb je affiniteit   met maatschappelijke vraagstukken en bovenal: werk je graag vol trots mee aan   een nog beter Brabant? Dan zijn wij op zoek naar jou! &amp;nbsp;Samenwerking zowel in- als extern is voor de provincie belangrijk om   de doelen te realiseren. De provincie is een netwerkorganisatie waar alle   inzet is gericht op het realiseren van de maatschappelijke opgaven. Dat   vraagt om integrale en strategische inzet van financierings- en   samenwerkingsmogelijkheden die bovendien optimaal zijn afgestemd op de   bestuurlijke opgaven en de programma?s.&amp;nbsp;Het team subsidies (31 fte) is organisatorisch ondergebracht in het   programma Slimme Financiering en Participaties. Het subsidie-instrument wordt   doelgericht ingezet bij de realisatie van de beleidsdoelstellingen. De   medewerkers van het team Subsidies zijn als deskundige partner van de   beleidsdomeinen verantwoordelijk voor de advisering over en uitvoering van   alle provinciale subsidies en subsidieregelingen. &amp;nbsp;Het team ondersteunt de gehele keten van   overweging, inrichting, uitvoering en evaluatie.&amp;nbsp; &amp;nbsp;Ben jij ? die klantgerichte,   analytische collega die samen met de andere collega?s van team Subsidies de   beleidsprogramma?s optimaal adviseert over de opzet en uitvoering van   subsidies?die   doortastende collega die aanvragers van subsidies adviseert en informeert   over subsidies en subsidieaanvragen?Dan zou jij weleens helemaal op je plek kunnen   zijn als een van onze senior subsidiebehandelaren!Als senior subsidiebehandelaar ben je het eerste   aanspreekpunt voor beleidsprogramma?s over de uitvoerbaarheid van regelingen   en heb je een adviesrol bij de beoordeling van subsidiecases, waaronder   leningen, garanties of exploitatiesubsidies;Je verzamelt een team om je heen waarmee je de   uitvoering van subsidieregelingen vorm geeft en bent daarin eerste   aanspreekpunt voor de teamleider;Je draagt bij aan de totstandkoming en aanpassing   van subsidieregelingen. Hierbij werk je samen met subsidie-adviseurs,   regeling-juristen en beleidsmedewerkers van de programma?s;Je stelt beschikkingen op met betrekking tot het   al dan niet verlenen of vaststellen van de subsidie en onderhoudt hierbij   contact met de subsidieaanvrager over voortgang en/of subsidie technische   vragen;Bij het opstellen van wijzigingsregelingen en   implementeren van regelingen heb je de regierol. Je adviseert gericht op   effectiviteit, bereik van beleidsdoel en uitvoerbaarheid in samenwerking met   regeling-juristen, behandelaren en beleid;Ook adviseer je in het proces van overwegen en   uitwerken van financieringsvraagstukken met betrekking tot de meest passende   financieringsvorm. &amp;nbsp;</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>''s-Hertogenbosch</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>De waarde van de opdracht is onbekend</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>85</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>15</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2018/S 092-208434</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Senior Subsidiebehandelaar</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-02</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>9</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>9</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Maandag Interim Professionals B.V.</OFFICIALNAME>
+                                <ADDRESS>Transformatorweg 94 </ADDRESS>
+                                <TOWN>Amsterdam</TOWN>
+                                <POSTAL_CODE>1014AK</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 404100103</PHONE>
+                                <E_MAIL>bedrijfsvoeringeindhoven@maandag.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Provincie Noord-Brabant</OFFICIALNAME>
+                    <ADDRESS>Brabantlaan 1 </ADDRESS>
+                    <TOWN>'s-Hertogenbosch</TOWN>
+                    <POSTAL_CODE>5216TV</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 736812812</PHONE>
+                    <E_MAIL>aanbestedingen@brabant.nl</E_MAIL>
+                    <URL>http://www.brabant.nl</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2018-11-23</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

@@ -492,12 +492,10 @@ def download_xml_bytes(publicatie_id: int):
         return resp.content
     print(f"Fout {resp.status_code} bij {publicatie_id}")
     return None
-
-
 # ---------- MAIN ----------
 def run_import(
-    date_from: str,
-    date_to: str,
+    date_from,  # Can be str or datetime.date
+    date_to,    # Can be str or datetime.date
     publicatie_type: str = "AGO",
     cpv_codes=None,
     max_pages=None,
@@ -508,14 +506,22 @@ def run_import(
     Draait de volledige import en geeft een lijst dicts (records) terug.
     Schrijft NIET naar CSV.
     """
+    from datetime import date
+    
     print("🚀 Start TenderNed scraper run_import")
-
+    
+    # Convert date objects to strings if needed
+    if isinstance(date_from, date):
+        date_from = date_from.isoformat()
+    if isinstance(date_to, date):
+        date_to = date_to.isoformat()
+    
     records = []
     row_id = 1
-
+    
     if save_xml:
         os.makedirs(xml_output_dir, exist_ok=True)
-
+    
     for publicatie_id, meta in iter_publicaties(
         publicatie_type=publicatie_type,
         date_from=date_from,
@@ -524,16 +530,15 @@ def run_import(
         max_pages=max_pages,
     ):
         print(f"Verwerk publicatie {publicatie_id}...")
-
         xml_bytes = download_xml_bytes(publicatie_id)
         if not xml_bytes:
             continue
-
+        
         if save_xml:
             xml_path = os.path.join(xml_output_dir, f"{publicatie_id}.xml")
             with open(xml_path, "wb") as f:
                 f.write(xml_bytes)
-
+        
         try:
             rec = parse_publicatie_xml(xml_bytes)
             if rec is None:
@@ -542,40 +547,34 @@ def run_import(
         except Exception as e:
             print(f"⚠️ Fout bij parsen XML {publicatie_id}: {e}")
             continue
-
+        
         # ✅ Parse publicatie_datum
         pub_raw = rec.get("contract_issue_date") or rec.get("datum_gunning")
         pub_iso = None
+        
         if isinstance(pub_raw, str):
             # Strip timezone: "2025-12-04+01:00" → "2025-12-04"
             pub_iso = pub_raw.split("T")[0].split("+")[0]
         else:
             pub_iso = pub_raw
-
-        # ✅✅ KRITIEKE FILTER: Skip als IssueDate buiten range valt
-        if date_from and pub_iso and pub_iso < date_from:
-            print(f"⏭️  Skip {publicatie_id}: IssueDate {pub_iso} < {date_from}")
-            continue
-        if date_to and pub_iso and pub_iso > date_to:
-            print(f"⏭️  Skip {publicatie_id}: IssueDate {pub_iso} > {date_to}")
-            continue
-
+        
         rec["publicatie_datum"] = pub_iso
         rec["Publicatiedatum"] = pub_iso
-
-        print(f"✅ Accepted {publicatie_id}: IssueDate={pub_iso}")
-
+        
+        # Just log the issue date, don't filter
+        if pub_iso:
+            print(f"✅ Processing {publicatie_id}: IssueDate={pub_iso}")
+        
         # Bestaande velden
         rec["id"] = row_id
         rec["publicatieId"] = publicatie_id
         rec["URL"] = meta.get("link")
-
+        
         row_id += 1
         records.append(rec)
-
+    
     print(f"\n✅ Klaar. Totaal records: {len(records)}")
     return records
-
 
 
 def main():

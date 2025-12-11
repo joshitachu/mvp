@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Harderwijk</OFFICIALNAME>
+                    <NATIONALID>10485004 0000</NATIONALID>
+                    <ADDRESS>Postbus 149</ADDRESS>
+                    <TOWN>Harderwijk</TOWN>
+                    <POSTAL_CODE>3840 AC</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Job Looijenga</CONTACT_POINT>
+                    <PHONE>+31 851108268</PHONE>
+                    <E_MAIL>j.looijenga@meerinzicht.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>https://www.harderwijk.nl/</URL_GENERAL>
+                    <URL_BUYER>https://platform.negometrix.com/PublishedTenders.aspx?tenderid=163068</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Beheer openbare ruimte van de wijk Stadsweiden Zuid (Gemeente Harderwijk)</P>
+                </TITLE>
+                <REFERENCE_NUMBER>EG.192041/RK</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="77310000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>Gemeente Harderwijk is op zoek naar ondernemers die het beheer van de openbare ruimte in de gemeente kunnen uitvoeren. De aanbesteding bestaat uit één perceel, bestaande uit één wijk. (zie paragraaf 1.3.1.2 van Deel A - Aanbestedingsleidraad voor een nadere omschrijving).</P>
+                    <P></P>
+                    <P>De aanbestedende dienst wenst met één inschrijver een overeenkomst te sluiten. De beoogde ingangsdatum van de overeenkomst is 1 februari 2021 en de looptijd bedraagt 1 (één) jaar met een optionele verlengingen van één (1) keer twee (2) jaar. De aanbesteding vindt plaats op basis van een RAW prestatiebestek, gebaseerd op beeldkwaliteitsniveau B volgens de Kwaliteitscatalogus Openbare Ruimte 2013.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">223220.00</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="77310000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Harderwijk</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Gemeente Harderwijk is op zoek naar ondernemers die het beheer van de openbare ruimte in de gemeente kunnen uitvoeren. De aanbesteding bestaat uit één perceel, bestaande uit één wijk. </P>
+                        <P></P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_PRICE></AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2020/S 215-527575</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-01-05</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>6</NB_TENDERS_RECEIVED>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Sight Landscaping B.V.</OFFICIALNAME>
+                                <TOWN>Harderwijk</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">233220.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Gelderland</OFFICIALNAME>
+                    <TOWN>Zutphen</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2021-02-03</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

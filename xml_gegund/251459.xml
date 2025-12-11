@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Den Haag</OFFICIALNAME>
+                    <NATIONALID>221909103</NATIONALID>
+                    <ADDRESS>Spui 70</ADDRESS>
+                    <TOWN>Den Haag</TOWN>
+                    <POSTAL_CODE>2511 BT</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Lloyd  Comvalius</CONTACT_POINT>
+                    <PHONE>+31 13716354</PHONE>
+                    <E_MAIL>aanbesteden@denhaag.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.denhaag.nl</URL_GENERAL>
+                    <URL_BUYER>https://www.denhaag.nl/nl/in-de-stad/ondernemen/zaken-doen-met-de-gemeente.htm</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="REGIONAL_AUTHORITY"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Raamovereenkomst onderhoud asfaltwerken</P>
+                </TITLE>
+                <REFERENCE_NUMBER>210064</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="45233222"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="WORKS"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>In de gemeente Den Haag liggen diverse asfaltverhardingen (wegen) die groot en klein onderhoud behoeven. Deze asfaltwerkzaamheden worden planmatig uitgevoerd aan de hand van jaarprogramma’s, waarin reeksen onderhoudswerken zijn opgenomen.</P>
+                    <P>De uit te voeren werken worden opgenomen in de eerder genoemde jaarprogramma’s voor resp. groot en klein onderhoud aan asfaltwegen. Daarbij wordt afgestemd met andere uitvoeringsprogramma’s (b.v. rioleringsonderhoud) en worden ook kleinere reconstructiewerkzaamheden meegenomen (b.v. kruispunten met asfaltwerkzaamheden).</P>
+                    <P>Het wegenonderhoud is niet volledig planmatig uit te voeren. Er moet altijd rekening worden gehouden met uitvoering van ‘curatief onderhoud’ ten gevolge van onvoorziene omstandigheden, zoals bijvoorbeeld vorstschade, plotseling optredende schades, verzakkingen en dergelijke.</P>
+                    <P>Zie verder de leidraad.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">24391134.32</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Den Haag</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>Zie leidraad en bestek.</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>1</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>1</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <OPTIONS></OPTIONS>
+                    <OPTIONS_DESCR>
+                        <P>Opdrachtgever wenst een overeenkomst aan te gaan met één Opdrachtnemer voor een initiële termijn van twee (2) jaar.</P>
+                    </OPTIONS_DESCR>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_RESTRICTED></PT_RESTRICTED>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2021/S 154-408324</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>Raamovereenkomst onderhoud asfaltwerken</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-12-31</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>5</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>5</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>BAM Infra B.V.</OFFICIALNAME>
+                                <NATIONALID>24347782</NATIONALID>
+                                <ADDRESS>H.J.Nederhorststraat 1</ADDRESS>
+                                <TOWN>GOUDA</TOWN>
+                                <POSTAL_CODE>2801SC</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 0631645800</PHONE>
+                                <E_MAIL>jacco.visser@bam.com</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                                <URL>http://www.baminfra.nl</URL>
+                            </ADDRESS_CONTRACTOR>
+                            <NO_SME></NO_SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_ESTIMATED_TOTAL CURRENCY="EUR">20000000</VAL_ESTIMATED_TOTAL>
+                        <VAL_TOTAL CURRENCY="EUR">24391134.32</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Den Haag</OFFICIALNAME>
+                    <ADDRESS>Prins Clauslaan 60,</ADDRESS>
+                    <TOWN>Den Haag</TOWN>
+                    <POSTAL_CODE>2595 AJ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 703813131</PHONE>
+                    <E_MAIL>voorlichting.rb.den.haag@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl/Organisatie/Rechtbanken/Den-Haag/Contact/Pages/default.aspx</URL>
+                </ADDRESS_REVIEW_BODY>
+                <REVIEW_PROCEDURE>
+                    <P>20 dagen ex artikel 3.40 ARW 2016</P>
+                </REVIEW_PROCEDURE>
+                <ADDRESS_REVIEW_INFO>
+                    <OFFICIALNAME>Rechtbank Den Haag</OFFICIALNAME>
+                    <ADDRESS>Prins Clauslaan 60</ADDRESS>
+                    <TOWN>Den Haag</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <E_MAIL>voorlichting.rb.den.haag@rechtspraak.nl</E_MAIL>
+                    <URL>http://www.rechtspraak.nl/Organisatie/Rechtbanken/Den-Haag/Contact/Pages/default.aspx</URL>
+                </ADDRESS_REVIEW_INFO>
+                <DATE_DISPATCH_NOTICE>2022-02-03</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

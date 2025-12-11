@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2021/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S05" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F15_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F15">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Roosendaal</OFFICIALNAME>
+                    <NATIONALID>20164788</NATIONALID>
+                    <ADDRESS>Stadserf 1</ADDRESS>
+                    <TOWN>Roosendaal</TOWN>
+                    <POSTAL_CODE>4701 NK</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Gemeente Roosendaal</CONTACT_POINT>
+                    <PHONE>+31 165579431</PHONE>
+                    <E_MAIL>o.rijsdijk@roosendaal.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://www.roosendaal.nl</URL_GENERAL>
+                    <URL_BUYER>https://platform.negometrix.com/PublishedTenders.aspx?tenderid=193878</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>Aankondiging vrijwillige transparantie vooraf betreffende "Regie over Kabels en Leidingen Ketenproces"</P>
+                </TITLE>
+                <REFERENCE_NUMBER>2022011 O</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="48611000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SUPPLIES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>In de Nederlandse ondergrond ligt 1,8 miljoen kilometer aan kabels, leidingen, buizen en andere infrastructuur. Alle werkzaamheden die gericht zijn op de aanleg en instandhouding daarvan, zorgen voor veel overlast, hinder en maatschappelijke kosten. Opdrachtgever is voornemens een opdracht voor Jaarlijkse licentie- en beheerfee ten behoeve van het beheren van de kabels- en leidingketen in de gemeente te gunnen aan de onderneming MOOR. MOOR ondersteunt en faciliteert dit gehele proces, vanaf de eerste planvorming van werkzaamheden tot en met de financiële afhandeling en archivering.</P>
+                    <P></P>
+                    <P>MOOR is in Nederland dé standaard voor het ondersteunen van alle processen die te maken hebben met het plannen, vergunnen, uitvoeren en administratief afhandelen van werkzaamheden aan de ondergrondse infrastructuur. MOOR is met succes in gebruik bij 288 gemeenten in Nederland.</P>
+                    <P></P>
+                    <P>Ondergrondse infrastructuur stopt niet bij de gemeente grens. De aangrenzende gemeenten Bergen op Zoom, Steenbergen, Rucphen en Halderberge maken alle gebruik van MOOR. Door het aangaan van een overeenkomst met MOOR kan Opdrachtgever efficiënter data uitwisselen met grensgemeenten en kunnen burgers direct de actuele opbrekingen, vergunningen en instemmingsbesluiten inzien.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">187000.00</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <SHORT_DESCR>
+                        <P>Opdrachtgever is voornemens een opdracht voor Jaarlijkse licentie- en beheerfee ten behoeve van het beheren van de kabels- en leidingketen in de gemeente te gunnen aan de onderneming MOOR. MOOR ondersteunt en faciliteert dit gehele proces, vanaf de eerste planvorming van werkzaamheden tot en met de financiële afhandeling en archivering. MOOR is in Nederland dé standaard voor het ondersteunen van alle processen die te maken hebben met het plannen, vergunnen, uitvoeren en administratief afhandelen van werkzaamheden aan de ondergrondse infrastructuur. </P>
+                    </SHORT_DESCR>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <DIRECTIVE_2014_24_EU>
+                    <PT_NEGOTIATED_WITHOUT_PUBLICATION>
+                        <D_ACCORDANCE_ARTICLE>
+                            <D_TECHNICAL></D_TECHNICAL>
+                        </D_ACCORDANCE_ARTICLE>
+                        <D_JUSTIFICATION>
+                            <P>Ondergrondse infrastructuur stopt niet bij de gemeente grens. De aangrenzende gemeenten Bergen op Zoom, Steenbergen, Rucphen en Halderberge maken alle gebruik van MOOR. Door het aangaan van een overeenkomst met MOOR kan Opdrachtgever efficiënter data uitwisselen met grensgemeenten en kunnen burgers direct de actuele opbrekingen, vergunningen en instemmingsbesluiten inzien.</P>
+                        </D_JUSTIFICATION>
+                    </PT_NEGOTIATED_WITHOUT_PUBLICATION>
+                </DIRECTIVE_2014_24_EU>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2022-02-03</DATE_CONCLUSION_CONTRACT>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>MOOR</OFFICIALNAME>
+                                <TOWN>Nieuwegein</TOWN>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">187000.00</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Rechtbank Zeeland-West-Brabant</OFFICIALNAME>
+                    <TOWN>Breda</TOWN>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2022-02-04</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F15_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>

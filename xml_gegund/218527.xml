@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TED_ESENDERS xmlns="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception" xmlns:ns2="http://publications.europa.eu/resource/schema/ted/2016/nuts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VERSION="R2.0.9.S03" xsi:noNamespaceSchemaLocation="http://publications.europa.eu/resource/schema/ted/R2.0.9/reception">
+    <FORM_SECTION>
+        <F03_2014 LG="NL" CATEGORY="ORIGINAL" FORM="F03">
+            <LEGAL_BASIS VALUE="32014L0024"></LEGAL_BASIS>
+            <CONTRACTING_BODY>
+                <ADDRESS_CONTRACTING_BODY>
+                    <OFFICIALNAME>Gemeente Bernheze</OFFICIALNAME>
+                    <NATIONALID>12345678</NATIONALID>
+                    <ADDRESS>De Misse 6 </ADDRESS>
+                    <TOWN>HEESCH</TOWN>
+                    <POSTAL_CODE>5384BZ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <CONTACT_POINT>Mevrouw Heleen  Steneker</CONTACT_POINT>
+                    <PHONE>+31 412458888</PHONE>
+                    <E_MAIL>budgethouder_bernheze@tsf.nl</E_MAIL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <URL_GENERAL>http://inhuurdesk.werkeninnoordoostbrabant.nl</URL_GENERAL>
+                    <URL_BUYER>http://inhuurdesk.werkeninnoordoostbrabant.nl</URL_BUYER>
+                </ADDRESS_CONTRACTING_BODY>
+                <CA_TYPE VALUE="BODY_PUBLIC"></CA_TYPE>
+                <CA_ACTIVITY VALUE="GENERAL_PUBLIC_SERVICES"></CA_ACTIVITY>
+            </CONTRACTING_BODY>
+            <OBJECT_CONTRACT>
+                <TITLE>
+                    <P>HR strateeg</P>
+                </TITLE>
+                <REFERENCE_NUMBER>TSF_5269</REFERENCE_NUMBER>
+                <CPV_MAIN>
+                    <CPV_CODE CODE="79000000"></CPV_CODE>
+                </CPV_MAIN>
+                <TYPE_CONTRACT CTYPE="SERVICES"></TYPE_CONTRACT>
+                <SHORT_DESCR>
+                    <P>AlgemeenDe gemeente Bernheze is een gemeente in ontwikkeling. De afgelopen maanden is er hard gewerkt aan een analyse en diagnose van de organisatie, wat geresulteerd heeft in een interventieplan voor de doorontwikkeling van de organisatie. Een van de interventies is het laten aansluiten en verbinden van (strategisch) HRM op de plannen en er voor zorgen dat HR voorop kan gaan lopen in de begeleiding van de verandering.&amp;nbsp;Doelstelling opdrachtDe opdracht is een tijdelijke inhuur van een HR Strateeg (24 uur per week).De opdracht start direct na gunning en duurt 6 maanden, met de optie tot verlenging.&amp;nbsp;ResultaatAls HR strateeg ben jij de strategisch adviseur en sparringpartner van het managementteam (MT) en verantwoordelijk voor het strategisch HRM beleid. Je adviseert en faciliteert, in nauwe samenwerking met de HRM adviseurs,&amp;nbsp; de teamcoaches en de managers bij het verder brengen van de organisatieontwikkeling in hun domein. Je werkt nauw samen met de programmamanager organisatieontwikkeling. Met jouw expertise koppel je visie en plannen aan elkaar. Werken binnen kaders zonder gedetailleerde regels in een organisatie in opbouw, zie je als een uitdaging.&amp;nbsp;Onderwerpen die verankerd moeten worden zijn:Doorvertalen organisatieontwikkeling in vernieuwend HR beleid en verankeren met de organisatiestrategie (op basis van het interventieplan).Invoeren SPP, Employee Self Service en Manager Self Service .Focus op behoud en ontwikkeling van talent/ontwikkelen arbeidsmarktbeleid.</P>
+                </SHORT_DESCR>
+                <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                <OBJECT_DESCR ITEM="1">
+                    <CPV_ADDITIONAL>
+                        <CPV_CODE CODE="79000000"></CPV_CODE>
+                    </CPV_ADDITIONAL>
+                    <ns2:NUTS CODE="NL"></ns2:NUTS>
+                    <MAIN_SITE>
+                        <P>Heesch</P>
+                    </MAIN_SITE>
+                    <SHORT_DESCR>
+                        <P>De waarde van de opdracht is onbekend</P>
+                    </SHORT_DESCR>
+                    <AC>
+                        <AC_QUALITY>
+                            <AC_CRITERION>Kwaliteit</AC_CRITERION>
+                            <AC_WEIGHTING>70</AC_WEIGHTING>
+                        </AC_QUALITY>
+                        <AC_PRICE>
+                            <AC_WEIGHTING>30</AC_WEIGHTING>
+                        </AC_PRICE>
+                    </AC>
+                    <NO_OPTIONS></NO_OPTIONS>
+                    <NO_EU_PROGR_RELATED></NO_EU_PROGR_RELATED>
+                </OBJECT_DESCR>
+                <NO_LOT_DIVISION></NO_LOT_DIVISION>
+            </OBJECT_CONTRACT>
+            <PROCEDURE>
+                <PT_OPEN></PT_OPEN>
+                <FRAMEWORK></FRAMEWORK>
+                <CONTRACT_COVERED_GPA></CONTRACT_COVERED_GPA>
+                <NOTICE_NUMBER_OJ>2018/S 092-208434</NOTICE_NUMBER_OJ>
+            </PROCEDURE>
+            <AWARD_CONTRACT ITEM="1">
+                <CONTRACT_NO>1</CONTRACT_NO>
+                <TITLE>
+                    <P>HR strateeg</P>
+                </TITLE>
+                <AWARDED_CONTRACT>
+                    <DATE_CONCLUSION_CONTRACT>2021-02-02</DATE_CONCLUSION_CONTRACT>
+                    <TENDERS>
+                        <NB_TENDERS_RECEIVED>54</NB_TENDERS_RECEIVED>
+                        <NB_TENDERS_RECEIVED_EMEANS>54</NB_TENDERS_RECEIVED_EMEANS>
+                    </TENDERS>
+                    <CONTRACTORS>
+                        <CONTRACTOR>
+                            <ADDRESS_CONTRACTOR>
+                                <OFFICIALNAME>Geerts &amp; Partners</OFFICIALNAME>
+                                <ADDRESS>Charles Stulemeijerweg 17 </ADDRESS>
+                                <TOWN>Tilburg</TOWN>
+                                <POSTAL_CODE>5026 RS</POSTAL_CODE>
+                                <COUNTRY VALUE="NL"></COUNTRY>
+                                <PHONE>+31 737370115</PHONE>
+                                <E_MAIL>das@geerts-partners.nl</E_MAIL>
+                                <ns2:NUTS CODE="NL"></ns2:NUTS>
+                            </ADDRESS_CONTRACTOR>
+                            <SME></SME>
+                        </CONTRACTOR>
+                        <NO_AWARDED_TO_GROUP></NO_AWARDED_TO_GROUP>
+                    </CONTRACTORS>
+                    <VALUES>
+                        <VAL_TOTAL CURRENCY="EUR">1.0</VAL_TOTAL>
+                    </VALUES>
+                </AWARDED_CONTRACT>
+            </AWARD_CONTRACT>
+            <COMPLEMENTARY_INFO>
+                <ADDRESS_REVIEW_BODY>
+                    <OFFICIALNAME>Gemeente Bernheze</OFFICIALNAME>
+                    <ADDRESS>De Misse 6 </ADDRESS>
+                    <TOWN>HEESCH</TOWN>
+                    <POSTAL_CODE>5384BZ</POSTAL_CODE>
+                    <COUNTRY VALUE="NL"></COUNTRY>
+                    <PHONE>+31 412458888</PHONE>
+                    <E_MAIL>aanbestedingen@bernheze.org</E_MAIL>
+                    <URL>http://www.bernheze.org</URL>
+                </ADDRESS_REVIEW_BODY>
+                <DATE_DISPATCH_NOTICE>2018-11-23</DATE_DISPATCH_NOTICE>
+            </COMPLEMENTARY_INFO>
+        </F03_2014>
+    </FORM_SECTION>
+</TED_ESENDERS>
