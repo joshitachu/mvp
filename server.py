@@ -1,6 +1,7 @@
 # serve.py
 import os
 import io
+from fastapi.middleware.cors import CORSMiddleware
 import json
 import datetime as dt
 from typing import Optional, List, Dict
@@ -10,6 +11,7 @@ from pydantic import BaseModel
 from supabase import create_client, Client
 from datetime import datetime, timedelta
 from collections import defaultdict
+import time
 import csv
 from models import Import, Notice, AuthCode, TendernedRawCached, TendernedRawCPVCached, TendernedRaw, SROIResult,NoticeSROIResult, CRMCompany, CRMFollowup
 
@@ -36,6 +38,52 @@ app = FastAPI(title="TenderNed Import Backend")
 
 # In-memory store voor SROI analysis progress tracking
 sroi_analysis_status: Dict[str, Dict] = {}
+
+
+
+# 1. CORS - Only allow your frontend domain
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://vercel.com/ferfs-projects/ithaka/5vz8wR52b8fTVTXtxzxBWYT7DMa6",  # Replace with your actual domain
+        "http://localhost:3000",              # For local dev
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# 2. Rate Limiter
+class RateLimiter:
+    def __init__(self, max_requests=100, window_seconds=60):
+        self.max_requests = max_requests
+        self.window_seconds = window_seconds
+        self.requests = defaultdict(list)
+    
+    def is_allowed(self, ip: str) -> bool:
+        now = time.time()
+        self.requests[ip] = [t for t in self.requests[ip] 
+                            if now - t < self.window_seconds]
+        
+        if len(self.requests[ip]) >= self.max_requests:
+            return False
+        
+        self.requests[ip].append(now)
+        return True
+
+rate_limiter = RateLimiter(max_requests=100, window_seconds=60)
+
+@app.middleware("http")
+async def rate_limit_middleware(request: Request, call_next):
+    # Get real IP from Cloudflare
+    client_ip = request.headers.get("CF-Connecting-IP") or request.client.host
+    
+    if not rate_limiter.is_allowed(client_ip):
+        raise HTTPException(status_code=429, detail="Too many requests")
+    
+    response = await call_next(request)
+    return response
+
 
 
 # --------- Pydantic modellen ---------
@@ -298,6 +346,7 @@ def list_imports(
 
 
 BATCH_SIZE = 1000
+
 def map_import_to_cache_schema(record: dict) -> dict:
     """
     Map een import record naar het cache schema.
@@ -307,6 +356,13 @@ def map_import_to_cache_schema(record: dict) -> dict:
     url_value = record.get("URL") or record.get("url")
     if isinstance(url_value, dict):
         url_value = url_value.get("href") or url_value.get("url")
+    
+    # Get publication date from any available field
+    pub_date = (
+        record.get("contract_issue_date") or 
+        record.get("publicatie_datum") or 
+        record.get("Publicatiedatum")  # ← Add this!
+    )
     
     return {
         "notice_id": record.get("notice_id"),
@@ -336,8 +392,8 @@ def map_import_to_cache_schema(record: dict) -> dict:
         "buyer_website": record.get("buyer_website"),
         "bedrag": record.get("bedrag"),
         "valuta": record.get("valuta"),
-        "publicatie_datum": record.get("contract_issue_date") or record.get("publicatie_datum"),
-        "Publicatiedatum": record.get("contract_issue_date") or record.get("publicatie_datum"),
+        "publicatie_datum": pub_date,  # ← Use the variable
+        "Publicatiedatum": pub_date,    # ← Use the variable
         "heeft_eerdere_aanbestedingen": record.get("heeft_eerdere_aanbestedingen", False),
         "aantal_eerdere_aanbestedingen": record.get("aantal_eerdere_aanbestedingen", 0),
     }
@@ -526,6 +582,7 @@ def start_import(
     Ondersteunt nu ook CPV-specifieke caching.
     """
     from sqlalchemy.dialects.postgresql import insert
+    import traceback
     
     UPSERT_BATCH_SIZE = 1000
     
@@ -598,14 +655,21 @@ def start_import(
             cache_records = [map_import_to_cache_schema(r) for r in new_records]
             print(f"💾 Opslaan {len(cache_records)} records in {cache_table}")
             
-            for cache_rec in cache_records:
-                stmt = insert(CacheModel).values(**cache_rec)
-                stmt = stmt.on_conflict_do_update(
-                    index_elements=['notice_id'],
-                    set_=cache_rec
-                )
-                db.execute(stmt)
-            db.commit()
+            try:
+                for cache_rec in cache_records:
+                    stmt = insert(CacheModel).values(**cache_rec)
+                    stmt = stmt.on_conflict_do_update(
+                        index_elements=['notice_id'],
+                        set_=cache_rec
+                    )
+                    db.execute(stmt)
+                db.commit()
+                print(f"✅ Cache insert successful!")
+            except Exception as e:
+                print(f"❌ ERROR inserting to cache: {e}")
+                print(f"❌ Error type: {type(e)}")
+                print(f"❌ Traceback: {traceback.format_exc()}")
+                db.rollback()
 
     # SCENARIO 5: Startdatum < kleinste datum in cache
     elif ep_str and df_str is not None and df_str < ep_str:
@@ -634,14 +698,21 @@ def start_import(
             cache_records = [map_import_to_cache_schema(r) for r in historical_records]
             print(f"💾 Opslaan {len(cache_records)} historische records in {cache_table}")
             
-            for cache_rec in cache_records:
-                stmt = insert(CacheModel).values(**cache_rec)
-                stmt = stmt.on_conflict_do_update(
-                    index_elements=['notice_id'],
-                    set_=cache_rec
-                )
-                db.execute(stmt)
-            db.commit()
+            try:
+                for cache_rec in cache_records:
+                    stmt = insert(CacheModel).values(**cache_rec)
+                    stmt = stmt.on_conflict_do_update(
+                        index_elements=['notice_id'],
+                        set_=cache_rec
+                    )
+                    db.execute(stmt)
+                db.commit()
+                print(f"✅ Cache insert successful!")
+            except Exception as e:
+                print(f"❌ ERROR inserting to cache: {e}")
+                print(f"❌ Error type: {type(e)}")
+                print(f"❌ Traceback: {traceback.format_exc()}")
+                db.rollback()
         
         # Haal cached data op
         if dt_str and dt_str >= cache_overlap_start:
@@ -679,14 +750,21 @@ def start_import(
                 cache_records = [map_import_to_cache_schema(r) for r in recent_records]
                 print(f"💾 Opslaan {len(cache_records)} recente records in {cache_table}")
                 
-                for cache_rec in cache_records:
-                    stmt = insert(CacheModel).values(**cache_rec)
-                    stmt = stmt.on_conflict_do_update(
-                        index_elements=['notice_id'],
-                        set_=cache_rec
-                    )
-                    db.execute(stmt)
-                db.commit()
+                try:
+                    for cache_rec in cache_records:
+                        stmt = insert(CacheModel).values(**cache_rec)
+                        stmt = stmt.on_conflict_do_update(
+                            index_elements=['notice_id'],
+                            set_=cache_rec
+                        )
+                        db.execute(stmt)
+                    db.commit()
+                    print(f"✅ Cache insert successful!")
+                except Exception as e:
+                    print(f"❌ ERROR inserting to cache: {e}")
+                    print(f"❌ Error type: {type(e)}")
+                    print(f"❌ Traceback: {traceback.format_exc()}")
+                    db.rollback()
 
     # SCENARIO 2 & 3: Startdatum <= meest recente datum in cache
     else:
@@ -729,14 +807,21 @@ def start_import(
                 cache_records = [map_import_to_cache_schema(r) for r in new_records]
                 print(f"💾 Opslaan {len(cache_records)} nieuwe records in {cache_table}")
                 
-                for cache_rec in cache_records:
-                    stmt = insert(CacheModel).values(**cache_rec)
-                    stmt = stmt.on_conflict_do_update(
-                        index_elements=['notice_id'],
-                        set_=cache_rec
-                    )
-                    db.execute(stmt)
-                db.commit()
+                try:
+                    for cache_rec in cache_records:
+                        stmt = insert(CacheModel).values(**cache_rec)
+                        stmt = stmt.on_conflict_do_update(
+                            index_elements=['notice_id'],
+                            set_=cache_rec
+                        )
+                        db.execute(stmt)
+                    db.commit()
+                    print(f"✅ Cache insert successful!")
+                except Exception as e:
+                    print(f"❌ ERROR inserting to cache: {e}")
+                    print(f"❌ Error type: {type(e)}")
+                    print(f"❌ Traceback: {traceback.format_exc()}")
+                    db.rollback()
 
     print(f"📊 Totaal records verzameld: {len(records)}")
     print(f"📡 Waarvan van API: {len(records_from_api)}")

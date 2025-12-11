@@ -68,8 +68,9 @@ def update_eerdere_aanbestedingen(batch_size: int = 500, use_cpv_table: bool = F
         
         # 3) Bepaal welke cache table te gebruiken
         CacheModel = TendernedRawCPVCached if use_cpv_table else TendernedRawCached
-        table_name = "tenderned_raw_cpv_cached"
+        table_name = "tenderned_raw_cpv_cached" if use_cpv_table else "tenderned_raw_cached"
         print(f"Using cache table: {table_name}")
+        print(f"CacheModel: {CacheModel.__tablename__}")
         
         # 4) Haal data op uit cache table in batches
         print("Fetching data from cache table...")
@@ -96,10 +97,17 @@ def update_eerdere_aanbestedingen(batch_size: int = 500, use_cpv_table: bool = F
             # 5) Bereken voor elke cached row het aantal eerdere aanbestedingen
             updates_performed = 0
             
-            for row in cached_rows:
+            for idx, row in enumerate(cached_rows):
                 row_id = row.id
                 bedrijf = (row.Officiele_benaming or "").strip()
                 pub_datum = parse_date(row.Publicatiedatum)
+                
+                # Debug first 5 records of first batch
+                if offset == 0 and idx < 5:
+                    print(f"\n--- DEBUG Record {row_id} ---")
+                    print(f"Company: '{bedrijf}'")
+                    print(f"Pub Date: {pub_datum}")
+                    print(f"Historical wins for company: {len(historical_wins.get(bedrijf, []))}")
                 
                 if not bedrijf or not row_id:
                     continue
@@ -114,6 +122,16 @@ def update_eerdere_aanbestedingen(batch_size: int = 500, use_cpv_table: bool = F
                         if win["datum"] and pub_datum and win["datum"] < pub_datum:
                             aantal_eerder += 1
                             totaal_bedrag_eerder += win["bedrag"]
+                    
+                    # Debug first 5 records
+                    if offset == 0 and idx < 5:
+                        print(f"Earlier wins found: {aantal_eerder}")
+                        print(f"Total amount earlier: {totaal_bedrag_eerder}")
+                        if len(historical_wins[bedrijf]) > 0:
+                            print(f"Sample wins (first 3):")
+                            for i, win in enumerate(historical_wins[bedrijf][:3]):
+                                is_earlier = win["datum"] and pub_datum and win["datum"] < pub_datum
+                                print(f"  {i+1}. Date: {win['datum']} | Amount: {win['bedrag']} | Earlier? {is_earlier}")
                 
                 # 6) Update het record
                 try:
@@ -128,7 +146,7 @@ def update_eerdere_aanbestedingen(batch_size: int = 500, use_cpv_table: bool = F
                     updates_performed += 1
                     
                 except Exception as e:
-                    print(f"Error updating id {row_id}: {e}")
+                    print(f"❌ Error updating id {row_id}: {e}")
                     db.rollback()
                     continue
             
@@ -160,7 +178,11 @@ def parse_date(raw):
         return None
     
     # If it's already a datetime/date object
-    if isinstance(raw, (datetime, )):
+    from datetime import date
+    if isinstance(raw, (datetime, date)):
+        # Convert date to datetime for comparison
+        if isinstance(raw, date) and not isinstance(raw, datetime):
+            return datetime.combine(raw, datetime.min.time())
         return raw
     
     if isinstance(raw, str):

@@ -558,22 +558,12 @@ def run_import(
         else:
             pub_iso = pub_raw
         
-        # ✅✅ KRITIEKE FILTER: Skip als IssueDate buiten range valt
-        # Both pub_iso and date_from/date_to are now strings, so comparison works
-        if date_from and pub_iso:
-            if pub_iso < date_from:
-                print(f"⏭️  Skip {publicatie_id}: IssueDate {pub_iso} < {date_from}")
-                continue
-        
-        if date_to and pub_iso:
-            if pub_iso > date_to:
-                print(f"⏭️  Skip {publicatie_id}: IssueDate {pub_iso} > {date_to}")
-                continue
-        
         rec["publicatie_datum"] = pub_iso
         rec["Publicatiedatum"] = pub_iso
         
-        print(f"✅ Accepted {publicatie_id}: IssueDate={pub_iso}")
+        # Just log the issue date, don't filter
+        if pub_iso:
+            print(f"✅ Processing {publicatie_id}: IssueDate={pub_iso}")
         
         # Bestaande velden
         rec["id"] = row_id
