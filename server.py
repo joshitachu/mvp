@@ -53,38 +53,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# 2. Rate Limiter
-class RateLimiter:
-    def __init__(self, max_requests=100, window_seconds=60):
-        self.max_requests = max_requests
-        self.window_seconds = window_seconds
-        self.requests = defaultdict(list)
-    
-    def is_allowed(self, ip: str) -> bool:
-        now = time.time()
-        self.requests[ip] = [t for t in self.requests[ip] 
-                            if now - t < self.window_seconds]
-        
-        if len(self.requests[ip]) >= self.max_requests:
-            return False
-        
-        self.requests[ip].append(now)
-        return True
-
-rate_limiter = RateLimiter(max_requests=100, window_seconds=60)
-
-@app.middleware("http")
-async def rate_limit_middleware(request: Request, call_next):
-    # Get real IP from Cloudflare
-    client_ip = request.headers.get("CF-Connecting-IP") or request.client.host
-    
-    if not rate_limiter.is_allowed(client_ip):
-        raise HTTPException(status_code=429, detail="Too many requests")
-    
-    response = await call_next(request)
-    return response
-
-
 
 # --------- Pydantic modellen ---------
 class ImportRequest(BaseModel):
@@ -936,9 +904,9 @@ def start_import(
             # Bulk upsert using PostgreSQL's ON CONFLICT
             stmt = insert(Notice).values(batch)
             stmt = stmt.on_conflict_do_update(
-                index_elements=['notice_id'],
+                constraint='notices_import_notice_unique', # Use the specific constraint name we created in SQL
                 set_={
-                    'import_id': stmt.excluded.import_id,
+                    # We don't need to update import_id because it's part of the key now
                     'publicatie_id': stmt.excluded.publicatie_id,
                     'url': stmt.excluded.url,
                     'titel': stmt.excluded.titel,
@@ -993,6 +961,74 @@ def start_import(
         total_records=total_records,
         created_at=import_obj.created_at.isoformat() if import_obj.created_at else None,
     )
+
+
+@app.delete("/imports/{import_id}")
+def delete_import(
+    import_id: str, 
+    user_code: str = Depends(validate_user_code),
+    db: Session = Depends(get_db)
+):
+    """
+    Verwijder een import en alle gekoppelde data uit de lokale Postgres database.
+    - notices (via foreign key cascade of expliciet)
+    - SROI resultaten
+    - imports record zelf
+    """
+    try:
+        # 1) Zoek de import op
+        import_obj = db.query(Import).filter(Import.id == import_id).first()
+
+        # Check of import bestaat
+        if not import_obj:
+            raise HTTPException(status_code=404, detail="Import niet gevonden")
+
+        # Check eigenaarschap
+        # (Zorg dat je model 'owner_code' attribuut heeft, wat in je schema staat)
+        if import_obj.owner_code != user_code:
+            raise HTTPException(
+                status_code=403,
+                detail="Je hebt geen toestemming om deze import te verwijderen"
+            )
+
+        # 2) Verwijder gekoppelde notices
+        # N.B. Als je 'ON DELETE CASCADE' in je SQL tabel definitie hebt (wat je eerder stuurde), 
+        # gebeurt dit automatisch bij stap 4. 
+        # We doen het hier expliciet zodat we het aantal verwijderde notices kunnen tellen voor de return.
+        num_deleted_notices = db.query(Notice).filter(
+            Notice.import_id == import_id,
+            Notice.owner_code == user_code
+        ).delete(synchronize_session=False)
+
+        # 3) Verwijder gekoppelde SROI resultaten
+        db.query(SROIResult).filter(
+            SROIResult.import_id == import_id,
+            SROIResult.owner_code == user_code
+        ).delete(synchronize_session=False)
+
+        # 4) Verwijder de import zelf
+        db.delete(import_obj)
+        
+        # 5) Commit de transactie
+        db.commit()
+
+        return {
+            "detail": "Import en gekoppelde data verwijderd",
+            "import_id": import_id,
+            "deleted_notices": num_deleted_notices,
+        }
+
+    except HTTPException:
+        # Als we zelf een 404 of 403 raisen, die gewoon doorlaten
+        raise
+    except Exception as e:
+        # Bij onverwachte database fouten: rollback
+        db.rollback()
+        print(f"Error deleting import {import_id}: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Fout bij verwijderen van import: {str(e)}"
+        )
 
 @app.get("/imports/{import_id}/notices")
 def get_import_notices(
