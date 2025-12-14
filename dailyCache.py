@@ -178,20 +178,42 @@ def map_city_to_province(city: Optional[str]) -> Optional[str]:
 def map_import_to_raw_schema(import_row: dict) -> dict:
     """Map import record to tenderned_raw schema"""
     pub_datum = import_row.get("contract_issue_date") or import_row.get("publicatie_datum")
-    if pub_datum and isinstance(pub_datum, str):
-        pub_datum = pub_datum[:10] if len(pub_datum) >= 10 else pub_datum
+    # Normalize date/datetime types for DB compatibility
+    try:
+        # parse_date is defined later but is available at runtime when this function is called
+        parsed_pub_dt = parse_date(pub_datum) if pub_datum else None
+    except Exception:
+        parsed_pub_dt = None
+
+    # For the date column use .date() when possible
+    pub_datum_date = parsed_pub_dt.date() if isinstance(parsed_pub_dt, datetime) else parsed_pub_dt
+    
+    # Normalize URL fields which may be dicts from the importer
+    def _extract_href(val):
+        if val is None:
+            return None
+        if isinstance(val, dict):
+            # common shapes: {'href': '...', 'title': 'self'}
+            return val.get("href") or val.get("url") or str(val)
+        if isinstance(val, list):
+            # try to pull href from first element
+            for it in val:
+                if isinstance(it, dict) and it.get("href"):
+                    return it.get("href")
+            return str(val)
+        return val
     
     return {
         "notice_id": import_row.get("notice_id"),
         "publicatie_id": import_row.get("publicatieId") or import_row.get("publicatie_id"),
-        "Publicatiedatum": pub_datum,
-        "publicatie_datum": pub_datum,
+    "Publicatiedatum": pub_datum_date,
+    "publicatie_datum": parsed_pub_dt,
         "Naam_aanbesteding": import_row.get("titel"),
         "titel": import_row.get("titel"),
         "Omschrijving_aanbesteding": import_row.get("omschrijving"),
         "omschrijving": import_row.get("omschrijving"),
-        "URL_TenderNed": import_row.get("URL") or import_row.get("url"),
-        "url": import_row.get("URL") or import_row.get("url"),
+    "URL_TenderNed": _extract_href(import_row.get("URL") or import_row.get("url")),
+    "url": _extract_href(import_row.get("URL") or import_row.get("url")),
         "Officiele_benaming": import_row.get("win_bedrijf_naam"),
         "win_bedrijf_naam": import_row.get("win_bedrijf_naam"),
         "Kvknummer": import_row.get("win_kvk"),
@@ -221,7 +243,7 @@ def map_import_to_raw_schema(import_row: dict) -> dict:
         "buyer_contact_email": import_row.get("buyer_contact_email"),
         "buyer_contact_tel": import_row.get("buyer_contact_tel"),
         "buyer_website": import_row.get("buyer_website"),
-        "bedrag": import_row.get("bedrag"),
+    "bedrag": parse_amount(import_row.get("bedrag")),
         "Waarde_valuta": import_row.get("valuta"),
         "valuta": import_row.get("valuta"),
         "owner_code": import_row.get("owner_code"),
@@ -231,23 +253,40 @@ def map_import_to_raw_schema(import_row: dict) -> dict:
 def map_import_to_cpv_cached_schema(import_row: dict, cpv_code: str, cpv_label: str) -> dict:
     """Map import record to tenderned_raw_cpv_cached schema"""
     pub_datum = import_row.get("contract_issue_date") or import_row.get("publicatie_datum")
-    if pub_datum and isinstance(pub_datum, str):
-        pub_datum = pub_datum[:10] if len(pub_datum) >= 10 else pub_datum
+    try:
+        parsed_pub_dt = parse_date(pub_datum) if pub_datum else None
+    except Exception:
+        parsed_pub_dt = None
+
+    pub_datum_date = parsed_pub_dt.date() if isinstance(parsed_pub_dt, datetime) else parsed_pub_dt
     
     win_plaats = import_row.get("win_plaats")
     province = map_city_to_province(win_plaats)
     
+    # Normalize URL fields which may be dicts from the importer
+    def _extract_href(val):
+        if val is None:
+            return None
+        if isinstance(val, dict):
+            return val.get("href") or val.get("url") or str(val)
+        if isinstance(val, list):
+            for it in val:
+                if isinstance(it, dict) and it.get("href"):
+                    return it.get("href")
+            return str(val)
+        return val
+    
     return {
         "notice_id": import_row.get("notice_id"),
         "publicatie_id": import_row.get("publicatieId") or import_row.get("publicatie_id"),
-        "Publicatiedatum": pub_datum,
-        "publicatie_datum": pub_datum,
+    "Publicatiedatum": pub_datum_date,
+    "publicatie_datum": parsed_pub_dt,
         "Naam_aanbesteding": import_row.get("titel"),
         "titel": import_row.get("titel"),
         "Omschrijving_aanbesteding": import_row.get("omschrijving"),
         "omschrijving": import_row.get("omschrijving"),
-        "URL_TenderNed": import_row.get("URL") or import_row.get("url"),
-        "url": import_row.get("URL") or import_row.get("url"),
+    "URL_TenderNed": _extract_href(import_row.get("URL") or import_row.get("url")),
+    "url": _extract_href(import_row.get("URL") or import_row.get("url")),
         "cpv_code": cpv_code,
         "cpv_label": cpv_label,
         "Officiele_benaming": import_row.get("win_bedrijf_naam"),
@@ -280,7 +319,7 @@ def map_import_to_cpv_cached_schema(import_row: dict, cpv_code: str, cpv_label: 
         "buyer_contact_email": import_row.get("buyer_contact_email"),
         "buyer_contact_tel": import_row.get("buyer_contact_tel"),
         "buyer_website": import_row.get("buyer_website"),
-        "bedrag": import_row.get("bedrag"),
+    "bedrag": parse_amount(import_row.get("bedrag")),
         "Waarde_valuta": import_row.get("valuta"),
         "valuta": import_row.get("valuta"),
         "owner_code": import_row.get("owner_code"),
