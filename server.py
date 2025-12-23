@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import json
 import datetime as dt
 from typing import Optional, List, Dict
-from fastapi import FastAPI, HTTPException, Query, BackgroundTasks, Depends, Header, Request
+from fastapi import FastAPI, HTTPException, Query, BackgroundTasks, Depends, Header, Request, status
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 from supabase import create_client, Client
@@ -2477,5 +2477,400 @@ def crm_update_followup(
     return result
 
 
-# Runnen:
-# uvicorn serve:app --reload --port 8000
+from simple_salesforce import Salesforce
+
+_sf_connection = None
+
+def get_salesforce_connection() -> Salesforce:
+    """
+    Maak of hergebruik Salesforce connectie
+    """
+    global _sf_connection
+    
+    if _sf_connection is None:
+        try:
+            _sf_connection = Salesforce(
+                username=os.getenv('SALESFORCE_USERNAME'),
+                password=os.getenv('SALESFORCE_PASSWORD'),
+                security_token=os.getenv('SALESFORCE_SECURITY_TOKEN'),
+                domain=os.getenv('SALESFORCE_DOMAIN', 'login')
+            )
+            print(f"✅ Salesforce connected: {_sf_connection.sf_instance}")
+        except Exception as e:
+            print(f"❌ Salesforce connection failed: {e}")
+            raise
+    
+    return _sf_connection
+
+# Helper functies
+def query_salesforce(query: str):
+    """Execute SOQL query"""
+    sf = get_salesforce_connection()
+    result = sf.query(query)
+    return result['records']
+
+def create_lead(data: dict) -> dict:
+    """Create Lead in Salesforce"""
+    sf = get_salesforce_connection()
+    result = sf.Lead.create(data)
+    return result
+
+def update_lead(lead_id: str, data: dict) -> dict:
+    """Update Lead in Salesforce"""
+    sf = get_salesforce_connection()
+    result = sf.Lead.update(lead_id, data)
+    return result
+
+def create_task(data: dict) -> dict:
+    """Create Task (follow-up) in Salesforce"""
+    sf = get_salesforce_connection()
+    result = sf.Task.create(data)
+    return result
+
+
+from models import CompanyCreate, CompanyUpdate, CompanyResponse, FollowupCreate
+
+
+# ==================== salesforce ====================
+
+
+@app.post("/api/companies", response_model=CompanyResponse, status_code=status.HTTP_201_CREATED)
+def create_company(company: CompanyCreate):
+    """
+    Maak nieuwe Lead aan in Salesforce
+    """
+    try:
+        # Check duplicaat op basis van Email
+        if company.contact_email:
+            existing = query_salesforce(
+                f"SELECT Id, Company, Status FROM Lead WHERE Email = '{company.contact_email}' LIMIT 1"
+            )
+            if existing:
+                raise HTTPException(
+                    status_code=status.HTTP_409_CONFLICT,
+                    detail={
+                        "error": "Lead with this email already exists",
+                        "salesforce_id": existing[0]['Id'],
+                        "company": existing[0]['Company'],
+                        "status": existing[0]['Status']
+                    }
+                )
+        
+        # Lead data voorbereiden met CORRECTE veldnamen
+        lead_data = {
+            'Company': company.name,
+            'LastName': company.contact_name or 'Unknown',  # Required
+            'Email': company.contact_email,
+            'Phone': company.contact_phone,
+            'Mobile': company.mobile,  # ← GECORRIGEERD
+            'Website': company.website,
+            'Title': company.title,
+            'Industry': company.industry,
+            'Status': company.lead_status,
+            'LeadSource': company.lead_source,
+            'Description': company.notes,
+            'AnnualRevenue': company.annual_revenue,
+            'NumberOfEmployees': company.num_employees,
+        }
+        
+        # Verwijder None values
+        lead_data = {k: v for k, v in lead_data.items() if v is not None}
+        
+        # Create in Salesforce
+        result = create_lead(lead_data)
+        
+        if not result.get('success'):
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to create lead in Salesforce"
+            )
+        
+        # Return response
+        return CompanyResponse(
+            id=result['id'],
+            name=company.name,
+            contact_name=company.contact_name,
+            contact_email=company.contact_email,
+            contact_phone=company.contact_phone,
+            mobile=company.mobile,
+            website=company.website,
+            title=company.title,
+            industry=company.industry,
+            lead_status=company.lead_status,
+            lead_source=company.lead_source,
+            notes=company.notes,
+            annual_revenue=company.annual_revenue,
+            num_employees=company.num_employees,
+            created_date=None
+        )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error creating company: {str(e)}"
+        )
+
+@app.get("/api/companies", response_model=List[CompanyResponse])
+def get_companies(limit: int = 100):
+    """
+    Haal alle Leads op uit Salesforce
+    """
+    try:
+        leads = query_salesforce(f"""
+            SELECT
+                Id, Company, Name, Email, Phone,
+                Website, Title, Industry, Status, LeadSource,
+                Description, AnnualRevenue, NumberOfEmployees,
+                CreatedDate
+            FROM Lead
+            WHERE IsConverted = false
+            ORDER BY CreatedDate DESC
+            LIMIT {limit}
+        """)
+        
+        companies = []
+        for lead in leads:
+            companies.append(CompanyResponse(
+                id=lead['Id'],
+                name=lead.get('Company', ''),
+                contact_name=lead.get('Name'),
+                contact_email=lead.get('Email'),
+                contact_phone=lead.get('Phone'),
+                mobile=lead.get('Mobile'),  # ← GECORRIGEERD
+                website=lead.get('Website'),
+                title=lead.get('Title'),
+                industry=lead.get('Industry'),
+                lead_status=lead.get('Status', 'Open - Not Contacted'),
+                lead_source=lead.get('LeadSource'),
+                notes=lead.get('Description'),
+                annual_revenue=lead.get('AnnualRevenue'),
+                num_employees=lead.get('NumberOfEmployees'),
+                created_date=lead.get('CreatedDate')
+            ))
+        print(companies)
+
+        return companies
+        
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error fetching companies: {str(e)}"
+        )
+
+@app.get("/api/companies/{company_id}", response_model=CompanyResponse)
+def get_company(company_id: str):
+    """
+    Haal 1 Lead op uit Salesforce
+    """
+    try:
+        leads = query_salesforce(f"""
+            SELECT 
+                Id, Company, Name, Email, Phone, Mobile,
+                Website, Title, Industry, Status, LeadSource,
+                Description, AnnualRevenue, NumberOfEmployees,
+                CreatedDate
+            FROM Lead
+            WHERE Id = '{company_id}'
+        """)
+        
+        if not leads:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="Company not found"
+            )
+        
+        lead = leads[0]
+        return CompanyResponse(
+            id=lead['Id'],
+            name=lead.get('Company', ''),
+            contact_name=lead.get('Name'),
+            contact_email=lead.get('Email'),
+            contact_phone=lead.get('Phone'),
+            mobile=lead.get('Mobile'),  # ← GECORRIGEERD
+            website=lead.get('Website'),
+            title=lead.get('Title'),
+            industry=lead.get('Industry'),
+            lead_status=lead.get('Status', 'Open - Not Contacted'),
+            lead_source=lead.get('LeadSource'),
+            notes=lead.get('Description'),
+            annual_revenue=lead.get('AnnualRevenue'),
+            num_employees=lead.get('NumberOfEmployees'),
+            created_date=lead.get('CreatedDate')
+        )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error fetching company: {str(e)}"
+        )
+
+@app.patch("/api/companies/{company_id}", response_model=CompanyResponse)
+def update_company(company_id: str, company: CompanyUpdate):
+    """
+    Update Lead in Salesforce
+    """
+    try:
+        # Check of Lead bestaat
+        existing = query_salesforce(f"SELECT Id FROM Lead WHERE Id = '{company_id}' LIMIT 1")
+        if not existing:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="Company not found"
+            )
+        
+        # Update data voorbereiden
+        update_data = {}
+        if company.lead_status:
+            update_data['Status'] = company.lead_status
+        if company.contact_name:
+            update_data['LastName'] = company.contact_name
+        if company.contact_email:
+            update_data['Email'] = company.contact_email
+        if company.contact_phone:
+            update_data['Phone'] = company.contact_phone
+        if company.mobile:
+            update_data['Mobile'] = company.mobile  # ← GECORRIGEERD
+        if company.website:
+            update_data['Website'] = company.website
+        if company.title:
+            update_data['Title'] = company.title
+        if company.industry:
+            update_data['Industry'] = company.industry
+        if company.notes:
+            update_data['Description'] = company.notes
+        if company.annual_revenue:
+            update_data['AnnualRevenue'] = company.annual_revenue
+        if company.num_employees:
+            update_data['NumberOfEmployees'] = company.num_employees
+        
+        # Update in Salesforce
+        result = update_lead(company_id, update_data)
+        
+        if result != 204:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to update lead"
+            )
+        
+        # Haal updated Lead op
+        return get_company(company_id)
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error updating company: {str(e)}"
+        )
+
+@app.delete("/api/companies/{company_id}")
+def delete_company(company_id: str):
+    """
+    Verwijder Lead uit Salesforce
+    """
+    try:
+        sf = get_salesforce_connection()
+        sf.Lead.delete(company_id)
+        return {"success": True, "message": "Lead deleted"}
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error deleting company: {str(e)}"
+        )
+
+# ==================== FOLLOW-UPS ====================
+
+@app.post("/api/companies/{company_id}/followups", status_code=status.HTTP_201_CREATED)
+def create_followup(company_id: str, followup: FollowupCreate):
+    """
+    Maak Task (follow-up) aan in Salesforce
+    """
+    try:
+        # Check of Lead bestaat
+        existing = query_salesforce(f"SELECT Id FROM Lead WHERE Id = '{company_id}' LIMIT 1")
+        if not existing:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="Company not found"
+            )
+        
+        # Task data voorbereiden
+        task_data = {
+            'Subject': followup.subject,
+            'ActivityDate': followup.due_date.isoformat(),
+            'Description': followup.notes,
+            'Priority': followup.priority,
+            'Status': 'Not Started',
+            'WhoId': company_id
+        }
+        
+        # Create in Salesforce
+        result = create_task(task_data)
+        
+        if not result.get('success'):
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to create follow-up"
+            )
+        
+        return {
+            "id": result['id'],
+            "subject": followup.subject,
+            "due_date": followup.due_date,
+            "notes": followup.notes,
+            "priority": followup.priority,
+            "status": "Not Started"
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error creating follow-up: {str(e)}"
+        )
+
+@app.get("/api/companies/{company_id}/followups")
+def get_followups(company_id: str):
+    """
+    Haal alle Tasks op voor een Lead
+    """
+    try:
+        tasks = query_salesforce(f"""
+            SELECT Id, Subject, ActivityDate, Description, Priority, Status
+            FROM Task
+            WHERE WhoId = '{company_id}'
+            ORDER BY ActivityDate ASC
+        """)
+        
+        return {"followups": tasks}
+        
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error fetching follow-ups: {str(e)}"
+        )
+
+# ==================== HEALTH CHECK ====================
+
+@app.get("/api/health")
+def health_check():
+    """
+    Check Salesforce connectie
+    """
+    try:
+        sf = get_salesforce_connection()
+        return {
+            "status": "healthy",
+            "salesforce_instance": sf.sf_instance,
+            "api_version": sf.sf_version
+        }
+    except Exception as e:
+        return {
+            "status": "unhealthy",
+            "error": str(e)
+        }

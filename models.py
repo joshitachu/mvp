@@ -415,3 +415,59 @@ class TendernedRawCPVCached(Base):
         Index('idx_tenderned_raw_cpv_cached_province', 'province'),
         Index('idx_tenderned_raw_cpv_cached_cpv_codes', 'cpv_codes'),
     )
+
+
+from pydantic import BaseModel, EmailStr
+from typing import Optional
+from datetime import date
+
+class CompanyCreate(BaseModel):
+    name: str  # -> Company field
+    contact_name: Optional[str] = None  # -> LastName
+    contact_email: Optional[EmailStr] = None  # -> Email
+    contact_phone: Optional[str] = None  # -> Phone
+    mobile: Optional[str] = None  # -> MobilePhone
+    website: Optional[str] = None  # -> Website
+    title: Optional[str] = None  # -> Title
+    industry: Optional[str] = None  # -> Industry
+    notes: Optional[str] = None  # -> Description
+    lead_status: Optional[str] = "Open - Not Contacted"  # -> Status
+    lead_source: Optional[str] = "Web Scraper"  # -> LeadSource
+    annual_revenue: Optional[float] = None  # -> AnnualRevenue
+    num_employees: Optional[int] = None  # -> NumberOfEmployees
+
+class CompanyUpdate(BaseModel):
+    lead_status: Optional[str] = None
+    contact_name: Optional[str] = None
+    contact_email: Optional[EmailStr] = None
+    contact_phone: Optional[str] = None
+    mobile: Optional[str] = None
+    website: Optional[str] = None
+    title: Optional[str] = None
+    industry: Optional[str] = None
+    notes: Optional[str] = None
+    annual_revenue: Optional[float] = None
+    num_employees: Optional[int] = None
+
+class FollowupCreate(BaseModel):
+    subject: str
+    due_date: date
+    notes: Optional[str] = None
+    priority: Optional[str] = "Normal"
+
+class CompanyResponse(BaseModel):
+    id: str  # Salesforce Lead Id
+    name: str
+    contact_name: Optional[str]
+    contact_email: Optional[str]
+    contact_phone: Optional[str]
+    mobile: Optional[str]
+    website: Optional[str]
+    title: Optional[str]
+    industry: Optional[str]
+    lead_status: str
+    lead_source: Optional[str]
+    notes: Optional[str]
+    annual_revenue: Optional[float]
+    num_employees: Optional[int]
+    created_date: Optional[str]
