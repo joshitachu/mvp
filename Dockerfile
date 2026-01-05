@@ -33,6 +33,10 @@ ENV SERPAPI_API_KEY="3757554d02872ebf5aa117d04584f92d6f6020b1dd46ab840f005ba4aa1
     DATABASE_URL="postgresql://postgres:voetbal123@localhost:5432/supabase_subset" \
     GOOGLE_CSE_API_KEY="AIzaSyAhm0u-wtyH1fQIn8Zc60GVBYw9ZZ8TGDs" \
     GOOGLE_CSE_CX="921c64bea8b8b4805"
+    SALESFORCE_LOGIN_URL="https://login.salesforce.com"
+    SALESFORCE_USERNAME="joshikabel@gmail.com"
+    SALESFORCE_PASSWORD="Joshitachu17k_123"
+    SALESFORCE_SECURITY_TOKEN="rvca2GFpWrR3yNAloUbRIno9"
 
 # Expose the port FastAPI/uvicorn will run on
 EXPOSE 8000
