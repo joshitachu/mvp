@@ -19,7 +19,10 @@ class AuthCode(Base):
     code = Column(CHAR(12), primary_key=True)
     created_at = Column(DateTime, default=func.now())
     used = Column(Boolean, default=False)
-
+    
+    # Nieuwe kolommen voor username/password (optioneel)
+    username = Column(String, unique=True, nullable=True, index=True)
+    password = Column(String, nullable=True)  # hashed password
 
 class Import(Base):
     __tablename__ = "imports"
@@ -422,11 +425,11 @@ from typing import Optional
 from datetime import date
 
 class CompanyCreate(BaseModel):
-    name: str  # -> Company field
-    contact_name: Optional[str] = None  # -> LastName
+    name: str  # -> Company field / LastName (required)
+    contact_name: Optional[str] = None  # -> LastName (if different from company)
     contact_email: Optional[EmailStr] = None  # -> Email
     contact_phone: Optional[str] = None  # -> Phone
-    mobile: Optional[str] = None  # -> MobilePhone
+    MobilePhone: Optional[str] = None  # -> MobilePhone
     website: Optional[str] = None  # -> Website
     title: Optional[str] = None  # -> Title
     industry: Optional[str] = None  # -> Industry
@@ -435,13 +438,22 @@ class CompanyCreate(BaseModel):
     lead_source: Optional[str] = "Web Scraper"  # -> LeadSource
     annual_revenue: Optional[float] = None  # -> AnnualRevenue
     num_employees: Optional[int] = None  # -> NumberOfEmployees
+    
+    # Additional fields from frontend
+    company: Optional[str] = None  # -> Company (same as name usually)
+    street: Optional[str] = None  # -> Street
+    city: Optional[str] = None  # -> City
+    postal_code: Optional[str] = None  # -> PostalCode
+    state_province: Optional[str] = None  # -> State/Province
+    country: Optional[str] = None  # -> Country
+    kvk: Optional[str] = None  # -> Custom field for KVK number
 
 class CompanyUpdate(BaseModel):
     lead_status: Optional[str] = None
     contact_name: Optional[str] = None
     contact_email: Optional[EmailStr] = None
     contact_phone: Optional[str] = None
-    mobile: Optional[str] = None
+    MobilePhone: Optional[str] = None
     website: Optional[str] = None
     title: Optional[str] = None
     industry: Optional[str] = None
@@ -461,7 +473,7 @@ class CompanyResponse(BaseModel):
     contact_name: Optional[str]
     contact_email: Optional[str]
     contact_phone: Optional[str]
-    mobile: Optional[str]
+    MobilePhone: Optional[str]
     website: Optional[str]
     title: Optional[str]
     industry: Optional[str]

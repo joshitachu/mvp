@@ -1401,7 +1401,87 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000, db:
 
     return results
 
+
+import bcrypt
+
+def verify_password(password: str, stored_hash: str) -> bool:
+    return bcrypt.checkpw(
+        password.encode("utf-8"),
+        stored_hash.encode("utf-8")
+    )
+
+def hash_password(password: str) -> str:
+    # bcrypt.gensalt() generates a random salt internally
+    pw_bytes = password.encode("utf-8")
+    hashed = bcrypt.hashpw(pw_bytes, bcrypt.gensalt())
+    return hashed.decode("utf-8")  # store this string in DB
+
     
+import secrets
+
+def generate_auth_code() -> str:
+    """Generate a unique 12-digit numeric code as a string."""
+    n = secrets.randbelow(900_000_000_000) + 100_000_000_000
+    return str(n)
+
+@app.post("/auth/login")
+def login_endpoint(payload: dict, db: Session = Depends(get_db)):
+    """Login with username and password.
+    Expects JSON: { username: "user", password: "pass" }
+    Returns 200 ok with code if successful; 400 for bad input; 403 for invalid credentials.
+    """
+    username = (payload.get("username") if isinstance(payload, dict) else None) or ""
+    password = (payload.get("password") if isinstance(payload, dict) else None) or ""
+    
+    if not username or not password:
+        raise HTTPException(status_code=400, detail="Username and password required")
+    
+    # Fetch user from DB
+    user = db.query(AuthCode).filter(AuthCode.username == username).first()
+    if not user:
+        raise HTTPException(status_code=403, detail="Invalid username or password")
+    
+    # Verify password
+    if not verify_password(password, user.password):
+        raise HTTPException(status_code=403, detail="Invalid username or password")
+    
+    return {"code": user.code}
+
+@app.post("/auth/register")
+def register_endpoint(payload: dict, db: Session = Depends(get_db)):
+    """Register a new user with username and password.
+    Expects JSON: { username: "user", password: "pass" }
+    Returns 200 ok with code if successful; 400 for bad input; 409 if username exists.
+    """
+    username = (payload.get("username") if isinstance(payload, dict) else None) or ""
+    password = (payload.get("password") if isinstance(payload, dict) else None) or ""
+    
+    if not username or not password:
+        raise HTTPException(status_code=400, detail="Username and password required")
+    
+    # Check if user already exists - FIX: User.username instead of just username
+    registered_user = db.query(AuthCode).filter(AuthCode.username == username).first()
+    if registered_user:
+        raise HTTPException(status_code=409, detail="Username already exists")
+    
+    # Hash password and generate auth code
+    hashed_password = hash_password(password)
+    auth_code = generate_auth_code()
+    
+    # Create new user
+    new_user = AuthCode(
+        username=username,
+        password=hashed_password,
+        code=auth_code  # of hoe je kolom ook heet
+    )
+    db.add(new_user)
+    db.commit()
+    db.refresh(new_user)
+    
+    return {"code": auth_code}
+
+
+
 @app.post("/validate-code")
 def validate_code_endpoint(payload: dict, db: Session = Depends(get_db)):
     """Validate a code server-side without needing a full authenticated request.
@@ -2478,6 +2558,8 @@ def crm_update_followup(
 
 
 from simple_salesforce import Salesforce
+from simple_salesforce import Salesforce
+import os
 
 _sf_connection = None
 
@@ -2526,12 +2608,10 @@ def create_task(data: dict) -> dict:
     sf = get_salesforce_connection()
     result = sf.Task.create(data)
     return result
-
+# ==================== API Endpoint ====================
 
 from models import CompanyCreate, CompanyUpdate, CompanyResponse, FollowupCreate
-
-
-# ==================== salesforce ====================
+from fastapi import HTTPException, status
 
 
 @app.post("/api/companies", response_model=CompanyResponse, status_code=status.HTTP_201_CREATED)
@@ -2562,7 +2642,7 @@ def create_company(company: CompanyCreate):
             'LastName': company.contact_name or 'Unknown',  # Required
             'Email': company.contact_email,
             'Phone': company.contact_phone,
-            'Mobile': company.mobile,  # ← GECORRIGEERD
+            'Mobilephone': company.MobilePhone,  # ← GECORRIGEERD
             'Website': company.website,
             'Title': company.title,
             'Industry': company.industry,
@@ -2707,7 +2787,6 @@ def get_company(company_id: str):
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Error fetching company: {str(e)}"
         )
-
 @app.patch("/api/companies/{company_id}", response_model=CompanyResponse)
 def update_company(company_id: str, company: CompanyUpdate):
     """
@@ -2732,8 +2811,8 @@ def update_company(company_id: str, company: CompanyUpdate):
             update_data['Email'] = company.contact_email
         if company.contact_phone:
             update_data['Phone'] = company.contact_phone
-        if company.mobile:
-            update_data['Mobile'] = company.mobile  # ← GECORRIGEERD
+        if company.MobilePhone:
+            update_data['MobilePhone'] = company.MobilePhone  # ← FIXED: Changed from 'Mobile' to 'MobilePhone'
         if company.website:
             update_data['Website'] = company.website
         if company.title:
@@ -2766,7 +2845,8 @@ def update_company(company_id: str, company: CompanyUpdate):
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Error updating company: {str(e)}"
         )
-
+    
+    
 @app.delete("/api/companies/{company_id}")
 def delete_company(company_id: str):
     """
