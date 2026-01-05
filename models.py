@@ -423,13 +423,11 @@ class TendernedRawCPVCached(Base):
 from pydantic import BaseModel, EmailStr
 from typing import Optional
 from datetime import date
-
 class CompanyCreate(BaseModel):
-    name: str  # -> Company field / LastName (required)
-    contact_name: Optional[str] = None  # -> LastName (if different from company)
+    name: str  # -> Company field
+    contact_name: Optional[str] = None  # -> LastName
     contact_email: Optional[EmailStr] = None  # -> Email
     contact_phone: Optional[str] = None  # -> Phone
-    MobilePhone: Optional[str] = None  # -> MobilePhone
     website: Optional[str] = None  # -> Website
     title: Optional[str] = None  # -> Title
     industry: Optional[str] = None  # -> Industry
@@ -440,20 +438,17 @@ class CompanyCreate(BaseModel):
     num_employees: Optional[int] = None  # -> NumberOfEmployees
     
     # Additional fields from frontend
-    company: Optional[str] = None  # -> Company (same as name usually)
     street: Optional[str] = None  # -> Street
     city: Optional[str] = None  # -> City
     postal_code: Optional[str] = None  # -> PostalCode
-    state_province: Optional[str] = None  # -> State/Province
+    state_province: Optional[str] = None  # -> State
     country: Optional[str] = None  # -> Country
-    kvk: Optional[str] = None  # -> Custom field for KVK number
 
 class CompanyUpdate(BaseModel):
     lead_status: Optional[str] = None
     contact_name: Optional[str] = None
     contact_email: Optional[EmailStr] = None
     contact_phone: Optional[str] = None
-    MobilePhone: Optional[str] = None
     website: Optional[str] = None
     title: Optional[str] = None
     industry: Optional[str] = None
@@ -468,12 +463,11 @@ class FollowupCreate(BaseModel):
     priority: Optional[str] = "Normal"
 
 class CompanyResponse(BaseModel):
-    id: str  # Salesforce Lead Id
+    id: str
     name: str
     contact_name: Optional[str]
     contact_email: Optional[str]
     contact_phone: Optional[str]
-    MobilePhone: Optional[str]
     website: Optional[str]
     title: Optional[str]
     industry: Optional[str]

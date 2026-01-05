@@ -2613,6 +2613,11 @@ def create_task(data: dict) -> dict:
 from models import CompanyCreate, CompanyUpdate, CompanyResponse, FollowupCreate
 from fastapi import HTTPException, status
 
+from typing import List
+from models import CompanyCreate, CompanyUpdate, CompanyResponse, FollowupCreate
+from fastapi import HTTPException, status
+
+# ==================== CREATE ====================
 
 @app.post("/api/companies", response_model=CompanyResponse, status_code=status.HTTP_201_CREATED)
 def create_company(company: CompanyCreate):
@@ -2636,13 +2641,12 @@ def create_company(company: CompanyCreate):
                     }
                 )
         
-        # Lead data voorbereiden met CORRECTE veldnamen
+        # Lead data voorbereiden
         lead_data = {
             'Company': company.name,
-            'LastName': company.contact_name or 'Unknown',  # Required
+            'LastName': company.contact_name or 'Unknown',  # Required field
             'Email': company.contact_email,
             'Phone': company.contact_phone,
-            'Mobilephone': company.MobilePhone,  # ← GECORRIGEERD
             'Website': company.website,
             'Title': company.title,
             'Industry': company.industry,
@@ -2656,13 +2660,17 @@ def create_company(company: CompanyCreate):
         # Verwijder None values
         lead_data = {k: v for k, v in lead_data.items() if v is not None}
         
+        print("Creating lead with data:", lead_data)
+        
         # Create in Salesforce
         result = create_lead(lead_data)
+        
+        print("Salesforce result:", result)
         
         if not result.get('success'):
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail="Failed to create lead in Salesforce"
+                detail=f"Failed to create lead in Salesforce. Result: {result}"
             )
         
         # Return response
@@ -2672,7 +2680,6 @@ def create_company(company: CompanyCreate):
             contact_name=company.contact_name,
             contact_email=company.contact_email,
             contact_phone=company.contact_phone,
-            mobile=company.mobile,
             website=company.website,
             title=company.title,
             industry=company.industry,
@@ -2687,10 +2694,15 @@ def create_company(company: CompanyCreate):
     except HTTPException:
         raise
     except Exception as e:
+        import traceback
+        print("Full error traceback:")
+        print(traceback.format_exc())
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Error creating company: {str(e)}"
         )
+
+# ==================== READ ALL ====================
 
 @app.get("/api/companies", response_model=List[CompanyResponse])
 def get_companies(limit: int = 100):
@@ -2718,7 +2730,6 @@ def get_companies(limit: int = 100):
                 contact_name=lead.get('Name'),
                 contact_email=lead.get('Email'),
                 contact_phone=lead.get('Phone'),
-                mobile=lead.get('Mobile'),  # ← GECORRIGEERD
                 website=lead.get('Website'),
                 title=lead.get('Title'),
                 industry=lead.get('Industry'),
@@ -2729,7 +2740,6 @@ def get_companies(limit: int = 100):
                 num_employees=lead.get('NumberOfEmployees'),
                 created_date=lead.get('CreatedDate')
             ))
-        print(companies)
 
         return companies
         
@@ -2739,6 +2749,8 @@ def get_companies(limit: int = 100):
             detail=f"Error fetching companies: {str(e)}"
         )
 
+# ==================== READ ONE ====================
+
 @app.get("/api/companies/{company_id}", response_model=CompanyResponse)
 def get_company(company_id: str):
     """
@@ -2747,7 +2759,7 @@ def get_company(company_id: str):
     try:
         leads = query_salesforce(f"""
             SELECT 
-                Id, Company, Name, Email, Phone, Mobile,
+                Id, Company, Name, Email, Phone,
                 Website, Title, Industry, Status, LeadSource,
                 Description, AnnualRevenue, NumberOfEmployees,
                 CreatedDate
@@ -2768,7 +2780,6 @@ def get_company(company_id: str):
             contact_name=lead.get('Name'),
             contact_email=lead.get('Email'),
             contact_phone=lead.get('Phone'),
-            mobile=lead.get('Mobile'),  # ← GECORRIGEERD
             website=lead.get('Website'),
             title=lead.get('Title'),
             industry=lead.get('Industry'),
@@ -2787,6 +2798,9 @@ def get_company(company_id: str):
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Error fetching company: {str(e)}"
         )
+
+# ==================== UPDATE ====================
+
 @app.patch("/api/companies/{company_id}", response_model=CompanyResponse)
 def update_company(company_id: str, company: CompanyUpdate):
     """
@@ -2811,8 +2825,6 @@ def update_company(company_id: str, company: CompanyUpdate):
             update_data['Email'] = company.contact_email
         if company.contact_phone:
             update_data['Phone'] = company.contact_phone
-        if company.MobilePhone:
-            update_data['MobilePhone'] = company.MobilePhone  # ← FIXED: Changed from 'Mobile' to 'MobilePhone'
         if company.website:
             update_data['Website'] = company.website
         if company.title:
@@ -2845,8 +2857,9 @@ def update_company(company_id: str, company: CompanyUpdate):
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Error updating company: {str(e)}"
         )
-    
-    
+
+# ==================== DELETE ====================
+
 @app.delete("/api/companies/{company_id}")
 def delete_company(company_id: str):
     """
