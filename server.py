@@ -3,9 +3,10 @@ import os
 import io
 from fastapi.middleware.cors import CORSMiddleware
 import json
+import re
 import datetime as dt
 from typing import Optional, List, Dict
-from fastapi import FastAPI, HTTPException, Query, BackgroundTasks, Depends, Header, Request
+from fastapi import FastAPI, HTTPException, Query, BackgroundTasks, Depends, Header, Request, status
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 from supabase import create_client, Client
@@ -13,10 +14,10 @@ from datetime import datetime, timedelta
 from collections import defaultdict
 import time
 import csv
-from models import Import, Notice, AuthCode, TendernedRawCached, TendernedRawCPVCached, TendernedRaw, SROIResult,NoticeSROIResult, CRMCompany, CRMFollowup
+from models import Import, Notice, AuthCode, TendernedRawCached, TendernedRawCPVCached, TendernedRaw, SROIResult, NoticeSROIResult, CRMCompany, CRMFollowup, TenderNotice, TenderCompany, TenderNoticeCPV, TenderNoticeLot, SavedSearch, SavedSearchAlert
 
 from sqlalchemy.orm import Session
-from database import get_db
+from database import get_db, SessionLocal
 import random
 
 from sqlalchemy import desc, func, and_, or_
@@ -73,6 +74,29 @@ class RateLimiter:
 
 rate_limiter = RateLimiter(max_requests=100, window_seconds=60)
 
+
+@app.on_event("startup")
+def fail_interrupted_imports() -> None:
+    """Make jobs interrupted by a process restart visible instead of stuck."""
+    db = SessionLocal()
+    try:
+        interrupted = db.query(Import).filter(Import.status == "running").update(
+            {
+                Import.status: "failed",
+                Import.error_message: "Import interrupted because the backend restarted.",
+                Import.finished_at: dt.datetime.now(dt.timezone.utc),
+            },
+            synchronize_session=False,
+        )
+        db.commit()
+        if interrupted:
+            print(f"⚠️ Marked {interrupted} interrupted import(s) as failed after startup")
+    except Exception:
+        db.rollback()
+        raise
+    finally:
+        db.close()
+
 @app.middleware("http")
 async def rate_limit_middleware(request: Request, call_next):
     # Get real IP from Cloudflare
@@ -102,6 +126,26 @@ class ImportResponse(BaseModel):
     name: str
     total_records: int
     created_at: str
+    # Fetch counters so callers can tell a complete import from a truncated one.
+    # complete=False means some publications were listed but never stored.
+    listed: int = 0
+    fetched: int = 0
+    http_failed: int = 0
+    parse_failed: int = 0
+    complete: bool = True
+
+
+class ImportJobResponse(BaseModel):
+    """Acknowledgement returned as soon as a queued import has been persisted."""
+    import_id: str
+    name: str
+    status: str
+    created_at: Optional[str] = None
+
+
+class SingleNoticeSROIRequest(BaseModel):
+    """Optional body for POST /imports/{id}/notices/{nid}/sroi-analyze."""
+    target: str = "winner"
 
 
 class SROIAnalysisStatus(BaseModel):
@@ -307,6 +351,142 @@ def map_city_to_province(city: Optional[str]) -> Optional[str]:
     return None
 
 
+def map_postcode_to_province(postcode: Optional[str]) -> Optional[str]:
+    """Dutch postcode ranges provide a safer fallback than matching a city name."""
+    if not postcode:
+        return None
+    match = re.match(r"\s*(\d{4})", postcode)
+    if not match:
+        return None
+    number = int(match.group(1))
+    # Postal ranges overlap at municipal boundaries, so this is deliberately a
+    # fallback only. A known municipality/city still wins in province_for_record.
+    ranges = (
+        (1000, 1299, "Noord-Holland"), (1300, 1379, "Flevoland"),
+        (1380, 1499, "Noord-Holland"), (1500, 2199, "Zuid-Holland"),
+        (2200, 2299, "Zuid-Holland"), (2300, 2399, "Zuid-Holland"),
+        (2400, 2999, "Zuid-Holland"), (3000, 3799, "Zuid-Holland"),
+        (3800, 3999, "Utrecht"), (4000, 4299, "Gelderland"),
+        (4300, 4999, "Zeeland"), (5000, 5999, "Noord-Brabant"),
+        (6000, 6599, "Limburg"), (6600, 7399, "Gelderland"),
+        (7400, 7799, "Overijssel"), (7800, 7999, "Drenthe"),
+        (8000, 8299, "Overijssel"), (8300, 8999, "Friesland"),
+        (9000, 9999, "Groningen"),
+    )
+    for start, end, province in ranges:
+        if start <= number <= end:
+            return province
+    return None
+
+
+def province_for_record(record: dict) -> Optional[str]:
+    return map_city_to_province(record.get("win_plaats")) or map_postcode_to_province(record.get("win_postcode"))
+
+
+def _parse_iso_date(value):
+    if not value:
+        return None
+    if isinstance(value, dt.datetime):
+        return value.date()
+    if isinstance(value, dt.date):
+        return value
+    try:
+        return dt.date.fromisoformat(str(value)[:10])
+    except ValueError:
+        return None
+
+
+def _company_key(name: Optional[str], kvk: Optional[str], postcode: Optional[str]) -> Optional[str]:
+    if kvk:
+        return "kvk:" + re.sub(r"\W", "", kvk).lower()
+    if not name:
+        return None
+    return "name:" + re.sub(r"\W", "", name).lower() + ":" + re.sub(r"\W", "", postcode or "").lower()
+
+
+def _upsert_tender_company(record: dict, prefix: str, db: Session) -> Optional[TenderCompany]:
+    name = record.get(f"{prefix}_bedrijf_naam")
+    kvk = record.get(f"{prefix}_kvk")
+    key = _company_key(name, kvk, record.get(f"{prefix}_postcode"))
+    if not key or not name:
+        return None
+    company = db.query(TenderCompany).filter(TenderCompany.canonical_key == key).first()
+    if company is None and kvk:
+        company = db.query(TenderCompany).filter(TenderCompany.kvk == kvk).first()
+    province = map_city_to_province(record.get(f"{prefix}_plaats")) or map_postcode_to_province(record.get(f"{prefix}_postcode"))
+    if company is None:
+        company = TenderCompany(canonical_key=key, name=name)
+        db.add(company)
+    company.kvk = kvk or company.kvk
+    company.name = name or company.name
+    company.street = record.get(f"{prefix}_straat") or company.street
+    company.postcode = record.get(f"{prefix}_postcode") or company.postcode
+    company.city = record.get(f"{prefix}_plaats") or company.city
+    company.province = province or company.province
+    company.country = record.get(f"{prefix}_land") or company.country
+    company.website = record.get(f"{prefix}_website") or company.website
+    company.last_seen_at = dt.datetime.now(dt.timezone.utc)
+    db.flush()
+    return company
+
+
+def persist_canonical_records(records: list[dict], db: Session) -> None:
+    """Persist source payloads and normalized CPV/company/lot records atomically."""
+    for record in records:
+        notice_key = record.get("notice_id") or str(record.get("publicatieId") or "")
+        source_xml = record.get("_source_xml")
+        if not notice_key or not source_xml:
+            continue
+        notice = db.query(TenderNotice).filter(TenderNotice.notice_id == notice_key).first()
+        if notice is None:
+            notice = TenderNotice(notice_id=notice_key, source_xml=source_xml)
+            db.add(notice)
+        winner = _upsert_tender_company(record, "win", db)
+        buyer = _upsert_tender_company(record, "buyer", db)
+        parsed = {key: value for key, value in record.items() if not key.startswith("_")}
+        notice.publicatie_id = record.get("publicatieId") or record.get("publicatie_id")
+        notice.publicatie_datum = _parse_iso_date(record.get("publicatie_datum") or record.get("contract_issue_date"))
+        notice.publicatie_code = record.get("publicatie_code")
+        notice.type_publicatie = record.get("type_publicatie")
+        notice.record_type = record.get("record_type")
+        notice.is_cancelled = bool(record.get("is_cancelled"))
+        notice.title = record.get("titel")
+        notice.description = record.get("omschrijving")
+        source_url = record.get("URL") or record.get("url")
+        if isinstance(source_url, dict):
+            source_url = source_url.get("href") or source_url.get("url")
+        notice.source_url = source_url
+        notice.listing_payload = json.loads(json.dumps(record.get("_listing_payload") or {}, default=str))
+        notice.source_xml = source_xml
+        notice.parsed_payload = json.loads(json.dumps(parsed, default=str))
+        notice.winner_company = winner
+        notice.buyer_company = buyer
+        notice.updated_at = dt.datetime.now(dt.timezone.utc)
+        db.flush()
+
+        db.query(TenderNoticeCPV).filter(TenderNoticeCPV.notice_id == notice.id).delete()
+        for index, code in enumerate(record.get("cpv_codes") or []):
+            db.add(TenderNoticeCPV(notice_id=notice.id, code=str(code), is_main=index == 0))
+
+        db.query(TenderNoticeLot).filter(TenderNoticeLot.notice_id == notice.id).delete()
+        for lot in record.get("lots") or []:
+            lot_id = lot.get("external_lot_id")
+            if not lot_id:
+                continue
+            db.add(TenderNoticeLot(
+                notice_id=notice.id,
+                external_lot_id=str(lot_id),
+                title=lot.get("title"),
+                description=lot.get("description"),
+                award_value=lot.get("award_value"),
+                currency=lot.get("currency"),
+                award_date=_parse_iso_date(lot.get("award_date")),
+                contract_start=_parse_iso_date(lot.get("contract_start")),
+                contract_end=_parse_iso_date(lot.get("contract_end")),
+            ))
+    db.commit()
+
+
 # --------- Endpoints ---------
 
 @app.get("/health")
@@ -340,6 +520,17 @@ def list_imports(
             "total_records": imp.total_records,
             "owner_code": imp.owner_code,
             "created_at": imp.created_at,
+            # Lifecycle + completeness, so the UI can distinguish a finished
+            # import from a crashed or truncated one.
+            "status": imp.status,
+            "error_message": imp.error_message,
+            "started_at": imp.started_at,
+            "finished_at": imp.finished_at,
+            "listed": imp.listed,
+            "fetched": imp.fetched,
+            "http_failed": imp.http_failed,
+            "parse_failed": imp.parse_failed,
+            "complete": (imp.http_failed + imp.parse_failed) == 0,
         }
         for imp in imports
     ]
@@ -347,7 +538,7 @@ def list_imports(
 
 BATCH_SIZE = 1000
 
-def map_import_to_cache_schema(record: dict) -> dict:
+def map_import_to_cache_schema(record: dict, include_cpv: bool = False) -> dict:
     """
     Map een import record naar het cache schema.
     Inclusief historische velden voor consistentie.
@@ -364,7 +555,7 @@ def map_import_to_cache_schema(record: dict) -> dict:
         record.get("Publicatiedatum")  # ← Add this!
     )
     
-    return {
+    mapped = {
         "notice_id": record.get("notice_id"),
         "publicatie_id": record.get("publicatieId") or record.get("publicatie_id"),
         "url": url_value,
@@ -397,6 +588,14 @@ def map_import_to_cache_schema(record: dict) -> dict:
         "heeft_eerdere_aanbestedingen": record.get("heeft_eerdere_aanbestedingen", False),
         "aantal_eerdere_aanbestedingen": record.get("aantal_eerdere_aanbestedingen", 0),
     }
+    if include_cpv:
+        codes = [str(code) for code in (record.get("cpv_codes") or [])]
+        # The legacy CPV cache uses text columns; populate both consistently
+        # until all readers have moved to tender_notice_cpvs.
+        mapped["cpv_codes"] = ",".join(codes)
+        mapped["cpv_code"] = codes[0] if codes else None
+        mapped["cpv_label"] = None
+    return mapped
 
 
 def map_cache_to_import_schema(cache_row: dict) -> dict:
@@ -570,23 +769,46 @@ def fetch_cached_in_batches(
     
     return all_records
 
-@app.post("/imports", response_model=ImportResponse)  
+def _run_import_job(payload: ImportRequest, user_code: str, import_id: str) -> None:
+    """Run an import outside the request lifecycle, using a worker-owned session."""
+    db = SessionLocal()
+    try:
+        import_obj = db.query(Import).filter(Import.id == import_id).first()
+        if not import_obj:
+            print(f"❌ Queued import {import_id} no longer exists")
+            return
+        _execute_import(payload, user_code, db, import_obj)
+    except Exception as exc:
+        # _execute_import normally records its own failure. This is a final guard
+        # for errors before it can do so (for example, a connection failure).
+        db.rollback()
+        try:
+            import_obj = db.query(Import).filter(Import.id == import_id).first()
+            if import_obj and import_obj.status in ("pending", "running"):
+                import_obj.status = "failed"
+                import_obj.error_message = f"{type(exc).__name__}: {exc}"[:2000]
+                import_obj.finished_at = dt.datetime.now(dt.timezone.utc)
+                db.commit()
+        except Exception:
+            db.rollback()
+        print(f"❌ Background import {import_id} FAILED: {exc}")
+    finally:
+        db.close()
+
+
+@app.post("/imports", response_model=ImportJobResponse, status_code=status.HTTP_202_ACCEPTED)
 def start_import(
     payload: ImportRequest,
+    background_tasks: BackgroundTasks,
     user_code: str = Depends(validate_user_code),
     db: Session = Depends(get_db)
 ):
     """
-    Start een nieuwe import-run met volledige caching via tenderned_raw.
-    Implementeert alle scenario's uit het importeer-document.
-    Ondersteunt nu ook CPV-specifieke caching.
+    Persist an import job and return immediately. GET /imports exposes its progress.
+
+    The actual TenderNed work uses a fresh session in _run_import_job, rather
+    than the request-scoped session FastAPI closes after this response.
     """
-    from sqlalchemy.dialects.postgresql import insert
-    import traceback
-    
-    UPSERT_BATCH_SIZE = 1000
-    
-    # 1) Maak import record
     name = generate_import_name()
     import_obj = Import(
         name=name,
@@ -596,131 +818,226 @@ def start_import(
         cpv_codes=payload.cpv_codes,
         region=payload.region,
         owner_code=user_code,
+        status="pending",
     )
     db.add(import_obj)
     db.commit()
     db.refresh(import_obj)
+
+    background_tasks.add_task(_run_import_job, payload, user_code, str(import_obj.id))
+    return ImportJobResponse(
+        import_id=str(import_obj.id),
+        name=import_obj.name,
+        status=import_obj.status,
+        created_at=import_obj.created_at.isoformat() if import_obj.created_at else None,
+    )
+
+
+def _execute_import(
+    payload: ImportRequest,
+    user_code: str,
+    db: Session,
+    import_obj: Import,
+):
+    """Execute a persisted import job. Called only by _run_import_job."""
+    from sqlalchemy.dialects.postgresql import insert
+    import traceback
     
+    UPSERT_BATCH_SIZE = 1000
+    
+    name = import_obj.name
     import_id = import_obj.id
 
-    # 2) Bepaal data-bron(nen): cache (met of zonder CPV) + evt run_import
-    date_from = payload.date_from
-    date_to = payload.date_to
+    # Per-run fetch counters, populated in place by run_import. Any of the four
+    # scenario branches may call it; they all share this dict so the totals are
+    # cumulative across the branch(es) actually taken.
+    fetch_stats = {"listed": 0, "fetched": 0, "http_failed": 0, "parse_failed": 0}
 
-    # Normaliseer naar strings voor vergelijking
-    df_str = str(date_from) if date_from is not None else None
-    dt_str = str(date_to) if date_to is not None else None
+    # Mark the run as in-flight. The imports row is committed before any data
+    # is fetched, so without this a crash mid-import leaves a row that looks
+    # identical to a successful one.
+    import_obj.status = 'running'
+    import_obj.started_at = dt.datetime.now(dt.timezone.utc)
+    db.commit()
 
-    records: list[dict] = []
-    records_from_api: list[dict] = []
+    try:
 
-    # Bepaal welke cache table te gebruiken
-    cache_table = "tenderned_raw_cpv_cached" if payload.cpv_codes else "tenderned_raw_cached"
-    CacheModel = TendernedRawCPVCached if payload.cpv_codes else TendernedRawCached
-    print(f"🗄️  Gebruikte cache table: {cache_table}")
+        # 2) Bepaal data-bron(nen): cache (met of zonder CPV) + evt run_import
+        date_from = payload.date_from
+        date_to = payload.date_to
 
-    # Haal cache range op
-    earliest_publicatie = db.query(func.min(CacheModel.Publicatiedatum)) \
-        .filter(CacheModel.Publicatiedatum.isnot(None)) \
-        .scalar()
+        # Normaliseer naar strings voor vergelijking
+        df_str = str(date_from) if date_from is not None else None
+        dt_str = str(date_to) if date_to is not None else None
+
+        records: list[dict] = []
+        records_from_api: list[dict] = []
+
+        # Bepaal welke cache table te gebruiken
+        cache_table = "tenderned_raw_cpv_cached" if payload.cpv_codes else "tenderned_raw_cached"
+        CacheModel = TendernedRawCPVCached if payload.cpv_codes else TendernedRawCached
+        print(f"🗄️  Gebruikte cache table: {cache_table}")
+
+        # Haal cache range op
+        earliest_publicatie = db.query(func.min(CacheModel.Publicatiedatum)) \
+            .filter(CacheModel.Publicatiedatum.isnot(None)) \
+            .scalar()
     
-    latest_publicatie = db.query(func.max(CacheModel.Publicatiedatum)) \
-        .filter(CacheModel.Publicatiedatum.isnot(None)) \
-        .scalar()
+        latest_publicatie = db.query(func.max(CacheModel.Publicatiedatum)) \
+            .filter(CacheModel.Publicatiedatum.isnot(None)) \
+            .scalar()
 
-    ep_str = str(earliest_publicatie) if earliest_publicatie is not None else None
-    lp_str = str(latest_publicatie) if latest_publicatie is not None else None
+        ep_str = str(earliest_publicatie) if earliest_publicatie is not None else None
+        lp_str = str(latest_publicatie) if latest_publicatie is not None else None
 
-    print(f"📊 Cache range: {ep_str} tot {lp_str}")
-    print(f"🎯 Gevraagde range: {df_str} tot {dt_str}")
+        print(f"📊 Cache range: {ep_str} tot {lp_str}")
+        print(f"🎯 Gevraagde range: {df_str} tot {dt_str}")
 
-    # SCENARIO 1: Geen cache OF startdatum > meest recente datum in cache
-    if not lp_str or (df_str is not None and df_str > lp_str):
-        print(f"📡 SCENARIO 1: Startdatum ({df_str}) > laatste cache ({lp_str})")
-        print(f"   → Ophalen via TenderNed API: {df_str} tot {dt_str}")
+        # SCENARIO 1: Geen cache OF startdatum > meest recente datum in cache
+        if not lp_str or (df_str is not None and df_str > lp_str):
+            print(f"📡 SCENARIO 1: Startdatum ({df_str}) > laatste cache ({lp_str})")
+            print(f"   → Ophalen via TenderNed API: {df_str} tot {dt_str}")
         
-        new_records = run_import(
-            date_from=payload.date_from,
-            date_to=payload.date_to,
-            publicatie_type=payload.publicatie_type,
-            cpv_codes=payload.cpv_codes,
-            max_pages=payload.max_pages,
-        )
+            new_records = run_import(
+                date_from=payload.date_from,
+                date_to=payload.date_to,
+                publicatie_type=payload.publicatie_type,
+                cpv_codes=payload.cpv_codes,
+                max_pages=payload.max_pages,
+                stats=fetch_stats,
+            )
         
-        if new_records:
-            records.extend(new_records)
-            records_from_api.extend(new_records)
+            if new_records:
+                records.extend(new_records)
+                records_from_api.extend(new_records)
             
-            # Voeg toe aan cache (bulk upsert)
-            cache_records = [map_import_to_cache_schema(r) for r in new_records]
-            print(f"💾 Opslaan {len(cache_records)} records in {cache_table}")
+                # Voeg toe aan cache (bulk upsert)
+                cache_records = [map_import_to_cache_schema(r, include_cpv=bool(payload.cpv_codes)) for r in new_records]
+                print(f"💾 Opslaan {len(cache_records)} records in {cache_table}")
             
-            try:
-                for cache_rec in cache_records:
-                    stmt = insert(CacheModel).values(**cache_rec)
-                    stmt = stmt.on_conflict_do_update(
-                        index_elements=['notice_id'],
-                        set_=cache_rec
-                    )
-                    db.execute(stmt)
-                db.commit()
-                print(f"✅ Cache insert successful!")
-            except Exception as e:
-                print(f"❌ ERROR inserting to cache: {e}")
-                print(f"❌ Error type: {type(e)}")
-                print(f"❌ Traceback: {traceback.format_exc()}")
-                db.rollback()
+                try:
+                    for cache_rec in cache_records:
+                        stmt = insert(CacheModel).values(**cache_rec)
+                        stmt = stmt.on_conflict_do_update(
+                            index_elements=['notice_id'],
+                            set_=cache_rec
+                        )
+                        db.execute(stmt)
+                    db.commit()
+                    print(f"✅ Cache insert successful!")
+                except Exception as e:
+                    print(f"❌ ERROR inserting to cache: {e}")
+                    print(f"❌ Error type: {type(e)}")
+                    print(f"❌ Traceback: {traceback.format_exc()}")
+                    db.rollback()
 
-    # SCENARIO 5: Startdatum < kleinste datum in cache
-    elif ep_str and df_str is not None and df_str < ep_str:
-        print(f"📡 SCENARIO 5: Startdatum ({df_str}) < oudste cache ({ep_str})")
+        # SCENARIO 5: Startdatum < kleinste datum in cache
+        elif ep_str and df_str is not None and df_str < ep_str:
+            print(f"📡 SCENARIO 5: Startdatum ({df_str}) < oudste cache ({ep_str})")
         
-        cache_overlap_start = ep_str
-        cache_overlap_end = dt_str if (dt_str and dt_str <= lp_str) else lp_str
+            cache_overlap_start = ep_str
+            cache_overlap_end = dt_str if (dt_str and dt_str <= lp_str) else lp_str
         
-        # Haal historische data op VIA API
-        api_end = ep_str
-        print(f"   → API ophalen (historisch): {df_str} tot {api_end}")
+            # Haal historische data op VIA API
+            api_end = ep_str
+            print(f"   → API ophalen (historisch): {df_str} tot {api_end}")
         
-        historical_records = run_import(
-            date_from=payload.date_from,
-            date_to=earliest_publicatie,
-            publicatie_type=payload.publicatie_type,
-            cpv_codes=payload.cpv_codes,
-            max_pages=payload.max_pages,
-        )
+            historical_records = run_import(
+                date_from=payload.date_from,
+                date_to=earliest_publicatie,
+                publicatie_type=payload.publicatie_type,
+                cpv_codes=payload.cpv_codes,
+                max_pages=payload.max_pages,
+                stats=fetch_stats,
+            )
         
-        if historical_records:
-            records.extend(historical_records)
-            records_from_api.extend(historical_records)
+            if historical_records:
+                records.extend(historical_records)
+                records_from_api.extend(historical_records)
             
-            # Voeg historische data toe aan cache
-            cache_records = [map_import_to_cache_schema(r) for r in historical_records]
-            print(f"💾 Opslaan {len(cache_records)} historische records in {cache_table}")
+                # Voeg historische data toe aan cache
+                cache_records = [map_import_to_cache_schema(r, include_cpv=bool(payload.cpv_codes)) for r in historical_records]
+                print(f"💾 Opslaan {len(cache_records)} historische records in {cache_table}")
             
-            try:
-                for cache_rec in cache_records:
-                    stmt = insert(CacheModel).values(**cache_rec)
-                    stmt = stmt.on_conflict_do_update(
-                        index_elements=['notice_id'],
-                        set_=cache_rec
-                    )
-                    db.execute(stmt)
-                db.commit()
-                print(f"✅ Cache insert successful!")
-            except Exception as e:
-                print(f"❌ ERROR inserting to cache: {e}")
-                print(f"❌ Error type: {type(e)}")
-                print(f"❌ Traceback: {traceback.format_exc()}")
-                db.rollback()
+                try:
+                    for cache_rec in cache_records:
+                        stmt = insert(CacheModel).values(**cache_rec)
+                        stmt = stmt.on_conflict_do_update(
+                            index_elements=['notice_id'],
+                            set_=cache_rec
+                        )
+                        db.execute(stmt)
+                    db.commit()
+                    print(f"✅ Cache insert successful!")
+                except Exception as e:
+                    print(f"❌ ERROR inserting to cache: {e}")
+                    print(f"❌ Error type: {type(e)}")
+                    print(f"❌ Traceback: {traceback.format_exc()}")
+                    db.rollback()
         
-        # Haal cached data op
-        if dt_str and dt_str >= cache_overlap_start:
-            print(f"   → Cache gebruiken: {cache_overlap_start} tot {cache_overlap_end}")
+            # Haal cached data op
+            if dt_str and dt_str >= cache_overlap_start:
+                print(f"   → Cache gebruiken: {cache_overlap_start} tot {cache_overlap_end}")
             
+                cached_rows = fetch_cached_in_batches(
+                    cache_overlap_start, 
+                    cache_overlap_end,
+                    cache_table=cache_table,
+                    cpv_codes=payload.cpv_codes,
+                    db=db
+                )
+
+                if cached_rows:
+                    print(f"✅ {len(cached_rows)} records uit cache (batched)")
+                    for cache_row in cached_rows:
+                        records.append(map_cache_to_import_schema(cache_row))
+        
+            # Als einddatum > laatste cache datum, haal resterende data op
+            if dt_str and lp_str and dt_str > lp_str:
+                print(f"   → API ophalen (recent): {lp_str} tot {dt_str}")
+            
+                recent_records = run_import(
+                    date_from=latest_publicatie,
+                    date_to=payload.date_to,
+                    publicatie_type=payload.publicatie_type,
+                    cpv_codes=payload.cpv_codes,
+                    max_pages=payload.max_pages,
+                    stats=fetch_stats,
+                )
+            
+                if recent_records:
+                    records.extend(recent_records)
+                    records_from_api.extend(recent_records)
+                
+                    cache_records = [map_import_to_cache_schema(r, include_cpv=bool(payload.cpv_codes)) for r in recent_records]
+                    print(f"💾 Opslaan {len(cache_records)} recente records in {cache_table}")
+                
+                    try:
+                        for cache_rec in cache_records:
+                            stmt = insert(CacheModel).values(**cache_rec)
+                            stmt = stmt.on_conflict_do_update(
+                                index_elements=['notice_id'],
+                                set_=cache_rec
+                            )
+                            db.execute(stmt)
+                        db.commit()
+                        print(f"✅ Cache insert successful!")
+                    except Exception as e:
+                        print(f"❌ ERROR inserting to cache: {e}")
+                        print(f"❌ Error type: {type(e)}")
+                        print(f"❌ Traceback: {traceback.format_exc()}")
+                        db.rollback()
+
+        # SCENARIO 2 & 3: Startdatum <= meest recente datum in cache
+        else:
+            print(f"📦 SCENARIO 2/3: Startdatum ({df_str}) binnen cache range")
+        
+            upper_bound_str = dt_str if (dt_str is not None and dt_str <= lp_str) else lp_str
+        
+            print(f"   → Cache gebruiken: {df_str} tot {upper_bound_str}")
             cached_rows = fetch_cached_in_batches(
-                cache_overlap_start, 
-                cache_overlap_end,
+                df_str, 
+                upper_bound_str,
                 cache_table=cache_table,
                 cpv_codes=payload.cpv_codes,
                 db=db
@@ -730,269 +1047,265 @@ def start_import(
                 print(f"✅ {len(cached_rows)} records uit cache (batched)")
                 for cache_row in cached_rows:
                     records.append(map_cache_to_import_schema(cache_row))
+
+            # Als einddatum > laatste cache datum, vul aan met API
+            if dt_str is not None and lp_str and dt_str > lp_str:
+                print(f"   → API aanvullen: {lp_str} tot {dt_str}")
+            
+                new_records = run_import(
+                    date_from=latest_publicatie,
+                    date_to=payload.date_to,
+                    publicatie_type=payload.publicatie_type,
+                    cpv_codes=payload.cpv_codes,
+                    max_pages=payload.max_pages,
+                    stats=fetch_stats,
+                )
+
+                if new_records:
+                    print(f"✅ {len(new_records)} nieuwe records via API")
+                    records.extend(new_records)
+                    records_from_api.extend(new_records)
+
+                    # Voeg toe aan cache
+                    cache_records = [map_import_to_cache_schema(r, include_cpv=bool(payload.cpv_codes)) for r in new_records]
+                    print(f"💾 Opslaan {len(cache_records)} nieuwe records in {cache_table}")
+                
+                    try:
+                        for cache_rec in cache_records:
+                            stmt = insert(CacheModel).values(**cache_rec)
+                            stmt = stmt.on_conflict_do_update(
+                                index_elements=['notice_id'],
+                                set_=cache_rec
+                            )
+                            db.execute(stmt)
+                        db.commit()
+                        print(f"✅ Cache insert successful!")
+                    except Exception as e:
+                        print(f"❌ ERROR inserting to cache: {e}")
+                        print(f"❌ Error type: {type(e)}")
+                        print(f"❌ Traceback: {traceback.format_exc()}")
+                        db.rollback()
+
+        print(f"📊 Totaal records verzameld: {len(records)}")
+        print(f"📡 Waarvan van API: {len(records_from_api)}")
+
+        # Persist the immutable source XML/listing before producing the
+        # owner-scoped import projection. If this fails, the job fails rather
+        # than claiming a cacheable import whose source cannot be reproduced.
+        persist_canonical_records(records_from_api, db)
+
+        # Maak een set van notice_ids die van API komen
+        api_notice_ids = {r.get("notice_id") for r in records_from_api if r.get("notice_id")}
+
+        # 3) Map records & voeg import_id toe
+        notice_rows = []
+        for r in records:
+            province = province_for_record(r)
         
-        # Als einddatum > laatste cache datum, haal resterende data op
-        if dt_str and lp_str and dt_str > lp_str:
-            print(f"   → API ophalen (recent): {lp_str} tot {dt_str}")
+            # Skip dit record als region filter actief is EN province niet matcht
+            if payload.region:
+                if not province:
+                    continue
+                if province.strip().lower() != payload.region.strip().lower():
+                    continue
+
+            notice_id = r.get("notice_id")
+        
+            # Check historische aanbestedingen ALLEEN als dit record van API komt
+            heeft_eerdere_aanbestedingen = r.get("heeft_eerdere_aanbestedingen", False)
+            aantal_eerdere_aanbestedingen = r.get("aantal_eerdere_aanbestedingen", 0)
+        
+            if notice_id in api_notice_ids:
+                bedrijf_naam = (r.get("win_bedrijf_naam") or "").strip()
             
-            recent_records = run_import(
-                date_from=latest_publicatie,
-                date_to=payload.date_to,
-                publicatie_type=payload.publicatie_type,
-                cpv_codes=payload.cpv_codes,
-                max_pages=payload.max_pages,
-            )
-            
-            if recent_records:
-                records.extend(recent_records)
-                records_from_api.extend(recent_records)
-                
-                cache_records = [map_import_to_cache_schema(r) for r in recent_records]
-                print(f"💾 Opslaan {len(cache_records)} recente records in {cache_table}")
-                
-                try:
-                    for cache_rec in cache_records:
-                        stmt = insert(CacheModel).values(**cache_rec)
-                        stmt = stmt.on_conflict_do_update(
-                            index_elements=['notice_id'],
-                            set_=cache_rec
+                if bedrijf_naam:
+                    try:
+                        historische_records = _search_companies_in_db(
+                            q=bedrijf_naam,
+                            years=5,
+                            max_results=100,
+                            db=db
                         )
-                        db.execute(stmt)
-                    db.commit()
-                    print(f"✅ Cache insert successful!")
-                except Exception as e:
-                    print(f"❌ ERROR inserting to cache: {e}")
-                    print(f"❌ Error type: {type(e)}")
-                    print(f"❌ Traceback: {traceback.format_exc()}")
-                    db.rollback()
-
-    # SCENARIO 2 & 3: Startdatum <= meest recente datum in cache
-    else:
-        print(f"📦 SCENARIO 2/3: Startdatum ({df_str}) binnen cache range")
-        
-        upper_bound_str = dt_str if (dt_str is not None and dt_str <= lp_str) else lp_str
-        
-        print(f"   → Cache gebruiken: {df_str} tot {upper_bound_str}")
-        cached_rows = fetch_cached_in_batches(
-            df_str, 
-            upper_bound_str,
-            cache_table=cache_table,
-            cpv_codes=payload.cpv_codes,
-            db=db
-        )
-
-        if cached_rows:
-            print(f"✅ {len(cached_rows)} records uit cache (batched)")
-            for cache_row in cached_rows:
-                records.append(map_cache_to_import_schema(cache_row))
-
-        # Als einddatum > laatste cache datum, vul aan met API
-        if dt_str is not None and lp_str and dt_str > lp_str:
-            print(f"   → API aanvullen: {lp_str} tot {dt_str}")
-            
-            new_records = run_import(
-                date_from=latest_publicatie,
-                date_to=payload.date_to,
-                publicatie_type=payload.publicatie_type,
-                cpv_codes=payload.cpv_codes,
-                max_pages=payload.max_pages,
-            )
-
-            if new_records:
-                print(f"✅ {len(new_records)} nieuwe records via API")
-                records.extend(new_records)
-                records_from_api.extend(new_records)
-
-                # Voeg toe aan cache
-                cache_records = [map_import_to_cache_schema(r) for r in new_records]
-                print(f"💾 Opslaan {len(cache_records)} nieuwe records in {cache_table}")
-                
-                try:
-                    for cache_rec in cache_records:
-                        stmt = insert(CacheModel).values(**cache_rec)
-                        stmt = stmt.on_conflict_do_update(
-                            index_elements=['notice_id'],
-                            set_=cache_rec
-                        )
-                        db.execute(stmt)
-                    db.commit()
-                    print(f"✅ Cache insert successful!")
-                except Exception as e:
-                    print(f"❌ ERROR inserting to cache: {e}")
-                    print(f"❌ Error type: {type(e)}")
-                    print(f"❌ Traceback: {traceback.format_exc()}")
-                    db.rollback()
-
-    print(f"📊 Totaal records verzameld: {len(records)}")
-    print(f"📡 Waarvan van API: {len(records_from_api)}")
-
-    # Maak een set van notice_ids die van API komen
-    api_notice_ids = {r.get("notice_id") for r in records_from_api if r.get("notice_id")}
-
-    # 3) Map records & voeg import_id toe
-    notice_rows = []
-    for r in records:
-        province = map_city_to_province(r.get("win_plaats"))
-        
-        # Skip dit record als region filter actief is EN province niet matcht
-        if payload.region:
-            if not province:
-                continue
-            if province.strip().lower() != payload.region.strip().lower():
-                continue
-
-        notice_id = r.get("notice_id")
-        
-        # Check historische aanbestedingen ALLEEN als dit record van API komt
-        heeft_eerdere_aanbestedingen = r.get("heeft_eerdere_aanbestedingen", False)
-        aantal_eerdere_aanbestedingen = r.get("aantal_eerdere_aanbestedingen", 0)
-        
-        if notice_id in api_notice_ids:
-            bedrijf_naam = (r.get("win_bedrijf_naam") or "").strip()
-            
-            if bedrijf_naam:
-                try:
-                    historische_records = _search_companies_in_db(
-                        q=bedrijf_naam,
-                        years=5,
-                        max_results=100,
-                        db=db
-                    )
                     
-                    if historische_records:
-                        heeft_eerdere_aanbestedingen = True
-                        aantal_eerdere_aanbestedingen = len(historische_records)
-                except Exception as e:
-                    print(f"Fout bij zoeken historische data voor {bedrijf_naam}: {e}")
+                        if historische_records:
+                            heeft_eerdere_aanbestedingen = True
+                            aantal_eerdere_aanbestedingen = len(historische_records)
+                    except Exception as e:
+                        print(f"Fout bij zoeken historische data voor {bedrijf_naam}: {e}")
 
-        # Haal publicatie_datum op
-        pub_datum = r.get("contract_issue_date") or r.get("publicatie_datum")
-        if pub_datum and isinstance(pub_datum, str) and len(pub_datum) >= 10:
-            pub_datum = pub_datum[:10]
+            # Haal publicatie_datum op
+            pub_datum = r.get("contract_issue_date") or r.get("publicatie_datum")
+            if pub_datum and isinstance(pub_datum, str) and len(pub_datum) >= 10:
+                pub_datum = pub_datum[:10]
         
-        # Extract URL - handle both dict and string formats
-        url_value = r.get("URL") or r.get("url")
-        if isinstance(url_value, dict):
-            url_value = url_value.get("href") or url_value.get("url")
+            # Extract URL - handle both dict and string formats
+            url_value = r.get("URL") or r.get("url")
+            if isinstance(url_value, dict):
+                url_value = url_value.get("href") or url_value.get("url")
         
-        notice_rows.append({
-            "import_id": import_id,
-            "notice_id": notice_id,
-            "publicatie_id": r.get("publicatieId") or r.get("publicatie_id"),
-            "url": url_value,
-            "titel": r.get("titel"),
-            "omschrijving": r.get("omschrijving"),
-            "win_bedrijf_naam": r.get("win_bedrijf_naam"),
-            "win_kvk": r.get("win_kvk"),
-            "win_straat": r.get("win_straat"),
-            "win_postcode": r.get("win_postcode"),
-            "win_plaats": r.get("win_plaats"),
-            "win_land": r.get("win_land"),
-            "win_contact_naam": r.get("win_contact_naam"),
-            "win_contact_email": r.get("win_contact_email"),
-            "win_contact_tel": r.get("win_contact_tel"),
-            "win_website": r.get("win_website"),
-            "buyer_bedrijf_naam": r.get("buyer_bedrijf_naam"),
-            "buyer_kvk": r.get("buyer_kvk"),
-            "buyer_straat": r.get("buyer_straat"),
-            "buyer_postcode": r.get("buyer_postcode"),
-            "buyer_plaats": r.get("buyer_plaats"),
-            "buyer_land": r.get("buyer_land"),
-            "buyer_contact_naam": r.get("buyer_contact_naam"),
-            "buyer_contact_email": r.get("buyer_contact_email"),
-            "buyer_contact_tel": r.get("buyer_contact_tel"),
-            "buyer_website": r.get("buyer_website"),
-            "bedrag": r.get("bedrag"),
-            "valuta": r.get("valuta"),
-            "province": province,
-            "publicatie_datum": pub_datum,
-            "heeft_eerdere_aanbestedingen": heeft_eerdere_aanbestedingen,
-            "aantal_eerdere_aanbestedingen": aantal_eerdere_aanbestedingen,
-            "owner_code": user_code,
-        })
+            notice_rows.append({
+                "import_id": import_id,
+                "notice_id": notice_id,
+                "publicatie_id": r.get("publicatieId") or r.get("publicatie_id"),
+                "url": url_value,
+                "titel": r.get("titel"),
+                "omschrijving": r.get("omschrijving"),
+                "win_bedrijf_naam": r.get("win_bedrijf_naam"),
+                "win_kvk": r.get("win_kvk"),
+                "win_straat": r.get("win_straat"),
+                "win_postcode": r.get("win_postcode"),
+                "win_plaats": r.get("win_plaats"),
+                "win_land": r.get("win_land"),
+                "win_contact_naam": r.get("win_contact_naam"),
+                "win_contact_email": r.get("win_contact_email"),
+                "win_contact_tel": r.get("win_contact_tel"),
+                "win_website": r.get("win_website"),
+                "buyer_bedrijf_naam": r.get("buyer_bedrijf_naam"),
+                "buyer_kvk": r.get("buyer_kvk"),
+                "buyer_straat": r.get("buyer_straat"),
+                "buyer_postcode": r.get("buyer_postcode"),
+                "buyer_plaats": r.get("buyer_plaats"),
+                "buyer_land": r.get("buyer_land"),
+                "buyer_contact_naam": r.get("buyer_contact_naam"),
+                "buyer_contact_email": r.get("buyer_contact_email"),
+                "buyer_contact_tel": r.get("buyer_contact_tel"),
+                "buyer_website": r.get("buyer_website"),
+                "bedrag": r.get("bedrag"),
+                "valuta": r.get("valuta"),
+                "province": province,
+                "publicatie_datum": pub_datum,
+                "heeft_eerdere_aanbestedingen": heeft_eerdere_aanbestedingen,
+                "aantal_eerdere_aanbestedingen": aantal_eerdere_aanbestedingen,
+                "owner_code": user_code,
+                # Classification: filter on record_type == 'awards' to exclude
+                # VEAT (no winner yet) and cancelled procedures. See migration 004.
+                "publicatie_code": r.get("publicatie_code"),
+                "record_type": r.get("record_type"),
+                "type_publicatie": r.get("type_publicatie"),
+                "is_cancelled": bool(r.get("is_cancelled")),
+            })
 
-    print(f"✅ {len(notice_rows)} records na filtering")
+        print(f"✅ {len(notice_rows)} records na filtering")
 
-    # 4) Deduplicate and bulk upsert naar database
-    unique_rows = {}
-    for row in notice_rows:
-        nid = row.get("notice_id")
-        if not nid:
-            continue
-        unique_rows[nid] = row
+        # 4) Deduplicate and bulk upsert naar database
+        unique_rows = {}
+        for row in notice_rows:
+            nid = row.get("notice_id")
+            if not nid:
+                continue
+            unique_rows[nid] = row
 
-    deduped_notice_rows = list(unique_rows.values())
-    total_records = len(deduped_notice_rows)
-    print(f"💾 Opslaan {total_records} unieke notices (van {len(notice_rows)} totaal)")
+        deduped_notice_rows = list(unique_rows.values())
+        total_records = len(deduped_notice_rows)
+        print(f"💾 Opslaan {total_records} unieke notices (van {len(notice_rows)} totaal)")
 
-    if deduped_notice_rows:
-        total_batches = (len(deduped_notice_rows) - 1) // UPSERT_BATCH_SIZE + 1
+        if deduped_notice_rows:
+            total_batches = (len(deduped_notice_rows) - 1) // UPSERT_BATCH_SIZE + 1
         
-        for i in range(0, len(deduped_notice_rows), UPSERT_BATCH_SIZE):
-            batch = deduped_notice_rows[i:i + UPSERT_BATCH_SIZE]
-            batch_num = i // UPSERT_BATCH_SIZE + 1
-            print(f"💾 Upserting batch {batch_num}/{total_batches} ({len(batch)} records)")
+            for i in range(0, len(deduped_notice_rows), UPSERT_BATCH_SIZE):
+                batch = deduped_notice_rows[i:i + UPSERT_BATCH_SIZE]
+                batch_num = i // UPSERT_BATCH_SIZE + 1
+                print(f"💾 Upserting batch {batch_num}/{total_batches} ({len(batch)} records)")
             
-            # Bulk upsert using PostgreSQL's ON CONFLICT
-            stmt = insert(Notice).values(batch)
-            stmt = stmt.on_conflict_do_update(
-                index_elements=['notice_id'],
-                set_={
-                    'import_id': stmt.excluded.import_id,
-                    'publicatie_id': stmt.excluded.publicatie_id,
-                    'url': stmt.excluded.url,
-                    'titel': stmt.excluded.titel,
-                    'omschrijving': stmt.excluded.omschrijving,
-                    'win_bedrijf_naam': stmt.excluded.win_bedrijf_naam,
-                    'win_kvk': stmt.excluded.win_kvk,
-                    'win_straat': stmt.excluded.win_straat,
-                    'win_postcode': stmt.excluded.win_postcode,
-                    'win_plaats': stmt.excluded.win_plaats,
-                    'win_land': stmt.excluded.win_land,
-                    'win_contact_naam': stmt.excluded.win_contact_naam,
-                    'win_contact_email': stmt.excluded.win_contact_email,
-                    'win_contact_tel': stmt.excluded.win_contact_tel,
-                    'win_website': stmt.excluded.win_website,
-                    'buyer_bedrijf_naam': stmt.excluded.buyer_bedrijf_naam,
-                    'buyer_kvk': stmt.excluded.buyer_kvk,
-                    'buyer_straat': stmt.excluded.buyer_straat,
-                    'buyer_postcode': stmt.excluded.buyer_postcode,
-                    'buyer_plaats': stmt.excluded.buyer_plaats,
-                    'buyer_land': stmt.excluded.buyer_land,
-                    'buyer_contact_naam': stmt.excluded.buyer_contact_naam,
-                    'buyer_contact_email': stmt.excluded.buyer_contact_email,
-                    'buyer_contact_tel': stmt.excluded.buyer_contact_tel,
-                    'buyer_website': stmt.excluded.buyer_website,
-                    'bedrag': stmt.excluded.bedrag,
-                    'valuta': stmt.excluded.valuta,
-                    'province': stmt.excluded.province,
-                    'publicatie_datum': stmt.excluded.publicatie_datum,
+                # Bulk upsert using PostgreSQL's ON CONFLICT
+                stmt = insert(Notice).values(batch)
+                # Conflict target is (import_id, notice_id), NOT notice_id alone.
+                # With a global notice_id key, an overlapping import re-parented another
+                # user's rows to itself and overwrote their owner_code, silently emptying
+                # the earlier import. See migrations/001_fix_notice_uniqueness.sql.
+                stmt = stmt.on_conflict_do_update(
+                    index_elements=['import_id', 'notice_id'],
+                    set_={
+                        'publicatie_id': stmt.excluded.publicatie_id,
+                        'url': stmt.excluded.url,
+                        'titel': stmt.excluded.titel,
+                        'omschrijving': stmt.excluded.omschrijving,
+                        'win_bedrijf_naam': stmt.excluded.win_bedrijf_naam,
+                        'win_kvk': stmt.excluded.win_kvk,
+                        'win_straat': stmt.excluded.win_straat,
+                        'win_postcode': stmt.excluded.win_postcode,
+                        'win_plaats': stmt.excluded.win_plaats,
+                        'win_land': stmt.excluded.win_land,
+                        'win_contact_naam': stmt.excluded.win_contact_naam,
+                        'win_contact_email': stmt.excluded.win_contact_email,
+                        'win_contact_tel': stmt.excluded.win_contact_tel,
+                        'win_website': stmt.excluded.win_website,
+                        'buyer_bedrijf_naam': stmt.excluded.buyer_bedrijf_naam,
+                        'buyer_kvk': stmt.excluded.buyer_kvk,
+                        'buyer_straat': stmt.excluded.buyer_straat,
+                        'buyer_postcode': stmt.excluded.buyer_postcode,
+                        'buyer_plaats': stmt.excluded.buyer_plaats,
+                        'buyer_land': stmt.excluded.buyer_land,
+                        'buyer_contact_naam': stmt.excluded.buyer_contact_naam,
+                        'buyer_contact_email': stmt.excluded.buyer_contact_email,
+                        'buyer_contact_tel': stmt.excluded.buyer_contact_tel,
+                        'buyer_website': stmt.excluded.buyer_website,
+                        'bedrag': stmt.excluded.bedrag,
+                        'valuta': stmt.excluded.valuta,
+                        'province': stmt.excluded.province,
+                        'publicatie_datum': stmt.excluded.publicatie_datum,
+                        'publicatie_code': stmt.excluded.publicatie_code,
+                    'record_type': stmt.excluded.record_type,
+                    'type_publicatie': stmt.excluded.type_publicatie,
+                    'is_cancelled': stmt.excluded.is_cancelled,
                     'heeft_eerdere_aanbestedingen': stmt.excluded.heeft_eerdere_aanbestedingen,
-                    'aantal_eerdere_aanbestedingen': stmt.excluded.aantal_eerdere_aanbestedingen,
-                    'owner_code': stmt.excluded.owner_code,
-                }
-            )
+                        'aantal_eerdere_aanbestedingen': stmt.excluded.aantal_eerdere_aanbestedingen,
+                        'owner_code': stmt.excluded.owner_code,
+                    }
+                )
             
-            try:
-                db.execute(stmt)
-                db.commit()
-            except Exception as e:
-                print(f"❌ Error batch {batch_num}: {e}")
-                db.rollback()
-                raise
+                try:
+                    db.execute(stmt)
+                    db.commit()
+                except Exception as e:
+                    print(f"❌ Error batch {batch_num}: {e}")
+                    db.rollback()
+                    raise
 
-    # 5) Update total_records
-    import_obj.total_records = total_records
-    db.commit()
+        # 5) Update total_records
+        import_obj.total_records = total_records
+        db.commit()
 
-    print(f"✅ Import {name} voltooid: {total_records} records")
+        dropped = fetch_stats["http_failed"] + fetch_stats["parse_failed"]
+        print(f"✅ Import {name} voltooid: {total_records} records")
+        if dropped:
+            print(
+                f"⚠️ Import {name} INCOMPLEET: {dropped} van {fetch_stats['listed']} "
+                f"publicaties niet verwerkt "
+                f"(http_failed={fetch_stats['http_failed']} parse_failed={fetch_stats['parse_failed']})"
+            )
 
-    return ImportResponse(
-        import_id=str(import_id),
-        name=name,
-        total_records=total_records,
-        created_at=import_obj.created_at.isoformat() if import_obj.created_at else None,
-    )
+        # 'partial' means the run finished but did not store everything the
+        # list endpoint advertised -- previously indistinguishable from success.
+        import_obj.status = 'partial' if dropped else 'completed'
+        import_obj.finished_at = dt.datetime.now(dt.timezone.utc)
+        import_obj.listed = fetch_stats["listed"]
+        import_obj.fetched = fetch_stats["fetched"]
+        import_obj.http_failed = fetch_stats["http_failed"]
+        import_obj.parse_failed = fetch_stats["parse_failed"]
+        db.commit()
+
+        return ImportResponse(
+            import_id=str(import_id),
+            name=name,
+            total_records=total_records,
+            created_at=import_obj.created_at.isoformat() if import_obj.created_at else None,
+            listed=fetch_stats["listed"],
+            fetched=fetch_stats["fetched"],
+            http_failed=fetch_stats["http_failed"],
+            parse_failed=fetch_stats["parse_failed"],
+            complete=(dropped == 0),
+        )
+    except HTTPException:
+        raise
+    except Exception as exc:
+        db.rollback()
+        import_obj.status = 'failed'
+        import_obj.error_message = f'{type(exc).__name__}: {exc}'[:2000]
+        import_obj.finished_at = dt.datetime.now(dt.timezone.utc)
+        db.commit()
+        print(f'❌ Import {name} FAILED: {exc}')
+        raise
 
 @app.get("/imports/{import_id}/notices")
 def get_import_notices(
@@ -1169,6 +1482,22 @@ def _make_csv_response(rows, filename: str):
     )
 
 
+def _excel_safe(value):
+    """Make a value writable by openpyxl.
+
+    Excel has no concept of timezones, so openpyxl raises TypeError on any
+    tz-aware datetime/time. Our Postgres columns are TIMESTAMPTZ, so strip the
+    tzinfo (after converting to local time) before writing.
+    """
+    if isinstance(value, dt.datetime) and value.tzinfo is not None:
+        return value.astimezone().replace(tzinfo=None)
+    if isinstance(value, dt.time) and value.tzinfo is not None:
+        return value.replace(tzinfo=None)
+    if isinstance(value, (dict, list)):
+        return json.dumps(value, ensure_ascii=False, default=str)
+    return value
+
+
 def _make_excel_response(rows, filename: str):
     import openpyxl
     from openpyxl.utils import get_column_letter
@@ -1183,7 +1512,7 @@ def _make_excel_response(rows, filename: str):
         headers = list(rows[0].keys())
         ws.append(headers)
         for row in rows:
-            ws.append([row.get(h) for h in headers])
+            ws.append([_excel_safe(row.get(h)) for h in headers])
 
         # Optioneel: auto column width
         for i, col in enumerate(ws.columns, start=1):
@@ -1237,15 +1566,43 @@ def _search_companies_in_db(q: str, years: int = 5, max_results: int = 1000, db:
 
     cutoff = (datetime.utcnow() - timedelta(days=365 * int(years))).date()
 
-    # Query TendernedRaw using SQLAlchemy - use the Python attribute names
+    # The canonical layer is the source of truth for new imports. Keep the
+    # legacy table fallback only until historic data has been backfilled.
     try:
-        rows = db.query(TendernedRaw).filter(
-            TendernedRaw.Officiele_benaming.ilike(f"%{q}%"),
-            TendernedRaw.Publicatiedatum >= cutoff
-        ).limit(max_results * 5).all()
+        canonical_rows = db.query(TenderNotice, TenderCompany).join(
+            TenderCompany, TenderNotice.winner_company_id == TenderCompany.id
+        ).filter(
+            TenderCompany.name.ilike(f"%{q}%"),
+            TenderNotice.publicatie_datum >= cutoff,
+        ).order_by(TenderNotice.publicatie_datum.desc()).limit(max_results).all()
     except Exception as e:
         print(f"Database query error: {e}")
         raise
+
+    if canonical_rows:
+        results = []
+        for notice, company in canonical_rows:
+            lot = db.query(TenderNoticeLot).filter(
+                TenderNoticeLot.notice_id == notice.id
+            ).order_by(TenderNoticeLot.award_value.desc().nullslast()).first()
+            results.append({
+                "publicatiedatum": str(notice.publicatie_datum) if notice.publicatie_datum else None,
+                "year": str(notice.publicatie_datum.year) if notice.publicatie_datum else None,
+                "bedrijf": company.name,
+                "kvk": company.kvk,
+                "omschrijving": notice.description,
+                "begindatum_opdracht": str(lot.contract_start) if lot and lot.contract_start else None,
+                "einddatum_opdracht": str(lot.contract_end) if lot and lot.contract_end else None,
+                "aantal_publicaties": 1,
+                "bedrag": float(lot.award_value) if lot and lot.award_value is not None else None,
+            })
+        return results
+
+    # Legacy fallback for pre-migration imports.
+    rows = db.query(TendernedRaw).filter(
+        TendernedRaw.Officiele_benaming.ilike(f"%{q}%"),
+        TendernedRaw.Publicatiedatum >= cutoff
+    ).limit(max_results * 5).all()
 
     if not rows:
         return []
@@ -1434,8 +1791,9 @@ def request_code_endpoint(db: Session = Depends(get_db)):
 
 @app.get("/api/search/company")
 def api_search_company(
-    q: str = Query(..., description="Bedrijfsnaam om te zoeken"), 
+    q: str = Query(..., description="Bedrijfsnaam om te zoeken"),
     years: int = Query(5, ge=1, le=20),
+    user_code: str = Depends(validate_user_code),
     db: Session = Depends(get_db)
 ):
     """
@@ -1510,6 +1868,8 @@ def save_sroi_results(results: List[Dict], owner_code: Optional[str] = None, db:
                 summary=result.get("summary", ""),
                 pages_checked=result.get("pages_checked", 0),
                 error=result.get("error"),
+                analysis_method=result.get("analysis_method"),
+                verdict=result.get("verdict"),
                 owner_code=owner_code
             )
             db.add(new_result)
@@ -1603,7 +1963,7 @@ def run_sroi_analysis_background(import_id: str, owner_code: Optional[str] = Non
 
 
 @app.post("/imports/{import_id}/sroi-analyze")
-async def start_sroi_analysis(
+def start_sroi_analysis(
     import_id: str, 
     background_tasks: BackgroundTasks, 
     user_code: str = Depends(validate_user_code),
@@ -1691,6 +2051,8 @@ def save_notice_sroi_result(result: Dict, owner_code: str, db: Session):
         existing.summary = result.get("summary", "")
         existing.pages_checked = result.get("pages_checked", 0)
         existing.error = result.get("error")
+        existing.analysis_method = result.get("analysis_method")
+        existing.verdict = result.get("verdict")
         existing.owner_code = owner_code
     else:
         # Create new
@@ -1707,6 +2069,8 @@ def save_notice_sroi_result(result: Dict, owner_code: str, db: Session):
             summary=result.get("summary", ""),
             pages_checked=result.get("pages_checked", 0),
             error=result.get("error"),
+            analysis_method=result.get("analysis_method"),
+            verdict=result.get("verdict"),
             owner_code=owner_code
         )
         db.add(new_result)
@@ -1715,7 +2079,7 @@ def save_notice_sroi_result(result: Dict, owner_code: str, db: Session):
 
 
 @app.get("/imports/{import_id}/sroi-status")
-async def get_sroi_status(
+def get_sroi_status(
     import_id: str, 
     user_code: str = Depends(validate_user_code),
     db: Session = Depends(get_db)
@@ -1759,7 +2123,7 @@ async def get_sroi_status(
 
 
 @app.get("/imports/{import_id}/sroi-results")
-async def get_sroi_results(
+def get_sroi_results(
     import_id: str, 
     user_code: str = Depends(validate_user_code),
     db: Session = Depends(get_db)
@@ -1803,7 +2167,7 @@ async def get_sroi_results(
 
 
 @app.get("/imports/{import_id}/notices/{notice_id}/sroi-results")
-async def get_notice_sroi_results(
+def get_notice_sroi_results(
     import_id: str, 
     notice_id: str, 
     user_code: str = Depends(validate_user_code),
@@ -1846,7 +2210,7 @@ async def get_notice_sroi_results(
 
 
 @app.delete("/imports/{import_id}/sroi-results")
-async def delete_sroi_results(
+def delete_sroi_results(
     import_id: str, 
     user_code: str = Depends(validate_user_code),
     db: Session = Depends(get_db)
@@ -1929,27 +2293,28 @@ def get_notice_detail(
 
 
 @app.post("/imports/{import_id}/notices/{notice_id}/sroi-analyze")
-async def analyze_single_notice(
-    import_id: str, 
-    notice_id: str, 
-    request: Request, 
+def analyze_single_notice(
+    import_id: str,
+    notice_id: str,
+    payload: Optional[SingleNoticeSROIRequest] = None,
     user_code: str = Depends(validate_user_code),
     db: Session = Depends(get_db)
 ):
     """
     Analyseer één specifieke notice / bedrijf (winnaar of inkoper) en sla resultaat direct op.
     Body (optioneel): { "target": "winner" | "buyer" }
+
+    NOTE: this is deliberately `def`, not `async def`. It calls analyze_notice_sroi,
+    which does blocking HTTP (up to 7 page fetches) plus time.sleep() and can run for
+    60-90s. As an async handler it blocked the event loop for that whole time, stalling
+    every other request in the process -- health checks included. As a sync handler
+    Starlette runs it in the threadpool instead. The real fix is a job queue (Phase 1).
     """
     try:
         if not notice_id:
             raise HTTPException(status_code=400, detail="Notice ID is missing or invalid")
 
-        try:
-            body = await request.json()
-        except Exception:
-            body = {}
-
-        target = (body or {}).get("target", "winner") if isinstance(body, dict) else "winner"
+        target = payload.target if payload else "winner"
 
         # Verify import exists and ownership
         import_record = db.query(Import)\
@@ -2006,13 +2371,17 @@ async def analyze_single_notice(
 def download_sroi_results(
     import_id: str,
     format: str = Query("excel", pattern="^(excel|csv)$"),
+    user_code: str = Depends(validate_user_code),
     db: Session = Depends(get_db)
 ):
     """
     Download SROI resultaten als Excel of CSV.
     """
+    # Scope to the caller: this endpoint previously had no auth and no owner
+    # filter, so any caller who knew an import_id could download its results.
     results = db.query(SROIResult)\
         .filter(SROIResult.import_id == import_id)\
+        .filter(SROIResult.owner_code == user_code)\
         .order_by(desc(SROIResult.score))\
         .all()
     
@@ -2049,6 +2418,78 @@ def list_regions(include_cities: bool = Query(False, description="Include city l
     if include_cities:
         return {"regions": PROVINCE_TO_CITIES}
     return {"regions": list(PROVINCE_TO_CITIES.keys())}
+
+
+@app.get("/analytics/buyers")
+def buyer_spend_profile(limit: int = Query(50, ge=1, le=200), db: Session = Depends(get_db), user_code: str = Depends(validate_user_code)):
+    """Buyer profiles from canonical public procurement data (not owner data)."""
+    rows = db.query(
+        TenderCompany.name, TenderCompany.kvk, TenderCompany.province,
+        func.count(TenderNotice.id).label("awards"),
+        func.max(TenderNotice.publicatie_datum).label("latest_award"),
+    ).join(TenderNotice, TenderNotice.buyer_company_id == TenderCompany.id).group_by(
+        TenderCompany.id
+    ).order_by(func.count(TenderNotice.id).desc()).limit(limit).all()
+    return [{"buyer": row.name, "kvk": row.kvk, "province": row.province, "awards": row.awards, "latest_award": row.latest_award} for row in rows]
+
+
+@app.get("/saved-searches")
+def list_saved_searches(user_code: str = Depends(validate_user_code), db: Session = Depends(get_db)):
+    return [{"id": row.id, "name": row.name, "filters": row.filters, "alert_enabled": row.is_alert_enabled,
+             "last_checked_at": row.last_checked_at, "created_at": row.created_at}
+            for row in db.query(SavedSearch).filter(SavedSearch.owner_code == user_code).order_by(SavedSearch.created_at.desc()).all()]
+
+
+@app.post("/saved-searches", status_code=201)
+def create_saved_search(payload: dict, user_code: str = Depends(validate_user_code), db: Session = Depends(get_db)):
+    name = str(payload.get("name") or "").strip()
+    if not name:
+        raise HTTPException(400, "name is required")
+    row = SavedSearch(owner_code=user_code, name=name, filters=payload.get("filters") or {}, is_alert_enabled=payload.get("alert_enabled", True))
+    db.add(row)
+    try:
+        db.commit()
+    except Exception:
+        db.rollback()
+        raise HTTPException(409, "A saved search with this name already exists")
+    db.refresh(row)
+    return {"id": row.id, "name": row.name, "filters": row.filters, "alert_enabled": row.is_alert_enabled}
+
+
+@app.delete("/saved-searches/{search_id}", status_code=204)
+def delete_saved_search(search_id: int, user_code: str = Depends(validate_user_code), db: Session = Depends(get_db)):
+    row = db.query(SavedSearch).filter(SavedSearch.id == search_id, SavedSearch.owner_code == user_code).first()
+    if not row:
+        raise HTTPException(404, "Saved search not found")
+    db.delete(row)
+    db.commit()
+
+
+@app.get("/analytics/competitors")
+def competitor_wins(limit: int = Query(50, ge=1, le=200), db: Session = Depends(get_db), user_code: str = Depends(validate_user_code)):
+    """Rank suppliers by canonical award count; filters cancelled/VEAT records."""
+    rows = db.query(
+        TenderCompany.name, TenderCompany.kvk, TenderCompany.province,
+        func.count(TenderNotice.id).label("wins"), func.max(TenderNotice.publicatie_datum).label("latest_win"),
+    ).join(TenderNotice, TenderNotice.winner_company_id == TenderCompany.id).filter(
+        TenderNotice.record_type == "awards", TenderNotice.is_cancelled.is_(False)
+    ).group_by(TenderCompany.id).order_by(func.count(TenderNotice.id).desc()).limit(limit).all()
+    return [{"company": row.name, "kvk": row.kvk, "province": row.province, "wins": row.wins, "latest_win": row.latest_win} for row in rows]
+
+
+@app.get("/analytics/re-tenders")
+def re_tender_candidates(within_days: int = Query(180, ge=1, le=3650), db: Session = Depends(get_db), user_code: str = Depends(validate_user_code)):
+    """Lots whose known contract end date is approaching; excludes unknown durations."""
+    today = dt.date.today()
+    cutoff = today + dt.timedelta(days=within_days)
+    lots = db.query(TenderNoticeLot, TenderNotice, TenderCompany).join(
+        TenderNotice, TenderNoticeLot.notice_id == TenderNotice.id
+    ).outerjoin(TenderCompany, TenderNoticeLot.awarded_company_id == TenderCompany.id).filter(
+        TenderNoticeLot.contract_end >= today, TenderNoticeLot.contract_end <= cutoff
+    ).order_by(TenderNoticeLot.contract_end).all()
+    return [{"notice_id": notice.notice_id, "lot_id": lot.external_lot_id, "title": lot.title or notice.title,
+             "contract_end": lot.contract_end, "winner": company.name if company else None,
+             "days_until_end": (lot.contract_end - today).days} for lot, notice, company in lots]
 
 
 # ========================================

@@ -21,21 +21,32 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of your backend code
 COPY . .
 
-# Set environment variables
-ENV SERPAPI_API_KEY="3757554d02872ebf5aa117d04584f92d6f6020b1dd46ab840f005ba4aa1f0aa2" \
-    OPEN_ROUTER="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" \
-    GOOGLE_API_KEY="AIzaSyA23-6UhmTE4XZR_bdVKbF0BgT9p_ro2A0" \
-    GROQ_API_KEY="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" \
-    TNS_BASE_URL="https://www.tenderned.nl/papi/tenderned-rs-tns/v2/publicaties" \
-    API_BASE_URL="https://www.tenderned.nl/papi/tenderned-rs-tns/v2" \
-    API_USERNAME="TNXML08248" \
-    API_PASSWORD="aapVqSgKB" \
-    DATABASE_URL="postgresql://postgres:voetbal123@localhost:5432/supabase_subset" \
-    GOOGLE_CSE_API_KEY="AIzaSyAhm0u-wtyH1fQIn8Zc60GVBYw9ZZ8TGDs" \
-    GOOGLE_CSE_CX="921c64bea8b8b4805"
+# Non-secret defaults only. TenderNed's v2 publicaties list endpoint is public --
+# verified 2026-09-04: HTTP 200 with no credentials.
+ENV TNS_BASE_URL="https://www.tenderned.nl/papi/tenderned-rs-tns/v2/publicaties" \
+    API_BASE_URL="https://www.tenderned.nl/papi/tenderned-rs-tns/v2"
+
+# SECRETS ARE NOT BAKED INTO THIS IMAGE.
+#
+# Supply them at runtime instead, e.g.
+#   docker run --env-file /etc/ithaka/env ...
+# or via your orchestrator's secret store. Required at runtime:
+#
+#   DATABASE_URL          postgresql://USER:PASSWORD@HOST:5432/DBNAME
+#   API_USERNAME          TenderNed API user   (only needed for the per-notice XML endpoint)
+#   API_PASSWORD          TenderNed API password
+#   GROQ_API_KEY          SROI analysis LLM
+#   GOOGLE_API_KEY        Gemini (alternative LLM path)
+#   SERPAPI_API_KEY       company website discovery
+#   GOOGLE_CSE_API_KEY    company website discovery (fallback)
+#   GOOGLE_CSE_CX         Google Custom Search engine id
+#   OPEN_ROUTER           (currently unused -- no code reads it)
+#
+# These previously appeared here as literal values and are therefore in git
+# history. Treat every one of them as compromised and rotate. See SECURITY.md.
 
 # Expose the port FastAPI/uvicorn will run on
 EXPOSE 8000
 
 # Start the FastAPI app - CHANGED TO LOCALHOST ONLY
-CMD ["uvicorn", "server:app", "--host", "127.0.0.1", "--port", "8000"]
+CMD ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8000"]

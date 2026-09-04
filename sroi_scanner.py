@@ -217,6 +217,23 @@ def extract_text_content(soup) -> str:
     return text[:12000]
 
 
+def company_identity_matches(soup, company_name: str) -> bool:
+    """Reject search results that do not credibly identify the target company."""
+    if not soup or not company_name:
+        return False
+    page_identity = " ".join([
+        soup.title.get_text(" ", strip=True) if soup.title else "",
+        (soup.find("meta", attrs={"name": "description"}) or {}).get("content", ""),
+        extract_text_content(soup)[:3000],
+    ]).lower()
+    normalized_name = re.sub(r"\W", "", company_name).lower()
+    if normalized_name and normalized_name in re.sub(r"\W", "", page_identity):
+        return True
+    ignored = {"bv", "b.v", "nv", "n.v", "the", "and", "van", "de", "het"}
+    tokens = [token.lower() for token in re.findall(r"[\w-]+", company_name) if len(token) >= 4 and token.lower() not in ignored]
+    return bool(tokens) and any(token in page_identity for token in tokens)
+
+
 
 
 
@@ -232,15 +249,15 @@ def find_first_working_url(company_name: str, initial_url: Optional[str]) -> Tup
     # 1) Try the direct URL from the notice
     if initial_url:
         print(f"🌐 Trying direct URL: {initial_url}")
-        if fetch_page_content(initial_url):
+        if (soup := fetch_page_content(initial_url)) and company_identity_matches(soup, company_name):
             return initial_url, "direct_url"
         else:
-            print("⚠️ Direct URL not reachable, falling back to search.")
+            print("⚠️ Direct URL was unreachable or did not identify the company, falling back to search.")
 
     # 2) Try SerpAPI if configured
     serp_url = search_with_serpapi(company_name)
     if serp_url:
-        if fetch_page_content(serp_url):
+        if (soup := fetch_page_content(serp_url)) and company_identity_matches(soup, company_name):
             return serp_url, "serpapi_search"
         else:
             print("⚠️ SerpAPI URL not reachable, trying Google CSE.")
@@ -248,7 +265,7 @@ def find_first_working_url(company_name: str, initial_url: Optional[str]) -> Tup
     # 3) Try Google CSE (100 free searches/day)
     cse_url = search_with_google_cse(company_name)
     if cse_url:
-        if fetch_page_content(cse_url):
+        if (soup := fetch_page_content(cse_url)) and company_identity_matches(soup, company_name):
             return cse_url, "google_cse_search"
         else:
             print("⚠️ Google CSE URL also not reachable.")
@@ -304,13 +321,21 @@ def keyword_analysis(text: str) -> Dict:
     else:
         confidence = "low"
 
+    evidence_sentences = []
+    for sentence in re.split(r"(?<=[.!?])\s+", text):
+        if any(keyword.lower() in sentence.lower() for keyword in set(found_keywords)):
+            evidence_sentences.append(sentence.strip()[:500])
+        if len(evidence_sentences) == 5:
+            break
     return {
         "sroi_compliant": sroi_compliant,
         "confidence": confidence,
-        "evidence": list(set(found_keywords))[:10],
-        "summary": f"Keyword analyse: score {total_score}, gevonden {len(set(found_keywords))} unieke termen.",
+        "evidence": evidence_sentences,
+        "summary": f"Geen AI-compliance-oordeel: keyword-fallback met score {total_score} en {len(set(found_keywords))} unieke termen.",
         "score": total_score,
         "score_breakdown": scores,
+        "analysis_method": "keyword_fallback",
+        "verdict": "insufficient_evidence",
     }
 
 
@@ -600,11 +625,34 @@ Confidence: low / medium / high
 
 def analyze_with_ai(company_name: str, text_content: str) -> Dict:
     """Route to the selected AI provider."""
+    # Rank passages before handing them to a model. The old code always sent
+    # the first 8k characters, regardless of what the crawler had found.
+    paragraphs = re.split(r"(?<=[.!?])\s+", text_content)
+    ranked = sorted(
+        paragraphs,
+        key=lambda paragraph: sum(keyword.lower() in paragraph.lower() for keyword in SROI_PHRASES_DIRECT + SROI_TERMS + KPI_PHRASES),
+        reverse=True,
+    )
+    selected_text = " ".join(ranked)[:8000] or text_content[:8000]
     if AI_PROVIDER == "groq":
-        return analyze_with_groq(company_name, text_content)
-    if AI_PROVIDER == "gemini":
-        return analyze_with_gemini(company_name, text_content)
-    return keyword_analysis(text_content)
+        result = analyze_with_groq(company_name, selected_text)
+    elif AI_PROVIDER == "gemini":
+        result = analyze_with_gemini(company_name, selected_text)
+    else:
+        result = keyword_analysis(selected_text)
+    if result.get("analysis_method") == "keyword_fallback":
+        return result
+    evidence = [item for item in result.get("evidence", []) if isinstance(item, str) and item.lower() in selected_text.lower()]
+    if not evidence:
+        return {
+            **keyword_analysis(selected_text),
+            "summary": "Geen AI-compliance-oordeel: model leverde geen controleerbaar bronbewijs.",
+            "verdict": "insufficient_evidence",
+        }
+    result["evidence"] = evidence[:10]
+    result["analysis_method"] = f"{AI_PROVIDER}_grounded"
+    result["verdict"] = "assessed"
+    return result
 
 def smart_scrape_and_analyze_hybrid(company_name: str, start_url: str) -> Dict:
     """
@@ -830,6 +878,8 @@ def analyze_notice_sroi(notice: Dict) -> Dict:
             "summary": analysis.get("summary", ""),
             "pages_checked": analysis.get("pages_checked", 0),
             "error": analysis.get("error"),
+            "analysis_method": analysis.get("analysis_method"),
+            "verdict": analysis.get("verdict"),
         })
     except Exception as e:
         result["error"] = str(e)

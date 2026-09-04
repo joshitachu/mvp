@@ -35,7 +35,19 @@ class Import(Base):
     region = Column(Text)
     province = Column(Text)
     owner_code = Column(Text)
-    
+
+    # Lifecycle: pending -> running -> completed | partial | failed
+    # See migrations/003_import_status.sql.
+    status = Column(Text, nullable=False, default="pending")
+    error_message = Column(Text)
+    started_at = Column(DateTime(timezone=True))
+    finished_at = Column(DateTime(timezone=True))
+    # Per-run fetch counters; partial means listed > fetched.
+    listed = Column(Integer, nullable=False, default=0)
+    fetched = Column(Integer, nullable=False, default=0)
+    http_failed = Column(Integer, nullable=False, default=0)
+    parse_failed = Column(Integer, nullable=False, default=0)
+
     # Relationships
     notices = relationship("Notice", back_populates="import_record", cascade="all, delete-orphan")
     sroi_results = relationship("SROIResult", back_populates="import_record", cascade="all, delete-orphan")
@@ -46,7 +58,10 @@ class Notice(Base):
     
     id = Column(BigInteger, primary_key=True, autoincrement=True)
     import_id = Column(UUID(as_uuid=True), ForeignKey("imports.id", ondelete="CASCADE"), nullable=False)
-    notice_id = Column(Text, unique=True)
+    # NOT globally unique: the same TenderNed notice may appear in many imports.
+    # Uniqueness is (import_id, notice_id) -- see __table_args__ and
+    # migrations/001_fix_notice_uniqueness.sql.
+    notice_id = Column(Text)
     publicatie_id = Column(BigInteger)
     url = Column(Text)
     titel = Column(Text)
@@ -86,7 +101,23 @@ class Notice(Base):
     aantal_eerdere_aanbestedingen = Column(Integer, default=0)
     owner_code = Column(Text)
     publicatie_datum = Column(DateTime(timezone=True))
-    
+
+    # Classification -- see publication_types.py and migration 004.
+    # record_type is what you should filter on; 'awards' excludes VEAT
+    # (intent-to-award, no winner) and cancelled procedures.
+    publicatie_code = Column(Text)
+    record_type = Column(Text)
+    type_publicatie = Column(Text)
+    is_cancelled = Column(Boolean, nullable=False, default=False)
+
+    __table_args__ = (
+        UniqueConstraint('import_id', 'notice_id', name='notices_import_id_notice_id_key'),
+        # Every hot read filters on (import_id, owner_code); without this it is a seq scan.
+        Index('idx_notices_import_owner', 'import_id', 'owner_code'),
+        # server.py filters with func.lower(province) == region; needs the expression index.
+        Index('idx_notices_province_lower', func.lower(province)),
+    )
+
     # Relationships
     import_record = relationship("Import", back_populates="notices")
 
@@ -108,6 +139,8 @@ class SROIResult(Base):
     summary = Column(Text)
     pages_checked = Column(Integer, default=0)
     error = Column(Text)
+    analysis_method = Column(Text)
+    verdict = Column(Text)
     created_at = Column(DateTime(timezone=True), default=func.now())
     owner_code = Column(Text)
     
@@ -137,6 +170,8 @@ class NoticeSROIResult(Base):
     summary = Column(Text)
     pages_checked = Column(Integer, default=0)
     error = Column(Text)
+    analysis_method = Column(Text)
+    verdict = Column(Text)
     created_at = Column(DateTime(timezone=True), default=func.now())
     owner_code = Column(Text)
     
@@ -199,6 +234,135 @@ class CRMFollowup(Base):
     __table_args__ = (
         Index('idx_crm_followups_company', 'company_id'),
     )
+
+
+# Canonical TenderNed layer -------------------------------------------------
+# These tables supersede the legacy tenderned_raw*_cached tables. Source data is
+# global/public and immutable; the existing `notices` table remains the
+# owner-scoped import projection used by the UI.
+class TenderNotice(Base):
+    __tablename__ = "tender_notices"
+
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    notice_id = Column(Text, unique=True, nullable=False)
+    publicatie_id = Column(BigInteger, unique=True)
+    publicatie_datum = Column(Date)
+    publicatie_code = Column(Text)
+    type_publicatie = Column(Text)
+    record_type = Column(Text)
+    is_cancelled = Column(Boolean, nullable=False, default=False)
+    title = Column(Text)
+    description = Column(Text)
+    source_url = Column(Text)
+    winner_company_id = Column(BigInteger, ForeignKey("tender_companies.id", ondelete="SET NULL"))
+    buyer_company_id = Column(BigInteger, ForeignKey("tender_companies.id", ondelete="SET NULL"))
+    # Preserve the API listing object and source XML. Derived records can be
+    # rebuilt locally without re-downloading TenderNed.
+    listing_payload = Column(JSONB, nullable=False, default=dict)
+    source_xml = Column(Text, nullable=False)
+    parsed_payload = Column(JSONB, nullable=False, default=dict)
+    fetched_at = Column(DateTime(timezone=True), nullable=False, default=func.now())
+    updated_at = Column(DateTime(timezone=True), nullable=False, default=func.now(), onupdate=func.now())
+
+    cpvs = relationship("TenderNoticeCPV", back_populates="notice", cascade="all, delete-orphan")
+    lots = relationship("TenderNoticeLot", back_populates="notice", cascade="all, delete-orphan")
+    winner_company = relationship("TenderCompany", foreign_keys=[winner_company_id])
+    buyer_company = relationship("TenderCompany", foreign_keys=[buyer_company_id])
+
+    __table_args__ = (
+        Index("idx_tender_notices_date", "publicatie_datum"),
+        Index("idx_tender_notices_type_date", "record_type", "publicatie_datum"),
+    )
+
+
+class TenderCompany(Base):
+    __tablename__ = "tender_companies"
+
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    # KVK is the stable identifier where available. canonical_key falls back to
+    # a normalized name/location key for notices that do not contain a KVK.
+    kvk = Column(Text, unique=True)
+    canonical_key = Column(Text, unique=True, nullable=False)
+    name = Column(Text, nullable=False)
+    street = Column(Text)
+    postcode = Column(Text)
+    city = Column(Text)
+    province = Column(Text)
+    country = Column(Text)
+    website = Column(Text)
+    first_seen_at = Column(DateTime(timezone=True), nullable=False, default=func.now())
+    last_seen_at = Column(DateTime(timezone=True), nullable=False, default=func.now())
+
+    __table_args__ = (
+        Index("idx_tender_companies_name", "name"),
+        Index("idx_tender_companies_province", "province"),
+    )
+
+
+class TenderNoticeCPV(Base):
+    __tablename__ = "tender_notice_cpvs"
+
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    notice_id = Column(BigInteger, ForeignKey("tender_notices.id", ondelete="CASCADE"), nullable=False)
+    code = Column(Text, nullable=False)
+    label = Column(Text)
+    is_main = Column(Boolean, nullable=False, default=False)
+
+    notice = relationship("TenderNotice", back_populates="cpvs")
+
+    __table_args__ = (
+        UniqueConstraint("notice_id", "code", name="tender_notice_cpvs_notice_code_key"),
+        Index("idx_tender_notice_cpvs_code", "code"),
+    )
+
+
+class TenderNoticeLot(Base):
+    __tablename__ = "tender_notice_lots"
+
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    notice_id = Column(BigInteger, ForeignKey("tender_notices.id", ondelete="CASCADE"), nullable=False)
+    external_lot_id = Column(Text, nullable=False)
+    title = Column(Text)
+    description = Column(Text)
+    awarded_company_id = Column(BigInteger, ForeignKey("tender_companies.id", ondelete="SET NULL"))
+    award_value = Column(Numeric)
+    currency = Column(Text)
+    award_date = Column(Date)
+    contract_start = Column(Date)
+    contract_end = Column(Date)
+
+    notice = relationship("TenderNotice", back_populates="lots")
+    awarded_company = relationship("TenderCompany")
+
+    __table_args__ = (
+        UniqueConstraint("notice_id", "external_lot_id", name="tender_notice_lots_notice_external_key"),
+        Index("idx_tender_notice_lots_company", "awarded_company_id"),
+    )
+
+
+class SavedSearch(Base):
+    __tablename__ = "saved_searches"
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    owner_code = Column(Text, nullable=False)
+    name = Column(Text, nullable=False)
+    filters = Column(JSONB, nullable=False, default=dict)
+    is_alert_enabled = Column(Boolean, nullable=False, default=True)
+    last_checked_at = Column(DateTime(timezone=True))
+    created_at = Column(DateTime(timezone=True), nullable=False, default=func.now())
+    updated_at = Column(DateTime(timezone=True), nullable=False, default=func.now(), onupdate=func.now())
+
+    __table_args__ = (UniqueConstraint("owner_code", "name", name="saved_searches_owner_name_key"),)
+
+
+class SavedSearchAlert(Base):
+    __tablename__ = "saved_search_alerts"
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    saved_search_id = Column(BigInteger, ForeignKey("saved_searches.id", ondelete="CASCADE"), nullable=False)
+    tender_notice_id = Column(BigInteger, ForeignKey("tender_notices.id", ondelete="CASCADE"), nullable=False)
+    created_at = Column(DateTime(timezone=True), nullable=False, default=func.now())
+    read_at = Column(DateTime(timezone=True))
+
+    __table_args__ = (UniqueConstraint("saved_search_id", "tender_notice_id", name="saved_search_alerts_search_notice_key"),)
 
 
 class TendernedRaw(Base):

@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ithaka
+      POSTGRES_USER: ithaka
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - ithaka_postgres:/var/lib/postgresql/data
+    restart: unless-stopped
+  backend:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://ithaka:${POSTGRES_PASSWORD}@db:5432/ithaka
+      TNS_BASE_URL: https://www.tenderned.nl/papi/tenderned-rs-tns/v2/publicaties
+      API_BASE_URL: https://www.tenderned.nl/papi/tenderned-rs-tns/v2
+      API_USERNAME: ${API_USERNAME}
+      API_PASSWORD: ${API_PASSWORD}
+      TN_FETCH_WORKERS: 8
+    depends_on: [db]
+    command: sh -c 'python deploy_entrypoint.py && uvicorn server:app --host 0.0.0.0 --port 8000'
+    ports: ["127.0.0.1:8010:8000"]
+    restart: unless-stopped
+  frontend:
+    build: ../ithaka-ui
+    environment:
+      BACKEND_URL: http://backend:8000
+    depends_on: [backend]
+    ports: ["127.0.0.1:3001:3000"]
+    restart: unless-stopped
+volumes:
+  ithaka_postgres:
