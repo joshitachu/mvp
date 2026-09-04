@@ -585,7 +585,17 @@ def iter_publicaties(publicatie_type=PUBLICATIE_TYPE, date_from=DATE_FROM, date_
             params["cpvCodes"] = cpv_codes
 
         resp = get_session().get(TNS_BASE_URL, params=params, timeout=HTTP_TIMEOUT)
-        resp.raise_for_status()
+        try:
+            resp.raise_for_status()
+        except requests.HTTPError:
+            # TenderNed's public list endpoint rejects page 100 and above
+            # (HTTP 400), even when there are more matching publications.
+            # Treat that API boundary as an exhausted listing so one import
+            # is not discarded after successfully fetching pages 0..99.
+            if resp.status_code == 400 and page >= 100:
+                print("⚠️ TenderNed pagination limit reached at page 100; stopping listing")
+                break
+            raise
         data = resp.json()
 
         contents = data.get("contents") or data.get("content", [])
