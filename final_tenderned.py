@@ -3,6 +3,7 @@ import csv
 import threading
 import re
 import requests
+from datetime import date, timedelta
 from requests.auth import HTTPBasicAuth
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -27,6 +28,7 @@ DATE_TO = "2025-02-05"
 PUBLICATIE_TYPE = "AGO"
 CPV_CODES = None
 MAX_PAGES = None
+MAX_QUERY_DAYS = 31
 
 SAVE_XML = True
 XML_OUTPUT_DIR = "xml_gegund"
@@ -568,6 +570,31 @@ def iter_publicaties(publicatie_type=PUBLICATIE_TYPE, date_from=DATE_FROM, date_
     Note: this endpoint requires no authentication (verified 2026-09-04).
     page_size is capped at 100 by the API; size=101+ returns a 400.
     """
+    # TenderNed only exposes pages 0..99 for one search. Split unrestricted
+    # historical imports into non-overlapping monthly windows so callers can
+    # request a long period without losing everything at that boundary.
+    if max_pages is None and date_from and date_to:
+        try:
+            range_start = date.fromisoformat(str(date_from))
+            range_end = date.fromisoformat(str(date_to))
+        except ValueError:
+            range_start = range_end = None
+
+        if range_start and range_end and (range_end - range_start).days >= MAX_QUERY_DAYS:
+            cursor = range_start
+            while cursor <= range_end:
+                window_end = min(cursor + timedelta(days=MAX_QUERY_DAYS - 1), range_end)
+                yield from iter_publicaties(
+                    publicatie_type=publicatie_type,
+                    date_from=cursor.isoformat(),
+                    date_to=window_end.isoformat(),
+                    cpv_codes=cpv_codes,
+                    page_size=page_size,
+                    max_pages=max_pages,
+                )
+                cursor = window_end + timedelta(days=1)
+            return
+
     page = 0
 
     while True:
